@@ -1,0 +1,1930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Contact AYC Security</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #F8F5F0;
+    --cream-2: #EFEBE3;
+    --paper: #FFFFFF;
+    --navy: #0E1C2B;
+    --navy-2: #0A1622;
+    --forest: #1C3D35;
+    --gold: #B8882A;
+    --gold-deep: #98701F;
+    --gold-soft: #D9B66B;
+    --ink: #2A2A28;
+    --ink-soft: #5A5A56;
+    --rule: #E4DED2;
+    --rule-strong: #CFC6B3;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .container-wide {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ============ BUTTONS ============ */
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 18px 26px;
+    border: 1px solid var(--gold);
+    cursor: pointer;
+    transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+  }
+  .btn-gold:hover {
+    background: var(--gold-deep);
+    border-color: var(--gold-deep);
+  }
+
+  .btn-outline-navy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--navy);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 18px 26px;
+    border: 1px solid var(--navy);
+    cursor: pointer;
+    transition: background 160ms ease, color 160ms ease;
+  }
+  .btn-outline-navy:hover { background: var(--navy); color: #fff; }
+
+  .btn-outline-light {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: transparent;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 18px 26px;
+    border: 1px solid rgba(255,255,255,0.6);
+    cursor: pointer;
+    transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+  }
+  .btn-outline-light:hover { background: #fff; color: var(--navy); border-color: #fff; }
+
+  /* ============ UTILITY RAIL ============ */
+  .utility-rail {
+    background: var(--navy-2);
+    height: 36px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.72);
+  }
+  .utility-rail .container-wide {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .utility-rail-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    position: relative;
+    box-shadow: 0 0 0 0 rgba(184,136,42,0.7);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(184,136,42,0.6); }
+    70% { box-shadow: 0 0 0 8px rgba(184,136,42,0); }
+    100% { box-shadow: 0 0 0 0 rgba(184,136,42,0); }
+  }
+  .utility-rail a:hover { color: var(--gold-soft); }
+
+  @media (max-width: 900px) { .utility-rail { display: none; } }
+
+  /* ============ MAIN NAV ============ */
+  .main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--navy);
+    height: 84px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .main-nav .container-wide {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 24px;
+  }
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .nav-logo { height: 44px; width: auto; display: block; }
+  .nav-rule {
+    width: 1px;
+    height: 36px;
+    background: rgba(255,255,255,0.18);
+  }
+  .brand-mark {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.62);
+    line-height: 1.5;
+    letter-spacing: 0.06em;
+  }
+  .brand-mark .gold { color: var(--gold-soft); }
+
+  .nav-center {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #fff;
+  }
+  .nav-item {
+    position: relative;
+    padding: 30px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.92);
+    transition: color 160ms ease;
+  }
+  .nav-item:hover { color: var(--gold-soft); }
+  .nav-item .caret {
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+  }
+
+  .nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: -16px;
+    background: var(--navy-2);
+    min-width: 320px;
+    padding: 12px 0;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-top: 2px solid var(--gold);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity 160ms, transform 160ms, visibility 160ms;
+    z-index: 60;
+  }
+  .nav-item:hover .nav-dropdown,
+  .nav-item:focus-within .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .nav-dropdown a {
+    display: block;
+    padding: 12px 22px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    color: rgba(255,255,255,0.82);
+    border-left: 2px solid transparent;
+    transition: background 140ms, color 140ms, border-color 140ms;
+  }
+  .nav-dropdown a:hover {
+    background: rgba(255,255,255,0.03);
+    color: var(--gold-soft);
+    border-left-color: var(--gold);
+  }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    padding: 14px 22px;
+    border: 1px solid var(--gold);
+    transition: all 160ms ease;
+    cursor: pointer;
+  }
+  .nav-cta:hover {
+    background: transparent;
+    color: var(--gold-soft);
+    border-color: var(--gold-soft);
+  }
+
+  .hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    padding: 0;
+    color: #fff;
+  }
+  .hamburger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: currentColor;
+    margin: 6px auto;
+    transition: transform 200ms, opacity 200ms;
+  }
+
+  @media (max-width: 1180px) {
+    .nav-center { gap: 20px; font-size: 13px; }
+  }
+  @media (max-width: 1040px) {
+    .nav-center { gap: 14px; font-size: 12px; letter-spacing: 0.1em; }
+    .brand-mark { display: none; }
+    .nav-rule { display: none; }
+  }
+  @media (max-width: 900px) {
+    .main-nav { height: 64px; }
+    .nav-logo { height: 36px; }
+    .nav-rule, .brand-mark { display: none; }
+    .nav-center, .nav-cta { display: none; }
+    .hamburger { display: block; }
+  }
+
+  /* ============ MOBILE TAP-TO-CALL BAR ============ */
+  .mobile-tap-call {
+    display: none;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 12px 16px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  @media (max-width: 900px) {
+    .mobile-tap-call { display: block; }
+  }
+
+  /* ============ MOBILE BOTTOM STRIP ============ */
+  .mobile-bottom-strip {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 80;
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .mobile-bottom-strip .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .mobile-bottom-strip a {
+    padding: 14px 4px;
+    text-align: center;
+    color: var(--gold-soft);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .mobile-bottom-strip a:last-child { border-right: none; }
+  @media (max-width: 900px) {
+    .mobile-bottom-strip { display: block; }
+    body { padding-bottom: 52px; }
+  }
+
+  /* ============ MOBILE DRAWER ============ */
+  .mobile-drawer {
+    position: fixed;
+    inset: 0;
+    background: var(--navy);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    transform: translateX(100%);
+    transition: transform 280ms ease;
+    overflow-y: auto;
+  }
+  .mobile-drawer.open { transform: translateX(0); }
+  .mobile-drawer-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  .mobile-drawer-close {
+    background: transparent;
+    border: none;
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  .mobile-drawer nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 32px;
+  }
+  .mobile-drawer nav a {
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .mobile-drawer nav a:hover { color: var(--gold-soft); }
+  .mobile-drawer .btn-gold { width: 100%; }
+
+  /* ============ SIDE TAB ============ */
+  .side-tab {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--gold);
+    color: var(--navy);
+    writing-mode: vertical-rl;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding: 18px 12px;
+    cursor: pointer;
+    border: none;
+    z-index: 40;
+    transition: background 160ms;
+  }
+  .side-tab:hover { background: var(--gold-deep); }
+  @media (max-width: 900px) { .side-tab { display: none; } }
+
+  /* ============ SLIDEOUT PANEL ============ */
+  .slideout {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 420px;
+    max-width: 100vw;
+    background: var(--paper);
+    z-index: 110;
+    transform: translateX(100%);
+    transition: transform 320ms ease;
+    box-shadow: -16px 0 48px rgba(14,28,43,0.18);
+    overflow-y: auto;
+    padding: 36px 32px;
+  }
+  .slideout.open { transform: translateX(0); }
+  .slideout-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(14,28,43,0.5);
+    z-index: 105;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 220ms, visibility 220ms;
+  }
+  .slideout-overlay.open { opacity: 1; visibility: visible; }
+  .slideout-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    color: var(--ink);
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  .slideout h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--navy);
+    margin: 0 0 8px;
+  }
+  .slideout p { font-size: 14px; color: var(--ink-soft); margin: 0 0 24px; }
+  .slideout .form-row { margin-bottom: 14px; }
+  .slideout label {
+    display: block;
+    font-weight: 500;
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  .slideout input, .slideout textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--rule-strong);
+    background: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+  }
+  .slideout textarea { min-height: 90px; resize: vertical; }
+  .slideout .btn-gold { width: 100%; margin-top: 8px; }
+
+  /* ============ PAGE HEADER ============ */
+  .page-header {
+    background: var(--paper);
+    padding: 48px 0 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .breadcrumb {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 22px;
+  }
+  .breadcrumb a:hover { color: var(--gold); }
+  .page-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: clamp(32px, 4vw, 52px);
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 10px;
+    line-height: 1.05;
+  }
+  .page-tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--gold);
+    margin: 0;
+  }
+
+  /* ============ QUICK CONTACT STRIP ============ */
+  .quick-strip {
+    background: var(--navy);
+    padding: 40px 0;
+  }
+  .quick-strip .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: stretch;
+  }
+  .quick-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    position: relative;
+  }
+  .quick-col + .quick-col::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    bottom: 8px;
+    width: 1px;
+    background: rgba(255,255,255,0.12);
+  }
+  .quick-icon {
+    color: var(--gold-soft);
+    margin-bottom: 14px;
+  }
+  .quick-icon svg { display: block; }
+  .quick-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 8px;
+  }
+  .quick-value {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: clamp(20px, 2.4vw, 30px);
+    color: #fff;
+    margin-bottom: 8px;
+    letter-spacing: 0.02em;
+    transition: color 140ms;
+    white-space: nowrap;
+  }
+  .quick-value:hover { color: var(--gold-soft); }
+  .quick-value.email {
+    font-size: clamp(14px, 1.6vw, 22px);
+    white-space: nowrap;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .quick-sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+  }
+  @media (max-width: 760px) {
+    .quick-strip .grid {
+      grid-template-columns: 1fr;
+      gap: 28px;
+    }
+    .quick-col + .quick-col::before {
+      left: 12%;
+      right: 12%;
+      width: auto;
+      top: -14px;
+      bottom: auto;
+      height: 1px;
+    }
+  }
+
+  /* ============ MAIN TWO-COLUMN ============ */
+  .main-section {
+    background: var(--cream);
+    padding: clamp(72px, 9vw, 112px) 0;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 60fr 40fr;
+    gap: 0;
+  }
+  @media (max-width: 960px) {
+    .main-grid { grid-template-columns: 1fr; }
+  }
+
+  .form-headline {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: clamp(26px, 3vw, 36px);
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 8px;
+    line-height: 1.1;
+  }
+  .form-subtext {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin: 0 0 36px;
+    max-width: 540px;
+  }
+
+  /* ============ SERVICE PILLS ============ */
+  .pills-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+  .pill {
+    border: 1px solid var(--rule-strong);
+    background: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    padding: 10px 18px;
+    cursor: pointer;
+    transition: background 140ms, color 140ms, border-color 140ms;
+  }
+  .pill:hover { border-color: var(--navy); }
+  .pill.selected {
+    background: var(--navy);
+    color: #fff;
+    border-color: var(--navy);
+  }
+  .pill:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  /* ============ FORM FIELDS ============ */
+  .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 18px;
+  }
+  .form-row.single { grid-template-columns: 1fr; }
+  @media (max-width: 640px) {
+    .form-row { grid-template-columns: 1fr; }
+  }
+
+  .field { display: flex; flex-direction: column; }
+  .field label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 6px;
+    display: block;
+  }
+  .field label .optional {
+    font-weight: 400;
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+  .field .hint {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+    margin-top: 6px;
+  }
+  .field input,
+  .field textarea,
+  .field select {
+    background: #fff;
+    border: 1px solid var(--rule-strong);
+    padding: 14px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+    width: 100%;
+    transition: border-color 140ms, box-shadow 140ms;
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .field select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%232A2A28' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 44px;
+  }
+  .field textarea { min-height: 140px; resize: vertical; }
+  .field input:focus,
+  .field textarea:focus,
+  .field select:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(184,136,42,0.12);
+  }
+
+  .submit-btn {
+    width: 100%;
+    margin-top: 8px;
+  }
+  .privacy-note {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: var(--ink-soft);
+    text-align: center;
+    margin-top: 12px;
+  }
+
+  /* ============ CONTACT TILES (below form) ============ */
+  .contact-tiles {
+    display: flex;
+    gap: 16px;
+    margin-top: 36px;
+  }
+  .contact-tile {
+    flex: 1;
+    background: #fff;
+    border: 1px solid var(--rule);
+    padding: 24px 20px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+    transition: border-color 160ms, transform 160ms;
+  }
+  .contact-tile:hover {
+    border-color: var(--gold);
+  }
+  .tile-icon {
+    color: var(--gold);
+    display: inline-flex;
+  }
+  .tile-icon svg { display: block; }
+  .tile-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-top: 10px;
+    display: block;
+  }
+  .tile-value {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--navy);
+    margin-top: 6px;
+    display: block;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+  }
+  .tile-value.email {
+    font-size: 16px;
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  .tile-sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-top: 4px;
+    display: block;
+  }
+  @media (max-width: 600px) {
+    .contact-tiles { flex-direction: column; }
+  }
+
+  /* ============ INFO PANEL ============ */
+  .info-panel {
+    padding-left: 48px;
+  }
+  @media (max-width: 960px) {
+    .info-panel { padding-left: 0; padding-top: 48px; }
+  }
+
+  .gsoc-card {
+    background: var(--navy);
+    padding: 28px;
+  }
+  .gsoc-head {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+  .gsoc-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.65;
+    margin: 14px 0 0;
+  }
+  .gold-rule {
+    border: none;
+    border-top: 1px solid rgba(184,136,42,0.3);
+    margin: 20px 0;
+  }
+  .gsoc-phone {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--gold-soft);
+    display: block;
+    letter-spacing: 0.04em;
+  }
+  .gsoc-phone:hover { color: #fff; }
+  .gsoc-phone-sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    margin-top: 4px;
+    display: block;
+  }
+
+  .disaster-card {
+    background: var(--forest);
+    padding: 28px;
+    margin-top: 16px;
+  }
+  .disaster-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 14px;
+    display: block;
+  }
+  .disaster-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.65;
+    margin: 0;
+  }
+  .disaster-card .gold-rule { margin: 16px 0; }
+  .disaster-prompt {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0;
+  }
+  .disaster-phone {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: var(--gold-soft);
+    margin-top: 6px;
+    display: block;
+  }
+  .disaster-phone:hover { color: #fff; }
+
+  .locations {
+    margin-top: 36px;
+  }
+  .locations-head {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    margin: 0 0 20px;
+  }
+  .location {
+    padding: 20px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  .location:last-child { border-bottom: none; }
+  .location-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 8px;
+    display: block;
+  }
+  .location-address {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .social-block {
+    margin-top: 28px;
+  }
+  .social-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 14px;
+    display: block;
+  }
+  .social-icons {
+    display: flex;
+    gap: 16px;
+  }
+  .social-icons a {
+    color: var(--ink-soft);
+    transition: color 140ms;
+    display: inline-flex;
+  }
+  .social-icons a:hover { color: var(--navy); }
+
+  /* ============ FINAL CTA ============ */
+  .final-cta {
+    background: var(--navy);
+    border-top: 4px solid var(--gold);
+    padding: clamp(56px, 7vw, 88px) 0;
+  }
+  .final-cta h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: clamp(28px, 4vw, 48px);
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0;
+    line-height: 1.05;
+  }
+  .final-cta .sub {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: clamp(18px, 2vw, 26px);
+    color: var(--gold-soft);
+    margin: 10px 0 0;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .final-cta p.body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: rgba(255,255,255,0.75);
+    line-height: 1.6;
+    margin: 16px auto 0;
+    max-width: 480px;
+  }
+  .final-cta .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    margin-top: 32px;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--navy-2);
+    padding: 72px 0 36px;
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr 1fr 1.2fr;
+    gap: 48px;
+    margin-bottom: 48px;
+  }
+  @media (max-width: 900px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+  }
+  @media (max-width: 560px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+  .footer-logo { height: 42px; width: auto; margin-bottom: 18px; display: block; }
+  .footer-desc {
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    line-height: 1.65;
+    margin: 0 0 16px;
+    max-width: 320px;
+  }
+  .footer-license {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    line-height: 1.7;
+    margin: 0 0 18px;
+  }
+  .footer-social {
+    display: flex;
+    gap: 14px;
+  }
+  .footer-social a {
+    color: rgba(255,255,255,0.6);
+    transition: color 140ms;
+    display: inline-flex;
+  }
+  .footer-social a:hover { color: var(--gold-soft); }
+
+  .footer-col h4 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    color: #fff;
+    margin: 0 0 18px;
+  }
+  .footer-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .footer-col a:hover { color: var(--gold-soft); }
+  .footer-col .footer-tel {
+    color: var(--gold-soft);
+    font-weight: 500;
+  }
+  .footer-loc-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-top: 18px;
+    margin-bottom: 4px;
+    display: block;
+  }
+  .footer-address {
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+  }
+
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.08);
+    padding-top: 24px;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 24px;
+    align-items: center;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+  }
+  .footer-bottom .center { text-align: center; }
+  .footer-bottom .right { text-align: right; display: flex; gap: 16px; justify-content: flex-end; }
+  .footer-bottom a:hover { color: var(--gold-soft); }
+  @media (max-width: 760px) {
+    .footer-bottom {
+      grid-template-columns: 1fr;
+      text-align: center;
+    }
+    .footer-bottom .center, .footer-bottom .right { text-align: center; justify-content: center; }
+  }
+
+  /* Hide visually but keep for screen readers */
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* ============ FOOTER RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    .footer-responsive-grid {
+      grid-template-columns: 1fr 1fr !important;
+      gap: 36px !important;
+    }
+  }
+  @media (max-width: 600px) {
+    .footer-responsive-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  @media (max-width: 760px) {
+    .final-grid {
+      grid-template-columns: 1fr !important;
+      gap: 32px !important;
+    }
+    .final-right {
+      border-left: none !important;
+      padding-left: 0 !important;
+      border-top: 1px solid rgba(255,255,255,0.22);
+      padding-top: 32px !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- UTILITY RAIL -->
+  <div class="utility-rail" role="complementary" aria-label="Status and contact">
+    <div class="container-wide">
+      <div class="utility-rail-left">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span>GSOC Online · 24/7 Live Monitoring</span>
+      </div>
+      <div class="utility-rail-right">
+        <a href="tel:+15615717983" aria-label="Call or text 5 6 1 5 7 1 7 9 8 3">Call or Text: (561) 571-7983</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAV -->
+  <header class="main-nav" role="banner">
+    <div class="container-wide">
+      <div class="nav-left">
+        <a href="/" aria-label="AYC Security home">
+          <img class="nav-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" />
+        </a>
+        <div class="nav-rule" aria-hidden="true"></div>
+        <div class="brand-mark">
+          Est. Boca Raton<br/>
+          <span class="gold">Veteran-Owned</span>
+        </div>
+      </div>
+
+      <nav class="nav-center" aria-label="Main">
+        <div class="nav-item" tabindex="0" role="button" aria-haspopup="true">
+          <span>Services</span>
+          <span class="caret" aria-hidden="true"></span>
+          <div class="nav-dropdown" role="menu">
+            <a href="/services/ongoing-security" role="menuitem">Ongoing Site Security</a>
+            <a href="/services/disaster-response" role="menuitem">Disaster &amp; Emergency Response</a>
+            <a href="/services/community-events" role="menuitem">Community, Events &amp; Close Protection</a>
+            <a href="/services/energy-industrial" role="menuitem">Energy &amp; Industrial Security</a>
+            <a href="/services/consulting-training" role="menuitem">Consulting, Training &amp; Procurement</a>
+            <a href="/services/ayc-intelligence" role="menuitem">AYC Intelligence</a>
+          </div>
+        </div>
+        <a class="nav-item" href="/industries">Industries</a>
+        <div class="nav-item" tabindex="0" role="button" aria-haspopup="true">
+          <span>About</span>
+          <span class="caret" aria-hidden="true"></span>
+          <div class="nav-dropdown" role="menu">
+            <a href="/about" role="menuitem">About AYC Security</a>
+            <a href="/operations-center" role="menuitem">Our Operations Center</a>
+            <a href="/about#leadership" role="menuitem">Our Leadership Team</a>
+          </div>
+        </div>
+        <a class="nav-item" href="/careers">Careers</a>
+        <a class="nav-item" href="/contact" aria-current="page">Contact</a>
+      </nav>
+
+      <a class="nav-cta" href="#contact-form">Request a Consultation →</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE TAP-TO-CALL -->
+  <a class="mobile-tap-call" href="tel:+15615717983" aria-label="Tap to call (561) 571-7983">Tap to Call — (561) 571-7983</a>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu" aria-hidden="true">
+    <div class="mobile-drawer-head">
+      <img class="nav-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" />
+      <button class="mobile-drawer-close" id="drawer-close" aria-label="Close menu">✕</button>
+    </div>
+    <nav aria-label="Mobile main">
+      <a href="/services/ongoing-security">Ongoing Site Security</a>
+      <a href="/services/disaster-response">Disaster Response</a>
+      <a href="/services/community-events">Community &amp; Events</a>
+      <a href="/services/energy-industrial">Energy &amp; Industrial</a>
+      <a href="/services/consulting-training">Consulting &amp; Training</a>
+      <a href="/services/ayc-intelligence">AYC Intelligence</a>
+      <a href="/industries">Industries</a>
+      <a href="/about">About</a>
+      <a href="/operations-center">Operations Center</a>
+      <a href="/careers">Careers</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <a class="btn-gold" href="#contact-form">Request a Consultation →</a>
+  </div>
+
+  <!-- SIDE TAB -->
+  <button class="side-tab" id="side-tab" aria-label="Open quick contact form">Get in Touch →</button>
+
+  <!-- SLIDEOUT PANEL -->
+  <div class="slideout-overlay" id="slideout-overlay"></div>
+  <aside class="slideout" id="slideout" aria-label="Quick contact form" aria-hidden="true">
+    <button class="slideout-close" id="slideout-close" aria-label="Close form">✕</button>
+    <h3>Quick Contact</h3>
+    <p>Send a brief message and we'll respond promptly.</p>
+    <div class="form-row">
+      <label for="qc-name">Name</label>
+      <input id="qc-name" type="text" autocomplete="name" />
+    </div>
+    <div class="form-row">
+      <label for="qc-email">Email</label>
+      <input id="qc-email" type="email" autocomplete="email" />
+    </div>
+    <div class="form-row">
+      <label for="qc-phone">Phone (optional)</label>
+      <input id="qc-phone" type="tel" autocomplete="tel" />
+    </div>
+    <div class="form-row">
+      <label for="qc-msg">How can we help?</label>
+      <textarea id="qc-msg"></textarea>
+    </div>
+    <button class="btn-gold" type="button">Send Message →</button>
+  </aside>
+
+  <!-- ━━━━━━━━━━ PAGE HEADER ━━━━━━━━━━ -->
+  <section class="page-header" aria-labelledby="page-title">
+    <div class="container">
+      <div class="breadcrumb"><a href="/">Home</a> / Contact</div>
+      <h1 id="page-title" class="page-title">Contact AYC Security</h1>
+      <p class="page-tagline">Ready When It Matters.</p>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━ MAIN TWO-COLUMN ━━━━━━━━━━ -->
+  <section class="main-section">
+    <div class="container">
+      <div class="main-grid">
+
+        <!-- LEFT: FORM -->
+        <div>
+          <form id="contact-form" novalidate>
+            <h2 class="form-headline">Send Us a Message</h2>
+            <p class="form-subtext">Fill out the form below and a member of our team will be in touch. Fields marked * are required.</p>
+
+            <span id="pills-label" class="pills-label">What can we help with?</span>
+            <div class="pills" role="radiogroup" aria-labelledby="pills-label">
+              <button type="button" class="pill" role="radio" aria-checked="false">Ongoing Site Security</button>
+              <button type="button" class="pill" role="radio" aria-checked="false">Disaster Response</button>
+              <button type="button" class="pill" role="radio" aria-checked="false">Community Security</button>
+              <button type="button" class="pill" role="radio" aria-checked="false">Conference &amp; Events</button>
+              <button type="button" class="pill" role="radio" aria-checked="false">Energy &amp; Industrial</button>
+              <button type="button" class="pill" role="radio" aria-checked="false">Consulting &amp; Training</button>
+              <button type="button" class="pill" role="radio" aria-checked="false">AYC Intelligence</button>
+              <button type="button" class="pill" role="radio" aria-checked="false">Not Sure</button>
+              <button type="button" class="pill" role="radio" aria-checked="false">Other</button>
+            </div>
+            <input type="hidden" name="service_type" id="service_type" />
+
+            <div class="form-row">
+              <div class="field">
+                <label for="first_name">First Name<span aria-hidden="true">*</span><span class="sr-only"> required</span></label>
+                <input id="first_name" name="first_name" type="text" autocomplete="given-name" required />
+              </div>
+              <div class="field">
+                <label for="last_name">Last Name<span aria-hidden="true">*</span><span class="sr-only"> required</span></label>
+                <input id="last_name" name="last_name" type="text" autocomplete="family-name" required />
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="field">
+                <label for="email">Email Address<span aria-hidden="true">*</span><span class="sr-only"> required</span></label>
+                <input id="email" name="email" type="email" autocomplete="email" required />
+              </div>
+              <div class="field">
+                <label for="phone">Phone Number <span class="optional">(optional)</span></label>
+                <input id="phone" name="phone" type="tel" autocomplete="tel" />
+              </div>
+            </div>
+
+            <div class="form-row single">
+              <div class="field">
+                <label for="company">Company or Organization <span class="optional">(optional)</span></label>
+                <input id="company" name="company" type="text" autocomplete="organization" />
+              </div>
+            </div>
+
+            <div class="form-row single">
+              <div class="field">
+                <label for="site_address">Property or Site Address <span class="optional">(optional)</span></label>
+                <input id="site_address" name="site_address" type="text" autocomplete="street-address" aria-describedby="site_hint" />
+                <span id="site_hint" class="hint">Helps us understand the scope of your need</span>
+              </div>
+            </div>
+
+            <div class="form-row" id="country-state-row">
+              <div class="field">
+                <label for="country">Country <span class="optional">(optional)</span></label>
+                <select id="country" name="country">
+                  <option value="">— Select country —</option>
+                  <option value="US">United States</option>
+                  <option value="CA">Canada</option>
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+              <div class="field" id="state-field">
+                <label for="state">State or Province <span class="optional">(optional)</span></label>
+                <select id="state" name="state">
+                  <option value="">— Select —</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-row single">
+              <div class="field">
+                <label for="message">Message<span aria-hidden="true">*</span><span class="sr-only"> required</span></label>
+                <textarea id="message" name="message" required></textarea>
+              </div>
+            </div>
+
+            <div class="form-row single">
+              <div class="field">
+                <label for="referral">How did you hear about us? <span class="optional">(optional)</span></label>
+                <select id="referral" name="referral">
+                  <option value="">— Select one —</option>
+                  <option>Referral</option>
+                  <option>Online Search</option>
+                  <option>Social Media</option>
+                  <option>AI Search or Assistant</option>
+                  <option>Advertisement</option>
+                  <option>Event or Conference</option>
+                  <option>Existing Client</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-gold submit-btn">Send Message →</button>
+            <p class="privacy-note">Your information is kept confidential and will never be sold or shared.</p>
+          </form>
+
+          <!-- CONTACT TILES (below form) -->
+          <div class="contact-tiles" aria-label="Direct contact channels">
+            <a class="contact-tile" href="tel:+15615717983">
+              <span class="tile-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter">
+                  <path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A15 15 0 0 1 3 6a2 2 0 0 1 2-2z"/>
+                </svg>
+              </span>
+              <span class="tile-label">Call</span>
+              <span class="tile-value">(561) 571-7983</span>
+            </a>
+            <a class="contact-tile" href="sms:+15615717983">
+              <span class="tile-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter">
+                  <path d="M3 5h18v12H8l-5 4V5z"/>
+                </svg>
+              </span>
+              <span class="tile-label">Text</span>
+              <span class="tile-value">(561) 571-7983</span>
+            </a>
+            <a class="contact-tile" href="/cdn-cgi/l/email-protection#ff96919990bf9e869c8c9a9c8a8d968b86d19c9092">
+              <span class="tile-icon" aria-hidden="true">
+                <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter">
+                  <path d="M3 6h18v12H3z"/>
+                  <path d="M3 6l9 7 9-7"/>
+                </svg>
+              </span>
+              <span class="tile-label">Email</span>
+              <span class="tile-value email"><span class="__cf_email__" data-cfemail="ddb4b3bbb29dbca4beaeb8bea8afb4a9a4f3beb2b0">[email&#160;protected]</span></span>
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: INFO PANEL -->
+        <aside class="info-panel" aria-label="Direct contact and operations info">
+
+          <div class="disaster-card" style="margin-top:0;">
+            <span class="disaster-label">Disaster &amp; Humanitarian Operations</span>
+            <p>Organizations responding to disasters call us because we deliver quality personnel on short timelines, anywhere in the country. Every deployment includes direct oversight and clear communication from first contact through final debrief.</p>
+            <hr class="gold-rule" />
+            <p class="disaster-prompt">Call to Discuss Your Operation</p>
+            <a class="disaster-phone" href="tel:+15615717983">(561) 571-7983</a>
+          </div>
+
+          <div class="gsoc-card" style="margin-top:16px;">
+            <div class="gsoc-head">
+              <span class="pulse-dot" aria-hidden="true"></span>
+              <span>GSOC Online · 24/7 Active</span>
+            </div>
+            <p>Every officer deployed to a site or event is monitored in real time through our Global Security Operations Center — GPS-confirmed, every hour, by a live human operator. For same-day event or site coverage, call or text directly.</p>
+          </div>
+
+          <div class="locations">
+            <h3 class="locations-head">Our Offices</h3>
+            <div class="location">
+              <span class="location-label">Florida — Headquarters</span>
+              <p class="location-address">7000 W Palmetto Park Rd., Suite 308<br/>Boca Raton, FL 33433</p>
+            </div>
+            <div class="location">
+              <span class="location-label">Ohio</span>
+              <p class="location-address">7160 Chagrin Road, Suite 180<br/>Chagrin Falls, OH 44023</p>
+            </div>
+          </div>
+
+          <div class="social-block">
+            <span class="social-label">Follow AYC Security</span>
+            <div class="social-icons">
+              <a href="https://www.linkedin.com/company/ayc-security/" aria-label="AYC Security on LinkedIn" target="_blank" rel="noopener">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.56v14H.22V8zm7.5 0h4.37v1.92h.06c.61-1.15 2.1-2.36 4.33-2.36 4.63 0 5.48 3.05 5.48 7.01V22h-4.56v-6.27c0-1.5-.03-3.42-2.08-3.42-2.08 0-2.4 1.63-2.4 3.31V22H7.72V8z"/></svg>
+              </a>
+              <a href="https://www.facebook.com/aycsecure/" aria-label="AYC Security on Facebook" target="_blank" rel="noopener">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.2h-3.1V8.7c0-.93.26-1.56 1.6-1.56h1.7V4.25c-.3-.04-1.32-.13-2.5-.13-2.48 0-4.18 1.51-4.18 4.29v2.39H7.4V14h2.72v8h3.38z"/></svg>
+              </a>
+            </div>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━ FINAL CTA ━━━━━━━━━━ -->
+  <section id="final-cta" class="final-cta"
+    aria-labelledby="final-cta-heading"
+    style="background:#0E1C2B; border-top:4px solid #B8882A;
+    padding:clamp(72px,9vw,110px) 0;">
+    <div class="container">
+      <div class="final-grid" style="display:grid;
+        grid-template-columns:7fr 5fr; gap:48px;
+        align-items:center;">
+
+        <div class="final-left">
+          <h2 id="final-cta-heading" style="font-family:
+            'Oswald',sans-serif; font-size:clamp(32px,4.6vw,60px);
+            font-weight:500; text-transform:uppercase;
+            color:#fff; line-height:1.05; margin:0 0 12px;">
+            Ready when it matters.
+            <span style="display:block; font-size:clamp(20px,2vw,28px);
+              color:#D9B66B; margin-top:8px;">
+              Same-Day Coverage Available.
+            </span>
+          </h2>
+          <p style="font-family:'Inter',sans-serif; font-size:16px;
+            color:rgba(255,255,255,0.8); line-height:1.6;
+            max-width:50ch; margin:0 0 32px;">
+            Need guards for an event tonight? Call or text.
+            For site coverage and all other inquiries,
+            use the form above or email us directly.
+          </p>
+          <a href="tel:+15615717983"
+            style="display:inline-block; background:#B8882A;
+            color:#0E1C2B; font-family:'Oswald',sans-serif;
+            font-weight:600; font-size:13px;
+            letter-spacing:0.16em; text-transform:uppercase;
+            padding:18px 26px; border:1px solid #B8882A;
+            text-decoration:none; margin-right:12px;"
+            aria-label="Call AYC Security">
+            CALL (561) 571-7983 →
+          </a>
+          <a href="#contact-form"
+            style="display:inline-block; background:transparent;
+            color:#fff; font-family:'Oswald',sans-serif;
+            font-weight:600; font-size:13px;
+            letter-spacing:0.16em; text-transform:uppercase;
+            padding:18px 26px;
+            border:1px solid rgba(255,255,255,0.5);
+            text-decoration:none;"
+            onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'}); return false;"
+            aria-label="Scroll to contact form">
+            SEND A MESSAGE →
+          </a>
+        </div>
+
+        <div class="final-right" style="border-left:
+          1px solid rgba(255,255,255,0.22);
+          padding-left:36px;">
+          <p style="font-family:'Oswald',sans-serif;
+            font-weight:700; font-size:clamp(18px,1.7vw,22px);
+            color:#fff; text-transform:uppercase;
+            letter-spacing:0.06em; margin:0 0 8px;">
+            Connect With Our Team
+          </p>
+          <a href="tel:+15615717983"
+            style="font-family:'IBM Plex Mono',monospace;
+            font-size:clamp(20px,2.2vw,28px); color:#D9B66B;
+            text-decoration:none; display:block;
+            margin-bottom:16px;">
+            (561) 571-7983
+          </a>
+          <div style="display:grid; grid-template-columns:
+            repeat(3,1fr); gap:8px;">
+            <a href="tel:+15615717983"
+              style="border:1px solid rgba(255,255,255,0.28);
+              font-family:'Oswald',sans-serif; font-weight:600;
+              font-size:12px; letter-spacing:0.16em;
+              text-transform:uppercase; padding:14px 6px;
+              text-align:center; color:#fff;
+              text-decoration:none; display:block;"
+              aria-label="Call (561) 571-7983">CALL</a>
+            <a href="sms:+15615717983"
+              style="border:1px solid rgba(255,255,255,0.28);
+              font-family:'Oswald',sans-serif; font-weight:600;
+              font-size:12px; letter-spacing:0.16em;
+              text-transform:uppercase; padding:14px 6px;
+              text-align:center; color:#fff;
+              text-decoration:none; display:block;"
+              aria-label="Text (561) 571-7983">TEXT</a>
+            <a href="/cdn-cgi/l/email-protection#741d1a121b34150d1707111701061d000d5a171b19" style="border:1px solid rgba(255,255,255,0.28);
+              font-family:'Oswald',sans-serif; font-weight:600;
+              font-size:12px; letter-spacing:0.16em;
+              text-transform:uppercase; padding:14px 6px;
+              text-align:center; color:#fff;
+              text-decoration:none; display:block;" aria-label="Email info@aycsecurity.com">EMAIL</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━ FOOTER ━━━━━━━━━━ -->
+  <footer class="site-footer" role="contentinfo"
+    style="background:#0A1622; padding:72px 0 36px;">
+    <div class="container">
+      <div class="footer-responsive-grid" style="display:grid;
+        grid-template-columns:4fr 2fr 2fr 2fr; gap:48px;">
+
+        <div>
+          <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png"
+            alt="AYC Security USA"
+            style="height:42px; width:auto; margin-bottom:22px;
+            display:block;">
+          <p style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.62); max-width:36ch;
+            line-height:1.65; margin:0 0 12px;">
+            AYC Security USA — a veteran-owned private security
+            firm headquartered in Boca Raton, Florida.
+            24/7 Global Security Operations Center.
+          </p>
+          <span style="font-family:'IBM Plex Mono',monospace;
+            font-size:11px; letter-spacing:0.14em;
+            text-transform:uppercase;
+            color:rgba(255,255,255,0.8); display:block;
+            margin-bottom:16px;">
+            Licensed &amp; Insured Nationally · Operating Across
+            the United States
+          </span>
+          <div style="display:flex; gap:14px; align-items:center;">
+            <a href="https://www.linkedin.com/company/ayc-security/"
+              target="_blank" rel="noopener"
+              aria-label="AYC Security on LinkedIn"
+              style="color:rgba(255,255,255,0.6);
+              text-decoration:none; display:block;"
+              onmouseover="this.style.color='#D9B66B'"
+              onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+              <svg width="20" height="20" viewBox="0 0 24 24"
+                fill="currentColor" aria-hidden="true">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2
+                  2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/aycsecure/"
+              target="_blank" rel="noopener"
+              aria-label="AYC Security on Facebook"
+              style="color:rgba(255,255,255,0.6);
+              text-decoration:none; display:block;"
+              onmouseover="this.style.color='#D9B66B'"
+              onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+              <svg width="20" height="20" viewBox="0 0 24 24"
+                fill="currentColor" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <nav aria-label="Services footer navigation">
+          <span style="font-family:'IBM Plex Mono',monospace;
+            font-size:10px; letter-spacing:0.24em;
+            text-transform:uppercase; color:#D9B66B;
+            display:block; margin-bottom:18px;">
+            Services
+          </span>
+          <a href="/services/ongoing-security"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Ongoing Site Security</a>
+          <a href="/services/disaster-response"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Disaster &amp; Emergency Response</a>
+          <a href="/services/community-events"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Community, Events &amp; Close Protection</a>
+          <a href="/services/energy-industrial"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Energy &amp; Industrial Security</a>
+          <a href="/services/consulting-training"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Consulting, Training &amp; Procurement</a>
+          <a href="/services/ayc-intelligence"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            AYC Intelligence</a>
+        </nav>
+
+        <nav aria-label="Company footer navigation">
+          <span style="font-family:'IBM Plex Mono',monospace;
+            font-size:10px; letter-spacing:0.24em;
+            text-transform:uppercase; color:#D9B66B;
+            display:block; margin-bottom:18px;">
+            Company
+          </span>
+          <a href="/about"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            About AYC Security</a>
+          <a href="/operations-center"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Our Operations Center</a>
+          <a href="/industries"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Industries Served</a>
+          <a href="/careers"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Careers</a>
+          <a href="/contact"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Contact</a>
+        </nav>
+
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace;
+            font-size:10px; letter-spacing:0.24em;
+            text-transform:uppercase; color:#D9B66B;
+            display:block; margin-bottom:18px;">
+            Contact
+          </span>
+          <a href="tel:+15615717983"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:#D9B66B; display:block; padding:5px 0;
+            text-decoration:none;">
+            (561) 571-7983</a>
+          <a href="/cdn-cgi/l/email-protection#2b42454d446b4a5248584e485e59425f5205484446" style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            <span class="__cf_email__" data-cfemail="8ae3e4ece5caebf3e9f9efe9fff8e3fef3a4e9e5e7">[email&#160;protected]</span></a>
+          <span style="font-family:'IBM Plex Mono',monospace;
+            font-size:10px; letter-spacing:0.16em;
+            text-transform:uppercase; color:#D9B66B;
+            display:block; margin-top:14px;">
+            Florida HQ
+          </span>
+          <address style="font-family:'Inter',sans-serif;
+            font-size:13px; color:rgba(255,255,255,0.7);
+            line-height:1.6; font-style:normal;">
+            7000 W Palmetto Park Rd., Suite 308<br>
+            Boca Raton, FL 33433
+          </address>
+          <span style="font-family:'IBM Plex Mono',monospace;
+            font-size:10px; letter-spacing:0.16em;
+            text-transform:uppercase; color:#D9B66B;
+            display:block; margin-top:14px;">
+            Ohio
+          </span>
+          <address style="font-family:'Inter',sans-serif;
+            font-size:13px; color:rgba(255,255,255,0.7);
+            line-height:1.6; font-style:normal;">
+            7160 Chagrin Road, Suite 180<br>
+            Chagrin Falls, OH 44023
+          </address>
+        </div>
+
+      </div>
+
+      <div style="border-top:1px solid rgba(255,255,255,0.10);
+        margin-top:48px; padding-top:28px;
+        display:flex; justify-content:space-between;
+        flex-wrap:wrap; gap:16px;
+        font-family:'IBM Plex Mono',monospace;
+        font-size:11px; letter-spacing:0.14em;
+        text-transform:uppercase;
+        color:rgba(255,255,255,0.45);">
+        <p style="margin:0;">
+          © 2026 AYC Security USA · All Rights Reserved
+        </p>
+        <p style="margin:0; font-size:10px;
+          color:rgba(255,255,255,0.42);
+          letter-spacing:0.06em; text-transform:none;">
+          FL B3200547 · NV 4383 · OH 20242100525221 ·
+          TN 14274 · TX B31026501
+        </p>
+        <div style="display:flex; gap:18px;">
+          <a href="/privacy"
+            style="color:rgba(255,255,255,0.45);
+            text-decoration:none;">Privacy</a>
+          <span aria-hidden="true">·</span>
+          <a href="/terms"
+            style="color:rgba(255,255,255,0.45);
+            text-decoration:none;">Terms</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- MOBILE BOTTOM STRIP -->
+  <nav class="mobile-bottom-strip" aria-label="Quick contact">
+    <div class="grid">
+      <a href="tel:+15615717983">Call</a>
+      <a href="sms:+15615717983">Text</a>
+      <a href="/cdn-cgi/l/email-protection#95fcfbf3fad5f4ecf6e6f0f6e0e7fce1ecbbf6faf8">Email</a>
+    </div>
+  </nav>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Pill selection (single-select)
+  const pills = document.querySelectorAll('.pill');
+  const serviceTypeInput = document.getElementById('service_type');
+  pills.forEach(pill => {
+    pill.addEventListener('click', () => {
+      pills.forEach(p => {
+        p.classList.remove('selected');
+        p.setAttribute('aria-checked', 'false');
+      });
+      pill.classList.add('selected');
+      pill.setAttribute('aria-checked', 'true');
+      if (serviceTypeInput) serviceTypeInput.value = pill.textContent.trim();
+    });
+    pill.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        pill.click();
+      }
+    });
+  });
+
+  // Hamburger / mobile drawer
+  const hamburger = document.getElementById('hamburger');
+  const drawer = document.getElementById('mobile-drawer');
+  const drawerClose = document.getElementById('drawer-close');
+  function openDrawer() {
+    drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    hamburger.setAttribute('aria-expanded', 'true');
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+  hamburger.addEventListener('click', openDrawer);
+  drawerClose.addEventListener('click', closeDrawer);
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+  // Side tab / slideout
+  const sideTab = document.getElementById('side-tab');
+  const slideout = document.getElementById('slideout');
+  const slideoutOverlay = document.getElementById('slideout-overlay');
+  const slideoutClose = document.getElementById('slideout-close');
+  function openSlideout() {
+    slideout.classList.add('open');
+    slideoutOverlay.classList.add('open');
+    slideout.setAttribute('aria-hidden', 'false');
+  }
+  function closeSlideout() {
+    slideout.classList.remove('open');
+    slideoutOverlay.classList.remove('open');
+    slideout.setAttribute('aria-hidden', 'true');
+  }
+  sideTab.addEventListener('click', openSlideout);
+  slideoutClose.addEventListener('click', closeSlideout);
+  slideoutOverlay.addEventListener('click', closeSlideout);
+
+  // Smooth scroll handled inline on final CTA button
+
+  // Country / State linkage
+  const US_STATES = [
+    'Nationwide / Multiple States',
+    'Alabama','Alaska','Arizona','Arkansas','California','Colorado',
+    'Connecticut','Delaware','District of Columbia','Florida','Georgia',
+    'Hawaii','Idaho','Illinois','Indiana','Iowa','Kansas','Kentucky',
+    'Louisiana','Maine','Maryland','Massachusetts','Michigan','Minnesota',
+    'Mississippi','Missouri','Montana','Nebraska','Nevada','New Hampshire',
+    'New Jersey','New Mexico','New York','North Carolina','North Dakota',
+    'Ohio','Oklahoma','Oregon','Pennsylvania','Rhode Island','South Carolina',
+    'South Dakota','Tennessee','Texas','Utah','Vermont','Virginia',
+    'Washington','West Virginia','Wisconsin','Wyoming'
+  ];
+  const CA_PROVINCES = [
+    'Alberta','British Columbia','Manitoba','New Brunswick',
+    'Newfoundland and Labrador','Nova Scotia','Ontario',
+    'Prince Edward Island','Quebec','Saskatchewan',
+    'Northwest Territories','Nunavut','Yukon'
+  ];
+
+  const countrySel = document.getElementById('country');
+  const stateSel = document.getElementById('state');
+  const stateField = document.getElementById('state-field');
+  const stateLabel = stateField ? stateField.querySelector('label') : null;
+
+  function populateStates(list, placeholder) {
+    stateSel.innerHTML = '';
+    const opt0 = document.createElement('option');
+    opt0.value = '';
+    opt0.textContent = placeholder;
+    stateSel.appendChild(opt0);
+    list.forEach(name => {
+      const o = document.createElement('option');
+      o.value = name;
+      o.textContent = name;
+      stateSel.appendChild(o);
+    });
+  }
+
+  function updateStateField() {
+    const v = countrySel.value;
+    if (v === 'Other') {
+      stateField.style.display = 'none';
+      stateSel.value = '';
+      return;
+    }
+    stateField.style.display = '';
+    if (v === 'CA') {
+      stateLabel.childNodes[0].nodeValue = 'Province ';
+      populateStates(CA_PROVINCES, '— Select province —');
+    } else {
+      // default + US
+      stateLabel.childNodes[0].nodeValue = 'State or Province ';
+      populateStates(US_STATES, '— Select state —');
+    }
+  }
+
+  if (countrySel && stateSel) {
+    updateStateField();
+    countrySel.addEventListener('change', updateStateField);
+  }
+
+  // Prevent actual form submission (visual only)
+  document.getElementById('contact-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+  });
+
+  // Close drawer/slideout with Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (drawer.classList.contains('open')) closeDrawer();
+      if (slideout.classList.contains('open')) closeSlideout();
+    }
+  });
+</script>
+
+</body>
+</html>
