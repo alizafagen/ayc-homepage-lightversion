@@ -1629,124 +1629,12 @@
     border-color: var(--gold);
   }
 
-  /* ============================================================
-     FOOTER
-     ============================================================ */
-  .site-footer {
-    background: var(--navy-2);
-    color: rgba(255,255,255,0.7);
-    padding: 72px 0 36px;
-    font-size: 14px;
-  }
-  .footer-grid {
-    display: grid;
-    grid-template-columns: 4fr 2fr 2fr 2fr;
-    gap: 40px;
-  }
-  @media (max-width: 900px) {
-    .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
-    .footer-col--brand { grid-column: 1 / -1; }
-  }
-  @media (max-width: 520px) {
-    .footer-grid { grid-template-columns: 1fr; }
-    .footer-col--brand { grid-column: auto; }
-  }
-  .footer-logo { height: 42px; width: auto; margin-bottom: 22px; }
-  .footer-blurb {
-    color: rgba(255,255,255,0.62);
-    font-family: var(--font-body);
-    font-size: 14px;
-    max-width: 36ch;
-    line-height: 1.65;
-    margin: 0;
-  }
-  .footer-license-line {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: rgba(255,255,255,0.8);
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    margin-top: 12px;
-    display: block;
-    line-height: 1.6;
-  }
-  .footer-head {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--gold-soft);
-    letter-spacing: 0.24em;
-    text-transform: uppercase;
-    margin: 0 0 18px;
-    display: block;
-  }
-  .footer-link {
-    font-family: var(--font-body);
-    font-size: 14px;
-    color: rgba(255,255,255,0.82);
-    display: block;
-    padding: 5px 0;
-    transition: color .18s ease;
-  }
-  .footer-link:hover { color: var(--gold-soft); }
-  .footer-phone { color: var(--gold-soft); display: block; padding: 5px 0; }
-  .footer-phone:hover { color: #fff; }
-  .footer-email { color: rgba(255,255,255,0.82); display: block; padding: 5px 0; }
-  .footer-email:hover { color: var(--gold-soft); }
-  .footer-addr-label {
-    font-family: var(--font-mono);
-    font-size: 10px;
-    color: var(--gold-soft);
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    margin-top: 14px;
-    display: block;
-  }
-  .footer-addr {
-    font-family: var(--font-body);
-    font-size: 13px;
-    color: rgba(255,255,255,0.7);
-    line-height: 1.6;
-    margin: 4px 0 0;
-    font-style: normal;
-  }
-
-  .footer-bottom {
-    border-top: 1px solid rgba(255,255,255,0.10);
-    margin-top: 48px;
-    padding-top: 28px;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 16px;
-    align-items: center;
-  }
-  .footer-bottom > * {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: rgba(255,255,255,0.45);
-    margin: 0;
-  }
-  .footer-bottom .footer-licenses-strip {
-    font-size: 10px;
-    color: rgba(255,255,255,0.42);
-    letter-spacing: 0.06em;
-    text-transform: none;
-  }
-  .footer-bottom-links { display: flex; gap: 18px; flex-wrap: wrap; }
-  .footer-bottom-links a:hover { color: var(--gold-soft); }
-  @media (max-width: 700px) {
-    .footer-bottom { flex-direction: column; align-items: flex-start; text-align: left; }
-  }
-
   /* Focus states */
   .flip-card:focus-visible,
   .btn-gold:focus-visible,
   .btn-outline-light:focus-visible,
   .btn-outline-navy:focus-visible,
-  .connect-btn:focus-visible,
-  .footer-link:focus-visible {
+  .connect-btn:focus-visible {
     outline: 2px solid var(--gold-soft);
     outline-offset: 3px;
   }
@@ -2666,56 +2554,204 @@
   <!-- ============================================================
        FOOTER
        ============================================================ -->
-  <footer class="site-footer" role="contentinfo">
+  <footer class="site-footer" role="contentinfo"
+    style="background:#0A1622; padding:72px 0 36px;">
     <div class="container">
-      <div class="footer-grid">
+      <div class="footer-responsive-grid" style="display:grid;
+        grid-template-columns:4fr 2fr 2fr 2fr; gap:48px;">
 
-        <div class="footer-col footer-col--brand">
-          <img class="footer-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security USA">
-          <p class="footer-blurb">AYC Security USA — a veteran-owned private security firm headquartered in Boca Raton, Florida. 24/7 Global Security Operations Center.</p>
-          <span class="footer-license-line">Licensed &amp; Insured Nationally · Operating Across the United States</span>
+        <div>
+          <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png"
+            alt="AYC Security USA"
+            style="height:42px; width:auto; margin-bottom:22px;
+            display:block;">
+          <p style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.62); max-width:36ch;
+            line-height:1.65; margin:0 0 12px;">
+            AYC Security USA — a veteran-owned private security
+            firm headquartered in Boca Raton, Florida.
+            24/7 Global Security Operations Center.
+          </p>
+          <span style="font-family:'IBM Plex Mono',monospace;
+            font-size:11px; letter-spacing:0.14em;
+            text-transform:uppercase;
+            color:rgba(255,255,255,0.8); display:block;
+            margin-bottom:16px;">
+            Licensed &amp; Insured Nationally · Operating Across
+            the United States
+          </span>
+          <div style="display:flex; gap:14px; align-items:center;">
+            <a href="https://www.linkedin.com/company/ayc-security/"
+              target="_blank" rel="noopener"
+              aria-label="AYC Security on LinkedIn"
+              style="color:rgba(255,255,255,0.6);
+              text-decoration:none; display:block;"
+              onmouseover="this.style.color='#D9B66B'"
+              onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+              <svg width="20" height="20" viewBox="0 0 24 24"
+                fill="currentColor" aria-hidden="true">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2
+                  2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/aycsecure/"
+              target="_blank" rel="noopener"
+              aria-label="AYC Security on Facebook"
+              style="color:rgba(255,255,255,0.6);
+              text-decoration:none; display:block;"
+              onmouseover="this.style.color='#D9B66B'"
+              onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+              <svg width="20" height="20" viewBox="0 0 24 24"
+                fill="currentColor" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+          </div>
         </div>
 
-        <nav class="footer-col" aria-label="Services">
-          <span class="footer-head">Services</span>
-          <a class="footer-link" href="/services/ongoing-security">Ongoing Site Security</a>
-          <a class="footer-link" href="/services/disaster-response">Disaster &amp; Emergency Response</a>
-          <a class="footer-link" href="/services/community-events">Community, Events &amp; Close Protection</a>
-          <a class="footer-link" href="/services/energy-industrial">Energy &amp; Industrial Security</a>
-          <a class="footer-link" href="/services/consulting-training">Consulting, Training &amp; Procurement</a>
-          <a class="footer-link" href="/services/ayc-intelligence">AYC Intelligence</a>
+        <nav aria-label="Services footer navigation">
+          <span style="font-family:'IBM Plex Mono',monospace;
+            font-size:10px; letter-spacing:0.24em;
+            text-transform:uppercase; color:#D9B66B;
+            display:block; margin-bottom:18px;">
+            Services
+          </span>
+          <a href="/services/ongoing-security"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Ongoing Site Security</a>
+          <a href="/services/disaster-response"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Disaster &amp; Emergency Response</a>
+          <a href="/services/community-events"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Community, Events &amp; Close Protection</a>
+          <a href="/services/energy-industrial"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Energy &amp; Industrial Security</a>
+          <a href="/services/consulting-training"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Consulting, Training &amp; Procurement</a>
+          <a href="/services/ayc-intelligence"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            AYC Intelligence</a>
         </nav>
 
-        <nav class="footer-col" aria-label="Company">
-          <span class="footer-head">Company</span>
-          <a class="footer-link" href="/about">About AYC Security</a>
-          <a class="footer-link" href="/operations-center">Our Operations Center</a>
-          <a class="footer-link" href="/industries">Industries Served</a>
-          <a class="footer-link" href="/careers">Careers</a>
-          <a class="footer-link" href="/contact">Contact</a>
+        <nav aria-label="Company footer navigation">
+          <span style="font-family:'IBM Plex Mono',monospace;
+            font-size:10px; letter-spacing:0.24em;
+            text-transform:uppercase; color:#D9B66B;
+            display:block; margin-bottom:18px;">
+            Company
+          </span>
+          <a href="/about"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            About AYC Security</a>
+          <a href="/operations-center"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Our Operations Center</a>
+          <a href="/industries"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Industries Served</a>
+          <a href="/careers"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Careers</a>
+          <a href="/contact"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Contact</a>
         </nav>
 
-        <div class="footer-col">
-          <span class="footer-head">Contact</span>
-          <a class="footer-phone" href="tel:+15615717983">(561) 571-7983</a>
-          <a class="footer-email" href="/cdn-cgi/l/email-protection#4e272028210e2f372d3d2b2d3b3c273a37602d2123"><span class="__cf_email__" data-cfemail="5930373f361938203a2a3c3a2c2b302d20773a3634">[email&#160;protected]</span></a>
-
-          <span class="footer-addr-label">Florida HQ</span>
-          <address class="footer-addr">7000 W Palmetto Park Rd., Suite 308<br>Boca Raton, FL 33433</address>
-
-          <span class="footer-addr-label">Ohio</span>
-          <address class="footer-addr">7160 Chagrin Road, Suite 180<br>Chagrin Falls, OH 44023</address>
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace;
+            font-size:10px; letter-spacing:0.24em;
+            text-transform:uppercase; color:#D9B66B;
+            display:block; margin-bottom:18px;">
+            Contact
+          </span>
+          <a href="tel:+15615717983"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:#D9B66B; display:block; padding:5px 0;
+            text-decoration:none;">
+            (561) 571-7983</a>
+          <a href="/cdn-cgi/l/email-protection#2b42454d446b4a5248584e485e59425f5205484446" style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            <span class="__cf_email__" data-cfemail="8ae3e4ece5caebf3e9f9efe9fff8e3fef3a4e9e5e7">[email&#160;protected]</span></a>
+          <span style="font-family:'IBM Plex Mono',monospace;
+            font-size:10px; letter-spacing:0.16em;
+            text-transform:uppercase; color:#D9B66B;
+            display:block; margin-top:14px;">
+            Florida HQ
+          </span>
+          <address style="font-family:'Inter',sans-serif;
+            font-size:13px; color:rgba(255,255,255,0.7);
+            line-height:1.6; font-style:normal;">
+            7000 W Palmetto Park Rd., Suite 308<br>
+            Boca Raton, FL 33433
+          </address>
+          <span style="font-family:'IBM Plex Mono',monospace;
+            font-size:10px; letter-spacing:0.16em;
+            text-transform:uppercase; color:#D9B66B;
+            display:block; margin-top:14px;">
+            Ohio
+          </span>
+          <address style="font-family:'Inter',sans-serif;
+            font-size:13px; color:rgba(255,255,255,0.7);
+            line-height:1.6; font-style:normal;">
+            7160 Chagrin Road, Suite 180<br>
+            Chagrin Falls, OH 44023
+          </address>
         </div>
 
       </div>
 
-      <div class="footer-bottom">
-        <p>© 2026 AYC Security USA · All Rights Reserved</p>
-        <p class="footer-licenses-strip">FL B3200547 · NV 4383 · OH 20242100525221 · TN 14274 · TX B31026501</p>
-        <div class="footer-bottom-links">
-          <a href="/privacy">Privacy</a>
+      <div style="border-top:1px solid rgba(255,255,255,0.10);
+        margin-top:48px; padding-top:28px;
+        display:flex; justify-content:space-between;
+        flex-wrap:wrap; gap:16px;
+        font-family:'IBM Plex Mono',monospace;
+        font-size:11px; letter-spacing:0.14em;
+        text-transform:uppercase;
+        color:rgba(255,255,255,0.45);">
+        <p style="margin:0;">
+          © 2026 AYC Security USA · All Rights Reserved
+        </p>
+        <p style="margin:0; font-size:10px;
+          color:rgba(255,255,255,0.42);
+          letter-spacing:0.06em; text-transform:none;">
+          FL B3200547 · NV 4383 · OH 20242100525221 ·
+          TN 14274 · TX B31026501
+        </p>
+        <div style="display:flex; gap:18px;">
+          <a href="/privacy"
+            style="color:rgba(255,255,255,0.45);
+            text-decoration:none;">Privacy</a>
           <span aria-hidden="true">·</span>
-          <a href="/terms">Terms</a>
+          <a href="/terms"
+            style="color:rgba(255,255,255,0.45);
+            text-decoration:none;">Terms</a>
         </div>
       </div>
 
