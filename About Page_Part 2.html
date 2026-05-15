@@ -1,0 +1,1183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>About AYC Security — Part 2</title>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F8F5F0;
+    --cream-2:#EFEBE3;
+    --paper:#FFFFFF;
+    --navy:#0E1C2B;
+    --navy-2:#0A1622;
+    --forest:#1C3D35;
+    --gold:#B8882A;
+    --gold-deep:#98701F;
+    --gold-soft:#D9B66B;
+    --ink:#2A2A28;
+    --ink-soft:#5A5A56;
+    --rule:#E4DED2;
+    --rule-strong:#CFC6B3;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0;background:var(--cream);color:var(--ink);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+
+  .container{width:min(1240px,92%);margin:0 auto}
+
+  /* Section base */
+  .section-light{background:var(--cream);padding:clamp(72px,9vw,120px) 0}
+  .section-alt{background:var(--cream-2);padding:clamp(72px,9vw,120px) 0}
+  .section-paper{background:var(--paper);padding:clamp(72px,9vw,120px) 0}
+  .section-dark{background:var(--navy);color:#fff;padding:clamp(72px,9vw,120px) 0}
+  .section-forest{background:var(--forest);color:#fff;padding:clamp(64px,8vw,96px) 0}
+
+  /* Headlines */
+  .section-headline{
+    font-family:'Oswald',sans-serif;
+    font-weight:600;
+    text-transform:uppercase;
+    color:var(--navy);
+    line-height:1.05;
+    letter-spacing:0.005em;
+    margin:0 0 12px;
+  }
+  .section-headline--lg{font-size:clamp(32px,4vw,48px)}
+  .section-headline--md{font-size:clamp(28px,3.5vw,42px)}
+  .section-headline--sm{font-size:clamp(26px,3vw,36px);font-weight:500}
+  .on-dark{color:#fff}
+
+  /* Buttons */
+  .btn-gold{
+    display:inline-flex;align-items:center;justify-content:center;
+    background:var(--gold);color:var(--navy);
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:13px;
+    letter-spacing:0.16em;text-transform:uppercase;
+    padding:18px 26px;border:1px solid var(--gold);
+    cursor:pointer;transition:background .18s ease, border-color .18s ease;
+  }
+  .btn-gold:hover{background:var(--gold-deep);border-color:var(--gold-deep)}
+  .btn-outline-light{
+    display:inline-flex;align-items:center;justify-content:center;
+    background:transparent;color:#fff;border:1px solid rgba(255,255,255,0.5);
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:13px;
+    letter-spacing:0.16em;text-transform:uppercase;padding:18px 26px;
+    transition:background .18s ease, color .18s ease;
+  }
+  .btn-outline-light:hover{background:#fff;color:var(--navy)}
+  .btn-outline-navy{
+    display:inline-flex;align-items:center;justify-content:center;
+    background:transparent;color:var(--navy);border:1px solid var(--navy);
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:13px;
+    letter-spacing:0.16em;text-transform:uppercase;padding:18px 26px;
+    transition:background .18s ease, color .18s ease;
+  }
+  .btn-outline-navy:hover{background:var(--navy);color:#fff}
+
+  /* ─────────── LEADERSHIP ─────────── */
+  .lead-intro{
+    font-family:'Inter',sans-serif;font-size:17px;color:var(--ink-soft);
+    max-width:640px;margin:0 0 56px;line-height:1.6;
+  }
+
+  .directorate{
+    margin-top:56px;margin-bottom:28px;
+  }
+  .directorate:first-of-type{margin-top:16px}
+  .directorate-label{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:12px;
+    color:var(--gold);text-transform:uppercase;letter-spacing:0.24em;
+    margin:0 0 12px;
+  }
+  .directorate-rule{
+    height:1px;background:var(--rule);width:100%;border:0;margin:0;
+  }
+
+  .card-grid{
+    display:grid;
+    grid-template-columns:repeat(4,minmax(0,280px));
+    gap:24px;
+    justify-content:start;
+  }
+  @media (max-width:1199px){
+    .card-grid{grid-template-columns:repeat(3,minmax(0,280px))}
+  }
+  @media (max-width:899px){
+    .card-grid{grid-template-columns:repeat(2,minmax(0,1fr));max-width:600px}
+  }
+  @media (max-width:599px){
+    .card-grid{grid-template-columns:1fr;max-width:360px;margin-left:auto;margin-right:auto}
+  }
+
+  /* Flip card */
+  .flip-card{
+    perspective:1000px;
+    width:100%;
+    max-width:280px;
+    min-height:440px;
+    background:transparent;
+    border:0;
+    padding:0;
+    cursor:pointer;
+    font-family:inherit;
+    text-align:left;
+  }
+  @media (max-width:899px){
+    .flip-card{max-width:none}
+  }
+  .flip-inner{
+    position:relative;width:100%;height:100%;
+    transition:transform .5s ease;
+    transform-style:preserve-3d;
+  }
+  .flip-card[aria-pressed="true"] .flip-inner{transform:rotateY(180deg)}
+  .card-front,.card-back{
+    position:absolute;inset:0;
+    min-height:440px;
+    backface-visibility:hidden;
+    -webkit-backface-visibility:hidden;
+  }
+  .card-front{
+    background:#fff;
+    border:1px solid var(--rule);
+    box-shadow:0 2px 12px rgba(0,0,0,0.06);
+    display:flex;flex-direction:column;
+  }
+  .card-photo{
+    width:100%;height:220px;object-fit:contain;object-position:center;
+    background:var(--cream);
+  }
+  .card-photo--placeholder{
+    width:100%;height:220px;background:var(--navy);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:40px;
+    color:var(--gold-soft);letter-spacing:0.02em;
+  }
+  .card-front-body{padding:18px;display:flex;flex-direction:column;flex:1}
+  .card-name{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:16px;
+    color:var(--navy);text-transform:uppercase;letter-spacing:0.06em;
+    margin:0 0 4px;line-height:1.2;
+  }
+  .card-title{
+    font-family:'Inter',sans-serif;font-size:13px;color:var(--gold);
+    line-height:1.4;margin:0 0 12px;
+  }
+  .card-rule{width:28px;height:0;border:0;border-top:1px solid var(--gold);margin:0}
+  .card-flip-prompt{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;color:var(--ink-soft);
+    text-transform:uppercase;letter-spacing:0.16em;margin-top:10px;
+  }
+
+  .card-back{
+    background:var(--navy);
+    transform:rotateY(180deg);
+    padding:22px 20px;
+    display:flex;flex-direction:column;
+    height:100%;
+    color:#fff;
+  }  .card-back-name{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:13px;
+    color:var(--gold-soft);text-transform:uppercase;letter-spacing:0.06em;
+    margin:0 0 4px;line-height:1.2;
+  }
+  .card-back-title{
+    font-family:'Inter',sans-serif;font-size:12px;
+    color:rgba(255,255,255,0.6);margin:0 0 14px;line-height:1.4;
+  }
+  .card-back-divider{
+    height:0;border:0;border-top:1px solid rgba(184,136,42,0.3);
+    margin:0 0 14px;
+  }
+  .card-bio-wrap{
+    flex:1;
+    overflow-y:auto;
+    padding-right:6px;
+    scrollbar-width:thin;
+    scrollbar-color:#B8882A rgba(255,255,255,0.1);
+  }
+  .card-bio-wrap::-webkit-scrollbar{width:4px}
+  .card-bio-wrap::-webkit-scrollbar-track{background:rgba(255,255,255,0.05)}
+  .card-bio-wrap::-webkit-scrollbar-thumb{background:#B8882A;border-radius:2px}
+  .card-bio{
+    font-family:'Inter',sans-serif;font-size:14px;
+    color:rgba(255,255,255,0.88);line-height:1.6;
+    margin:0;
+  }
+  .card-back--advisor .card-back-title{margin-bottom:20px}
+  .card-back--advisor .card-back-divider{margin-bottom:20px}
+  .card-cta{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;
+    color:var(--gold-soft);text-transform:uppercase;letter-spacing:0.14em;
+    margin-top:0;padding-top:16px;display:inline-block;
+    border-top:1px solid rgba(184,136,42,0.25);
+    flex-shrink:0;
+  }
+  .card-cta:hover{color:#fff}
+
+  /* Advisors grid: max 3 cols, last 2 centered */
+  .advisors-grid{
+    display:grid;
+    grid-template-columns:repeat(3,minmax(0,1fr));
+    gap:24px;
+    max-width:912px; /* 3*280 + 2*24 */
+  }
+  @media (max-width:900px){
+    .advisors-grid{grid-template-columns:repeat(2,1fr);max-width:600px}
+  }
+  @media (max-width:600px){
+    .advisors-grid{grid-template-columns:1fr;max-width:360px;margin-left:auto;margin-right:auto}
+  }
+  .advisors-row-pair{
+    grid-column:1 / -1;
+    display:flex;
+    justify-content:flex-start;
+    gap:24px;
+    width:100%;
+  }
+  .advisors-row-pair .flip-card{flex:0 0 280px;max-width:280px}
+  @media (max-width:900px){
+    .advisors-row-pair{
+      display:contents; /* let pair items flow into the parent grid */
+    }
+    .advisors-row-pair .flip-card{max-width:none}
+  }
+
+  /* ─────────── ORG CHART ─────────── */
+  .org-sub{
+    font-family:'Inter',sans-serif;font-size:16px;color:var(--ink-soft);
+    margin:0 0 40px;max-width:640px;
+  }
+  @media (min-width:900px){
+    .mobile-scroll-hint{display:none}
+  }
+  .org-placeholder-overlay{
+    position:absolute;
+    top:12px;left:12px;
+    z-index:2;
+    background:rgba(14,28,43,0.75);
+    color:#fff;
+    font-family:'Inter',sans-serif;font-size:11px;
+    padding:6px 12px;
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+  }
+  .org-placeholder-overlay-dot{
+    width:6px;height:6px;border-radius:50%;
+    background:#B8882A;flex-shrink:0;
+  }
+
+  /* ─────────── LICENSES (removed) ─────────── */
+
+  /* ─────────── GIVING BACK ─────────── */
+  .giving-section{
+    background:var(--forest);color:#fff;
+    padding:clamp(64px,8vw,96px) 0;
+  }
+  .giving-grid{
+    display:grid;
+    grid-template-columns:55fr 45fr;
+    gap:0;
+    align-items:stretch;
+    background:rgba(0,0,0,0.12);
+  }
+  @media (max-width:900px){
+    .giving-grid{grid-template-columns:1fr}
+  }
+  .giving-image-wrap{
+    position:relative;
+    min-height:480px;
+    overflow:hidden;
+  }
+  @media (max-width:900px){
+    .giving-image-wrap{min-height:260px;height:260px}
+  }
+  .giving-image{
+    position:absolute;inset:0;
+    width:100%;height:100%;
+    object-fit:cover;
+  }
+  .giving-image-overlay{
+    position:absolute;inset:0;
+    background:rgba(28,61,53,0.35);
+    pointer-events:none;
+  }
+  .giving-placeholder-tag{
+    position:absolute;left:16px;top:16px;
+    z-index:2;
+    background:rgba(14,28,43,0.78);
+    color:var(--gold-soft);
+    font-family:'IBM Plex Mono',monospace;
+    font-size:10px;letter-spacing:0.16em;text-transform:uppercase;
+    padding:6px 10px;
+    border:1px solid rgba(184,136,42,0.4);
+  }
+  .giving-content{
+    padding:56px 48px;
+    display:flex;flex-direction:column;justify-content:center;
+  }
+  @media (max-width:900px){
+    .giving-content{padding:40px 24px}
+  }
+  .giving-stat-num{
+    font-family:'Oswald',sans-serif;font-weight:700;
+    font-size:clamp(64px,8vw,96px);
+    color:var(--gold);line-height:1;margin:0;
+    letter-spacing:0.005em;
+  }
+  .giving-stat-label{
+    font-family:'Inter',sans-serif;font-weight:500;font-size:18px;
+    color:#fff;margin:8px 0 32px;line-height:1.4;
+  }
+  .giving-rule{
+    height:0;border:0;border-top:1px solid rgba(184,136,42,0.4);
+    margin:0 0 32px;
+  }
+  .giving-h{
+    font-family:'Oswald',sans-serif;font-weight:600;
+    font-size:clamp(24px,3vw,36px);
+    color:#fff;text-transform:uppercase;letter-spacing:0.04em;
+    margin:0 0 20px;line-height:1.1;
+  }
+  .giving-body-text{
+    font-family:'Inter',sans-serif;font-size:16px;
+    color:rgba(255,255,255,0.82);line-height:1.75;
+    margin:0;
+  }
+
+  /* ─────────── FINAL CTA ─────────── */
+  .final-cta{
+    background:var(--navy);
+    color:#fff;
+    padding:clamp(72px,9vw,110px) 0;
+    border-top:4px solid var(--gold);
+  }
+  .final-grid{
+    display:grid;
+    grid-template-columns:7fr 5fr;
+    gap:0;
+    align-items:start;
+  }
+  @media (max-width:900px){
+    .final-grid{grid-template-columns:1fr;gap:48px}
+  }
+  .final-left{padding-right:48px}
+  @media (max-width:900px){.final-left{padding-right:0}}
+  .final-headline{
+    font-family:'Oswald',sans-serif;font-weight:500;
+    font-size:clamp(32px,4.6vw,60px);color:#fff;
+    text-transform:uppercase;line-height:1.05;margin:0;
+    letter-spacing:0.005em;
+  }
+  .final-sub{
+    font-family:'Oswald',sans-serif;font-weight:500;
+    font-size:clamp(18px,2vw,26px);color:var(--gold-soft);
+    display:block;margin-top:12px;text-transform:uppercase;
+    letter-spacing:0.02em;
+  }
+  .final-body{
+    font-family:'Inter',sans-serif;font-size:16px;
+    color:rgba(255,255,255,0.8);line-height:1.6;
+    margin-top:18px;max-width:48ch;
+  }
+  .final-cta-btn{margin-top:32px}
+
+  .final-right{
+    border-left:1px solid rgba(255,255,255,0.22);
+    padding-left:36px;
+  }
+  @media (max-width:900px){
+    .final-right{
+      border-left:0;
+      border-top:1px solid rgba(255,255,255,0.22);
+      padding-left:0;padding-top:36px;
+    }
+  }
+  .connect-title{
+    font-family:'Oswald',sans-serif;font-weight:700;
+    font-size:clamp(18px,1.7vw,22px);color:#fff;
+    text-transform:uppercase;letter-spacing:0.06em;
+    margin:0;
+  }
+  .connect-phone{
+    font-family:'IBM Plex Mono',monospace;font-size:24px;
+    color:var(--gold-soft);display:block;margin-top:8px;
+    letter-spacing:0.02em;
+  }
+  .connect-phone:hover{color:#fff}
+  .connect-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:8px;
+    margin-top:16px;
+  }
+  .connect-btn{
+    border:1px solid rgba(255,255,255,0.28);
+    font-family:'Oswald',sans-serif;font-weight:600;
+    font-size:12px;text-transform:uppercase;letter-spacing:0.16em;
+    padding:14px 6px;text-align:center;color:#fff;
+    transition:background .18s ease, color .18s ease, border-color .18s ease;
+  }
+  .connect-btn:hover{background:var(--gold);color:var(--navy);border-color:var(--gold)}
+
+  /* ─────────── FOOTER ─────────── */
+  .site-footer{
+    background:var(--navy-2);
+    color:rgba(255,255,255,0.7);
+    padding:72px 0 36px;
+    font-size:14px;
+  }
+  .footer-grid{
+    display:grid;
+    grid-template-columns:4fr 2fr 2fr 2fr;
+    gap:40px;
+  }
+  @media (max-width:900px){
+    .footer-grid{grid-template-columns:1fr 1fr;gap:36px}
+    .footer-col--brand{grid-column:1/-1}
+  }
+  @media (max-width:520px){
+    .footer-grid{grid-template-columns:1fr}
+    .footer-col--brand{grid-column:auto}
+  }
+  .footer-logo{height:42px;width:auto;margin-bottom:22px}
+  .footer-blurb{
+    color:rgba(255,255,255,0.62);
+    font-family:'Inter',sans-serif;font-size:14px;
+    max-width:36ch;line-height:1.65;margin:0;
+  }
+  .footer-license-line{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;
+    color:rgba(255,255,255,0.8);letter-spacing:0.14em;
+    text-transform:uppercase;margin-top:12px;display:block;
+    line-height:1.6;
+  }
+  .footer-head{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;
+    color:var(--gold-soft);letter-spacing:0.24em;text-transform:uppercase;
+    margin:0 0 18px;display:block;
+  }
+  .footer-link{
+    font-family:'Inter',sans-serif;font-size:14px;
+    color:rgba(255,255,255,0.82);
+    display:block;padding:5px 0;
+    transition:color .18s ease;
+  }
+  .footer-link:hover{color:var(--gold-soft)}
+  .footer-phone{color:var(--gold-soft);display:block;padding:5px 0}
+  .footer-phone:hover{color:#fff}
+  .footer-email{color:rgba(255,255,255,0.82);display:block;padding:5px 0}
+  .footer-email:hover{color:var(--gold-soft)}
+  .footer-addr-label{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;
+    color:var(--gold-soft);text-transform:uppercase;
+    letter-spacing:0.16em;margin-top:14px;display:block;
+  }
+  .footer-addr{
+    font-family:'Inter',sans-serif;font-size:13px;
+    color:rgba(255,255,255,0.7);line-height:1.6;
+    margin:4px 0 0;font-style:normal;
+  }
+
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.10);
+    margin-top:48px;padding-top:28px;
+    display:flex;justify-content:space-between;
+    flex-wrap:wrap;gap:16px;
+    align-items:center;
+  }
+  .footer-bottom > *{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;
+    letter-spacing:0.14em;text-transform:uppercase;
+    color:rgba(255,255,255,0.45);margin:0;
+  }
+  .footer-bottom .footer-licenses-strip{
+    font-size:10px;color:rgba(255,255,255,0.42);
+    letter-spacing:0.06em;text-transform:none;
+  }
+  .footer-bottom-links{display:flex;gap:18px;flex-wrap:wrap}
+  .footer-bottom-links a:hover{color:var(--gold-soft)}
+  @media (max-width:700px){
+    .footer-bottom{flex-direction:column;align-items:flex-start;text-align:left}
+  }
+
+  /* Focus states */
+  .flip-card:focus-visible,
+  .btn-gold:focus-visible,
+  .btn-outline-light:focus-visible,
+  .btn-outline-navy:focus-visible,
+  .connect-btn:focus-visible,
+  .footer-link:focus-visible{
+    outline:2px solid var(--gold-soft);
+    outline-offset:3px;
+  }
+</style>
+</head>
+<body>
+
+<!-- ━━━━━━━━━━ LEADERSHIP TEAM ━━━━━━━━━━ -->
+<section id="leadership" class="section-paper" aria-labelledby="leadership-heading">
+  <div class="container">
+    <h2 id="leadership-heading" class="section-headline section-headline--lg">The People Behind the Mission</h2>
+    <p class="lead-intro">AYC's leadership team brings over 150 combined years of military, law enforcement, legal, and medical expertise to every client engagement.</p>
+
+    <!-- Directorate: Executive Leadership -->
+    <div class="directorate">
+      <p class="directorate-label">Executive Leadership</p>
+      <hr class="directorate-rule" />
+    </div>
+    <div class="card-grid">
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Seth Stern, President">
+        <div class="flip-inner">
+          <div class="card-front">
+            <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_a32cb4156735499db593790ed61d03e3~mv2.png" alt="Seth Stern" loading="lazy" />
+            <div class="card-front-body">
+              <h3 class="card-name">Seth Stern</h3>
+              <p class="card-title">President</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Bio +</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <h3 class="card-back-name">Seth Stern</h3>
+            <p class="card-back-title">President</p>
+            <hr class="card-back-divider" />
+            <div class="card-bio-wrap"><p class="card-bio">Seth Stern is a serial entrepreneur with a strong background in real estate and commodities. As a patriotic American, Seth grew up in the Tri-state area and from a young age developed an interest in personal and community security. That interest eventually became a calling, leading him to found AYC Security. His business acumen and genuine care for the safety of others serves as a guiding light for the AYC leadership team.</p></div>
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Andrew Carr-Locke, Chief Personnel Officer">
+        <div class="flip-inner">
+          <div class="card-front">
+            <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_4b80c6bf38d34c86b9bd536c093426ff~mv2.jpg" alt="Andrew Carr-Locke" loading="lazy" />
+            <div class="card-front-body">
+              <h3 class="card-name">Andrew Carr-Locke</h3>
+              <p class="card-title">Chief Personnel Officer</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Bio +</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <h3 class="card-back-name">Andrew Carr-Locke</h3>
+            <p class="card-back-title">Chief Personnel Officer</p>
+            <hr class="card-back-divider" />
+            <div class="card-bio-wrap"><p class="card-bio">Andrew Carr-Locke founded the Redfield Group in Toronto, which was acquired by Garda, one of the largest security firms in the world. Before that, he managed 24/7 security for $500 million worth of commercial property through the G20 riots and the Occupy Movement. He built a security-concierge model for residential and commercial properties that competitors have since replicated industry-wide. At AYC, Andrew ensures every post is staffed to the same standard, every time.</p></div>
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Daniel Sommers, General Counsel">
+        <div class="flip-inner">
+          <div class="card-front">
+            <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_d0a5f4695b0a4571b2021b3edc86bc1f~mv2.jpg" alt="Daniel P.W.A. Sommers, Esq." loading="lazy" />
+            <div class="card-front-body">
+              <h3 class="card-name">Daniel P.W.A. Sommers, Esq.</h3>
+              <p class="card-title">General Counsel</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Bio +</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <h3 class="card-back-name">Daniel P.W.A. Sommers, Esq.</h3>
+            <p class="card-back-title">General Counsel</p>
+            <hr class="card-back-divider" />
+            <div class="card-bio-wrap"><p class="card-bio">Daniel Sommers launched and managed a successful legal services business for over ten years and has litigated as both a criminal prosecutor and defense lawyer up to the Supreme Court of Canada. He has served in COO roles, chaired the ethics working group of the International Society of Military Science, and served in both combat and legal roles in the Canadian army reserve. Daniel provides the legal framework behind AYC's most complex security operations.</p></div>
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Brian Papula, Junior Partner">
+        <div class="flip-inner">
+          <div class="card-front">
+            <div class="card-photo--placeholder" aria-hidden="true">AYC</div>
+            <div class="card-front-body">
+              <h3 class="card-name">Brian Papula</h3>
+              <p class="card-title">Junior Partner</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Bio +</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <h3 class="card-back-name">Brian Papula</h3>
+            <p class="card-back-title">Junior Partner</p>
+            <hr class="card-back-divider" />
+            <div class="card-bio-wrap"><p class="card-bio">Bio coming soon. To learn more about our team, we invite you to get in touch directly.</p></div>
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+    </div>
+
+    <!-- Directorate: Security -->
+    <div class="directorate">
+      <p class="directorate-label">Security</p>
+      <hr class="directorate-rule" />
+    </div>
+    <div class="card-grid">
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Jim Waddell, Vice President Risk Mitigation">
+        <div class="flip-inner">
+          <div class="card-front">
+            <div class="card-photo--placeholder" aria-hidden="true">AYC</div>
+            <div class="card-front-body">
+              <h3 class="card-name">Jim Waddell</h3>
+              <p class="card-title">Vice President, Risk Mitigation</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Bio +</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <h3 class="card-back-name">Jim Waddell</h3>
+            <p class="card-back-title">Vice President, Risk Mitigation</p>
+            <hr class="card-back-divider" />
+            <div class="card-bio-wrap"><p class="card-bio">Jim Waddell spent twenty-eight years as a Special Agent with the Drug Enforcement Administration, conducting investigations at the national and international level. He is a certified federal law enforcement instructor with a Top Secret security clearance. Jim has prepared and presented cases to federal prosecutors and testified in numerous civil and criminal proceedings. At AYC, he leads threat assessment and risk mitigation for office buildings, events, and organizations operating in complex environments.</p></div>
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Brian Davis, Vice President Investigations">
+        <div class="flip-inner">
+          <div class="card-front">
+            <div class="card-photo--placeholder" aria-hidden="true">AYC</div>
+            <div class="card-front-body">
+              <h3 class="card-name">Brian Davis</h3>
+              <p class="card-title">Vice President, Investigations</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Bio +</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <h3 class="card-back-name">Brian Davis</h3>
+            <p class="card-back-title">Vice President, Investigations</p>
+            <hr class="card-back-divider" />
+            <div class="card-bio-wrap"><p class="card-bio">Bio coming soon. To learn more about our team, we invite you to get in touch directly.</p></div>
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+    </div>
+
+    <!-- Directorate: Consulting -->
+    <div class="directorate">
+      <p class="directorate-label">Consulting</p>
+      <hr class="directorate-rule" />
+    </div>
+    <div class="card-grid">
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Damien O'Connell, Vice President Leadership and Decision-Making">
+        <div class="flip-inner">
+          <div class="card-front">
+            <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_a9a0c949ccb946b48f825134baa5f4ff~mv2.jpg" alt="Damien O'Connell" loading="lazy" />
+            <div class="card-front-body">
+              <h3 class="card-name">Damien O'Connell</h3>
+              <p class="card-title">Vice President, Leadership and Decision-Making</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Bio +</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <h3 class="card-back-name">Damien O'Connell</h3>
+            <p class="card-back-title">Vice President, Leadership and Decision-Making</p>
+            <hr class="card-back-divider" />
+            <div class="card-bio-wrap"><p class="card-bio">Damien O'Connell is a military historian and one of the leading practitioners of decision games in use today. He has taught at the US Naval Academy, the FBI National Academy, and the Baltic Defence College, and led Marine Corps University's effort to institutionalize the case method at The Basic School. He later served as a Non-Resident Fellow at Marine Corps University's Brute Krulak Center for Innovation and Future Warfare. At AYC, Damien builds the decision-making frameworks that keep security personnel clear-headed under pressure.</p></div>
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Jon Meyer, Government Liaison">
+        <div class="flip-inner">
+          <div class="card-front">
+            <div class="card-photo--placeholder" aria-hidden="true">AYC</div>
+            <div class="card-front-body">
+              <h3 class="card-name">Jon Meyer</h3>
+              <p class="card-title">Government Liaison</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Bio +</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <h3 class="card-back-name">Jon Meyer</h3>
+            <p class="card-back-title">Government Liaison</p>
+            <hr class="card-back-divider" />
+            <div class="card-bio-wrap"><p class="card-bio">Bio coming soon. To learn more about our team, we invite you to get in touch directly.</p></div>
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+    </div>
+
+    <!-- Directorate: Hospital Security & Medical -->
+    <div class="directorate">
+      <p class="directorate-label">Hospital Security &amp; Medical</p>
+      <hr class="directorate-rule" />
+    </div>
+    <div class="card-grid">
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Dr. Kashif Pirzada, MD, Vice President Medical Training">
+        <div class="flip-inner">
+          <div class="card-front">
+            <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_235c3caff06440dfae2aecee93c26c17~mv2.webp" alt="Dr. Kashif Pirzada, MD" loading="lazy" />
+            <div class="card-front-body">
+              <h3 class="card-name">Dr. Kashif Pirzada, MD</h3>
+              <p class="card-title">Vice President, Medical Training</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Bio +</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <h3 class="card-back-name">Dr. Kashif Pirzada, MD</h3>
+            <p class="card-back-title">Vice President, Medical Training</p>
+            <hr class="card-back-divider" />
+            <div class="card-bio-wrap"><p class="card-bio">Dr. Kashif Pirzada has worked as an emergency physician for over fifteen years at two of Canada's largest Level 1 trauma centers. He has served as a Coroner for the province of Ontario, investigating mysterious and suspicious deaths to prevent future similar incidents. He is a faculty member at the University of Toronto and a founder of the Critical Drugs Coalition. At AYC, Dr. Pirzada oversees on-site medical training and emergency preparedness for events, campuses, and 24/7 operations.</p></div>
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Laval Martin, Vice President Resiliency">
+        <div class="flip-inner">
+          <div class="card-front">
+            <img class="card-photo" src="https://static.wixstatic.com/media/9ddcb9_fa167b551d974f3a9e4f356c1f3b7b5d~mv2.webp" alt="Laval Martin" loading="lazy" />
+            <div class="card-front-body">
+              <h3 class="card-name">Laval Martin</h3>
+              <p class="card-title">Vice President, Resiliency</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Bio +</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <h3 class="card-back-name">Laval Martin</h3>
+            <p class="card-back-title">Vice President, Resiliency</p>
+            <hr class="card-back-divider" />
+            <div class="card-bio-wrap"><p class="card-bio">Laval Martin holds a master's degree in social work from the University of Toronto and has worked in crisis intervention and conflict resolution since 2006. He has delivered psychotherapy for over five years to clients navigating serious mental health challenges. Laval brings the ability to read a situation before it escalates, a skill as valuable in HOA communities and house of worship security as it is in any high-pressure environment. At AYC, he leads resiliency programming and de-escalation training.</p></div>
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Dr. Kristin Brockway, MD, Vice President Healthcare Operations">
+        <div class="flip-inner">
+          <div class="card-front">
+            <div class="card-photo--placeholder" aria-hidden="true">AYC</div>
+            <div class="card-front-body">
+              <h3 class="card-name">Dr. Kristin Brockway, MD</h3>
+              <p class="card-title">Vice President, Healthcare Operations</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Bio +</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <h3 class="card-back-name">Dr. Kristin Brockway, MD</h3>
+            <p class="card-back-title">Vice President, Healthcare Operations</p>
+            <hr class="card-back-divider" />
+            <div class="card-bio-wrap"><p class="card-bio">Bio coming soon. To learn more about our team, we invite you to get in touch directly.</p></div>
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Dr. Frank Sommers, MD, Vice President Disaster Psychiatry">
+        <div class="flip-inner">
+          <div class="card-front">
+            <img class="card-photo" src="https://static.wixstatic.com/media/cdf5ef_699e4c3c2c5f48c2a8240dd2b76b0987~mv2.jpg" alt="Dr. Frank Sommers, MD" loading="lazy" />
+            <div class="card-front-body">
+              <h3 class="card-name">Dr. Frank Sommers, MD</h3>
+              <p class="card-title">Vice President, Disaster Psychiatry</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Bio +</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <h3 class="card-back-name">Dr. Frank Sommers, MD</h3>
+            <p class="card-back-title">Vice President, Disaster Psychiatry</p>
+            <hr class="card-back-divider" />
+            <div class="card-bio-wrap"><p class="card-bio">Dr. Frank Sommers is the founder of Disaster Psychiatry Canada and a member of the Department of Psychiatry at the University of Toronto. A military veteran, he deployed as a civilian psychiatrist to the NATO contingent in Afghanistan. He is a Distinguished Fellow of both the Canadian and American Psychiatric Associations and a recipient of the Ontario Medical Association Presidential Award. At AYC, Dr. Sommers leads disaster psychiatry and critical incident response.</p></div>
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Rabbi Jonathan Jaffit, Vice President Disaster Chaplaincy">
+        <div class="flip-inner">
+          <div class="card-front">
+            <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_e8c2b7f0f9cb424787dd1ea05c19905a~mv2.jpeg" alt="Rabbi Jonathan Jaffit" loading="lazy" />
+            <div class="card-front-body">
+              <h3 class="card-name">Rabbi Jonathan Jaffit</h3>
+              <p class="card-title">Vice President, Disaster Chaplaincy</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Bio +</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <h3 class="card-back-name">Rabbi Jonathan Jaffit</h3>
+            <p class="card-back-title">Vice President, Disaster Chaplaincy</p>
+            <hr class="card-back-divider" />
+            <div class="card-bio-wrap"><p class="card-bio">After completing a master's degree in history and years of active involvement in Jewish campus life, Rabbi Jaffit lived in Jerusalem from 2009 to 2014, pursuing advanced rabbinical studies and teaching in Jewish educational institutions. Since returning to Canada, he has served as a military chaplain with the Toronto Scottish Regiment, holding the rank of captain. At AYC, Rabbi Jaffit leads disaster chaplaincy for houses of worship, schools, and community organizations requiring security with pastoral support.</p></div>
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for David Letterman, Vice President Healthcare Facilities">
+        <div class="flip-inner">
+          <div class="card-front">
+            <div class="card-photo--placeholder" aria-hidden="true">AYC</div>
+            <div class="card-front-body">
+              <h3 class="card-name">David Letterman</h3>
+              <p class="card-title">Vice President, Healthcare Facilities</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Bio +</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <h3 class="card-back-name">David Letterman</h3>
+            <p class="card-back-title">Vice President, Healthcare Facilities</p>
+            <hr class="card-back-divider" />
+            <div class="card-bio-wrap"><p class="card-bio">Bio coming soon. To learn more about our team, we invite you to get in touch directly.</p></div>
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+    </div>
+
+    <!-- Directorate: Logistics & Business Development -->
+    <div class="directorate">
+      <p class="directorate-label">Logistics &amp; Business Development</p>
+      <hr class="directorate-rule" />
+    </div>
+    <div class="card-grid">
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Eugene Coles, Vice President Force Protection">
+        <div class="flip-inner">
+          <div class="card-front">
+            <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_34df00e15c0848f0accf25738d70d45c~mv2.jpg" alt="Eugene Coles" loading="lazy" />
+            <div class="card-front-body">
+              <h3 class="card-name">Eugene Coles</h3>
+              <p class="card-title">Vice President, Force Protection</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Bio +</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <h3 class="card-back-name">Eugene Coles</h3>
+            <p class="card-back-title">Vice President, Force Protection</p>
+            <hr class="card-back-divider" />
+            <div class="card-bio-wrap"><p class="card-bio">Eugene Coles served twenty-two years in the Marine Corps, from squad leader to platoon commander over mortar, anti-armor, and heavy machinegun units. He conducted counter-IED and foreign internal defense operations across the Middle East, South America, and the Asia Pacific Rim. A distinguished graduate of the Infantry Platoon Sergeant's Course and jungle and mountain warfare schools, Eugene holds degrees in Political Science and International Relations. At AYC, he leads force protection planning and threat assessment for high-risk environments.</p></div>
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Byron Childs, Ohio Operations Director and Client Account Manager">
+        <div class="flip-inner">
+          <div class="card-front">
+            <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_93eb6596a52b4b629f31cbfdd0727dcf~mv2.jpg" alt="Byron Childs" loading="lazy" />
+            <div class="card-front-body">
+              <h3 class="card-name">Byron Childs</h3>
+              <p class="card-title">Ohio Operations Director &amp; Client Account Manager</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Bio +</span>
+            </div>
+          </div>
+          <div class="card-back">
+            <h3 class="card-back-name">Byron Childs</h3>
+            <p class="card-back-title">Ohio Operations Director &amp; Client Account Manager</p>
+            <hr class="card-back-divider" />
+            <div class="card-bio-wrap"><p class="card-bio">Byron Childs spent over thirteen years in law enforcement, including service on a regional SWAT team running high-risk warrants and protection details for political figures. He is a commissioned peace officer, Certified Firearms Instructor, and certified armorer who trains personnel in close-quarters tactics and vehicle dynamics. Byron coordinates event security, secure transport, and 24/7 coverage for AYC's Ohio regional operations, bringing a client-first approach and the same exacting standards to the field that he holds in training.</p></div>
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ ORG CHART ━━━━━━━━━━ -->
+<section id="org-chart" class="section-alt" aria-labelledby="org-heading">
+  <div class="container">
+    <h2 id="org-heading" class="section-headline section-headline--sm">How We're Structured</h2>
+    <p class="org-sub">AYC Security's operational structure ensures every client engagement is supported at every level.</p>
+
+    <div style="position:relative;overflow:hidden;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:40px;">
+      <span class="org-placeholder-overlay" role="note">
+        <span class="org-placeholder-overlay-dot" aria-hidden="true"></span>
+        Placeholder — org chart being updated
+      </span>
+      <img
+        src="https://static.wixstatic.com/media/f4c8e4_a6712e0abbec4b64b00315e9516fd449~mv2.png"
+        alt="AYC Security USA Organizational Chart showing President, C-suite leadership, and five directorates: Consulting, Security, Training, Admin, and Education, with Government, Individual, and Commercial Sales under Chief Marketing Officer"
+        style="max-width:100%;min-width:700px;display:block;height:auto;border:1px solid #E4DED2;"
+      />
+    </div>
+
+    <p class="mobile-scroll-hint" style="font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5A5A56;text-align:center;margin-top:12px;">
+      Scroll to view full chart on mobile
+    </p>
+
+    <div style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;">
+      AYC Security USA organizational structure. The President oversees six direct reports: Chief Financial Officer, Chief Operating Officer, General Counsel, Chief Personnel Officer, Chief of Staff, and Chief Marketing Officer. The Chief Operating Officer oversees three directorates: Consulting Directorate including Crisis Management Division, Threat Assessment Division, Risk Analysis Division, and Penetration Testing Division; Security Directorate including Transportation Hubs, Hospitals, Large Commercial Entities, and Mines and Construction Sites; and Training Directorate including Workplace Safety, Leadership and Decision-Making, and Communication and Legalities. The Chief Personnel Officer oversees the Admin Directorate including Human Resources Office, Logistics Division, and Procurement Office; and the Education Directorate. The Chief Marketing Officer oversees Government Sales, Individual Sales, and Commercial Sales.
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ BOARD OF ADVISORS ━━━━━━━━━━ -->
+<section id="advisors" class="section-paper" aria-labelledby="advisors-heading">
+  <div class="container">
+    <h2 id="advisors-heading" class="section-headline section-headline--md">Board of Advisors</h2>
+    <p class="lead-intro" style="margin-bottom:48px;max-width:560px;font-size:16px">AYC Security is guided by an advisory board of senior military and civilian leaders.</p>
+
+    <div class="advisors-grid">
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View profile of Lieutenant General Stacy Clardy">
+        <div class="flip-inner">
+          <div class="card-front">
+            <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_a9aa7e0478904b609bd70b04332e1ffe~mv2.jpg" alt="Lieutenant General Stacy Clardy" loading="lazy" />
+            <div class="card-front-body">
+              <h3 class="card-name">Lt. Gen. Stacy Clardy</h3>
+              <p class="card-title">USMC, Retired · Board of Advisors</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Profile +</span>
+            </div>
+          </div>
+          <div class="card-back card-back--advisor">
+            <h3 class="card-back-name">Lieutenant General Stacy Clardy</h3>
+            <p class="card-back-title">USMC, Retired</p>
+            <hr class="card-back-divider" />
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View profile of Lieutenant Colonel Robert Leonhard">
+        <div class="flip-inner">
+          <div class="card-front">
+            <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_aac01e088ae6490abb45481a18173201~mv2.jpg" alt="Lieutenant Colonel Robert Leonhard, PhD" loading="lazy" />
+            <div class="card-front-body">
+              <h3 class="card-name">Lt. Col. Robert Leonhard, PhD</h3>
+              <p class="card-title">US Army, Retired · Board of Advisors</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Profile +</span>
+            </div>
+          </div>
+          <div class="card-back card-back--advisor">
+            <h3 class="card-back-name">Lt. Col. Robert Leonhard, PhD</h3>
+            <p class="card-back-title">US Army, Retired</p>
+            <hr class="card-back-divider" />
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View profile of Lieutenant-Colonel James MacMillan">
+        <div class="flip-inner">
+          <div class="card-front">
+            <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_4a609e01f26c4cd8bc14746c2730a8f6~mv2.jpg" alt="Lieutenant-Colonel James MacMillan" loading="lazy" />
+            <div class="card-front-body">
+              <h3 class="card-name">Lt. Col. James MacMillan</h3>
+              <p class="card-title">Canadian Army, Retired · Board of Advisors</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Profile +</span>
+            </div>
+          </div>
+          <div class="card-back card-back--advisor">
+            <h3 class="card-back-name">Lt. Col. James MacMillan</h3>
+            <p class="card-back-title">Canadian Army, Retired</p>
+            <hr class="card-back-divider" />
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+      <div class="advisors-row-pair">
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View profile of Mr. Rick DeChant">
+        <div class="flip-inner">
+          <div class="card-front">
+            <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_b38f8e61032d4dc38350679500dbc92d~mv2.jpg" alt="Mr. Rick DeChant" loading="lazy" />
+            <div class="card-front-body">
+              <h3 class="card-name">Mr. Rick DeChant</h3>
+              <p class="card-title">Board of Advisors</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Profile +</span>
+            </div>
+          </div>
+          <div class="card-back card-back--advisor">
+            <h3 class="card-back-name">Mr. Rick DeChant</h3>
+            <p class="card-back-title">Board of Advisors</p>
+            <hr class="card-back-divider" />
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+
+      <button class="flip-card" type="button" aria-pressed="false" aria-label="View profile of Mr. Lee Mersek">
+        <div class="flip-inner">
+          <div class="card-front">
+            <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_e31863a72aa245149aededebd7f324bc~mv2.jpg" alt="Mr. Lee Mersek" loading="lazy" />
+            <div class="card-front-body">
+              <h3 class="card-name">Mr. Lee Mersek</h3>
+              <p class="card-title">Board of Advisors</p>
+              <hr class="card-rule" />
+              <span class="card-flip-prompt">View Profile +</span>
+            </div>
+          </div>
+          <div class="card-back card-back--advisor">
+            <h3 class="card-back-name">Mr. Lee Mersek</h3>
+            <p class="card-back-title">Board of Advisors</p>
+            <hr class="card-back-divider" />
+            <a class="card-cta" href="/contact">Connect with our team →</a>
+          </div>
+        </div>
+      </button>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- ━━━━━━━━━━ GIVING BACK ━━━━━━━━━━ -->
+<section id="giving-back" class="giving-section" aria-labelledby="giving-heading">
+  <div class="container">
+    <div class="giving-grid">
+      <div class="giving-image-wrap">
+        <span class="giving-placeholder-tag" aria-hidden="true">Placeholder — replace with AYC community photo</span>
+        <img class="giving-image" src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Community support and charitable giving — AYC Security" loading="lazy" />
+        <div class="giving-image-overlay" aria-hidden="true"></div>
+      </div>
+      <div class="giving-content">
+        <p class="giving-stat-num">10%</p>
+        <p class="giving-stat-label">of all profits donated to charitable causes</p>
+        <hr class="giving-rule" />
+        <h2 id="giving-heading" class="giving-h">Giving Back Is Part of How We Operate</h2>
+        <p class="giving-body-text">AYC Security is guided by the desire to make the world a better, safer place. Not just by protecting people, but by helping heal communities through action and charity. We exist to protect others. Making the world better for all is simply part of how we do that.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ FINAL CTA ━━━━━━━━━━ -->
+<section id="final-cta" class="final-cta" aria-labelledby="final-cta-heading">
+  <div class="container">
+    <div class="final-grid">
+      <div class="final-left">
+        <h2 id="final-cta-heading" class="final-headline">
+          Ready when it matters.
+          <span class="final-sub">Same-Day Coverage Available.</span>
+        </h2>
+        <p class="final-body">Call, text, or email — we respond immediately. For urgent coverage needs, call or text directly.</p>
+        <a class="btn-gold final-cta-btn" href="/contact" aria-label="Get protected now, visit contact page">Get Protected Now →</a>
+      </div>
+      <div class="final-right">
+        <p class="connect-title">Connect With Our Team</p>
+        <a class="connect-phone" href="tel:+15615717983" aria-label="Call AYC Security at (561) 571-7983">(561) 571-7983</a>
+        <div class="connect-grid">
+          <a class="connect-btn" href="tel:+15615717983" aria-label="Call (561) 571-7983">Call</a>
+          <a class="connect-btn" href="sms:+15615717983" aria-label="Text (561) 571-7983">Text</a>
+          <a class="connect-btn" href="/cdn-cgi/l/email-protection#a9c0c7cfc6e9c8d0cadacccadcdbc0ddd087cac6c4" aria-label="Email info@aycsecurity.com">Email</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ━━━━━━━━━━ FOOTER ━━━━━━━━━━ -->
+<footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+
+      <div class="footer-col footer-col--brand">
+        <img class="footer-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security USA" />
+        <p class="footer-blurb">AYC Security USA — a veteran-owned private security firm headquartered in Boca Raton, Florida. 24/7 Global Security Operations Center.</p>
+        <span class="footer-license-line">Licensed &amp; Insured Nationally · Operating Across the United States</span>
+      </div>
+
+      <nav class="footer-col" aria-label="Services">
+        <span class="footer-head">Services</span>
+        <a class="footer-link" href="/services/ongoing-security">Ongoing Site Security</a>
+        <a class="footer-link" href="/services/disaster-response">Disaster &amp; Emergency Response</a>
+        <a class="footer-link" href="/services/community-events">Community, Events &amp; Close Protection</a>
+        <a class="footer-link" href="/services/energy-industrial">Energy &amp; Industrial Security</a>
+        <a class="footer-link" href="/services/consulting-training">Consulting, Training &amp; Procurement</a>
+        <a class="footer-link" href="/services/ayc-intelligence">AYC Intelligence</a>
+      </nav>
+
+      <nav class="footer-col" aria-label="Company">
+        <span class="footer-head">Company</span>
+        <a class="footer-link" href="/about">About AYC Security</a>
+        <a class="footer-link" href="/operations-center">Our Operations Center</a>
+        <a class="footer-link" href="/industries">Industries Served</a>
+        <a class="footer-link" href="/careers">Careers</a>
+        <a class="footer-link" href="/contact">Contact</a>
+      </nav>
+
+      <div class="footer-col">
+        <span class="footer-head">Contact</span>
+        <a class="footer-phone" href="tel:+15615717983">(561) 571-7983</a>
+        <a class="footer-email" href="/cdn-cgi/l/email-protection#4e272028210e2f372d3d2b2d3b3c273a37602d2123"><span class="__cf_email__" data-cfemail="5930373f361938203a2a3c3a2c2b302d20773a3634">[email&#160;protected]</span></a>
+
+        <span class="footer-addr-label">Florida HQ</span>
+        <address class="footer-addr">7000 W Palmetto Park Rd., Suite 308<br />Boca Raton, FL 33433</address>
+
+        <span class="footer-addr-label">Ohio</span>
+        <address class="footer-addr">7160 Chagrin Road, Suite 180<br />Chagrin Falls, OH 44023</address>
+      </div>
+
+    </div>
+
+    <div class="footer-bottom">
+      <p>© 2026 AYC Security USA · All Rights Reserved</p>
+      <p class="footer-licenses-strip">FL B3200547 · NV 4383 · OH 20242100525221 · TN 14274 · TX B31026501</p>
+      <div class="footer-bottom-links">
+        <a href="/privacy">Privacy</a>
+        <span aria-hidden="true">·</span>
+        <a href="/terms">Terms</a>
+      </div>
+    </div>
+
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function(){
+  // Flip card toggle (click + keyboard)
+  var cards = document.querySelectorAll('.flip-card');
+  cards.forEach(function(card){
+    function toggle(){
+      var pressed = card.getAttribute('aria-pressed') === 'true';
+      card.setAttribute('aria-pressed', pressed ? 'false' : 'true');
+    }
+    card.addEventListener('click', function(e){
+      // Don't toggle if user clicked the inner CTA link
+      if(e.target.closest('.card-cta')) return;
+      toggle();
+    });
+    card.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){
+        if(e.target.closest('.card-cta')) return;
+        e.preventDefault();
+        toggle();
+      }
+      if(e.key === 'Escape'){
+        card.setAttribute('aria-pressed', 'false');
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>
