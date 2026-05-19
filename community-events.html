@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Community, Events & Close Protection Security | AYC Security</title>
+<meta name="description" content="AYC Security provides professional security for houses of worship, community organizations, corporate events, galas, and private functions. Same-day event coverage. Close protection available through Salvare Global, our bespoke protection division. FL, OH, TX, NV, TN licensed.">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F8F5F0; --cream-2:#EFEBE3; --paper:#FFFFFF;
+    --navy:#0E1C2B; --navy-2:#0A1622; --forest:#1C3D35;
+    --gold:#B8882A; --gold-deep:#98701F; --gold-soft:#D9B66B;
+    --ink:#2A2A28; --ink-soft:#5A5A56;
+    --rule:#E4DED2; --rule-strong:#CFC6B3;
+  }
+  *,*::before,*::after{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    font-family:'Inter',-apple-system,sans-serif;
+    color:var(--ink);
+    background:var(--paper);
+    line-height:1.6;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{display:block;max-width:100%;}
+  a{color:inherit;text-decoration:none;}
+  button{font-family:inherit;cursor:pointer;border:none;background:none;}
+
+  .container{max-width:1280px;margin:0 auto;padding:0 32px;}
+  @media (max-width:720px){.container{padding:0 20px;}}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:10px;
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:13px;
+    letter-spacing:0.16em;text-transform:uppercase;
+    padding:18px 26px;border:1px solid transparent;
+    transition:background .2s ease,color .2s ease,border-color .2s ease;
+    cursor:pointer;text-align:center;
+  }
+  .btn-gold{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+  .btn-gold:hover{background:var(--gold-deep);border-color:var(--gold-deep);}
+  .btn-outline-light{background:transparent;color:#fff;border-color:rgba(255,255,255,0.5);}
+  .btn-outline-light:hover{background:#fff;color:var(--navy);border-color:#fff;}
+  .btn-outline-navy{background:transparent;color:var(--navy);border:1px solid var(--navy);}
+  .btn-outline-navy:hover{background:var(--navy);color:#fff;}
+
+  /* ---------- Utility Rail ---------- */
+  .utility-rail{
+    background:var(--navy-2);color:#fff;height:36px;
+    display:flex;align-items:center;
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.04em;
+  }
+  .utility-rail .container{display:flex;justify-content:space-between;align-items:center;width:100%;}
+  .gsoc-status{display:flex;align-items:center;gap:10px;color:rgba(255,255,255,0.85);}
+  .pulse-dot{
+    width:8px;height:8px;border-radius:50%;background:var(--gold-soft);
+    box-shadow:0 0 0 0 rgba(217,182,107,0.7);
+    animation:pulse 2s infinite;
+  }
+  @keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(217,182,107,0.7);}
+    70%{box-shadow:0 0 0 10px rgba(217,182,107,0);}
+    100%{box-shadow:0 0 0 0 rgba(217,182,107,0);}
+  }
+  .utility-rail a{color:rgba(255,255,255,0.9);}
+  .utility-rail a:hover{color:var(--gold-soft);}
+  @media (max-width:720px){.utility-rail{display:none;}}
+
+  /* ---------- Main Nav ---------- */
+  .main-nav{
+    position:sticky;top:0;z-index:100;
+    background:var(--navy);height:84px;
+    border-bottom:1px solid rgba(255,255,255,0.06);
+  }
+  .main-nav .container{display:flex;align-items:center;justify-content:space-between;height:100%;gap:24px;}
+  .nav-left{display:flex;align-items:center;gap:16px;}
+  .nav-logo{height:44px;width:auto;display:block;filter:brightness(0) invert(1);}
+  .nav-rule{width:1px;height:32px;background:rgba(255,255,255,0.2);}
+  .nav-tagline{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.08em;line-height:1.4;color:rgba(255,255,255,0.7);}
+  .nav-tagline .gold{color:var(--gold-soft);display:block;}
+  .nav-center{display:flex;align-items:center;gap:28px;}
+  .nav-center a, .nav-center .nav-dropdown-trigger{
+    font-family:'Oswald',sans-serif;font-weight:500;font-size:13px;
+    color:#fff;letter-spacing:.12em;text-transform:uppercase;
+    padding:8px 0;position:relative;display:inline-flex;align-items:center;gap:6px;
+    cursor:pointer;
+  }
+  .nav-center a:hover, .nav-center .nav-dropdown-trigger:hover{color:var(--gold-soft);}
+  .caret{width:8px;height:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translate(-2px,-2px);display:inline-block;}
+  .nav-dropdown{position:relative;}
+  .nav-dropdown-menu{
+    position:absolute;top:100%;left:-12px;
+    background:var(--navy-2);border-top:2px solid var(--gold);
+    padding:8px 0;min-width:340px;
+    opacity:0;visibility:hidden;transform:translateY(8px);
+    transition:opacity .2s ease,transform .2s ease,visibility .2s;
+    box-shadow:0 18px 40px rgba(0,0,0,0.35);
+  }
+  .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu{
+    opacity:1;visibility:visible;transform:translateY(0);
+  }
+  .nav-dropdown-menu a{
+    display:block;padding:12px 22px;font-family:'Inter',sans-serif;
+    font-size:14px;font-weight:400;color:rgba(255,255,255,0.85);
+    letter-spacing:0;text-transform:none;
+  }
+  .nav-dropdown-menu a:hover{background:rgba(184,136,42,0.1);color:var(--gold-soft);}
+  .nav-right .btn{padding:14px 22px;font-size:12px;}
+  .hamburger{display:none;}
+  @media (max-width:1080px){
+    .nav-center,.nav-right{display:none;}
+    .hamburger{display:flex;flex-direction:column;justify-content:center;gap:5px;width:36px;height:36px;cursor:pointer;}
+    .hamburger span{width:24px;height:2px;background:#fff;display:block;}
+    .main-nav{height:64px;}
+    .nav-tagline{display:none;}
+    .nav-rule{display:none;}
+  }
+
+  /* Mobile drawer */
+  .mobile-drawer{
+    position:fixed;inset:0;background:var(--navy);z-index:200;
+    transform:translateX(100%);transition:transform .3s ease;
+    display:flex;flex-direction:column;padding:24px;
+  }
+  .mobile-drawer.open{transform:translateX(0);}
+  .mobile-drawer-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;}
+  .mobile-drawer-close{font-size:28px;color:#fff;background:none;border:none;cursor:pointer;}
+  .mobile-drawer nav a, .mobile-drawer nav .group-label{
+    display:block;padding:14px 0;font-family:'Oswald',sans-serif;
+    font-size:18px;color:#fff;letter-spacing:.12em;text-transform:uppercase;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+  }
+  .mobile-drawer nav .group-label{color:var(--gold-soft);font-size:12px;font-family:'IBM Plex Mono',monospace;letter-spacing:.18em;margin-top:16px;border-bottom:none;padding-bottom:4px;}
+  .mobile-drawer nav .sub a{font-size:14px;font-family:'Inter',sans-serif;font-weight:400;letter-spacing:0;text-transform:none;padding:10px 0;color:rgba(255,255,255,0.8);border-bottom:1px solid rgba(255,255,255,0.05);}
+
+  /* Side Tab */
+  .side-tab{
+    position:fixed;right:0;top:50%;transform:rotate(-90deg) translateX(50%);transform-origin:right center;
+    background:var(--gold);color:var(--navy);
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    padding:12px 22px;z-index:90;cursor:pointer;border:none;
+  }
+  .side-tab:hover{background:var(--gold-deep);}
+  @media (max-width:720px){.side-tab{display:none;}}
+
+  /* Slideout */
+  .slideout{
+    position:fixed;top:0;right:0;height:100%;width:min(420px,100%);
+    background:#fff;z-index:210;transform:translateX(100%);
+    transition:transform .3s ease;box-shadow:-20px 0 60px rgba(0,0,0,0.2);
+    padding:32px;overflow-y:auto;
+  }
+  .slideout.open{transform:translateX(0);}
+  .slideout-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:24px;}
+  .slideout h3{font-family:'Oswald',sans-serif;font-size:22px;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin:0;}
+  .slideout .close-btn{font-size:28px;background:none;border:none;cursor:pointer;color:var(--ink);}
+  .slideout p{font-size:14px;color:var(--ink-soft);line-height:1.6;}
+  .slideout .field{display:flex;flex-direction:column;gap:6px;margin-bottom:14px;}
+  .slideout label{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-soft);}
+  .slideout input,.slideout textarea{
+    border:1px solid var(--rule-strong);padding:12px 14px;
+    font-family:'Inter',sans-serif;font-size:15px;color:var(--ink);
+    background:#fff;
+  }
+  .slideout textarea{min-height:100px;resize:vertical;}
+  .slideout .btn{width:100%;}
+  .scrim{position:fixed;inset:0;background:rgba(0,0,0,0.4);z-index:205;opacity:0;visibility:hidden;transition:opacity .25s ease,visibility .25s;}
+  .scrim.open{opacity:1;visibility:visible;}
+
+  /* ---------- Hero ---------- */
+  .hero{
+    position:relative;min-height:82vh;
+    background:url('https://alizafagen.github.io/ayc-homepage-lightversion/assets/IMG_7280.JPG') center/cover no-repeat;
+    color:#fff;display:flex;align-items:center;
+  }
+  .hero::before{
+    content:"";position:absolute;inset:0;
+    background:linear-gradient(90deg,rgba(14,28,43,0.82) 0%,rgba(14,28,43,0.5) 100%);
+  }
+  .hero .container{position:relative;z-index:2;padding-top:80px;padding-bottom:80px;}
+  .hero-grid{display:grid;grid-template-columns:60% 40%;gap:48px;align-items:start;}
+  .hero-breadcrumb{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.22em;
+    color:var(--gold-soft);text-transform:uppercase;margin-bottom:28px;
+  }
+  .hero-headline{
+    font-family:'Oswald',sans-serif;font-weight:700;
+    font-size:clamp(44px,6.5vw,80px);line-height:0.95;
+    letter-spacing:0.04em;text-transform:uppercase;
+    margin:0 0 20px 0;color:#fff;
+  }
+  .hero-subhead{
+    font-family:'Oswald',sans-serif;font-weight:500;
+    font-size:clamp(20px,2.5vw,32px);letter-spacing:.08em;
+    color:var(--gold-soft);text-transform:uppercase;margin:0 0 28px 0;
+    line-height:1.2;
+  }
+  .hero-body{
+    font-family:'Inter',sans-serif;font-size:18px;line-height:1.7;
+    color:rgba(255,255,255,0.85);max-width:52ch;margin:0 0 36px 0;
+  }
+  .hero-ctas{display:flex;flex-wrap:wrap;gap:14px;}
+
+  .hero-panel{
+    background:rgba(10,22,34,0.82);
+    border-top:3px solid var(--gold);
+    padding:36px 32px;
+  }
+  .panel-label{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.18em;
+    color:var(--gold-soft);text-transform:uppercase;
+  }
+  .gold-rule{border:none;border-top:1px solid rgba(184,136,42,0.3);margin:14px 0;}
+  .coverage-item{
+    display:flex;align-items:center;gap:12px;padding:14px 0;
+    border-bottom:1px solid rgba(255,255,255,0.08);
+    font-family:'Inter',sans-serif;font-size:16px;color:#fff;line-height:1.5;
+  }
+  .coverage-item:last-of-type{border-bottom:none;}
+  .gold-dot{width:6px;height:6px;border-radius:50%;background:var(--gold);flex-shrink:0;}
+  .panel-foot{font-family:'IBM Plex Mono',monospace;font-size:12px;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:.14em;}
+
+  .photo-tag{
+    position:absolute;bottom:20px;left:20px;z-index:3;
+    background:rgba(0,0,0,0.7);border:1px dashed var(--gold-soft);
+    padding:8px 14px;
+    font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.16em;
+    color:var(--gold-soft);text-transform:uppercase;
+  }
+
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero{min-height:auto;}
+  }
+
+  /* ---------- Overview Callout ---------- */
+  .overview{background:#fff;padding:56px 0;}
+  .overview .container{max-width:860px;}
+  .overview-panel{
+    border-left:4px solid var(--gold);
+    padding:28px 32px;background:var(--cream);
+  }
+  .overview-panel p{font-size:17px;color:var(--ink);line-height:1.8;margin:0 0 18px 0;}
+  .overview-panel p:last-child{margin-bottom:0;}
+
+  /* ---------- Section Common ---------- */
+  .split-section{padding:clamp(72px,9vw,112px) 0;}
+  .split-grid{display:grid;grid-template-columns:1fr 1fr;min-height:560px;}
+  .split-grid.cp{grid-template-columns:55% 45%;}
+  .split-image{width:100%;height:100%;object-fit:cover;min-height:480px;}
+  .split-content{padding:56px 48px;display:flex;flex-direction:column;justify-content:center;}
+  .section-label{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.22em;
+    color:var(--gold);text-transform:uppercase;margin-bottom:16px;display:block;
+  }
+  .section-headline{
+    font-family:'Oswald',sans-serif;font-weight:600;
+    font-size:clamp(28px,3.5vw,44px);line-height:1.05;
+    color:var(--navy);text-transform:uppercase;
+    margin:0 0 20px 0;letter-spacing:.04em;
+  }
+  .section-body{font-family:'Inter',sans-serif;font-size:16px;color:var(--ink);line-height:1.75;margin:0 0 18px 0;}
+  .section-body:last-of-type{margin-bottom:28px;}
+
+  .check-list{list-style:none;margin:0 0 8px 0;padding:0;}
+  .check-list li{
+    display:flex;gap:12px;align-items:flex-start;padding:8px 0;
+    font-family:'Inter',sans-serif;font-size:16px;color:var(--ink);line-height:1.5;
+  }
+  .check-icon{flex-shrink:0;margin-top:4px;width:16px;height:16px;}
+
+  @media (max-width:960px){
+    .split-grid, .split-grid.cp{grid-template-columns:1fr;}
+    .split-content{padding:40px 24px;}
+    .split-image{min-height:300px;}
+    .events-section .split-grid > :first-child{order:2;}
+    .events-section .split-grid > :last-child{order:1;}
+  }
+
+  /* Events placeholder panel */
+  .photo-placeholder{
+    background:var(--cream-2);
+    display:flex;align-items:center;justify-content:center;
+    flex-direction:column;gap:12px;
+    min-height:480px;width:100%;
+  }
+  .photo-placeholder .monogram{
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:48px;
+    color:var(--gold);letter-spacing:.08em;
+  }
+  .photo-placeholder .ph-note{
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.16em;
+    color:var(--ink-soft);text-transform:uppercase;
+  }
+  @media (max-width:960px){.photo-placeholder{min-height:260px;}}
+
+  /* ---------- Close Protection ---------- */
+  .cp-section{background:var(--navy);color:#fff;padding:clamp(72px,9vw,112px) 0;}
+  .cp-section .section-headline{color:#fff;}
+  .cp-section .section-label{color:var(--gold-soft);}
+  .cp-grid{display:grid;grid-template-columns:55% 45%;gap:56px;align-items:start;}
+  @media (max-width:960px){.cp-grid{grid-template-columns:1fr;gap:40px;}}
+  .cp-body{font-family:'Inter',sans-serif;font-size:16px;color:rgba(255,255,255,0.85);line-height:1.75;margin:0 0 16px 0;}
+  .dot-list{list-style:none;padding:0;margin:24px 0 0 0;}
+  .dot-list li{
+    position:relative;padding:8px 0 8px 22px;
+    font-family:'Inter',sans-serif;font-size:16px;line-height:1.7;
+    color:rgba(255,255,255,0.85);
+  }
+  .dot-list li::before{
+    content:"";position:absolute;left:0;top:18px;
+    width:7px;height:7px;background:var(--gold);border-radius:50%;
+  }
+  .cp-ctas{display:flex;flex-wrap:wrap;gap:16px;margin-top:32px;}
+  .salvare-callout{
+    margin-top:28px;padding:20px 24px;
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(184,136,42,0.3);
+  }
+  .salvare-callout .panel-label{display:block;margin-bottom:10px;}
+  .salvare-callout p{font-family:'Inter',sans-serif;font-size:15px;color:rgba(255,255,255,0.75);line-height:1.6;margin:0;}
+
+  .cp-panel{
+    background:rgba(255,255,255,0.04);
+    border:1px solid rgba(255,255,255,0.10);
+    padding:40px 36px;
+  }
+  .cp-item{padding:20px 0;border-bottom:1px solid rgba(255,255,255,0.08);}
+  .cp-item:first-child{padding-top:0;}
+  .cp-item:last-child{border-bottom:none;padding-bottom:0;}
+  .cp-item-title{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:18px;color:#fff;
+    text-transform:uppercase;letter-spacing:.06em;margin:0 0 8px 0;
+  }
+  .cp-item-body{font-family:'Inter',sans-serif;font-size:15px;color:rgba(255,255,255,0.7);line-height:1.6;margin:0;}
+
+  .gsoc-note{
+    font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:.14em;
+    color:var(--gold);text-transform:uppercase;margin-top:20px;display:block;
+  }
+
+  /* ---------- How It Works ---------- */
+  .hiw{background:var(--cream);padding:clamp(72px,9vw,112px) 0;}
+  .hiw .section-headline{text-align:center;margin-bottom:56px;}
+  .hiw-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media (max-width:860px){.hiw-grid{grid-template-columns:1fr;}}
+  .step-card{
+    background:#fff;border:1px solid var(--rule);border-top:3px solid var(--gold);
+    padding:36px 32px;
+  }
+  .step-num{
+    font-family:'Oswald',sans-serif;font-weight:700;
+    font-size:clamp(48px,5vw,64px);color:var(--gold);
+    line-height:1;margin-bottom:16px;
+  }
+  .step-title{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:18px;
+    color:var(--navy);text-transform:uppercase;letter-spacing:.06em;
+    margin:0 0 14px 0;
+  }
+  .step-body{font-family:'Inter',sans-serif;font-size:16px;color:var(--ink);line-height:1.75;margin:0;}
+
+  /* ---------- Testimonials ---------- */
+  .testimonials{background:var(--cream-2);padding:clamp(64px,8vw,96px) 0;}
+  .testimonials .section-headline{font-size:clamp(24px,3vw,36px);margin-bottom:48px;}
+  .t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+  @media (max-width:960px){.t-grid{grid-template-columns:1fr;}}
+  .t-card{
+    background:#fff;border:1px solid var(--rule);
+    padding:32px 28px;position:relative;
+  }
+  .t-quote-mark{
+    position:absolute;top:14px;left:20px;
+    font-family:'Oswald',sans-serif;font-weight:700;font-size:72px;
+    color:var(--gold);opacity:0.12;line-height:1;
+  }
+  .t-quote{
+    font-family:'Inter',sans-serif;font-size:16px;color:var(--ink);
+    line-height:1.7;font-style:italic;margin:24px 0 20px 0;position:relative;z-index:1;
+  }
+  .t-rule{width:36px;height:1px;background:var(--gold);margin:0 0 14px 0;}
+  .t-name{font-family:'Oswald',sans-serif;font-weight:600;font-size:14px;color:var(--navy);text-transform:uppercase;letter-spacing:.06em;}
+  .t-role{font-family:'Inter',sans-serif;font-size:13px;color:var(--ink-soft);margin-top:4px;}
+  .t-note{
+    font-family:'Inter',sans-serif;font-size:13px;color:var(--ink-soft);
+    text-align:center;margin-top:24px;
+  }
+
+  /* ---------- FAQ ---------- */
+  .faq{background:#fff;padding:clamp(64px,8vw,96px) 0;}
+  .faq .section-headline{font-size:clamp(24px,3vw,38px);margin-bottom:40px;}
+  .faq-list{max-width:920px;margin:0 auto;border-top:1px solid var(--rule);}
+  .faq-item{border-bottom:1px solid var(--rule);}
+  .faq-q{
+    width:100%;display:flex;justify-content:space-between;align-items:center;gap:24px;
+    text-align:left;padding:24px 4px;
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:18px;
+    color:var(--navy);text-transform:uppercase;letter-spacing:.06em;line-height:1.4;
+  }
+  .faq-q .indicator{
+    width:24px;height:24px;flex-shrink:0;position:relative;
+  }
+  .faq-q .indicator::before,.faq-q .indicator::after{
+    content:"";position:absolute;background:var(--gold);
+  }
+  .faq-q .indicator::before{left:0;right:0;top:50%;height:2px;margin-top:-1px;}
+  .faq-q .indicator::after{top:0;bottom:0;left:50%;width:2px;margin-left:-1px;transition:transform .25s ease;}
+  .faq-item.open .faq-q .indicator::after{transform:scaleY(0);}
+  .faq-a{
+    max-height:0;overflow:hidden;transition:max-height .35s ease;
+  }
+  .faq-a-inner{
+    font-family:'Inter',sans-serif;font-size:16px;color:var(--ink);line-height:1.75;
+    padding:0 4px 24px 4px;max-width:760px;
+  }
+
+  /* ---------- Final CTA ---------- */
+  .final-cta{background:var(--navy);border-top:4px solid var(--gold);padding:clamp(72px,9vw,110px) 0;color:#fff;}
+  .final-grid{display:grid;grid-template-columns:1.2fr 1fr;gap:64px;align-items:center;}
+  @media (max-width:860px){.final-grid{grid-template-columns:1fr;gap:40px;}}
+  .final-headline{
+    font-family:'Oswald',sans-serif;font-weight:500;
+    font-size:clamp(32px,4.6vw,60px);line-height:1.05;
+    color:#fff;text-transform:uppercase;margin:0;letter-spacing:.03em;
+  }
+  .final-sub{
+    font-family:'Oswald',sans-serif;font-weight:500;
+    font-size:clamp(18px,2vw,26px);color:var(--gold-soft);
+    text-transform:uppercase;margin-top:12px;letter-spacing:.08em;
+  }
+  .final-body{
+    font-family:'Inter',sans-serif;font-size:16px;color:rgba(255,255,255,0.8);
+    margin-top:18px;line-height:1.7;max-width:48ch;
+  }
+  .final-right{border-left:1px solid rgba(255,255,255,0.22);padding-left:36px;}
+  @media (max-width:860px){.final-right{border-left:none;padding-left:0;border-top:1px solid rgba(255,255,255,0.22);padding-top:36px;}}
+  .final-right h3{font-family:'Oswald',sans-serif;font-weight:700;font-size:22px;color:#fff;text-transform:uppercase;letter-spacing:.08em;margin:0 0 14px 0;}
+  .final-tel{font-family:'IBM Plex Mono',monospace;font-size:24px;color:var(--gold-soft);display:block;margin-bottom:24px;}
+  .final-tel:hover{color:#fff;}
+  .ctex{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;}
+  .ctex a{
+    border:1px solid rgba(255,255,255,0.28);padding:14px 8px;
+    text-align:center;font-family:'Oswald',sans-serif;font-weight:600;
+    font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#fff;
+    transition:background .2s,border-color .2s;
+  }
+  .ctex a:hover{background:var(--gold);color:var(--navy);border-color:var(--gold);}
+
+  /* ---------- Footer ---------- */
+  footer{background:var(--navy-2);color:rgba(255,255,255,0.78);padding:72px 0 36px;}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr 1.2fr;gap:48px;}
+  @media (max-width:960px){.footer-grid{grid-template-columns:1fr 1fr;gap:36px;}}
+  @media (max-width:560px){.footer-grid{grid-template-columns:1fr;}}
+  .footer h4{
+    font-family:'Oswald',sans-serif;font-weight:600;font-size:13px;
+    color:#fff;text-transform:uppercase;letter-spacing:.18em;
+    margin:0 0 18px 0;
+  }
+  .footer ul{list-style:none;padding:0;margin:0;}
+  .footer li{padding:6px 0;}
+  .footer a{font-family:'Inter',sans-serif;font-size:14px;color:rgba(255,255,255,0.7);}
+  .footer a:hover{color:var(--gold-soft);}
+  .footer-logo{height:48px;filter:brightness(0) invert(1);margin-bottom:16px;}
+  .footer-desc{font-family:'Inter',sans-serif;font-size:14px;color:rgba(255,255,255,0.65);line-height:1.65;margin-bottom:16px;max-width:38ch;}
+  .footer-license{font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;color:rgba(255,255,255,0.5);text-transform:uppercase;margin-bottom:18px;line-height:1.6;}
+  .footer-social{display:flex;gap:12px;}
+  .footer-social a{
+    width:36px;height:36px;border:1px solid rgba(255,255,255,0.2);
+    display:inline-flex;align-items:center;justify-content:center;
+  }
+  .footer-social a:hover{border-color:var(--gold);background:var(--gold);}
+  .footer-social a:hover svg{fill:var(--navy);}
+  .footer-social svg{width:14px;height:14px;fill:rgba(255,255,255,0.8);}
+  .footer-contact{font-family:'Inter',sans-serif;font-size:14px;color:rgba(255,255,255,0.7);line-height:1.7;}
+  .footer-contact .line{display:block;}
+  .footer-contact .label{
+    font-family:'IBM Plex Mono',monospace;font-size:10px;letter-spacing:.18em;
+    color:var(--gold-soft);text-transform:uppercase;display:block;margin-top:14px;margin-bottom:4px;
+  }
+  .footer-bottom{
+    border-top:1px solid rgba(255,255,255,0.1);
+    margin-top:48px;padding-top:24px;
+    display:flex;justify-content:space-between;flex-wrap:wrap;gap:16px;
+    font-family:'IBM Plex Mono',monospace;font-size:11px;letter-spacing:.1em;
+    color:rgba(255,255,255,0.5);text-transform:uppercase;
+  }
+  .footer-bottom a{color:rgba(255,255,255,0.6);margin-left:18px;}
+
+  /* Reduced motion */
+  @media (prefers-reduced-motion:reduce){
+    *,*::before,*::after{animation-duration:0.001ms !important;transition-duration:0.001ms !important;}
+  }
+</style>
+</head>
+<body>
+
+<!-- Utility Rail -->
+<div class="utility-rail" role="complementary" aria-label="Site status and contact">
+  <div class="container">
+    <div class="gsoc-status">
+      <span class="pulse-dot" aria-hidden="true"></span>
+      <span>GSOC Online · 24/7 Live Monitoring</span>
+    </div>
+    <div><a href="tel:+15615717983">Call or Text: (561) 571-7983</a></div>
+  </div>
+</div>
+
+<!-- Main Nav -->
+<header class="main-nav" role="banner">
+  <div class="container">
+    <div class="nav-left">
+      <a href="/" aria-label="AYC Security home">
+        <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" class="nav-logo">
+      </a>
+      <div class="nav-rule" aria-hidden="true"></div>
+      <div class="nav-tagline">
+        Est. Boca Raton
+        <span class="gold">Veteran-Owned</span>
+      </div>
+    </div>
+
+    <nav class="nav-center" aria-label="Primary">
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-trigger" tabindex="0" aria-haspopup="true">Services <span class="caret" aria-hidden="true"></span></span>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/services/ongoing-security">Ongoing Site Security</a>
+          <a href="/services/disaster-response">Disaster &amp; Emergency Response</a>
+          <a href="/services/community-events">Community, Events &amp; Close Protection</a>
+          <a href="/services/energy-industrial">Energy &amp; Industrial Security</a>
+          <a href="/services/consulting-training">Consulting, Training &amp; Procurement</a>
+          <a href="/services/ayc-intelligence">AYC Intelligence</a>
+        </div>
+      </div>
+      <a href="/industries">Industries</a>
+      <div class="nav-dropdown">
+        <span class="nav-dropdown-trigger" tabindex="0" aria-haspopup="true">About <span class="caret" aria-hidden="true"></span></span>
+        <div class="nav-dropdown-menu" role="menu">
+          <a href="/about">About AYC Security</a>
+          <a href="/operations-center">Our Operations Center</a>
+          <a href="/about#leadership">Our Leadership Team</a>
+        </div>
+      </div>
+      <a href="/careers">Careers</a>
+      <a href="/contact">Contact</a>
+    </nav>
+
+    <div class="nav-right">
+      <a href="/contact" class="btn btn-gold" style="padding:14px 22px;font-size:12px;">Request a Consultation →</a>
+    </div>
+
+    <button class="hamburger" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false" id="hamburger-btn">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Mobile drawer -->
+<div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Mobile navigation">
+  <div class="mobile-drawer-head">
+    <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" style="height:40px;filter:brightness(0) invert(1);">
+    <button class="mobile-drawer-close" aria-label="Close menu" id="mobile-close">×</button>
+  </div>
+  <nav aria-label="Mobile primary">
+    <div class="group-label">Services</div>
+    <div class="sub">
+      <a href="/services/ongoing-security">Ongoing Site Security</a>
+      <a href="/services/disaster-response">Disaster &amp; Emergency Response</a>
+      <a href="/services/community-events">Community, Events &amp; Close Protection</a>
+      <a href="/services/energy-industrial">Energy &amp; Industrial Security</a>
+      <a href="/services/consulting-training">Consulting, Training &amp; Procurement</a>
+      <a href="/services/ayc-intelligence">AYC Intelligence</a>
+    </div>
+    <a href="/industries">Industries</a>
+    <div class="group-label">About</div>
+    <div class="sub">
+      <a href="/about">About AYC Security</a>
+      <a href="/operations-center">Our Operations Center</a>
+      <a href="/about#leadership">Our Leadership Team</a>
+    </div>
+    <a href="/careers">Careers</a>
+    <a href="/contact">Contact</a>
+  </nav>
+  <a href="/contact" class="btn btn-gold" style="margin-top:32px;">Request a Consultation →</a>
+</div>
+
+<!-- Side Tab -->
+<button class="side-tab" id="side-tab" aria-label="Open contact form">Get in Touch →</button>
+
+<!-- Slideout -->
+<div class="scrim" id="scrim"></div>
+<aside class="slideout" id="slideout" role="dialog" aria-label="Contact form">
+  <div class="slideout-head">
+    <h3>Get in Touch</h3>
+    <button class="close-btn" id="slideout-close" aria-label="Close">×</button>
+  </div>
+  <p>Tell us about your event, community, or protection need. We respond same-day.</p>
+  <form onsubmit="event.preventDefault();this.querySelector('button[type=submit]').textContent='Sent — we will follow up';">
+    <div class="field"><label for="so-name">Name</label><input id="so-name" type="text" required></div>
+    <div class="field"><label for="so-email">Email</label><input id="so-email" type="email" required></div>
+    <div class="field"><label for="so-phone">Phone</label><input id="so-phone" type="tel"></div>
+    <div class="field"><label for="so-msg">What do you need?</label><textarea id="so-msg" required></textarea></div>
+    <button type="submit" class="btn btn-gold">Send Request →</button>
+  </form>
+</aside>
+
+<!-- ===================== HERO ===================== -->
+<section class="hero" aria-labelledby="hero-headline" aria-label="AYC Security officers on deployment in Florida">
+  <div class="container">
+    <div class="hero-grid">
+      <div>
+        <div class="hero-breadcrumb">Services / Community, Events &amp; Close Protection</div>
+        <h1 class="hero-headline" id="hero-headline">Present.<br>Prepared.<br>Professional.</h1>
+        <div class="hero-subhead">Security that fits your community and events</div>
+        <p class="hero-body">From houses of worship to gala events to executive protection, AYC is proud to provide professional security that feels like a presence, not a warning. We ensure your guests feel safe, and events run smoothly.</p>
+        <div class="hero-ctas">
+          <a href="/contact" class="btn btn-gold">Get Same-Day Event Coverage →</a>
+          <a href="tel:+15615717983" class="btn btn-outline-light">Call (561) 571-7983</a>
+        </div>
+      </div>
+      <aside class="hero-panel" aria-label="Coverage overview">
+        <div class="panel-label">What We Cover</div>
+        <hr class="gold-rule">
+        <div class="coverage-item"><span class="gold-dot" aria-hidden="true"></span><span>Houses of Worship &amp; Community Events</span></div>
+        <div class="coverage-item"><span class="gold-dot" aria-hidden="true"></span><span>Corporate Events, Galas &amp; Conferences</span></div>
+        <div class="coverage-item"><span class="gold-dot" aria-hidden="true"></span><span>Executive &amp; Close Protection</span></div>
+        <hr class="gold-rule" style="margin:16px 0;">
+        <div class="panel-foot">GSOC Monitored · Same-Day Available</div>
+      </aside>
+    </div>
+  </div>
+  <div class="photo-tag">AYC Photo — Confirm Final Selection Before Launch</div>
+</section>
+
+<!-- ===================== OVERVIEW CALLOUT ===================== -->
+<section class="overview" aria-label="Overview">
+  <div class="container">
+    <div class="overview-panel">
+      <p>Not every security situation looks the same. A synagogue on Shabbat needs a presence that is protective but welcoming. A gala needs officers who are professional, discreet, and suited to the environment. An executive moving through a high-profile event needs a different level of attention entirely.</p>
+      <p>AYC provides security that fits the event. Armed and unarmed. Uniformed and plainclothes. Same-day deployment available for time-sensitive event needs. Every deployed officer is monitored through our Global Security Operations Center with GPS-confirmed hourly check-ins.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SECTION 1: COMMUNITY ===================== -->
+<section class="split-section community-section" id="community" style="background:var(--cream);padding:0;" aria-labelledby="community-headline">
+  <div class="split-grid">
+    <img class="split-image" src="https://alizafagen.github.io/ayc-homepage-lightversion/assets/IMG_7279.JPG" alt="AYC Security officers protecting a synagogue">
+    <div class="split-content">
+      <span class="section-label">Community Security</span>
+      <h2 class="section-headline" id="community-headline">Where community gathers,<br>we stand watch.</h2>
+      <p class="section-body">Houses of worship, schools, and community organizations carry a responsibility to the people who gather there. AYC provides security that protects that responsibility without disrupting the warmth and openness that defines those spaces.</p>
+      <p class="section-body">Our officers are trained for environments where the tone of the security presence matters as much as the preparation behind it. We have extensive experience with religious communities — synagogues, churches, mosques — and the specific security considerations each community faces.</p>
+      <ul class="check-list">
+        <li><svg class="check-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2"/></svg>Shabbat, High Holiday, and year-round synagogue security</li>
+        <li><svg class="check-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2"/></svg>Church, mosque, and multi-faith community security</li>
+        <li><svg class="check-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2"/></svg>School and campus security</li>
+        <li><svg class="check-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2"/></svg>Community events with speakers or large gatherings</li>
+        <li><svg class="check-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2"/></svg>Access control and perimeter monitoring</li>
+        <li><svg class="check-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2"/></svg>GSOC-monitored hourly officer check-ins</li>
+      </ul>
+      <a href="/contact" class="btn btn-outline-navy" style="margin-top:24px;align-self:flex-start;">Discuss Your Community's Needs →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SECTION 2: EVENTS ===================== -->
+<section class="split-section events-section" id="events" style="background:#fff;padding:0;" aria-labelledby="events-headline">
+  <div class="split-grid">
+    <div class="split-content">
+      <span class="section-label">Events Security</span>
+      <h2 class="section-headline" id="events-headline">Your event runs.<br>Your guests stay safe.</h2>
+      <p class="section-body">Corporate galas, conferences, networking events, private parties, and speaker events each carry their own security requirements. AYC provides professional uniformed and plainclothes officers calibrated to the size, tone, and nature of your event.</p>
+      <p class="section-body">Need coverage for an event happening tonight? Same-day deployment is available. We have staffed events from intimate private gatherings to large multi-venue functions, and we bring the same level of preparation and professionalism to each.</p>
+      <ul class="check-list">
+        <li><svg class="check-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2"/></svg>Corporate galas, dinners, and award events</li>
+        <li><svg class="check-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2"/></svg>Conferences and multi-day events</li>
+        <li><svg class="check-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2"/></svg>Networking events and private functions</li>
+        <li><svg class="check-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2"/></svg>High-profile speaker and community events</li>
+        <li><svg class="check-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2"/></svg>Religious events and holiday functions</li>
+        <li><svg class="check-icon" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2"/></svg>Same-day and short-notice deployment available</li>
+      </ul>
+      <span class="gsoc-note">GSOC Monitored · Every Officer · Every Hour</span>
+      <a href="/contact" class="btn btn-outline-navy" style="margin-top:24px;align-self:flex-start;">Request Event Coverage →</a>
+    </div>
+    <div style="position:relative;width:100%;min-height:480px;">
+      <img class="split-image" src="https://images.unsplash.com/photo-1659273144088-202efb9b86c8?auto=format&fit=crop&w=900&q=80" alt="Security officers at an outdoor event — replace with real AYC photo" style="object-fit:cover;width:100%;height:100%;position:absolute;inset:0;">
+      <div class="photo-tag" style="position:absolute;top:20px;left:20px;bottom:auto;">Placeholder — Replace with Real AYC Event Photo</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== SECTION 3: CLOSE PROTECTION ===================== -->
+<section class="cp-section" id="close-protection" aria-labelledby="cp-headline">
+  <div class="container">
+    <div class="cp-grid">
+      <div>
+        <span class="section-label">Close Protection</span>
+        <h2 class="section-headline" id="cp-headline">When the security requirement is personal.</h2>
+        <p class="cp-body">Some security requirements go beyond a venue or an event. When the individual is the principal, the approach requires a different level of attention, discretion, and expertise.</p>
+        <p class="cp-body">AYC provides close protection and executive security through Salvare Global Solutions, our dedicated bespoke protection division, offering customized security for high-net-worth individuals, executives, political figures, and high-profile clients. Services include personal security details, protective drivers, estate security, travel security, and continuous threat analysis.</p>
+        <ul class="dot-list">
+          <li>Personal security details (PSDs)</li>
+          <li>Protective drivers and vehicle security</li>
+          <li>Estate and residential security</li>
+          <li>Travel security — domestic and international</li>
+          <li>Event and venue close protection for VIPs</li>
+          <li>Executive protection at offices and embassies</li>
+          <li>Continuous 24/7 operations center support</li>
+        </ul>
+        <div class="cp-ctas">
+          <a href="tel:+15615717983" class="btn btn-gold">Discuss Your Protection Needs →</a>
+          <a href="https://www.salvareglobal.com" target="_blank" rel="noopener" class="btn btn-outline-light">Visit Salvare Global →</a>
+        </div>
+        <div class="salvare-callout">
+          <div class="panel-label">A Division of AYC Security</div>
+          <p>Salvare Global Solutions is AYC's dedicated bespoke close protection division. For high-end personal and executive protection, visit salvareglobal.com or call (561) 851-4017.</p>
+        </div>
+      </div>
+      <div class="cp-panel">
+        <div class="cp-item">
+          <h3 class="cp-item-title">Discreet by Default</h3>
+          <p class="cp-item-body">Our protection personnel operate in plainclothes or uniformed, depending on the principal's preference and the environment.</p>
+        </div>
+        <div class="cp-item">
+          <h3 class="cp-item-title">Vetted Professionals</h3>
+          <p class="cp-item-body">Personnel drawn from backgrounds in elite military and law enforcement units. Every agent is individually selected for each assignment.</p>
+        </div>
+        <div class="cp-item">
+          <h3 class="cp-item-title">24/7 Operations Center</h3>
+          <p class="cp-item-body">All close protection assignments are supported by a U.S.-based operations center providing persistent monitoring and crisis response.</p>
+        </div>
+        <div class="cp-item">
+          <h3 class="cp-item-title">Experience with High-Profile Clients</h3>
+          <p class="cp-item-body">Political figures, business executives, celebrities, and high-net-worth individuals and families across North America and internationally.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== HOW IT WORKS ===================== -->
+<section class="hiw" aria-labelledby="hiw-headline">
+  <div class="container">
+    <h2 class="section-headline" id="hiw-headline">How It Works</h2>
+    <div class="hiw-grid">
+      <article class="step-card">
+        <div class="step-num">01</div>
+        <h3 class="step-title">Tell Us About Your Event or Need</h3>
+        <p class="step-body">Call, text, or <a href="/contact" style="color:#B8882A;text-decoration:underline;">fill out the form</a>. Tell us about the event, your community, or your protection requirement. We respond quickly and ask the right questions to understand exactly what you need.</p>
+      </article>
+      <article class="step-card">
+        <div class="step-num">02</div>
+        <h3 class="step-title">We Plan and Staff</h3>
+        <p class="step-body">We match the right personnel to your environment. For events, we coordinate coverage based on venue, attendance, and expected dynamics. For close protection, we build a tailored plan around your schedule, locations, and risk profile.</p>
+      </article>
+      <article class="step-card">
+        <div class="step-num">03</div>
+        <h3 class="step-title">Covered and Monitored</h3>
+        <p class="step-body">For event and community deployments, every officer is monitored through our Global Security Operations Center with GPS-confirmed hourly check-ins. You have a direct line to our team before, during, and after the event. We communicate proactively.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== TESTIMONIALS ===================== -->
+<section class="testimonials" aria-labelledby="t-headline">
+  <div class="container">
+    <h2 class="section-headline" id="t-headline">Trusted by Communities and Event Organizers</h2>
+    <div class="t-grid">
+      <article class="t-card">
+        <div class="t-quote-mark" aria-hidden="true">"</div>
+        <p class="t-quote">For the last 20 years I have been overseeing security companies protecting the largest synagogue in the southeastern US, with almost 1,000 families as members. AYC is our current provider and I have been continuously impressed by their dedication, hard work, and can-do attitude. I would place AYC at the top of that list.</p>
+        <div class="t-rule"></div>
+        <div class="t-name">David Berger</div>
+        <div class="t-role">Security Chairman, Boca Raton Synagogue</div>
+      </article>
+      <article class="t-card">
+        <div class="t-quote-mark" aria-hidden="true">"</div>
+        <p class="t-quote">We have worked with a number of security providers over the years for our annual gala. AYC stood out immediately. Their team was professional, well-presented, and handled a last-minute change in attendance numbers without missing a beat. We will not be looking for another provider.</p>
+        <div class="t-rule"></div>
+        <div class="t-name">[Name Pending — Client Quote to Be Confirmed]</div>
+        <div class="t-role">Director of Events, Nonprofit Organization</div>
+      </article>
+      <article class="t-card">
+        <div class="t-quote-mark" aria-hidden="true">"</div>
+        <p class="t-quote">Our community has worked with AYC for several years now. They understand the balance we need — security that is present and serious, without making our congregation feel like they are entering a checkpoint. That is harder to find than you might think.</p>
+        <div class="t-rule"></div>
+        <div class="t-name">[Name Pending — Client Quote to Be Confirmed]</div>
+        <div class="t-role">Security Committee Chair, South Florida Religious Community</div>
+      </article>
+    </div>
+    <p class="t-note">Placeholder testimonials will be updated with confirmed client quotes before launch.</p>
+  </div>
+</section>
+
+<!-- ===================== FAQ ===================== -->
+<section class="faq" aria-labelledby="faq-headline">
+  <div class="container">
+    <h2 class="section-headline" id="faq-headline">Common Questions</h2>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <button class="faq-q" aria-expanded="true"><span>Can AYC provide security for a same-day event?</span><span class="indicator" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Same-day deployment is available for time-sensitive event needs. Call or text us directly to discuss your requirements and timeline.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Does AYC provide armed or unarmed officers for community and event security?</span><span class="indicator" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Both options are available. The appropriate choice depends on the nature of the event, the community's preferences, and the risk environment. We work through this with you during the initial consultation.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>How does AYC approach security at houses of worship?</span><span class="indicator" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Our officers are specifically trained for environments where tone and approach matter as much as preparation. We understand that a house of worship needs a visible but welcoming presence. We have extensive experience with synagogues, churches, and other religious communities and their specific security needs.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>What is Salvare Global, and how is it related to AYC?</span><span class="indicator" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Salvare Global Solutions is AYC Security's dedicated bespoke close protection division, specializing in personalized security for high-net-worth individuals, executives, and high-profile clients. For high-end close protection, executive security, and personal security details, visit salvareglobal.com or call (561) 851-4017.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Does AYC monitor officers during events through the GSOC?</span><span class="indicator" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. For community and event deployments, every officer checks in with GPS confirmation every hour through our Global Security Operations Center, verified by a live human operator. This applies to ongoing and event security engagements.</div></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false"><span>Can AYC coordinate with venue security or local law enforcement?</span><span class="indicator" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. Our personnel are experienced working alongside existing venue security teams and coordinating with local law enforcement when appropriate. We integrate with the existing security structure of the venue or organization.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FINAL CTA ===================== -->
+<section class="final-cta" aria-labelledby="final-headline">
+  <div class="container">
+    <div class="final-grid">
+      <div>
+        <h2 class="final-headline" id="final-headline">Ready to Secure Your Event or Community?</h2>
+        <div class="final-sub">Same-Day Event Coverage Available.</div>
+        <p class="final-body">Tell us about your event or community security need. We will put together the right coverage.</p>
+        <a href="/contact" class="btn btn-gold" style="margin-top:32px;">Get Protected Now →</a>
+      </div>
+      <div class="final-right">
+        <h3>Connect With Our Team</h3>
+        <a href="tel:+15615717983" class="final-tel">(561) 571-7983</a>
+        <div class="ctex">
+          <a href="tel:+15615717983">Call</a>
+          <a href="sms:+15615717983">Text</a>
+          <a href="/cdn-cgi/l/email-protection#5e373038311e3f273d2d3b3d2b2c372a27703d3133">Email</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" class="footer-logo">
+        <p class="footer-desc">Veteran-owned professional security services. Headquartered in Boca Raton, Florida. Ongoing site security, event coverage, close protection, and consulting.</p>
+        <div class="footer-license">Licensed FL · OH · TX · NV · TN</div>
+        <div class="footer-social">
+          <a href="https://www.linkedin.com/company/ayc-security/" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14C2.2 0 0 2.2 0 5v14c0 2.8 2.2 5 5 5h14c2.8 0 5-2.2 5-5V5c0-2.8-2.2-5-5-5zM7.1 20.5H3.6V9h3.5v11.5zM5.3 7.4c-1.1 0-2-.9-2-2s.9-2 2-2 2 .9 2 2-.9 2-2 2zM20.5 20.5H17v-5.6c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9v5.7H9.5V9h3.4v1.6h.1c.5-.9 1.6-1.8 3.3-1.8 3.6 0 4.2 2.4 4.2 5.4v6.3z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/aycsecure/" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 12c0-5.5-4.5-10-10-10S2 6.5 2 12c0 5 3.7 9.1 8.4 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7C18.3 21.1 22 17 22 12z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div>
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/ongoing-security">Ongoing Site Security</a></li>
+          <li><a href="/services/disaster-response">Disaster &amp; Emergency Response</a></li>
+          <li><a href="/services/community-events">Community, Events &amp; Close Protection</a></li>
+          <li><a href="/services/energy-industrial">Energy &amp; Industrial Security</a></li>
+          <li><a href="/services/consulting-training">Consulting, Training &amp; Procurement</a></li>
+          <li><a href="/services/ayc-intelligence">AYC Intelligence</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/operations-center">Operations Center</a></li>
+          <li><a href="/industries">Industries</a></li>
+          <li><a href="/careers">Careers</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <div class="footer-contact">
+          <span class="label">Phone</span>
+          <a href="tel:+15615717983">(561) 571-7983</a>
+          <span class="label">Email</span>
+          <a href="/cdn-cgi/l/email-protection#10797e767f5071697363757365627964693e737f7d"><span class="__cf_email__" data-cfemail="fd94939b92bd9c849e8e989e888f948984d39e9290">[email&#160;protected]</span></a>
+          <span class="label">Florida HQ</span>
+          <span class="line">1825 Corporate Blvd NW</span>
+          <span class="line">Boca Raton, FL 33431</span>
+          <span class="label">Ohio Office</span>
+          <span class="line">Cleveland, OH</span>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>© 2026 AYC Security · License FL #B-2400000 · OH #20-30-1234</div>
+      <div>
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    const btn = item.querySelector('.faq-q');
+    const ans = item.querySelector('.faq-a');
+    const setOpen = (open) => {
+      item.classList.toggle('open', open);
+      btn.setAttribute('aria-expanded', String(open));
+      ans.style.maxHeight = open ? ans.scrollHeight + 'px' : '0px';
+    };
+    if (item.classList.contains('open')) {
+      requestAnimationFrame(() => { ans.style.maxHeight = ans.scrollHeight + 'px'; });
+    }
+    btn.addEventListener('click', () => setOpen(!item.classList.contains('open')));
+  });
+
+  // Mobile drawer
+  const drawer = document.getElementById('mobile-drawer');
+  const hamb = document.getElementById('hamburger-btn');
+  const mClose = document.getElementById('mobile-close');
+  hamb.addEventListener('click', () => { drawer.classList.add('open'); hamb.setAttribute('aria-expanded','true'); });
+  mClose.addEventListener('click', () => { drawer.classList.remove('open'); hamb.setAttribute('aria-expanded','false'); });
+
+  // Slideout
+  const slideout = document.getElementById('slideout');
+  const scrim = document.getElementById('scrim');
+  const sideTab = document.getElementById('side-tab');
+  const slClose = document.getElementById('slideout-close');
+  const openSO = () => { slideout.classList.add('open'); scrim.classList.add('open'); };
+  const closeSO = () => { slideout.classList.remove('open'); scrim.classList.remove('open'); };
+  sideTab.addEventListener('click', openSO);
+  slClose.addEventListener('click', closeSO);
+  scrim.addEventListener('click', closeSO);
+
+  // ESC closes overlays
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      drawer.classList.remove('open');
+      closeSO();
+    }
+  });
+</script>
+</body>
+</html>
