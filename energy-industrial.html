@@ -1,0 +1,1922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Energy & Industrial Security | Mining, Ports & Industrial Site Security | AYC Security</title>
+<meta name="description" content="AYC Security provides professional armed and unarmed security for mining operations, maritime ports, energy facilities, factories, and warehouses. GSOC-monitored. Compliance-aware. 24/7 coverage across the United States." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #F8F5F0;
+    --cream-2: #EFEBE3;
+    --paper: #FFFFFF;
+    --navy: #0E1C2B;
+    --navy-2: #0A1622;
+    --forest: #1C3D35;
+    --gold: #B8882A;
+    --gold-deep: #98701F;
+    --gold-soft: #D9B66B;
+    --ink: #2A2A28;
+    --ink-soft: #5A5A56;
+    --rule: #E4DED2;
+    --rule-strong: #CFC6B3;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    color: var(--ink);
+    background: var(--paper);
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+  .container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  @media (max-width: 720px) {
+    .container { padding: 0 20px; }
+  }
+
+  /* ============ BUTTONS ============ */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 18px 26px;
+    border: 1px solid transparent;
+    transition: background-color .18s ease, color .18s ease, border-color .18s ease;
+    cursor: pointer;
+    text-align: center;
+  }
+  .btn-gold {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+  }
+  .btn-gold:hover { background: var(--gold-deep); border-color: var(--gold-deep); }
+  .btn-outline-light {
+    background: transparent;
+    color: #fff;
+    border: 1px solid rgba(255,255,255,0.5);
+  }
+  .btn-outline-light:hover { background: #fff; color: var(--navy); }
+  .btn-outline-navy {
+    background: transparent;
+    color: var(--navy);
+    border: 1px solid var(--navy);
+  }
+  .btn-outline-navy:hover { background: var(--navy); color: #fff; }
+
+  /* ============ UTILITY RAIL ============ */
+  .utility-rail {
+    background: var(--navy-2);
+    height: 36px;
+    color: rgba(255,255,255,0.85);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    letter-spacing: 0.04em;
+  }
+  .utility-rail .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .util-left { display: flex; align-items: center; gap: 10px; }
+  .gsoc-dot {
+    width: 8px; height: 8px; background: var(--gold);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0 rgba(184,136,42,0.6);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(184,136,42,0.7); }
+    70% { box-shadow: 0 0 0 8px rgba(184,136,42,0); }
+    100% { box-shadow: 0 0 0 0 rgba(184,136,42,0); }
+  }
+  .util-right a:hover { color: var(--gold-soft); }
+  @media (max-width: 820px) {
+    .utility-rail { display: none; }
+  }
+
+  /* ============ MAIN NAV ============ */
+  .main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    height: 84px;
+    color: #fff;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .main-nav .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .nav-brand img { height: 42px; width: auto; }
+  .brand-rule {
+    width: 1px; height: 36px;
+    background: rgba(255,255,255,0.2);
+  }
+  .brand-text {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    line-height: 1.4;
+    color: rgba(255,255,255,0.75);
+  }
+  .brand-text .gold { color: var(--gold-soft); display: block; }
+  .nav-center {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .nav-center > li { list-style: none; position: relative; }
+  .nav-link {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.85);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 0;
+    transition: color .15s ease;
+  }
+  .nav-link:hover { color: var(--gold-soft); }
+  .nav-link .caret { width: 8px; height: 8px; display: inline-block; }
+  .nav-dropdown {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 0;
+    background: var(--navy-2);
+    border-top: 2px solid var(--gold);
+    min-width: 320px;
+    padding: 14px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity .18s ease, transform .18s ease, visibility .18s ease;
+    box-shadow: 0 24px 60px rgba(0,0,0,0.4);
+  }
+  .nav-center > li:hover .nav-dropdown,
+  .nav-center > li:focus-within .nav-dropdown {
+    opacity: 1; visibility: visible; transform: translateY(0);
+  }
+  .nav-dropdown a {
+    display: block;
+    padding: 11px 22px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: rgba(255,255,255,0.85);
+    border-left: 2px solid transparent;
+    transition: background .15s, border-color .15s, color .15s;
+  }
+  .nav-dropdown a:hover {
+    background: rgba(255,255,255,0.04);
+    border-left-color: var(--gold);
+    color: #fff;
+  }
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    border: 1px solid var(--gold);
+    transition: background .18s ease;
+  }
+  .nav-cta:hover { background: var(--gold-deep); border-color: var(--gold-deep); }
+  .nav-hamburger {
+    display: none;
+    width: 40px; height: 40px;
+    background: transparent;
+    color: #fff;
+    align-items: center;
+    justify-content: center;
+  }
+
+  @media (max-width: 1100px) {
+    .nav-center, .nav-cta-wrap { display: none; }
+    .nav-hamburger { display: inline-flex; }
+    .main-nav { height: 64px; }
+    .nav-brand img { height: 36px; }
+    .brand-text { font-size: 9px; }
+  }
+
+  /* Mobile drawer */
+  .mobile-drawer {
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: min(360px, 88vw);
+    background: var(--navy);
+    transform: translateX(100%);
+    transition: transform .26s ease;
+    z-index: 200;
+    padding: 24px 28px;
+    overflow-y: auto;
+    border-left: 1px solid rgba(255,255,255,0.06);
+  }
+  .mobile-drawer.open { transform: translateX(0); }
+  .mobile-drawer-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .26s ease, visibility .26s ease;
+    z-index: 199;
+  }
+  .mobile-drawer-overlay.open { opacity: 1; visibility: visible; }
+  .mobile-drawer-header {
+    display: flex; align-items: center; justify-content: space-between;
+    padding-bottom: 18px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+    margin-bottom: 18px;
+  }
+  .mobile-drawer-close {
+    color: #fff;
+    width: 36px; height: 36px;
+    display: inline-flex; align-items: center; justify-content: center;
+  }
+  .mobile-drawer h4 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    margin: 18px 0 10px;
+  }
+  .mobile-drawer a.m-link {
+    display: block;
+    color: rgba(255,255,255,0.9);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    font-size: 14px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .mobile-drawer a.m-sublink {
+    display: block;
+    color: rgba(255,255,255,0.78);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    padding: 8px 0;
+  }
+  .mobile-drawer .btn { margin-top: 24px; width: 100%; }
+
+  /* Side tab */
+  .side-tab {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(-90deg) translateX(50%);
+    transform-origin: right center;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    padding: 10px 18px;
+    z-index: 80;
+    border: 1px solid var(--gold);
+    box-shadow: -2px 0 12px rgba(0,0,0,0.15);
+    transition: background .18s;
+  }
+  .side-tab:hover { background: var(--gold-deep); }
+  @media (max-width: 820px) { .side-tab { display: none; } }
+
+  /* ============ HERO ============ */
+  .hero {
+    position: relative;
+    min-height: 82vh;
+    background: var(--navy);
+    color: #fff;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 80px 0;
+  }
+  .hero-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://images.unsplash.com/photo-1735379595209-a8cd4acfb2c1?auto=format&fit=crop&w=1800&q=80');
+    background-size: cover;
+    background-position: center;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(14,28,43,0.84), rgba(14,28,43,0.50));
+  }
+  .placeholder-tag {
+    position: absolute;
+    bottom: 16px; left: 16px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.7);
+    background: rgba(10,22,34,0.7);
+    border: 1px solid rgba(217,182,107,0.4);
+    padding: 6px 10px;
+    z-index: 2;
+  }
+  .hero .container {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 60fr 40fr;
+    gap: 56px;
+    align-items: center;
+  }
+  @media (max-width: 960px) {
+    .hero .container { grid-template-columns: 1fr; gap: 40px; }
+  }
+  .breadcrumb {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin-bottom: 22px;
+  }
+  .breadcrumb a:hover { color: #fff; }
+  .breadcrumb .sep { opacity: 0.5; margin: 0 6px; }
+  .hero h1 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(44px, 6.5vw, 80px);
+    line-height: 0.95;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #fff;
+    margin-bottom: 20px;
+  }
+  .hero-sub {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: clamp(20px, 2.5vw, 32px);
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 28px;
+  }
+  .hero-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: rgba(255,255,255,0.85);
+    max-width: 52ch;
+    margin-bottom: 36px;
+  }
+  .hero-ctas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 14px;
+  }
+  .hero-panel {
+    background: rgba(10,22,34,0.82);
+    border-top: 3px solid var(--gold);
+    padding: 36px 32px;
+    backdrop-filter: blur(2px);
+  }
+  .panel-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+  }
+  .gold-rule {
+    border: none;
+    height: 1px;
+    background: rgba(184,136,42,0.3);
+    margin: 14px 0;
+  }
+  .sector-row {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    font-size: 16px;
+    color: #fff;
+  }
+  .sector-row:last-of-type { border-bottom: none; }
+  .sector-icon {
+    width: 18px; height: 18px;
+    flex-shrink: 0;
+    margin-right: 10px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .sector-icon svg { width: 18px; height: 18px; display: block; }
+  .gold-dot {
+    width: 6px; height: 6px;
+    background: var(--gold);
+    border-radius: 50%;
+    flex-shrink: 0;
+  }
+  .panel-foot {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    line-height: 1.5;
+  }
+
+  /* ============ CALLOUT ============ */
+  .callout {
+    background: var(--paper);
+    padding: 56px 0;
+  }
+  .callout .container {
+    display: grid;
+    grid-template-columns: 55fr 45fr;
+    gap: 40px;
+    align-items: stretch;
+  }
+  @media (max-width: 880px) {
+    .callout .container { grid-template-columns: 1fr; gap: 0; }
+    .callout-image { order: -1; height: 240px; }
+  }
+  .callout-text {
+    border-left: 4px solid var(--gold);
+    padding: 28px 32px;
+    background: var(--cream);
+  }
+  .callout-text p {
+    font-size: 17px;
+    color: var(--ink);
+    line-height: 1.8;
+    max-width: 60ch;
+  }
+  .callout-text p + p { margin-top: 16px; }
+  .callout-image {
+    position: relative;
+    min-height: 320px;
+    background: var(--navy);
+    overflow: hidden;
+  }
+  .callout-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    position: absolute; inset: 0;
+  }
+  .callout-image .placeholder-tag { top: 16px; left: 16px; bottom: auto; }
+
+  /* ============ WHAT WE SECURE (TABS) ============ */
+  .what-we-secure {
+    background: var(--cream);
+    padding: clamp(72px, 9vw, 112px) 0;
+  }
+  .section-head h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: clamp(28px, 3.5vw, 44px);
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 12px;
+  }
+  .section-head .sub {
+    font-size: 17px;
+    color: var(--ink-soft);
+    max-width: 600px;
+    margin-bottom: 48px;
+  }
+
+  .tab-nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0;
+    border-bottom: 1px solid var(--rule);
+    margin-bottom: 0;
+  }
+  .tab-btn {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    padding: 18px 26px;
+    border-bottom: 3px solid transparent;
+    margin-bottom: -1px;
+    transition: color .15s, border-color .15s;
+    background: transparent;
+  }
+  .tab-btn:hover { color: var(--gold); }
+  .tab-btn[aria-selected="true"] {
+    color: var(--navy);
+    border-bottom-color: var(--gold);
+  }
+  .tab-panel-wrap {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-top: none;
+  }
+  .tab-panel {
+    display: none;
+    grid-template-columns: 55fr 45fr;
+  }
+  .tab-panel[aria-hidden="false"] { display: grid; }
+  @media (max-width: 880px) {
+    .tab-panel { grid-template-columns: 1fr; }
+    .tab-panel .panel-image { order: -1; height: 280px; }
+  }
+  .panel-text {
+    padding: 40px;
+  }
+  .panel-icon {
+    color: var(--gold);
+    margin-bottom: 18px;
+  }
+  .panel-icon svg { width: 36px; height: 36px; }
+  .panel-text h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 22px;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 16px;
+  }
+  .panel-text p {
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.75;
+    max-width: 60ch;
+  }
+  .panel-text p + p { margin-top: 14px; }
+  .panel-services {
+    list-style: none;
+    margin-top: 22px;
+    padding: 18px 0 0;
+    border-top: 1px solid var(--rule);
+  }
+  .panel-services li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 8px 0;
+    font-size: 15px;
+    color: var(--ink);
+  }
+  .check {
+    color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+  .panel-image {
+    position: relative;
+    background: var(--navy);
+    min-height: 480px;
+    overflow: hidden;
+  }
+  .panel-image img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    position: absolute; inset: 0;
+  }
+  .panel-image .placeholder-tag {
+    top: 16px; left: 16px; bottom: auto;
+  }
+  .panel-image.coming-soon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: var(--navy);
+    text-align: center;
+    padding: 40px;
+  }
+  .panel-image.coming-soon::before {
+    content: '';
+    position: absolute; inset: 24px;
+    border: 1px dashed rgba(217,182,107,0.3);
+    pointer-events: none;
+  }
+  .coming-label {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    color: var(--gold-soft);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    position: relative; z-index: 1;
+  }
+  .coming-sub {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    max-width: 280px;
+    line-height: 1.6;
+    position: relative; z-index: 1;
+  }
+
+  /* ============ GSOC CALLOUT ============ */
+  .gsoc-callout {
+    background: var(--navy);
+    color: #fff;
+    padding: clamp(72px, 9vw, 112px) 0;
+  }
+  .gsoc-callout .container {
+    display: grid;
+    grid-template-columns: 55fr 45fr;
+    gap: 56px;
+    align-items: center;
+  }
+  @media (max-width: 960px) {
+    .gsoc-callout .container { grid-template-columns: 1fr; gap: 48px; }
+  }
+  .gsoc-callout h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(36px, 5vw, 60px);
+    line-height: 0.98;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 20px;
+  }
+  .gsoc-callout p.body {
+    font-size: 17px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.8;
+    max-width: 52ch;
+    margin-bottom: 36px;
+  }
+  .gsoc-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+    margin-bottom: 32px;
+  }
+  .gsoc-card {
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.12);
+    padding: 24px 20px;
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+    flex: 1;
+  }
+  @media (max-width: 720px) {
+    .gsoc-cards { flex-direction: column; }
+  }
+  .gsoc-card .gsoc-card-icon {
+    flex-shrink: 0;
+    color: var(--gold);
+    width: 36px;
+    height: 36px;
+  }
+  .gsoc-card .gsoc-card-icon svg { width: 36px; height: 36px; display: block; }
+  .gsoc-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-bottom: 6px;
+  }
+  .gsoc-card p {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.8);
+    line-height: 1.6;
+  }
+
+  .stat-panel {
+    background: #0A1622;
+    border: 1px solid rgba(255,255,255,0.10);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 56px 40px;
+    gap: 32px;
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+  }
+  .stat-panel::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    pointer-events: none;
+    background:
+      linear-gradient(rgba(184,136,42,0.04) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(184,136,42,0.04) 1px, transparent 1px);
+    background-size: 36px 36px;
+  }
+  .stat-panel::after {
+    content: '';
+    position: absolute;
+    left: 0; right: 0;
+    height: 1px;
+    z-index: 0;
+    pointer-events: none;
+    background: linear-gradient(90deg, transparent 0%, rgba(184,136,42,0.5) 50%, transparent 100%);
+    animation: gsoc-scan 5s linear infinite;
+  }
+  @keyframes gsoc-scan {
+    0%   { top: 0%; opacity: 0; }
+    5%   { opacity: 1; }
+    95%  { opacity: 1; }
+    100% { top: 100%; opacity: 0; }
+  }
+  .stat-row {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+  }
+  .stat-num {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(52px, 5.5vw, 72px);
+    color: var(--gold);
+    line-height: 1;
+    letter-spacing: 0.02em;
+    display: block;
+  }
+  .stat-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14px;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin-top: 6px;
+    display: block;
+  }
+  .stat-divider {
+    width: 48px;
+    height: 1px;
+    background: rgba(255,255,255,0.12);
+    position: relative;
+    z-index: 1;
+  }
+
+  .btn-gsoc {
+    background: transparent;
+    color: var(--gold-soft);
+    border: 1px solid var(--gold-soft);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 18px 26px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: background .18s ease, color .18s ease, border-color .18s ease;
+  }
+  .btn-gsoc:hover { background: var(--gold-soft); color: var(--navy); }
+
+  /* ============ WHY AYC ============ */
+  .why-ayc {
+    background: var(--cream-2);
+    padding: clamp(72px, 9vw, 112px) 0;
+  }
+  .why-sub { max-width: 480px; }
+  .why-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  @media (max-width: 820px) {
+    .why-grid { grid-template-columns: 1fr; }
+  }
+  .why-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--gold);
+    padding: 36px 32px;
+  }
+  .why-card .icon {
+    color: var(--gold);
+    margin-bottom: 16px;
+  }
+  .why-card .icon svg { width: 40px; height: 40px; }
+  .why-card h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 12px;
+  }
+  .why-card p {
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.7;
+  }
+
+  /* ============ HOW IT WORKS ============ */
+  .how-it-works {
+    background: var(--paper);
+    padding: clamp(72px, 9vw, 112px) 0;
+  }
+  .how-it-works h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: clamp(28px, 3.5vw, 44px);
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    text-align: center;
+    margin-bottom: 56px;
+  }
+  .steps {
+    display: flex;
+    gap: 24px;
+  }
+  @media (max-width: 880px) {
+    .steps { flex-direction: column; }
+  }
+  .step {
+    flex: 1;
+    background: var(--cream);
+    border: 1px solid var(--rule);
+    border-top: 3px solid var(--gold);
+    padding: 36px 32px;
+  }
+  .step-num {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(48px, 5vw, 64px);
+    color: var(--gold);
+    line-height: 1;
+    margin-bottom: 12px;
+  }
+  .step h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 18px;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    margin-bottom: 14px;
+  }
+  .step p {
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.75;
+  }
+
+  /* ============ TESTIMONIALS ============ */
+  .testimonials {
+    background: var(--cream);
+    padding: clamp(64px, 8vw, 96px) 0;
+  }
+  .testimonials h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: clamp(24px, 3vw, 36px);
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 48px;
+  }
+  .test-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  @media (max-width: 880px) {
+    .test-grid { grid-template-columns: 1fr; }
+  }
+  .test-card {
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    padding: 36px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .test-card::before {
+    content: '"';
+    position: absolute;
+    top: 16px; left: 24px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 80px;
+    color: var(--gold);
+    opacity: 0.12;
+    line-height: 1;
+  }
+  .test-quote {
+    font-size: 17px;
+    color: var(--ink);
+    line-height: 1.7;
+    font-style: italic;
+    margin-bottom: 24px;
+    position: relative;
+    z-index: 1;
+  }
+  .test-rule {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin-bottom: 16px;
+  }
+  .test-name {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+  }
+  .test-role {
+    font-size: 14px;
+    color: var(--ink-soft);
+    margin-top: 4px;
+  }
+  .test-note {
+    font-size: 13px;
+    color: var(--ink-soft);
+    text-align: center;
+    margin-top: 20px;
+    font-style: italic;
+  }
+
+  /* ============ FAQ ============ */
+  .faq {
+    background: var(--cream-2);
+    padding: clamp(64px, 8vw, 96px) 0;
+  }
+  .faq h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: clamp(24px, 3vw, 38px);
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-bottom: 40px;
+  }
+  .faq-list { max-width: 920px; }
+  .faq-item {
+    border-top: 1px solid var(--rule-strong);
+  }
+  .faq-item:last-child { border-bottom: 1px solid var(--rule-strong); }
+  .faq-q {
+    width: 100%;
+    text-align: left;
+    padding: 22px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 17px;
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    cursor: pointer;
+  }
+  .faq-q:hover { color: var(--gold); }
+  .faq-toggle {
+    width: 24px; height: 24px;
+    flex-shrink: 0;
+    color: var(--gold);
+    position: relative;
+  }
+  .faq-toggle::before, .faq-toggle::after {
+    content: '';
+    position: absolute;
+    background: currentColor;
+  }
+  .faq-toggle::before {
+    top: 50%; left: 0; right: 0;
+    height: 2px; margin-top: -1px;
+  }
+  .faq-toggle::after {
+    left: 50%; top: 0; bottom: 0;
+    width: 2px; margin-left: -1px;
+    transition: transform .2s ease;
+  }
+  .faq-item.open .faq-toggle::after { transform: scaleY(0); }
+  .faq-a {
+    display: none;
+    padding: 0 0 22px;
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.75;
+    max-width: 72ch;
+  }
+  .faq-item.open .faq-a { display: block; }
+
+  /* ============ FINAL CTA ============ */
+  .final-cta {
+    background: var(--navy);
+    border-top: 4px solid var(--gold);
+    color: #fff;
+    padding: clamp(72px, 9vw, 110px) 0;
+  }
+  .final-cta .container {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 56px;
+    align-items: center;
+  }
+  @media (max-width: 880px) {
+    .final-cta .container { grid-template-columns: 1fr; gap: 40px; }
+  }
+  .final-cta h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: clamp(32px, 4.6vw, 60px);
+    line-height: 1.05;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .final-cta .sub {
+    color: var(--gold-soft);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: clamp(18px, 2vw, 26px);
+    margin-top: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .final-cta .body {
+    font-size: 16px;
+    color: rgba(255,255,255,0.8);
+    margin-top: 18px;
+    max-width: 48ch;
+    line-height: 1.7;
+  }
+  .final-cta .btn-gold { margin-top: 32px; }
+  .final-right {
+    border-left: 1px solid rgba(255,255,255,0.22);
+    padding-left: 36px;
+  }
+  @media (max-width: 880px) {
+    .final-right { border-left: none; border-top: 1px solid rgba(255,255,255,0.22); padding-left: 0; padding-top: 32px; }
+  }
+  .final-right h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin-bottom: 12px;
+  }
+  .final-phone {
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 24px;
+    color: var(--gold-soft);
+    margin-bottom: 24px;
+  }
+  .final-phone:hover { color: #fff; }
+  .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+    margin-top: 12px;
+  }
+  .contact-btn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 16px 12px;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.18);
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    transition: background .15s, border-color .15s;
+  }
+  .contact-btn:hover { background: rgba(184,136,42,0.15); border-color: var(--gold); }
+  .contact-btn svg { color: var(--gold-soft); }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--navy-2);
+    color: rgba(255,255,255,0.75);
+    padding: 72px 0 36px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr 1.1fr;
+    gap: 48px;
+  }
+  @media (max-width: 980px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  }
+  @media (max-width: 580px) {
+    .footer-grid { grid-template-columns: 1fr; }
+  }
+  .footer-col h4 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: var(--gold-soft);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .footer-col ul { list-style: none; }
+  .footer-col li {
+    padding: 6px 0;
+    font-size: 14px;
+  }
+  .footer-col a:hover { color: var(--gold-soft); }
+  .footer-brand img { height: 38px; margin-bottom: 18px; }
+  .footer-desc {
+    font-size: 14px;
+    line-height: 1.7;
+    margin-bottom: 18px;
+    max-width: 32ch;
+  }
+  .footer-license {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+    line-height: 1.6;
+  }
+  .footer-socials {
+    display: flex;
+    gap: 10px;
+  }
+  .footer-socials a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px; height: 36px;
+    border: 1px solid rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.85);
+    transition: background .15s, border-color .15s, color .15s;
+  }
+  .footer-socials a:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+    color: var(--navy);
+  }
+  .footer-contact {
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .footer-contact p { margin-bottom: 10px; }
+  .footer-contact strong {
+    display: block;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    color: rgba(255,255,255,0.55);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
+  .footer-bottom {
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid rgba(255,255,255,0.08);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 14px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,0.55);
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .footer-bottom-links a { margin-left: 18px; }
+  .footer-bottom-links a:hover { color: var(--gold-soft); }
+
+  /* visually-hidden helper */
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+</style>
+</head>
+<body>
+
+<!-- UTILITY RAIL -->
+<div class="utility-rail" role="complementary" aria-label="Operational status">
+  <div class="container">
+    <div class="util-left">
+      <span class="gsoc-dot" aria-hidden="true"></span>
+      <span>GSOC Online · 24/7 Live Monitoring</span>
+    </div>
+    <div class="util-right">
+      <a href="tel:+15615717983">Call or Text: (561) 571-7983</a>
+    </div>
+  </div>
+</div>
+
+<!-- MAIN NAV -->
+<nav class="main-nav" aria-label="Main">
+  <div class="container">
+    <a class="nav-brand" href="/" aria-label="AYC Security home">
+      <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" />
+      <span class="brand-rule" aria-hidden="true"></span>
+      <span class="brand-text">
+        Est. Boca Raton
+        <span class="gold">Veteran-Owned</span>
+      </span>
+    </a>
+
+    <ul class="nav-center" role="menubar">
+      <li role="none">
+        <a href="#" class="nav-link" role="menuitem" aria-haspopup="true">
+          Services
+          <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
+        <div class="nav-dropdown" role="menu">
+          <a href="/services/ongoing-security" role="menuitem">Ongoing Site Security</a>
+          <a href="/services/disaster-response" role="menuitem">Disaster &amp; Emergency Response</a>
+          <a href="/services/community-events" role="menuitem">Community, Events &amp; Close Protection</a>
+          <a href="/services/energy-industrial" role="menuitem" aria-current="page">Energy &amp; Industrial Security</a>
+          <a href="/services/consulting-training" role="menuitem">Consulting, Training &amp; Procurement</a>
+          <a href="/services/ayc-intelligence" role="menuitem">AYC Intelligence</a>
+        </div>
+      </li>
+      <li role="none"><a href="/industries" class="nav-link" role="menuitem">Industries</a></li>
+      <li role="none">
+        <a href="/about" class="nav-link" role="menuitem" aria-haspopup="true">
+          About
+          <svg class="caret" viewBox="0 0 12 12" aria-hidden="true"><path d="M2 4l4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.5"/></svg>
+        </a>
+        <div class="nav-dropdown" role="menu">
+          <a href="/about" role="menuitem">About AYC Security</a>
+          <a href="/operations-center" role="menuitem">Our Operations Center</a>
+          <a href="/about#leadership" role="menuitem">Our Leadership Team</a>
+        </div>
+      </li>
+      <li role="none"><a href="/careers" class="nav-link" role="menuitem">Careers</a></li>
+      <li role="none"><a href="/contact" class="nav-link" role="menuitem">Contact</a></li>
+    </ul>
+
+    <span class="nav-cta-wrap">
+      <a class="nav-cta" href="/contact">Request a Consultation →</a>
+    </span>
+
+    <button class="nav-hamburger" id="navHamburger" aria-label="Open menu" aria-controls="mobileDrawer" aria-expanded="false">
+      <svg width="22" height="22" viewBox="0 0 22 22" fill="none" aria-hidden="true"><path d="M3 6h16M3 11h16M3 16h16" stroke="currentColor" stroke-width="1.6"/></svg>
+    </button>
+  </div>
+</nav>
+
+<!-- MOBILE DRAWER -->
+<div class="mobile-drawer-overlay" id="drawerOverlay"></div>
+<aside class="mobile-drawer" id="mobileDrawer" aria-label="Mobile navigation" aria-hidden="true">
+  <div class="mobile-drawer-header">
+    <span class="brand-text">AYC Security</span>
+    <button class="mobile-drawer-close" id="drawerClose" aria-label="Close menu">
+      <svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true"><path d="M4 4l14 14M18 4L4 18" stroke="currentColor" stroke-width="1.6"/></svg>
+    </button>
+  </div>
+  <h4>Services</h4>
+  <a class="m-sublink" href="/services/ongoing-security">Ongoing Site Security</a>
+  <a class="m-sublink" href="/services/disaster-response">Disaster &amp; Emergency Response</a>
+  <a class="m-sublink" href="/services/community-events">Community, Events &amp; Close Protection</a>
+  <a class="m-sublink" href="/services/energy-industrial">Energy &amp; Industrial Security</a>
+  <a class="m-sublink" href="/services/consulting-training">Consulting, Training &amp; Procurement</a>
+  <a class="m-sublink" href="/services/ayc-intelligence">AYC Intelligence</a>
+  <h4>Company</h4>
+  <a class="m-link" href="/industries">Industries</a>
+  <a class="m-link" href="/about">About</a>
+  <a class="m-link" href="/operations-center">Operations Center</a>
+  <a class="m-link" href="/careers">Careers</a>
+  <a class="m-link" href="/contact">Contact</a>
+  <a class="btn btn-gold" href="/contact">Request a Consultation →</a>
+</aside>
+
+<!-- SIDE TAB -->
+<a href="/contact" class="side-tab" aria-label="Get in touch">Get in Touch →</a>
+
+<!-- ============ HERO ============ -->
+<section class="hero" aria-labelledby="heroTitle">
+  <div class="hero-bg" role="img" aria-label="Industrial port cranes, replace with real AYC site photo"></div>
+  <div class="hero-overlay" aria-hidden="true"></div>
+  <span class="placeholder-tag">Placeholder · Replace with real AYC site photo</span>
+
+  <div class="container">
+    <div class="hero-left">
+      <p class="breadcrumb">
+        <a href="/services">Services</a>
+        <span class="sep">/</span>
+        Energy &amp; Industrial Security
+      </p>
+      <h1 id="heroTitle">Protecting your<br />critical operations</h1>
+      <p class="hero-sub">Security built for sites that cannot stop</p>
+      <p class="hero-body">
+        AYC provides professional armed and unarmed security for mining operations, maritime ports, energy facilities, factories, and industrial sites. Our personnel are experienced in large-perimeter environments and high-value asset protection. Every deployed officer is GSOC-monitored, every hour, around the clock.
+      </p>
+      <div class="hero-ctas">
+        <a class="btn btn-gold" href="/contact">Request a Consultation →</a>
+        <a class="btn btn-outline-light" href="tel:+15615717983">Call (561) 571-7983</a>
+      </div>
+    </div>
+
+    <aside class="hero-panel" aria-label="Sectors we secure">
+      <p class="panel-label">Sectors we secure</p>
+      <hr class="gold-rule" />
+      <div class="sector-row"><span class="sector-icon" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none"><path d="M2 16L8 10M10 2l6 6-8 8-2-2 6-6-2-2-6 6-2-2z" stroke="#D9B66B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Mining Operations</div>
+      <div class="sector-row"><span class="sector-icon" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none"><circle cx="9" cy="5" r="2" stroke="#D9B66B" stroke-width="1.5"/><path d="M9 7v9M5 13c1.1.9 2.5 1 4 1s2.9-.1 4-1" stroke="#D9B66B" stroke-width="1.5" stroke-linecap="round"/><path d="M3 10h12" stroke="#D9B66B" stroke-width="1.5" stroke-linecap="round"/></svg></span> Maritime Ports &amp; Rail</div>
+      <div class="sector-row"><span class="sector-icon" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none"><path d="M10 2L4 10h5l-1 6 7-8h-5l1-6z" stroke="#D9B66B" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></span> Energy Facilities &amp; Utilities</div>
+      <div class="sector-row"><span class="sector-icon" aria-hidden="true"><svg viewBox="0 0 18 18" fill="none"><path d="M1 16V8l5-3v3l5-3v3l5-3v11H1z" stroke="#D9B66B" stroke-width="1.5" stroke-linejoin="round"/><rect x="4" y="12" width="2" height="4" stroke="#D9B66B" stroke-width="1"/><rect x="8" y="12" width="2" height="4" stroke="#D9B66B" stroke-width="1"/><rect x="12" y="11" width="3" height="5" stroke="#D9B66B" stroke-width="1"/></svg></span> Factories &amp; Industrial Sites</div>
+      <hr class="gold-rule" />
+      <p class="panel-foot">GSOC Monitored · Armed &amp; Unarmed Available</p>
+    </aside>
+  </div>
+</section>
+
+<!-- ============ CALLOUT ============ -->
+<section class="callout" aria-label="Approach">
+  <div class="container">
+    <div class="callout-text">
+      <p>AYC provides security built for industrial environments. Our personnel understand large-site protocols, remote perimeters, and high-value asset protection. Our Global Security Operations Center monitors every deployed officer every hour. And our integrated legal counsel ensures every incident is documented to protect you operationally and legally.</p>
+      <p>Armed and unarmed options available. Nationwide coverage. Short timelines.</p>
+    </div>
+    <div class="callout-image">
+      <img src="https://images.unsplash.com/photo-1755943807913-5f999c562f45?auto=format&fit=crop&w=900&q=80" alt="Industrial construction site, replace with real AYC site photo" />
+      <span class="placeholder-tag">Placeholder · Replace with real AYC site photo</span>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHAT WE SECURE ============ -->
+<section class="what-we-secure" aria-labelledby="whatWeSecureTitle">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="whatWeSecureTitle">What we secure</h2>
+      <p class="sub">AYC has experience across a full range of industrial and energy environments.</p>
+    </div>
+
+    <div class="tab-nav" role="tablist" aria-label="Industrial sectors">
+      <button class="tab-btn" role="tab" id="tab-1" aria-controls="panel-1" aria-selected="true" tabindex="0">Mining &amp; Extraction</button>
+      <button class="tab-btn" role="tab" id="tab-2" aria-controls="panel-2" aria-selected="false" tabindex="-1">Maritime Ports &amp; Rail</button>
+      <button class="tab-btn" role="tab" id="tab-3" aria-controls="panel-3" aria-selected="false" tabindex="-1">Energy &amp; Utilities</button>
+      <button class="tab-btn" role="tab" id="tab-4" aria-controls="panel-4" aria-selected="false" tabindex="-1">Factories &amp; Warehouses</button>
+    </div>
+
+    <div class="tab-panel-wrap">
+
+      <!-- TAB 1 — Mining -->
+      <div class="tab-panel" role="tabpanel" id="panel-1" aria-labelledby="tab-1" aria-hidden="false">
+        <div class="panel-text">
+          <div class="panel-icon" aria-hidden="true">
+            <!-- Pickaxe -->
+            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
+              <path d="M5 31l10-10" />
+              <path d="M14 22l-3-3" />
+              <path d="M5 7c5 2 11 2 16 0M5 7c2 5 2 11 0 16M5 7l16 16" />
+            </svg>
+          </div>
+          <h3>Mining Operations</h3>
+          <p>Mining sites present unique security challenges. Large and often remote perimeters. High-value equipment and extracted materials. Personnel working around the clock in conditions where a coverage gap creates real exposure.</p>
+          <p>AYC has direct experience providing security for active mining operations, including operations in Nevada. Our senior leadership brings firsthand knowledge of mining environments. We understand the operational rhythm of these sites and build security coverage around it.</p>
+          <ul class="panel-services">
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Perimeter security for large and remote sites</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Equipment and materials protection</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Personnel access control</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Armed officers for high-value asset areas</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> GSOC-monitored hourly check-ins</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Incident documentation</li>
+          </ul>
+        </div>
+        <div class="panel-image">
+          <img src="https://images.unsplash.com/photo-1680463990599-9d318aaecf71?auto=format&fit=crop&w=900&q=80" alt="Mining operation open pit, replace with real AYC site photo" />
+          <span class="placeholder-tag">Placeholder · Replace with real AYC mining site photo</span>
+        </div>
+      </div>
+
+      <!-- TAB 2 — Maritime Ports & Rail -->
+      <div class="tab-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" aria-hidden="true">
+        <div class="panel-text">
+          <div class="panel-icon" aria-hidden="true">
+            <!-- Anchor -->
+            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6">
+              <circle cx="18" cy="8" r="3" />
+              <path d="M18 11v19" />
+              <path d="M13 16h10" />
+              <path d="M6 24c2 4 6 6 12 6s10-2 12-6" />
+              <path d="M6 24l-2-2M30 24l2-2" />
+            </svg>
+          </div>
+          <h3>Ports, Maritime Facilities &amp; Rail</h3>
+          <p>Maritime ports, cargo facilities, and rail yards are critical infrastructure and high-value targets for theft, unauthorized access, and disruption. AYC provides security personnel experienced in port environments, supporting access control, cargo protection, perimeter monitoring, and incident response.</p>
+          <p>Our security approach aligns with compliance frameworks including the International Ship and Port Facility Security Code (ISPS) and the Customs-Trade Partnership Against Terrorism (C-TPAT). Our integrated legal counsel provides the regulatory awareness that port security demands.</p>
+          <ul class="panel-services">
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Access control and identity management</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Cargo and vehicle screening support</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Perimeter and waterside monitoring</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> ISPS and C-TPAT compliance awareness</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Incident documentation and response</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Armed and unarmed officer deployment</li>
+          </ul>
+        </div>
+        <div class="panel-image">
+          <img src="https://images.unsplash.com/photo-1735379595209-a8cd4acfb2c1?auto=format&fit=crop&w=900&q=80" alt="Industrial port facility, replace with real AYC site photo" />
+          <span class="placeholder-tag">Placeholder · Replace with real AYC site photo</span>
+        </div>
+      </div>
+
+      <!-- TAB 3 — Energy & Utilities -->
+      <div class="tab-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" aria-hidden="true">
+        <div class="panel-text">
+          <div class="panel-icon" aria-hidden="true">
+            <!-- Lightning bolt -->
+            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="miter">
+              <path d="M20 3L7 20h9l-2 13 13-17h-9l2-13z" />
+            </svg>
+          </div>
+          <h3>Energy Facilities &amp; Utilities</h3>
+          <p>Power plants, pipelines, and utility infrastructure require continuous, protocol-driven security. These facilities operate under strict regulatory frameworks, including requirements from the Nuclear Regulatory Commission and the Department of Energy, and cannot afford a security incident.</p>
+          <p>AYC provides armed and unarmed security personnel experienced in regulated facility environments, supported by GSOC monitoring and integrated legal counsel. We work with your compliance and safety teams to ensure our security approach meets your regulatory obligations.</p>
+          <ul class="panel-services">
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Armed and unarmed security for regulated facilities</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Access control and identity management</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Perimeter protection and patrol</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> NRC and DOE compliance awareness</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Emergency response coordination</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Incident documentation and regulatory reporting</li>
+          </ul>
+        </div>
+        <div class="panel-image">
+          <img src="https://images.unsplash.com/photo-1681504787493-c5e3b8c16813?auto=format&fit=crop&w=900&q=80" alt="Power station facility, replace with real AYC site photo" />
+          <span class="placeholder-tag">Placeholder · Replace with real AYC energy site photo</span>
+        </div>
+      </div>
+
+      <!-- TAB 4 — Factories & Warehouses -->
+      <div class="tab-panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" aria-hidden="true">
+        <div class="panel-text">
+          <div class="panel-icon" aria-hidden="true">
+            <!-- Factory -->
+            <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6">
+              <path d="M4 31V14l9 6V14l9 6V8h7v23H4z" />
+              <path d="M10 25h3M16 25h3M22 25h3M28 25h3" />
+            </svg>
+          </div>
+          <h3>Factories, Warehouses &amp; Industrial Facilities</h3>
+          <p>Manufacturing facilities and warehouses face significant exposure to theft, unauthorized access, and vandalism, particularly overnight and on weekends. AYC provides around-the-clock security calibrated to the operational hours and layout of your facility, with GSOC-monitored hourly officer check-ins ensuring no coverage gaps.</p>
+          <p>From single-site factories to multi-location warehouse networks, we build security coverage that matches your operation.</p>
+          <ul class="panel-services">
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Armed and unarmed officer deployment</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Perimeter patrol and access control</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Overnight and weekend coverage</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> High-value inventory and equipment protection</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> GSOC-monitored hourly GPS check-ins</li>
+            <li><svg class="check" width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5l3 3 7-7" stroke="currentColor" stroke-width="1.8"/></svg> Incident documentation</li>
+          </ul>
+        </div>
+        <div class="panel-image">
+          <img src="https://images.unsplash.com/photo-1755943807913-5f999c562f45?auto=format&fit=crop&w=900&q=80" alt="Industrial facility, replace with real AYC site photo" />
+          <span class="placeholder-tag">Placeholder · Replace with real AYC site photo</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============ GSOC CALLOUT ============ -->
+<section class="gsoc-callout" aria-labelledby="gsocTitle">
+  <div class="container">
+    <div>
+      <h2 id="gsocTitle">Large perimeters<br />require continuous<br />oversight.</h2>
+      <p class="body">Industrial and energy sites cover more ground than any other security environment. A gap in coverage at a remote perimeter point is a gap that gets exploited. AYC's Global Security Operations Center tracks every deployed officer via GPS check-in every hour, verified by a live human operator. Not automated software. Not a morning report. Every post, confirmed, around the clock.</p>
+
+      <div class="gsoc-cards" role="list" aria-label="GSOC response">
+        <div class="gsoc-card" role="listitem">
+          <div class="gsoc-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M20 4C13.373 4 8 9.373 8 16c0 9 12 20 12 20s12-11 12-20c0-6.627-5.373-12-12-12z" stroke="#B8882A" stroke-width="2"/>
+              <circle cx="20" cy="16" r="4" stroke="#B8882A" stroke-width="2"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Officer Check-In</h3>
+            <p>GPS-confirmed. Every hour, on the hour, from every deployed post.</p>
+          </div>
+        </div>
+        <div class="gsoc-card" role="listitem">
+          <div class="gsoc-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none">
+              <rect x="6" y="8" width="28" height="18" rx="2" stroke="#B8882A" stroke-width="2"/>
+              <path d="M14 32h12M20 26v6" stroke="#B8882A" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="20" cy="17" r="3" stroke="#B8882A" stroke-width="2"/>
+              <path d="M12 17c2-3 5-5 8-5s6 2 8 5c-2 3-5 5-8 5s-6-2-8-5z" stroke="#B8882A" stroke-width="1.5"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Live Operator Review</h3>
+            <p>A real person verifies every check-in. Not automated software. Not a morning summary.</p>
+          </div>
+        </div>
+        <div class="gsoc-card" role="listitem">
+          <div class="gsoc-card-icon" aria-hidden="true">
+            <svg viewBox="0 0 40 40" fill="none">
+              <path d="M20 6C15.582 6 12 9.582 12 14v8l-3 4h22l-3-4v-8c0-4.418-3.582-8-8-8z" stroke="#B8882A" stroke-width="2" stroke-linejoin="round"/>
+              <path d="M17 26c0 1.657 1.343 3 3 3s3-1.343 3-3" stroke="#B8882A" stroke-width="2"/>
+            </svg>
+          </div>
+          <div>
+            <h3>Immediate Response</h3>
+            <p>A missed check-in or flagged incident triggers immediate action. Not a report. Action.</p>
+          </div>
+        </div>
+      </div>
+
+      <a class="btn-gsoc" href="/operations-center">Learn more about our Operations Center →</a>
+    </div>
+
+    <div class="stat-panel" aria-label="GSOC coverage statistics">
+      <div class="stat-row">
+        <span class="stat-num">24/7</span>
+        <span class="stat-label">GSOC Monitoring</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-row">
+        <span class="stat-num">365</span>
+        <span class="stat-label">Days a Year</span>
+      </div>
+      <div class="stat-divider" aria-hidden="true"></div>
+      <div class="stat-row">
+        <span class="stat-num">0</span>
+        <span class="stat-label">Unmonitored Posts</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ WHY AYC ============ -->
+<section class="why-ayc" aria-labelledby="whyTitle">
+  <div class="container">
+    <div class="section-head">
+      <h2 id="whyTitle">Why clients choose AYC</h2>
+      <p class="sub why-sub">Built different. Because industrial security demands it.</p>
+    </div>
+
+    <div class="why-grid">
+      <article class="why-card">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M20 6v6" />
+            <path d="M12 14h16" />
+            <path d="M16 14l-6 12M24 14l6 12" />
+            <path d="M6 26h12M22 26h12" />
+            <path d="M20 12v22M14 34h12" />
+          </svg>
+        </div>
+        <h3>Compliance-Aware Operations</h3>
+        <p>AYC is one of the few security firms with general counsel integrated directly in operations. For industrial clients operating under regulatory frameworks, including ports, energy facilities, and mining sites, our security approach is informed by legal awareness from day one. Every incident is documented to meet your compliance requirements.</p>
+      </article>
+
+      <article class="why-card">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M20 4l13 5v9c0 9-6 15-13 18-7-3-13-9-13-18V9l13-5z" />
+            <path d="M20 14l1.8 3.6L26 18l-3 2.9.7 4.1L20 23l-3.7 2 .7-4.1L14 18l4.2-.4L20 14z" />
+          </svg>
+        </div>
+        <h3>Military Backgrounds</h3>
+        <p>AYC's leadership team brings over 150 combined years of military, law enforcement, and security experience. That depth filters into every officer we deploy. Industrial environments demand personnel who understand protocols, can operate independently in remote conditions, and respond effectively when something happens.</p>
+      </article>
+
+      <article class="why-card">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6">
+            <circle cx="20" cy="20" r="3" />
+            <circle cx="20" cy="20" r="9" />
+            <circle cx="20" cy="20" r="15" />
+            <path d="M20 5v6M20 29v6M5 20h6M29 20h6" />
+          </svg>
+        </div>
+        <h3>GSOC Monitoring at Scale</h3>
+        <p>For large perimeters and multi-site operations, GSOC monitoring is not optional. It is how you verify that every post is covered. AYC's operations center confirms every officer's GPS position every hour. You always know coverage is confirmed. Not just assumed.</p>
+      </article>
+
+      <article class="why-card">
+        <div class="icon" aria-hidden="true">
+          <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" stroke-width="1.6">
+            <path d="M20 4c5.5 0 10 4.5 10 10 0 7-10 22-10 22S10 21 10 14c0-5.5 4.5-10 10-10z" />
+            <circle cx="20" cy="14" r="3.5" />
+          </svg>
+        </div>
+        <h3>Nationwide Coverage</h3>
+        <p>AYC operates nationally through direct deployment and a network of vetted regional partners. Whether your site is in Nevada, Texas, Ohio, or anywhere in between, we can provide coverage. Active licenses in FL, NV, OH, TN, and TX, with national reach through partners.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="how-it-works" aria-labelledby="howTitle">
+  <div class="container">
+    <h2 id="howTitle">How it works</h2>
+    <div class="steps">
+      <article class="step">
+        <div class="step-num">01</div>
+        <h3>Consult</h3>
+        <p>Tell us about your site, your current security challenges, and your requirements. We ask the right questions, including shift patterns, access points, and any regulatory obligations, to understand your environment before we build a plan.</p>
+      </article>
+      <article class="step">
+        <div class="step-num">02</div>
+        <h3>Assess &amp; Plan</h3>
+        <p>We conduct a thorough assessment of your site and develop a security plan tailored to your operation. Armed or unarmed. Single site or multi-location. Continuous or shift-based coverage. Not a template. A plan built around your specific facility.</p>
+      </article>
+      <article class="step">
+        <div class="step-num">03</div>
+        <h3>Deploy &amp; Monitor</h3>
+        <p>We deploy and activate GSOC monitoring from day one. Every officer checks in every hour. You have a direct line to our team. We communicate proactively and provide documentation throughout the engagement. You will never need to chase us down for a situation update.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ TESTIMONIALS ============ -->
+<section class="testimonials" aria-labelledby="testTitle">
+  <div class="container">
+    <h2 id="testTitle">What our clients say</h2>
+    <div class="test-grid">
+      <article class="test-card">
+        <p class="test-quote">Security at an active mining site requires personnel who understand the environment and operate without oversight every time. AYC provided consistent, professional coverage across a large remote perimeter. No gaps. No incidents we were not immediately informed of. The GSOC monitoring gave us real confidence that coverage was continuous.</p>
+        <div class="test-rule" aria-hidden="true"></div>
+        <div class="test-name">Name Pending · Client Quote to be Confirmed</div>
+        <div class="test-role">Director of Operations, Mining Operation, Nevada</div>
+      </article>
+      <article class="test-card">
+        <p class="test-quote">We needed a security provider who understood our compliance obligations, not just our physical perimeter. AYC's approach to incident documentation and their legal awareness made a real difference. When an issue came up, the paperwork was already in order.</p>
+        <div class="test-rule" aria-hidden="true"></div>
+        <div class="test-name">Name Pending · Client Quote to be Confirmed</div>
+        <div class="test-role">VP of Security, Industrial Facility</div>
+      </article>
+    </div>
+    <p class="test-note">Placeholder testimonials to be updated with confirmed client quotes before launch.</p>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section class="faq" aria-labelledby="faqTitle">
+  <div class="container">
+    <h2 id="faqTitle">Common questions</h2>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <button class="faq-q" aria-expanded="true">
+          Does AYC provide armed security for industrial and mining sites?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">Yes. Armed and unarmed options are available. The appropriate deployment depends on your site type, risk profile, and any jurisdictional requirements. We work through this with you during the site assessment.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Can AYC monitor security across large or remote perimeters?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">Yes. AYC's Global Security Operations Center tracks every deployed officer via GPS check-in every hour, confirmed by a live human operator. For large industrial sites and remote mining operations, this provides the continuous verification that local supervision alone cannot.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Is AYC familiar with port and energy sector regulatory requirements?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">Yes. AYC is aware of the compliance frameworks governing port operations (ISPS Code, C-TPAT) and energy facilities (NRC, DOE requirements). Our integrated legal counsel provides ongoing awareness that informs our security approach and incident documentation in regulated environments.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Can AYC provide security across multiple sites or locations?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">Yes. AYC works with clients operating single facilities and multi-site industrial portfolios. We coordinate coverage across locations and provide consistent GSOC monitoring regardless of the number or distribution of sites.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Does AYC operate in states with major industrial and energy activity?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">AYC holds active licenses in Florida, Nevada, Ohio, Tennessee, and Texas, all states with significant energy, mining, and industrial operations. Nationally, we operate through direct deployment and vetted regional partners.</div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What documentation does AYC provide for industrial security engagements?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a">AYC provides thorough incident documentation throughout every engagement, informed by our integrated general counsel. For regulated facilities, this documentation is designed to support your compliance reporting obligations and protect your organization operationally and legally.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FINAL CTA ============ -->
+<section class="final-cta" aria-labelledby="ctaTitle">
+  <div class="container">
+    <div>
+      <h2 id="ctaTitle">Ready to secure your site?</h2>
+      <p class="sub">Nationwide Coverage.</p>
+      <p class="body">Tell us about your facility, your current security situation, and your timeline. We will tell you what we can do.</p>
+      <a class="btn btn-gold" href="/contact">Request a Consultation →</a>
+    </div>
+    <div class="final-right">
+      <h3>Connect With Our Team</h3>
+      <a class="final-phone" href="tel:+15615717983">(561) 571-7983</a>
+      <div class="contact-grid">
+        <a class="contact-btn" href="tel:+15615717983">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M4 2h3l2 4-2 1c1 2 3 4 5 5l1-2 4 2v3c0 .5-.5 1-1 1C8 16 2 10 2 3c0-.5.5-1 1-1z" stroke="currentColor" stroke-width="1.4"/></svg>
+          Call
+        </a>
+        <a class="contact-btn" href="sms:+15615717983">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 3h14v10H7l-4 3V3z" stroke="currentColor" stroke-width="1.4"/></svg>
+          Text
+        </a>
+        <a class="contact-btn" href="/cdn-cgi/l/email-protection#20434f4e54414354604159435345435552450e434f4d">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M2 4h14v10H2zM2 4l7 6 7-6" stroke="currentColor" stroke-width="1.4"/></svg>
+          Email
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FOOTER ============ -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div class="footer-col footer-brand">
+        <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" />
+        <p class="footer-desc">AYC Security USA, a veteran-owned private security firm headquartered in Boca Raton, Florida. 24/7 Global Security Operations Center.</p>
+        <p class="footer-license">Licensed &amp; Insured Nationally · Operating Across the United States</p>
+        <div class="footer-socials">
+          <a href="https://www.linkedin.com/company/ayc-security/" aria-label="LinkedIn" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M3.5 2a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3zM2 6h3v8H2zM6 6h3v1.2c.5-.8 1.4-1.4 2.7-1.4 2 0 2.8 1.3 2.8 3.3V14h-3V9.8c0-1-.4-1.6-1.3-1.6-.9 0-1.4.6-1.4 1.6V14H6V6z"/></svg>
+          </a>
+          <a href="https://www.facebook.com/aycsecure/" aria-label="Facebook" target="_blank" rel="noopener">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M10 5h2V2h-2.4C7.6 2 6 3.5 6 5.5V7H4v3h2v6h3v-6h2l.4-3H9V6c0-.6.3-1 1-1z"/></svg>
+          </a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="/services/ongoing-security">Ongoing Site Security</a></li>
+          <li><a href="/services/disaster-response">Disaster &amp; Emergency Response</a></li>
+          <li><a href="/services/community-events">Community, Events &amp; Close Protection</a></li>
+          <li><a href="/services/energy-industrial">Energy &amp; Industrial Security</a></li>
+          <li><a href="/services/consulting-training">Consulting, Training &amp; Procurement</a></li>
+          <li><a href="/services/ayc-intelligence">AYC Intelligence</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/operations-center">Operations Center</a></li>
+          <li><a href="/industries">Industries</a></li>
+          <li><a href="/careers">Careers</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col footer-contact">
+        <h4>Contact</h4>
+        <p><strong>Phone</strong><a href="tel:+15615717983">(561) 571-7983</a></p>
+        <p><strong>Email</strong><a href="/cdn-cgi/l/email-protection#1d7e7273697c7e695d7c647e6e787e686f78337e7270"><span class="__cf_email__" data-cfemail="1d7e7273697c7e695d7c647e6e787e686f78337e7270">[email&#160;protected]</span></a></p>
+        <p><strong>Florida HQ</strong>Boca Raton, FL</p>
+        <p><strong>Ohio Office</strong>Cleveland, OH</p>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <span>© 2026 AYC Security · Licenses: FL B&nbsp;2300012 · NV PILB&nbsp;2349 · OH&nbsp;202312 · TN&nbsp;3217 · TX&nbsp;C24151</span>
+      <span class="footer-bottom-links">
+        <a href="/privacy">Privacy</a>
+        <a href="/terms">Terms</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Mobile drawer
+  (function() {
+    const ham = document.getElementById('navHamburger');
+    const drawer = document.getElementById('mobileDrawer');
+    const overlay = document.getElementById('drawerOverlay');
+    const close = document.getElementById('drawerClose');
+    function open() {
+      drawer.classList.add('open');
+      overlay.classList.add('open');
+      drawer.setAttribute('aria-hidden', 'false');
+      ham.setAttribute('aria-expanded', 'true');
+    }
+    function shut() {
+      drawer.classList.remove('open');
+      overlay.classList.remove('open');
+      drawer.setAttribute('aria-hidden', 'true');
+      ham.setAttribute('aria-expanded', 'false');
+    }
+    ham.addEventListener('click', open);
+    close.addEventListener('click', shut);
+    overlay.addEventListener('click', shut);
+  })();
+
+  // Tabs
+  (function() {
+    const tabs = document.querySelectorAll('.tab-btn');
+    const panels = document.querySelectorAll('.tab-panel');
+    tabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        tabs.forEach(t => {
+          t.setAttribute('aria-selected', 'false');
+          t.setAttribute('tabindex', '-1');
+        });
+        panels.forEach(p => p.setAttribute('aria-hidden', 'true'));
+        tab.setAttribute('aria-selected', 'true');
+        tab.setAttribute('tabindex', '0');
+        const panelId = tab.getAttribute('aria-controls');
+        document.getElementById(panelId).setAttribute('aria-hidden', 'false');
+      });
+      tab.addEventListener('keydown', (e) => {
+        const arr = Array.from(tabs);
+        const idx = arr.indexOf(tab);
+        if (e.key === 'ArrowRight') {
+          e.preventDefault();
+          arr[(idx + 1) % arr.length].focus();
+          arr[(idx + 1) % arr.length].click();
+        } else if (e.key === 'ArrowLeft') {
+          e.preventDefault();
+          arr[(idx - 1 + arr.length) % arr.length].focus();
+          arr[(idx - 1 + arr.length) % arr.length].click();
+        }
+      });
+    });
+  })();
+
+  // FAQ accordion
+  (function() {
+    const items = document.querySelectorAll('.faq-item');
+    items.forEach(item => {
+      const btn = item.querySelector('.faq-q');
+      btn.addEventListener('click', () => {
+        const isOpen = item.classList.toggle('open');
+        btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
