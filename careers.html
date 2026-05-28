@@ -1,0 +1,1758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Security Careers &amp; Jobs | AYC Security USA</title>
+<meta name="description" content="Join AYC Security — a veteran-owned private security firm. We are always hiring security officers, armed guards, and supervisors in Florida, Nevada, Ohio, Tennessee, and Texas. Apply online." />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --cream: #F8F5F0;
+    --cream-2: #EFEBE3;
+    --paper: #FFFFFF;
+    --navy: #0E1C2B;
+    --navy-2: #0A1622;
+    --forest: #1C3D35;
+    --gold: #B8882A;
+    --gold-deep: #98701F;
+    --gold-soft: #D9B66B;
+    --ink: #2A2A28;
+    --ink-soft: #5A5A56;
+    --rule: #E4DED2;
+    --rule-strong: #CFC6B3;
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    margin: 0;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    background: var(--cream);
+    color: var(--ink);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; text-decoration: none; }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  .container-wide {
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* ============ BUTTONS ============ */
+  .btn-gold {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 18px 26px;
+    border: 1px solid var(--gold);
+    cursor: pointer;
+    transition: background 160ms ease, border-color 160ms ease, color 160ms ease;
+  }
+  .btn-gold:hover {
+    background: var(--gold-deep);
+    border-color: var(--gold-deep);
+  }
+
+  .btn-outline-navy {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: transparent;
+    color: var(--navy);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 18px 26px;
+    border: 1px solid var(--navy);
+    cursor: pointer;
+    transition: background 160ms ease, color 160ms ease;
+  }
+  .btn-outline-navy:hover { background: var(--navy); color: #fff; }
+
+  .btn-outline-light {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: transparent;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 18px 26px;
+    border: 1px solid rgba(255,255,255,0.6);
+    cursor: pointer;
+    transition: background 160ms ease, color 160ms ease, border-color 160ms ease;
+  }
+  .btn-outline-light:hover { background: #fff; color: var(--navy); border-color: #fff; }
+
+  /* ============ UTILITY RAIL ============ */
+  .utility-rail {
+    background: var(--navy-2);
+    height: 36px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.72);
+  }
+  .utility-rail .container-wide {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .utility-rail-left {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .pulse-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--gold);
+    position: relative;
+    box-shadow: 0 0 0 0 rgba(184,136,42,0.7);
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(184,136,42,0.6); }
+    70% { box-shadow: 0 0 0 8px rgba(184,136,42,0); }
+    100% { box-shadow: 0 0 0 0 rgba(184,136,42,0); }
+  }
+  .utility-rail a:hover { color: var(--gold-soft); }
+
+  @media (max-width: 900px) { .utility-rail { display: none; } }
+
+  /* ============ MAIN NAV ============ */
+  .main-nav {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: var(--navy);
+    height: 84px;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .main-nav .container-wide {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    gap: 24px;
+  }
+  .nav-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .nav-logo { height: 44px; width: auto; display: block; }
+  .nav-rule {
+    width: 1px;
+    height: 36px;
+    background: rgba(255,255,255,0.18);
+  }
+  .brand-mark {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.62);
+    line-height: 1.5;
+    letter-spacing: 0.06em;
+  }
+  .brand-mark .gold { color: var(--gold-soft); }
+
+  .nav-center {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #fff;
+  }
+  .nav-item {
+    position: relative;
+    padding: 30px 0;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.92);
+    transition: color 160ms ease;
+  }
+  .nav-item:hover { color: var(--gold-soft); }
+  .nav-item[aria-current="page"] { color: var(--gold-soft); }
+  .nav-item .caret {
+    width: 8px;
+    height: 8px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg) translateY(-2px);
+  }
+
+  .nav-dropdown {
+    position: absolute;
+    top: 100%;
+    left: -16px;
+    background: var(--navy-2);
+    min-width: 320px;
+    padding: 12px 0;
+    border: 1px solid rgba(255,255,255,0.08);
+    border-top: 2px solid var(--gold);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(6px);
+    transition: opacity 160ms, transform 160ms, visibility 160ms;
+    z-index: 60;
+  }
+  .nav-item:hover .nav-dropdown,
+  .nav-item:focus-within .nav-dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .nav-dropdown a {
+    display: block;
+    padding: 12px 22px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 0.02em;
+    text-transform: none;
+    color: rgba(255,255,255,0.82);
+    border-left: 2px solid transparent;
+    transition: background 140ms, color 140ms, border-color 140ms;
+  }
+  .nav-dropdown a:hover {
+    background: rgba(255,255,255,0.03);
+    color: var(--gold-soft);
+    border-left-color: var(--gold);
+  }
+
+  .nav-cta {
+    background: var(--gold);
+    color: var(--navy);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.14em;
+    padding: 14px 22px;
+    border: 1px solid var(--gold);
+    transition: all 160ms ease;
+    cursor: pointer;
+  }
+  .nav-cta:hover {
+    background: transparent;
+    color: var(--gold-soft);
+    border-color: var(--gold-soft);
+  }
+
+  .hamburger {
+    display: none;
+    background: transparent;
+    border: none;
+    width: 44px;
+    height: 44px;
+    cursor: pointer;
+    padding: 0;
+    color: #fff;
+  }
+  .hamburger span {
+    display: block;
+    width: 26px;
+    height: 2px;
+    background: currentColor;
+    margin: 6px auto;
+    transition: transform 200ms, opacity 200ms;
+  }
+
+  @media (max-width: 1180px) {
+    .nav-center { gap: 20px; font-size: 13px; }
+  }
+  @media (max-width: 1040px) {
+    .nav-center { gap: 14px; font-size: 12px; letter-spacing: 0.1em; }
+    .brand-mark { display: none; }
+    .nav-rule { display: none; }
+  }
+  @media (max-width: 900px) {
+    .main-nav { height: 64px; }
+    .nav-logo { height: 36px; }
+    .nav-rule, .brand-mark { display: none; }
+    .nav-center, .nav-cta { display: none; }
+    .hamburger { display: block; }
+  }
+
+  /* ============ MOBILE TAP-TO-CALL BAR ============ */
+  .mobile-tap-call {
+    display: none;
+    background: var(--gold);
+    color: var(--navy);
+    padding: 12px 16px;
+    text-align: center;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  @media (max-width: 900px) {
+    .mobile-tap-call { display: block; }
+  }
+
+  /* ============ MOBILE BOTTOM STRIP ============ */
+  .mobile-bottom-strip {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 80;
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,0.1);
+  }
+  .mobile-bottom-strip .grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .mobile-bottom-strip a {
+    padding: 14px 4px;
+    text-align: center;
+    color: var(--gold-soft);
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .mobile-bottom-strip a:last-child { border-right: none; }
+  @media (max-width: 900px) {
+    .mobile-bottom-strip { display: block; }
+    body { padding-bottom: 52px; }
+  }
+
+  /* ============ MOBILE DRAWER ============ */
+  .mobile-drawer {
+    position: fixed;
+    inset: 0;
+    background: var(--navy);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    transform: translateX(100%);
+    transition: transform 280ms ease;
+    overflow-y: auto;
+  }
+  .mobile-drawer.open { transform: translateX(0); }
+  .mobile-drawer-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 32px;
+  }
+  .mobile-drawer-close {
+    background: transparent;
+    border: none;
+    color: #fff;
+    width: 44px;
+    height: 44px;
+    font-size: 28px;
+    cursor: pointer;
+  }
+  .mobile-drawer nav {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 32px;
+  }
+  .mobile-drawer nav a {
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 18px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 14px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .mobile-drawer nav a:hover { color: var(--gold-soft); }
+  .mobile-drawer .btn-gold { width: 100%; }
+
+  /* ============ SIDE TAB ============ */
+  .side-tab {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    background: var(--gold);
+    color: var(--navy);
+    writing-mode: vertical-rl;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    padding: 18px 12px;
+    cursor: pointer;
+    border: none;
+    z-index: 40;
+    transition: background 160ms;
+  }
+  .side-tab:hover { background: var(--gold-deep); }
+  @media (max-width: 900px) { .side-tab { display: none; } }
+
+  /* ============ SLIDEOUT PANEL ============ */
+  .slideout {
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh;
+    width: 420px;
+    max-width: 100vw;
+    background: var(--paper);
+    z-index: 110;
+    transform: translateX(100%);
+    transition: transform 320ms ease;
+    box-shadow: -16px 0 48px rgba(14,28,43,0.18);
+    overflow-y: auto;
+    padding: 36px 32px;
+  }
+  .slideout.open { transform: translateX(0); }
+  .slideout-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(14,28,43,0.5);
+    z-index: 105;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 220ms, visibility 220ms;
+  }
+  .slideout-overlay.open { opacity: 1; visibility: visible; }
+  .slideout-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: transparent;
+    border: none;
+    color: var(--ink);
+    width: 36px;
+    height: 36px;
+    font-size: 22px;
+    cursor: pointer;
+  }
+  .slideout h3 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: 22px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--navy);
+    margin: 0 0 8px;
+  }
+  .slideout p { font-size: 14px; color: var(--ink-soft); margin: 0 0 24px; }
+  .slideout .form-row { margin-bottom: 14px; }
+  .slideout label {
+    display: block;
+    font-weight: 500;
+    font-size: 13px;
+    margin-bottom: 6px;
+  }
+  .slideout input, .slideout textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--rule-strong);
+    background: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+  }
+  .slideout textarea { min-height: 90px; resize: vertical; }
+  .slideout .btn-gold { width: 100%; margin-top: 8px; }
+
+  /* ============ PAGE HEADER ============ */
+  .page-header {
+    background: var(--paper);
+    padding: 48px 0 40px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .breadcrumb {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin-bottom: 22px;
+  }
+  .breadcrumb a:hover { color: var(--gold); }
+  .page-title {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 600;
+    font-size: clamp(32px, 4vw, 52px);
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 10px;
+    line-height: 1.05;
+  }
+  .page-tagline {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: var(--gold);
+    margin: 0;
+  }
+
+  /* ============ MAIN TWO-COLUMN ============ */
+  .main-section {
+    background: var(--cream);
+    padding: clamp(72px, 9vw, 112px) 0;
+  }
+  .main-grid {
+    display: grid;
+    grid-template-columns: 60fr 40fr;
+    gap: 0;
+  }
+  @media (max-width: 960px) {
+    .main-grid { grid-template-columns: 1fr; }
+  }
+
+  .form-headline {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: clamp(26px, 3vw, 36px);
+    color: var(--navy);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    margin: 0 0 8px;
+    line-height: 1.1;
+  }
+  .form-subtext {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--ink-soft);
+    margin: 0 0 36px;
+    max-width: 540px;
+  }
+
+  /* ============ SERVICE PILLS ============ */
+  .pills-label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 12px;
+    display: block;
+  }
+  .pills {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 32px;
+  }
+  .pill {
+    border: 1px solid var(--rule-strong);
+    background: #fff;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    padding: 10px 18px;
+    cursor: pointer;
+    transition: background 140ms, color 140ms, border-color 140ms;
+  }
+  .pill:hover { border-color: var(--navy); }
+  .pill.selected {
+    background: var(--navy);
+    color: #fff;
+    border-color: var(--navy);
+  }
+  .pill:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 2px;
+  }
+
+  /* ============ FORM FIELDS ============ */
+  .field-group {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 18px;
+    margin-bottom: 8px;
+  }
+  .field-group .field--full { grid-column: 1 / -1; }
+  @media (max-width: 640px) {
+    .field-group { grid-template-columns: 1fr; }
+  }
+
+  .field { display: flex; flex-direction: column; margin-bottom: 0; }
+  .field label {
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    color: var(--ink);
+    margin-bottom: 6px;
+    display: block;
+  }
+  .field input,
+  .field textarea,
+  .field select {
+    background: #fff;
+    border: 1px solid var(--rule-strong);
+    padding: 14px 16px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--ink);
+    width: 100%;
+    transition: border-color 140ms, box-shadow 140ms;
+    border-radius: 0;
+    -webkit-appearance: none;
+    appearance: none;
+  }
+  .field select {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'><path d='M1 1l5 5 5-5' stroke='%232A2A28' stroke-width='1.5' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right 16px center;
+    padding-right: 44px;
+  }
+  .field textarea { min-height: 140px; resize: vertical; }
+  .field input:focus,
+  .field textarea:focus,
+  .field select:focus {
+    outline: none;
+    border-color: var(--gold);
+    box-shadow: 0 0 0 3px rgba(184,136,42,0.12);
+  }
+
+  /* Careers submit + form-note */
+  .careers-submit { margin-top: 24px; }
+  .form-note {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.08em;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+
+  /* ============ CAREERS SIDE PANEL ============ */
+  .careers-side {
+    padding-left: clamp(40px, 5vw, 72px);
+    border-left: 1px solid var(--rule);
+  }
+  @media (max-width: 960px) {
+    .careers-side {
+      padding-left: 0;
+      border-left: none;
+      border-top: 1px solid var(--rule);
+      padding-top: 48px;
+      margin-top: 48px;
+    }
+  }
+  .careers-side__h2 {
+    font-family: 'Oswald', sans-serif;
+    font-weight: 700;
+    font-size: clamp(22px, 2.5vw, 30px);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink);
+    margin: 0 0 12px;
+  }
+  .careers-side__intro {
+    font-family: 'Inter', sans-serif;
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.7;
+    margin: 0 0 28px;
+  }
+  .careers-checklist {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 36px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+  .careers-checklist li {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .careers-check {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 3px;
+  }
+  .careers-checklist li span {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+  }
+  .veteran-callout {
+    background: var(--navy);
+    padding: 28px 28px 24px;
+    border-left: 3px solid var(--gold);
+  }
+  .veteran-callout__label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    margin: 0 0 12px;
+  }
+  .veteran-callout__body {
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: rgba(255,255,255,0.85);
+    line-height: 1.7;
+    margin: 0 0 14px;
+  }
+  .veteran-callout__contact {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.6);
+    margin: 0;
+  }
+  .veteran-callout__contact a {
+    color: var(--gold-soft);
+    text-decoration: none;
+  }
+  .veteran-callout__contact a:hover { text-decoration: underline; }
+
+  /* ============ FINAL CTA ============ */
+  .final-cta {
+    background: var(--navy);
+    border-top: 4px solid var(--gold);
+    padding: clamp(72px, 9vw, 110px) 0;
+  }
+
+  /* ============ FOOTER ============ */
+  footer {
+    background: var(--navy-2);
+    padding: 72px 0 36px;
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    line-height: 1.7;
+  }
+
+  /* Hide visually but keep for screen readers */
+  .sr-only {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  /* Form sections */
+  .form-section {
+    border-top: 1px solid var(--rule);
+    padding-top: 28px;
+    margin-top: 28px;
+  }
+  .form-section-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    display: block;
+    margin-bottom: 20px;
+  }
+  .field-row-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  @media (max-width: 640px) { .field-row-2 { grid-template-columns: 1fr; } }
+
+  /* Shift checkboxes */
+  .shift-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 24px;
+    margin-top: 10px;
+  }
+  .shift-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-family: 'Inter', sans-serif;
+    font-size: 15px;
+    color: var(--ink-soft);
+    cursor: pointer;
+  }
+  .shift-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--gold);
+    flex-shrink: 0;
+    cursor: pointer;
+  }
+
+  /* Consent block */
+  .consent-block {
+    background: var(--cream-2);
+    border: 1px solid var(--rule-strong);
+    border-left: 3px solid var(--gold);
+    padding: 20px 22px;
+    margin-top: 28px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+  .consent-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.65;
+    cursor: pointer;
+  }
+  .consent-item input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--gold);
+    flex-shrink: 0;
+    margin-top: 2px;
+    cursor: pointer;
+  }
+
+  /* File upload */
+  .file-hint {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: var(--ink-soft);
+    letter-spacing: 0.04em;
+    margin-top: 6px;
+    display: block;
+  }
+  input[type="file"] {
+    width: 100%;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: var(--ink);
+    padding: 10px 0;
+    cursor: pointer;
+  }
+
+  /* Why Join AYC section */
+  .careers-divider {
+    border-top: 1px solid var(--rule);
+    margin: 32px 0;
+  }
+
+  /* ============ FOOTER RESPONSIVE ============ */
+  @media (max-width: 900px) {
+    .footer-responsive-grid {
+      grid-template-columns: 1fr 1fr !important;
+      gap: 36px !important;
+    }
+  }
+  @media (max-width: 600px) {
+    .footer-responsive-grid {
+      grid-template-columns: 1fr !important;
+    }
+  }
+  @media (max-width: 760px) {
+    .final-grid {
+      grid-template-columns: 1fr !important;
+      gap: 32px !important;
+    }
+    .final-right {
+      border-left: none !important;
+      padding-left: 0 !important;
+      border-top: 1px solid rgba(255,255,255,0.22);
+      padding-top: 32px !important;
+    }
+  }
+</style>
+</head>
+<body>
+
+  <!-- UTILITY RAIL -->
+  <div class="utility-rail" role="complementary" aria-label="Status and contact">
+    <div class="container-wide">
+      <div class="utility-rail-left">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        <span>GSOC Online · 24/7 Live Monitoring</span>
+      </div>
+      <div class="utility-rail-right">
+        <a href="tel:+15615717983" aria-label="Call or text 5 6 1 5 7 1 7 9 8 3">Call or Text: (561) 571-7983</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAV -->
+  <header class="main-nav" role="banner">
+    <div class="container-wide">
+      <div class="nav-left">
+        <a href="index.html" aria-label="AYC Security home">
+          <img class="nav-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" />
+        </a>
+        <div class="nav-rule" aria-hidden="true"></div>
+        <div class="brand-mark">
+          Est. Boca Raton<br/>
+          <span class="gold">Veteran-Owned</span>
+        </div>
+      </div>
+
+      <nav class="nav-center" aria-label="Main">
+        <div class="nav-item" tabindex="0" role="button" aria-haspopup="true">
+          <span>Services</span>
+          <span class="caret" aria-hidden="true"></span>
+          <div class="nav-dropdown" role="menu">
+            <a href="/services/ongoing-security" role="menuitem">Ongoing Site Security</a>
+            <a href="/services/disaster-response" role="menuitem">Disaster &amp; Emergency Response</a>
+            <a href="/services/community-events" role="menuitem">Community, Events &amp; Close Protection</a>
+            <a href="/services/energy-industrial" role="menuitem">Energy &amp; Industrial Security</a>
+            <a href="/services/consulting-training" role="menuitem">Consulting, Training &amp; Procurement</a>
+            <a href="/services/ayc-intelligence" role="menuitem">AYC Intelligence</a>
+          </div>
+        </div>
+        <a class="nav-item" href="/industries">Industries</a>
+        <div class="nav-item" tabindex="0" role="button" aria-haspopup="true">
+          <span>About</span>
+          <span class="caret" aria-hidden="true"></span>
+          <div class="nav-dropdown" role="menu">
+            <a href="/about" role="menuitem">About AYC Security</a>
+            <a href="/operations-center" role="menuitem">Our Operations Center</a>
+            <a href="/about#leadership" role="menuitem">Our Leadership Team</a>
+          </div>
+        </div>
+        <a class="nav-item" href="careers.html" aria-current="page">Careers</a>
+        <a class="nav-item" href="/contact">Contact</a>
+      </nav>
+
+      <a class="nav-cta" href="#careers-form">Apply Now →</a>
+
+      <button class="hamburger" id="hamburger" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- MOBILE TAP-TO-CALL -->
+  <a class="mobile-tap-call" href="tel:+15615717983" aria-label="Tap to call (561) 571-7983">Tap to Call — (561) 571-7983</a>
+
+  <!-- MOBILE DRAWER -->
+  <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu" aria-hidden="true">
+    <div class="mobile-drawer-head">
+      <img class="nav-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" />
+      <button class="mobile-drawer-close" id="drawer-close" aria-label="Close menu">✕</button>
+    </div>
+    <nav aria-label="Mobile main">
+      <a href="/services/ongoing-security">Ongoing Site Security</a>
+      <a href="/services/disaster-response">Disaster Response</a>
+      <a href="/services/community-events">Community &amp; Events</a>
+      <a href="/services/energy-industrial">Energy &amp; Industrial</a>
+      <a href="/services/consulting-training">Consulting &amp; Training</a>
+      <a href="/services/ayc-intelligence">AYC Intelligence</a>
+      <a href="/industries">Industries</a>
+      <a href="/about">About</a>
+      <a href="/operations-center">Operations Center</a>
+      <a href="careers.html">Careers</a>
+      <a href="/contact">Contact</a>
+    </nav>
+    <a class="btn-gold" href="#careers-form">Apply Now →</a>
+  </div>
+
+  <!-- SIDE TAB -->
+  <button class="side-tab" id="side-tab" aria-label="Open quick contact form">Get in Touch →</button>
+
+  <!-- SLIDEOUT PANEL -->
+  <div class="slideout-overlay" id="slideout-overlay"></div>
+  <aside class="slideout" id="slideout" aria-label="Quick contact form" aria-hidden="true">
+    <button class="slideout-close" id="slideout-close" aria-label="Close form">✕</button>
+    <h3>Quick Contact</h3>
+    <p>Send a brief message and we'll respond promptly.</p>
+    <div class="form-row">
+      <label for="qc-name">Name</label>
+      <input id="qc-name" type="text" autocomplete="name" />
+    </div>
+    <div class="form-row">
+      <label for="qc-email">Email</label>
+      <input id="qc-email" type="email" autocomplete="email" />
+    </div>
+    <div class="form-row">
+      <label for="qc-phone">Phone (optional)</label>
+      <input id="qc-phone" type="tel" autocomplete="tel" />
+    </div>
+    <div class="form-row">
+      <label for="qc-msg">How can we help?</label>
+      <textarea id="qc-msg"></textarea>
+    </div>
+    <button class="btn-gold" type="button">Send Message →</button>
+  </aside>
+
+  <!-- ━━━━━━━━━━ PAGE HEADER ━━━━━━━━━━ -->
+  <section class="page-header" aria-labelledby="page-title">
+    <div class="container">
+      <div class="breadcrumb">
+        <a href="index.html">Home</a> / Careers
+      </div>
+      <h1 id="page-title" class="page-title">Careers at AYC Security</h1>
+      <p class="page-tagline">Protecting with Pride. Serving with Strength.</p>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━ MAIN TWO-COLUMN ━━━━━━━━━━ -->
+  <section class="main-section">
+    <div class="container">
+      <div class="main-grid">
+
+        <!-- LEFT: APPLICATION FORM -->
+        <div class="careers-form-col">
+          <form id="careers-form" action="mailto:info@aycsecurity.com" method="post" enctype="text/plain" novalidate>
+
+            <h2 class="form-headline">Apply to Join Our Team</h2>
+            <p class="form-subtext">
+              We are always looking for qualified, committed security professionals.
+              Fill out the form below and a member of our team will be in touch.
+              Fields marked * are required.
+            </p>
+
+            <span id="role-label" class="pills-label">I am interested in (select all that apply)</span>
+            <div class="pills" role="group" aria-labelledby="role-label">
+              <button type="button" class="pill" role="checkbox" aria-checked="false">Uniformed Security Officer</button>
+              <button type="button" class="pill" role="checkbox" aria-checked="false">Armed Security Officer</button>
+              <button type="button" class="pill" role="checkbox" aria-checked="false">Supervisor Role</button>
+              <button type="button" class="pill" role="checkbox" aria-checked="false">Administrative</button>
+              <button type="button" class="pill" role="checkbox" aria-checked="false">Other</button>
+            </div>
+
+            <!-- SECTION 1: PERSONAL INFORMATION -->
+            <div class="form-section">
+              <span class="form-section-label">Personal Information</span>
+              <div class="field-group">
+
+                <div class="field-row-2">
+                  <div class="field">
+                    <label for="first-name">First Name<span aria-hidden="true">*</span></label>
+                    <input type="text" id="first-name" name="first_name" required autocomplete="given-name" />
+                  </div>
+                  <div class="field">
+                    <label for="last-name">Last Name<span aria-hidden="true">*</span></label>
+                    <input type="text" id="last-name" name="last_name" required autocomplete="family-name" />
+                  </div>
+                </div>
+
+                <div class="field-row-2">
+                  <div class="field">
+                    <label for="email">Email Address<span aria-hidden="true">*</span></label>
+                    <input type="email" id="email" name="email" required autocomplete="email" />
+                  </div>
+                  <div class="field">
+                    <label for="phone">Phone Number<span aria-hidden="true">*</span></label>
+                    <input type="tel" id="phone" name="phone" required autocomplete="tel" />
+                  </div>
+                </div>
+
+                <div class="field-row-2">
+                  <div class="field">
+                    <label for="dob">Date of Birth<span aria-hidden="true">*</span>
+                      <span style="font-weight:400;font-size:12px;color:var(--ink-soft)"> — required for background check</span>
+                    </label>
+                    <input type="date" id="dob" name="dob" required />
+                  </div>
+                  <div class="field">
+                    <label for="state">State You Would Like to Work In<span aria-hidden="true">*</span></label>
+                    <select id="state" name="state" required>
+                      <option value="" disabled selected>Select a state</option>
+                      <option>Alabama</option><option>Alaska</option><option>Arizona</option>
+                      <option>Arkansas</option><option>California</option><option>Colorado</option>
+                      <option>Connecticut</option><option>Delaware</option>
+                      <option>District of Columbia</option><option>Florida</option>
+                      <option>Georgia</option><option>Hawaii</option><option>Idaho</option>
+                      <option>Illinois</option><option>Indiana</option><option>Iowa</option>
+                      <option>Kansas</option><option>Kentucky</option><option>Louisiana</option>
+                      <option>Maine</option><option>Maryland</option><option>Massachusetts</option>
+                      <option>Michigan</option><option>Minnesota</option><option>Mississippi</option>
+                      <option>Missouri</option><option>Montana</option><option>Nebraska</option>
+                      <option>Nevada</option><option>New Hampshire</option><option>New Jersey</option>
+                      <option>New Mexico</option><option>New York</option>
+                      <option>North Carolina</option><option>North Dakota</option>
+                      <option>Ohio</option><option>Oklahoma</option><option>Oregon</option>
+                      <option>Pennsylvania</option><option>Rhode Island</option>
+                      <option>South Carolina</option><option>South Dakota</option>
+                      <option>Tennessee</option><option>Texas</option><option>Utah</option>
+                      <option>Vermont</option><option>Virginia</option><option>Washington</option>
+                      <option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
+                      <option>Multiple States</option>
+                    </select>
+                  </div>
+                </div>
+
+                <div class="field field--full">
+                  <label for="address">Address<span aria-hidden="true">*</span></label>
+                  <input type="text" id="address" name="address" required
+                    placeholder="Street address, city, state, ZIP" autocomplete="street-address" />
+                </div>
+
+                <div class="field field--full">
+                  <label for="dl-number">Driver's License Number<span aria-hidden="true">*</span></label>
+                  <input type="text" id="dl-number" name="dl_number" required
+                    placeholder="e.g. D123456789" />
+                </div>
+
+              </div>
+            </div>
+
+            <!-- SECTION 2: EXPERIENCE & BACKGROUND -->
+            <div class="form-section">
+              <span class="form-section-label">Experience &amp; Background</span>
+              <div class="field-group">
+
+                <div class="field field--full">
+                  <label for="military-bg">Military or Law Enforcement Background
+                    <span style="font-weight:400;font-size:12px;color:var(--ink-soft)">(optional)</span>
+                  </label>
+                  <textarea id="military-bg" name="military_bg" rows="3"
+                    placeholder="Branch, rank, years of service, or agency and role..."></textarea>
+                </div>
+
+                <div class="field field--full">
+                  <label for="security-exp">Security Experience
+                    <span style="font-weight:400;font-size:12px;color:var(--ink-soft)">(optional)</span>
+                  </label>
+                  <textarea id="security-exp" name="security_exp" rows="3"
+                    placeholder="Previous security positions, certifications, and relevant training..."></textarea>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- SECTION 3: AVAILABILITY -->
+            <div class="form-section">
+              <span class="form-section-label">Availability</span>
+              <div class="field-group">
+
+                <div class="field field--full">
+                  <label>Available Shifts<span aria-hidden="true">*</span> (select all that apply)</label>
+                  <div class="shift-grid">
+                    <label class="shift-item">
+                      <input type="checkbox" name="shift_day" value="day" />
+                      Day Shift (6 AM to 2 PM)
+                    </label>
+                    <label class="shift-item">
+                      <input type="checkbox" name="shift_eve" value="evening" />
+                      Evening Shift (2 PM to 10 PM)
+                    </label>
+                    <label class="shift-item">
+                      <input type="checkbox" name="shift_night" value="night" />
+                      Night Shift (10 PM to 6 AM)
+                    </label>
+                    <label class="shift-item">
+                      <input type="checkbox" name="shift_wkd" value="weekend_days" />
+                      Weekend Days
+                    </label>
+                    <label class="shift-item">
+                      <input type="checkbox" name="shift_wkn" value="weekend_nights" />
+                      Weekend Nights
+                    </label>
+                    <label class="shift-item">
+                      <input type="checkbox" name="shift_flex" value="flexible" />
+                      Flexible / On-Call
+                    </label>
+                  </div>
+                </div>
+
+                <div class="field field--full">
+                  <label for="employment-type">Employment Type<span aria-hidden="true">*</span></label>
+                  <select id="employment-type" name="employment_type" required>
+                    <option value="" disabled selected>Select one</option>
+                    <option>Full-Time</option>
+                    <option>Part-Time</option>
+                    <option>Either</option>
+                  </select>
+                </div>
+
+              </div>
+            </div>
+
+            <!-- SECTION 4: EMERGENCY CONTACT -->
+            <div class="form-section">
+              <span class="form-section-label">Emergency Contact</span>
+              <div class="field-group">
+                <div class="field-row-2" style="grid-column: 1 / -1;">
+                  <div class="field">
+                    <label for="ec-name">Contact Name<span aria-hidden="true">*</span></label>
+                    <input type="text" id="ec-name" name="emergency_contact_name" required
+                      placeholder="Full name" />
+                  </div>
+                  <div class="field">
+                    <label for="ec-phone">Contact Phone<span aria-hidden="true">*</span></label>
+                    <input type="tel" id="ec-phone" name="emergency_contact_phone" required
+                      placeholder="(555) 000-0000" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 5: RESUME -->
+            <div class="form-section">
+              <span class="form-section-label">Resume</span>
+              <div class="field-group">
+                <div class="field field--full">
+                  <label for="resume-file">Attach Resume
+                    <span style="font-weight:400;font-size:12px;color:var(--ink-soft)">(optional)</span>
+                  </label>
+                  <input type="file" id="resume-file" name="resume_file"
+                    accept=".pdf,.doc,.docx" />
+                  <span class="file-hint">PDF, DOC, or DOCX · Max 5 MB</span>
+                </div>
+                <div class="field field--full">
+                  <label for="resume-link">Or paste a LinkedIn profile or resume link
+                    <span style="font-weight:400;font-size:12px;color:var(--ink-soft)">(optional)</span>
+                  </label>
+                  <input type="url" id="resume-link" name="resume_link" placeholder="https://" />
+                </div>
+              </div>
+            </div>
+
+            <!-- SECTION 6: BACKGROUND & CONSENT -->
+            <div class="form-section">
+              <span class="form-section-label">Background &amp; Consent</span>
+              <div class="field-group">
+                <div class="field field--full">
+                  <label for="criminal-history">Criminal History
+                    <span style="font-weight:400;font-size:12px;color:var(--ink-soft)">(optional)</span>
+                  </label>
+                  <textarea id="criminal-history" name="criminal_history" rows="3"
+                    placeholder="If applicable, please briefly explain. A prior record does not automatically disqualify you."></textarea>
+                </div>
+              </div>
+
+              <div class="consent-block">
+                <label class="consent-item">
+                  <input type="checkbox" name="consent_drug" required />
+                  <span>I consent to drug testing as required by company policy and applicable state law.*</span>
+                </label>
+                <label class="consent-item">
+                  <input type="checkbox" name="consent_bg" required />
+                  <span>I consent to a comprehensive background check, including criminal history, employment verification, and reference checks.*</span>
+                </label>
+                <label class="consent-item">
+                  <input type="checkbox" name="consent_accuracy" required />
+                  <span>I certify that all information provided in this application is accurate and complete to the best of my knowledge.*</span>
+                </label>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-gold careers-submit" style="margin-top:32px;width:100%;">
+              Submit Application →
+            </button>
+            <p class="form-note">
+              Applications are reviewed by our operations team.
+              A member of our team will be in touch.
+            </p>
+
+          </form>
+        </div>
+
+        <!-- RIGHT: WHAT WE LOOK FOR -->
+        <aside class="careers-side" aria-label="What we look for in candidates">
+
+          <h2 class="careers-side__h2">Why Join AYC?</h2>
+          <p class="careers-side__intro">
+            AYC Security strives to be the finest mid-market full-service security
+            firm in the world. The only way we can do that is with the best personnel.
+          </p>
+          <ul class="careers-checklist">
+            <li>
+              <svg class="careers-check" viewBox="0 0 18 18" fill="none" stroke="#B8882A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 9 7 13 15 5"/></svg>
+              <span>Competitive wages and comprehensive benefits</span>
+            </li>
+            <li>
+              <svg class="careers-check" viewBox="0 0 18 18" fill="none" stroke="#B8882A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 9 7 13 15 5"/></svg>
+              <span>Extensive training and career growth opportunities</span>
+            </li>
+            <li>
+              <svg class="careers-check" viewBox="0 0 18 18" fill="none" stroke="#B8882A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 9 7 13 15 5"/></svg>
+              <span>Flexible scheduling across multiple shifts</span>
+            </li>
+            <li>
+              <svg class="careers-check" viewBox="0 0 18 18" fill="none" stroke="#B8882A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 9 7 13 15 5"/></svg>
+              <span>Supportive and collaborative team environment</span>
+            </li>
+            <li>
+              <svg class="careers-check" viewBox="0 0 18 18" fill="none" stroke="#B8882A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 9 7 13 15 5"/></svg>
+              <span>Advancement into leadership and supervisory roles</span>
+            </li>
+            <li>
+              <svg class="careers-check" viewBox="0 0 18 18" fill="none" stroke="#B8882A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="3 9 7 13 15 5"/></svg>
+              <span>Access to AYC's Global Security Operations Center technology</span>
+            </li>
+          </ul>
+
+          <div class="careers-divider"></div>
+
+          <h2 class="careers-side__h2">What We Look For</h2>
+          <p class="careers-side__intro">
+            AYC holds its officers to a higher standard. Our clients depend on it.
+            Here is what we look for in every candidate.
+          </p>
+
+          <ul class="careers-checklist">
+            <li>
+              <svg class="careers-check" viewBox="0 0 18 18" fill="none"
+                stroke="#B8882A" stroke-width="2.2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <polyline points="3 9 7 13 15 5"/>
+              </svg>
+              <span>Valid security guard license, or willingness to obtain one. Florida requires a Class D (unarmed) or Class G (armed) license.</span>
+            </li>
+            <li>
+              <svg class="careers-check" viewBox="0 0 18 18" fill="none"
+                stroke="#B8882A" stroke-width="2.2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <polyline points="3 9 7 13 15 5"/>
+              </svg>
+              <span>Valid driver's license and access to a personal vehicle.</span>
+            </li>
+            <li>
+              <svg class="careers-check" viewBox="0 0 18 18" fill="none"
+                stroke="#B8882A" stroke-width="2.2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <polyline points="3 9 7 13 15 5"/>
+              </svg>
+              <span>Military or law enforcement background preferred. Our leadership team is built from both communities, and we actively recruit from veterans and former officers.</span>
+            </li>
+            <li>
+              <svg class="careers-check" viewBox="0 0 18 18" fill="none"
+                stroke="#B8882A" stroke-width="2.2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <polyline points="3 9 7 13 15 5"/>
+              </svg>
+              <span>Professional presentation and demeanor. AYC officers represent the firm at every deployment.</span>
+            </li>
+            <li>
+              <svg class="careers-check" viewBox="0 0 18 18" fill="none"
+                stroke="#B8882A" stroke-width="2.2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <polyline points="3 9 7 13 15 5"/>
+              </svg>
+              <span>Comfort with accountability. Every AYC officer checks in hourly through our Global Security Operations Center. This is how we protect our clients and our people.</span>
+            </li>
+            <li>
+              <svg class="careers-check" viewBox="0 0 18 18" fill="none"
+                stroke="#B8882A" stroke-width="2.2" stroke-linecap="round"
+                stroke-linejoin="round" aria-hidden="true">
+                <polyline points="3 9 7 13 15 5"/>
+              </svg>
+              <span>Physical fitness for patrol and incident response. Clear background check required.</span>
+            </li>
+          </ul>
+
+          <div class="veteran-callout">
+            <p class="veteran-callout__label">Veterans &amp; Law Enforcement</p>
+            <p class="veteran-callout__body">
+              AYC Security is veteran-owned and actively recruits from the military
+              and law enforcement community. If you have served in any branch or
+              capacity, we want to hear from you.
+            </p>
+            <p class="veteran-callout__contact">
+              Questions? Email us at
+              <a href="/cdn-cgi/l/email-protection#dcb5b2bab39cbda5bfafb9bfa9aeb5a8a5f2bfb3b1"><span class="__cf_email__" data-cfemail="3f565159507f5e465c4c5a5c4a4d564b46115c5052">[email&#160;protected]</span></a>
+            </p>
+          </div>
+
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━ FINAL CTA ━━━━━━━━━━ -->
+  <section id="final-cta" class="final-cta"
+    aria-labelledby="final-cta-heading"
+    style="background:#0E1C2B; border-top:4px solid #B8882A;
+    padding:clamp(72px,9vw,110px) 0;">
+    <div class="container">
+      <div class="final-grid" style="display:grid;
+        grid-template-columns:7fr 5fr; gap:48px;
+        align-items:center;">
+
+        <div class="final-left">
+          <h2 id="final-cta-heading" style="font-family:
+            'Oswald',sans-serif; font-size:clamp(32px,4.6vw,52px);
+            font-weight:700; text-transform:uppercase;
+            color:#fff; line-height:1.05; margin:0 0 8px;">
+            Ready to Make a Difference?
+            <span style="display:block; font-size:clamp(18px,1.8vw,24px);
+              font-weight:500;
+              color:#D9B66B; margin-top:8px;">
+              Join a team built on service, accountability, and pride
+            </span>
+          </h2>
+          <p style="font-family:'Inter',sans-serif; font-size:16px;
+            color:rgba(255,255,255,0.8); line-height:1.6;
+            max-width:50ch; margin:16px 0 32px;">
+            We are always looking for reliable, professional individuals who take security seriously.
+            Apply above or reach out directly with any questions.
+          </p>
+          <a href="#careers-form"
+            style="display:inline-block; background:#B8882A;
+            color:#0E1C2B; font-family:'Oswald',sans-serif;
+            font-weight:600; font-size:13px;
+            letter-spacing:0.16em; text-transform:uppercase;
+            padding:18px 26px; border:1px solid #B8882A;
+            text-decoration:none;"
+            onclick="document.getElementById('careers-form').scrollIntoView({behavior:'smooth'}); return false;"
+            aria-label="Scroll to application form">
+            Apply Now →
+          </a>
+        </div>
+
+        <div class="final-right" style="border-left:
+          1px solid rgba(255,255,255,0.22);
+          padding-left:36px;">
+          <p style="font-family:'IBM Plex Mono',monospace;
+            font-size:12px; color:#D9B66B;
+            text-transform:uppercase; letter-spacing:0.18em;
+            margin:0 0 12px;">
+            Questions? Reach Out
+          </p>
+          <a href="tel:+15615717983"
+            style="font-family:'Oswald',sans-serif; font-weight:700;
+            font-size:clamp(26px,2.8vw,36px); color:#D9B66B;
+            text-decoration:none; display:block;
+            letter-spacing:0.04em; margin-bottom:10px;">
+            (561) 571-7983
+          </a>
+          <a href="/cdn-cgi/l/email-protection#e980878f86a988908a9a8c8a9c9b809d90c78a8684" style="font-family:'Inter',sans-serif; font-size:16px;
+            color:rgba(255,255,255,0.75); text-decoration:none;
+            display:block; margin-bottom:14px;">
+            <span class="__cf_email__" data-cfemail="167f78707956776f7565737563647f626f3875797b">[email&#160;protected]</span>
+          </a>
+          <p style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.55); margin:0; line-height:1.6;">
+            We aim to respond within 3 business days.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ━━━━━━━━━━ FOOTER ━━━━━━━━━━ -->
+  <footer class="site-footer" role="contentinfo"
+    style="background:#0A1622; padding:72px 0 36px;">
+    <div class="container">
+      <div class="footer-responsive-grid" style="display:grid;
+        grid-template-columns:4fr 2fr 2fr 2fr; gap:48px;">
+
+        <div>
+          <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png"
+            alt="AYC Security USA"
+            style="height:42px; width:auto; margin-bottom:22px;
+            display:block;">
+          <p style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.62); max-width:36ch;
+            line-height:1.65; margin:0 0 12px;">
+            AYC Security USA — a veteran-owned private security
+            firm headquartered in Boca Raton, Florida.
+            24/7 Global Security Operations Center.
+          </p>
+          <span style="font-family:'IBM Plex Mono',monospace;
+            font-size:11px; letter-spacing:0.14em;
+            text-transform:uppercase;
+            color:rgba(255,255,255,0.8); display:block;
+            margin-bottom:16px;">
+            Licensed &amp; Insured Nationally · Operating Across
+            the United States
+          </span>
+          <div style="display:flex; gap:14px; align-items:center;">
+            <a href="https://www.linkedin.com/company/ayc-security/"
+              target="_blank" rel="noopener"
+              aria-label="AYC Security on LinkedIn"
+              style="color:rgba(255,255,255,0.6);
+              text-decoration:none; display:block;"
+              onmouseover="this.style.color='#D9B66B'"
+              onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+              <svg width="20" height="20" viewBox="0 0 24 24"
+                fill="currentColor" aria-hidden="true">
+                <path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/>
+                <circle cx="4" cy="4" r="2"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/aycsecure/"
+              target="_blank" rel="noopener"
+              aria-label="AYC Security on Facebook"
+              style="color:rgba(255,255,255,0.6);
+              text-decoration:none; display:block;"
+              onmouseover="this.style.color='#D9B66B'"
+              onmouseout="this.style.color='rgba(255,255,255,0.6)'">
+              <svg width="20" height="20" viewBox="0 0 24 24"
+                fill="currentColor" aria-hidden="true">
+                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <nav aria-label="Services footer navigation">
+          <span style="font-family:'IBM Plex Mono',monospace;
+            font-size:10px; letter-spacing:0.24em;
+            text-transform:uppercase; color:#D9B66B;
+            display:block; margin-bottom:18px;">
+            Services
+          </span>
+          <a href="/services/ongoing-security"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Ongoing Site Security</a>
+          <a href="/services/disaster-response"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Disaster &amp; Emergency Response</a>
+          <a href="/services/community-events"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Community, Events &amp; Close Protection</a>
+          <a href="/services/energy-industrial"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Energy &amp; Industrial Security</a>
+          <a href="/services/consulting-training"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Consulting, Training &amp; Procurement</a>
+          <a href="/services/ayc-intelligence"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            AYC Intelligence</a>
+        </nav>
+
+        <nav aria-label="Company footer navigation">
+          <span style="font-family:'IBM Plex Mono',monospace;
+            font-size:10px; letter-spacing:0.24em;
+            text-transform:uppercase; color:#D9B66B;
+            display:block; margin-bottom:18px;">
+            Company
+          </span>
+          <a href="/about"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            About AYC Security</a>
+          <a href="/operations-center"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Our Operations Center</a>
+          <a href="/industries"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Industries Served</a>
+          <a href="careers.html"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Careers</a>
+          <a href="/contact"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            Contact</a>
+        </nav>
+
+        <div>
+          <span style="font-family:'IBM Plex Mono',monospace;
+            font-size:10px; letter-spacing:0.24em;
+            text-transform:uppercase; color:#D9B66B;
+            display:block; margin-bottom:18px;">
+            Contact
+          </span>
+          <a href="tel:+15615717983"
+            style="font-family:'Inter',sans-serif; font-size:14px;
+            color:#D9B66B; display:block; padding:5px 0;
+            text-decoration:none;">
+            (561) 571-7983</a>
+          <a href="/cdn-cgi/l/email-protection#573e39313817362e3424323422253e232e7934383a" style="font-family:'Inter',sans-serif; font-size:14px;
+            color:rgba(255,255,255,0.82); display:block;
+            padding:5px 0; text-decoration:none;">
+            <span class="__cf_email__" data-cfemail="60090e060f2001190313050315120914194e030f0d">[email&#160;protected]</span></a>
+          <span style="font-family:'IBM Plex Mono',monospace;
+            font-size:10px; letter-spacing:0.16em;
+            text-transform:uppercase; color:#D9B66B;
+            display:block; margin-top:14px;">
+            Florida HQ
+          </span>
+          <address style="font-family:'Inter',sans-serif;
+            font-size:13px; color:rgba(255,255,255,0.7);
+            line-height:1.6; font-style:normal;">
+            7000 W Palmetto Park Rd., Suite 308<br>
+            Boca Raton, FL 33433
+          </address>
+          <span style="font-family:'IBM Plex Mono',monospace;
+            font-size:10px; letter-spacing:0.16em;
+            text-transform:uppercase; color:#D9B66B;
+            display:block; margin-top:14px;">
+            Ohio
+          </span>
+          <address style="font-family:'Inter',sans-serif;
+            font-size:13px; color:rgba(255,255,255,0.7);
+            line-height:1.6; font-style:normal;">
+            7160 Chagrin Road, Suite 180<br>
+            Chagrin Falls, OH 44023
+          </address>
+        </div>
+
+      </div>
+
+      <div style="border-top:1px solid rgba(255,255,255,0.10);
+        margin-top:48px; padding-top:28px;
+        display:flex; justify-content:space-between;
+        flex-wrap:wrap; gap:16px;
+        font-family:'IBM Plex Mono',monospace;
+        font-size:11px; letter-spacing:0.14em;
+        text-transform:uppercase;
+        color:rgba(255,255,255,0.45);">
+        <p style="margin:0;">
+          © 2026 AYC Security USA · All Rights Reserved
+        </p>
+        <p style="margin:0; font-size:10px;
+          color:rgba(255,255,255,0.42);
+          letter-spacing:0.06em; text-transform:none;">
+          FL B3200547 · NV 4383 · OH 20242100525221 ·
+          TN 14274 · TX B31026501
+        </p>
+        <div style="display:flex; gap:18px;">
+          <a href="/privacy"
+            style="color:rgba(255,255,255,0.45);
+            text-decoration:none;">Privacy</a>
+          <span aria-hidden="true">·</span>
+          <a href="/terms"
+            style="color:rgba(255,255,255,0.45);
+            text-decoration:none;">Terms</a>
+        </div>
+      </div>
+
+    </div>
+  </footer>
+
+  <!-- MOBILE BOTTOM STRIP -->
+  <nav class="mobile-bottom-strip" aria-label="Quick contact">
+    <div class="grid">
+      <a href="tel:+15615717983">Call</a>
+      <a href="sms:+15615717983">Text</a>
+      <a href="/cdn-cgi/l/email-protection#167f78707956776f7565737563647f626f3875797b">Email</a>
+    </div>
+  </nav>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // Pill selection (multi-select)
+  document.querySelectorAll('.pills .pill').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const current = btn.getAttribute('aria-checked') === 'true';
+      btn.setAttribute('aria-checked', current ? 'false' : 'true');
+      btn.classList.toggle('selected', !current);
+    });
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        btn.click();
+      }
+    });
+  });
+
+  // Hamburger / mobile drawer
+  const hamburger = document.getElementById('hamburger');
+  const drawer = document.getElementById('mobile-drawer');
+  const drawerClose = document.getElementById('drawer-close');
+  function openDrawer() {
+    drawer.classList.add('open');
+    drawer.setAttribute('aria-hidden', 'false');
+    hamburger.setAttribute('aria-expanded', 'true');
+  }
+  function closeDrawer() {
+    drawer.classList.remove('open');
+    drawer.setAttribute('aria-hidden', 'true');
+    hamburger.setAttribute('aria-expanded', 'false');
+  }
+  hamburger.addEventListener('click', openDrawer);
+  drawerClose.addEventListener('click', closeDrawer);
+  drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+  // Side tab / slideout
+  const sideTab = document.getElementById('side-tab');
+  const slideout = document.getElementById('slideout');
+  const slideoutOverlay = document.getElementById('slideout-overlay');
+  const slideoutClose = document.getElementById('slideout-close');
+  function openSlideout() {
+    slideout.classList.add('open');
+    slideoutOverlay.classList.add('open');
+    slideout.setAttribute('aria-hidden', 'false');
+  }
+  function closeSlideout() {
+    slideout.classList.remove('open');
+    slideoutOverlay.classList.remove('open');
+    slideout.setAttribute('aria-hidden', 'true');
+  }
+  sideTab.addEventListener('click', openSlideout);
+  slideoutClose.addEventListener('click', closeSlideout);
+  slideoutOverlay.addEventListener('click', closeSlideout);
+
+  // Prevent actual form submission (visual only — proper handler in code phase)
+  document.getElementById('careers-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+  });
+
+  // Close drawer/slideout with Escape
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      if (drawer.classList.contains('open')) closeDrawer();
+      if (slideout.classList.contains('open')) closeSlideout();
+    }
+  });
+</script>
+
+</body>
+</html>

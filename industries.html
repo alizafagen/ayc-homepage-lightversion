@@ -1,0 +1,1096 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Security for Office Buildings, HOAs, Healthcare &amp; More | AYC Security USA</title>
+<meta name="description" content="AYC Security serves commercial real estate, residential HOAs, houses of worship, healthcare facilities, energy and mining operations, events, schools, disaster relief organizations, and corporate clients. Licensed in Florida, Nevada, Ohio, Tennessee, and Texas.">
+<meta property="og:title" content="Industries We Serve | AYC Security USA">
+<meta property="og:description" content="Industry-specific security from a veteran-owned firm. Licensed in FL, NV, OH, TN, TX with national coverage through vetted regional partners.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F8F5F0; --cream-2:#EFEBE3; --paper:#FFFFFF;
+    --navy:#0E1C2B; --navy-2:#0A1622;
+    --gold:#B8882A; --gold-deep:#98701F; --gold-soft:#D9B66B;
+    --ink:#2A2A28; --ink-soft:#5A5A56;
+    --rule:#E4DED2; --rule-strong:#CFC6B3;
+    --font-display:"Oswald","Arial Narrow",sans-serif;
+    --font-body:"Inter",system-ui,-apple-system,sans-serif;
+    --font-mono:"IBM Plex Mono",ui-monospace,"SFMono-Regular",monospace;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--ink);font-family:var(--font-body);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
+  img{display:block;max-width:100%}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer;border-radius:0}
+  .container{width:100%;max-width:1320px;margin:0 auto;padding:0 32px}
+  @media (max-width:720px){.container{padding:0 20px}}
+  .sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+
+  /* ===== UTILITY RAIL ===== */
+  .utility-rail{background:var(--navy-2);color:rgba(255,255,255,0.72);font-family:var(--font-mono);font-size:12px;letter-spacing:0.04em;height:36px;border-bottom:1px solid rgba(255,255,255,0.06)}
+  .utility-rail .container{height:100%;display:flex;align-items:center;justify-content:space-between;gap:16px}
+  .utility-rail__status{display:inline-flex;align-items:center;gap:10px}
+  .pulse-dot{width:8px;height:8px;background:var(--gold);border-radius:50%;position:relative;box-shadow:0 0 0 0 rgba(184,136,42,0.7);animation:pulseDot 1.8s ease-out infinite}
+  @keyframes pulseDot{0%{box-shadow:0 0 0 0 rgba(184,136,42,0.55)}70%{box-shadow:0 0 0 9px rgba(184,136,42,0)}100%{box-shadow:0 0 0 0 rgba(184,136,42,0)}}
+  .utility-rail__phone{color:rgba(255,255,255,0.85)}
+  .utility-rail__phone:hover{color:var(--gold-soft)}
+  @media (max-width:720px){.utility-rail{display:none}}
+
+  /* ===== MAIN NAV ===== */
+  .nav{position:sticky;top:0;z-index:50;background:var(--navy);border-bottom:1px solid rgba(255,255,255,0.08);height:84px}
+  .nav__inner{display:flex;align-items:center;height:100%;gap:32px}
+  .nav__brand{display:inline-flex;align-items:center;gap:14px;flex-shrink:0}
+  .nav__logo{height:42px;width:auto}
+  .nav__vrule{width:1px;height:32px;background:rgba(255,255,255,0.18)}
+  .nav__mark{font-family:var(--font-mono);font-size:10px;letter-spacing:0.22em;text-transform:uppercase;color:rgba(255,255,255,0.62);line-height:1.4}
+  .nav__mark span{display:block}
+  .nav__mark .veteran{color:var(--gold-soft)}
+  .nav__links{display:flex;align-items:center;gap:4px;margin-left:auto}
+  .nav__link,.nav__trigger{font-family:var(--font-display);font-weight:500;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.92);background:transparent;border:0;padding:12px 14px;display:inline-flex;align-items:center;gap:6px;height:84px;cursor:pointer;transition:color .15s ease}
+  .nav__link:hover,.nav__trigger:hover,.nav__trigger[aria-expanded="true"]{color:var(--gold-soft)}
+  .nav__link[aria-current="page"]{color:var(--gold-soft);box-shadow:inset 0 -2px 0 var(--gold)}
+  .nav__caret{width:8px;height:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:translateY(-2px) rotate(45deg);transition:transform .2s ease}
+  .nav__trigger[aria-expanded="true"] .nav__caret{transform:translateY(1px) rotate(225deg)}
+  .nav__cta{margin-left:16px;background:var(--gold);color:var(--navy);border:1px solid var(--gold);font-family:var(--font-display);font-weight:600;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;padding:14px 22px;transition:background-color .2s ease,color .2s ease,border-color .2s ease;flex-shrink:0}
+  .nav__cta:hover,.nav__cta:focus-visible{background:transparent;color:var(--gold-soft);border-color:var(--gold-soft)}
+  .nav__dropdown-wrap{position:relative}
+  .nav__dropdown{position:absolute;top:100%;left:0;min-width:320px;background:var(--navy-2);border:1px solid rgba(255,255,255,0.08);padding:8px 0;opacity:0;visibility:hidden;transform:translateY(-4px);transition:opacity .15s ease,transform .15s ease,visibility .15s;z-index:60}
+  .nav__dropdown-wrap.is-open .nav__dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+  .nav__dropdown a{display:block;padding:12px 22px;font-family:var(--font-body);font-size:14px;color:rgba(255,255,255,0.88);border-left:2px solid transparent;transition:background-color .15s ease,border-color .15s ease,color .15s ease}
+  .nav__dropdown a:hover,.nav__dropdown a:focus-visible{background:rgba(255,255,255,0.03);border-left-color:var(--gold);color:#fff}
+  .nav__hamburger{display:none;width:44px;height:44px;background:transparent;border:1px solid rgba(255,255,255,0.18);margin-left:auto;align-items:center;justify-content:center;gap:5px;flex-direction:column}
+  .nav__hamburger span{display:block;width:20px;height:1.5px;background:#fff}
+  @media (max-width:1099px){.nav__mark{display:none}.nav__vrule{display:none}}
+  @media (max-width:899px){.nav{height:64px}.nav__logo{height:36px}.nav__links,.nav__cta{display:none}.nav__hamburger{display:inline-flex}}
+
+  /* ===== TAP-TO-CALL ===== */
+  .tap-call-bar{display:none;background:var(--gold);color:var(--navy);font-family:var(--font-display);font-weight:600;font-size:14px;letter-spacing:0.1em;text-transform:uppercase;padding:12px;text-align:center}
+  @media (max-width:899px){.tap-call-bar{display:block}}
+
+  /* ===== MOBILE DRAWER ===== */
+  .drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100%);background:var(--navy);z-index:100;transform:translateX(100%);transition:transform .28s ease;display:flex;flex-direction:column;overflow-y:auto}
+  .drawer.is-open{transform:translateX(0)}
+  .drawer__head{display:flex;align-items:center;justify-content:space-between;padding:18px 20px;border-bottom:1px solid rgba(255,255,255,0.08)}
+  .drawer__head img{height:36px}
+  .drawer__close{width:40px;height:40px;background:transparent;border:1px solid rgba(255,255,255,0.2);color:#fff;font-size:18px;line-height:1}
+  .drawer__list{list-style:none;padding:0;margin:0}
+  .drawer__item{border-bottom:1px solid rgba(255,255,255,0.06)}
+  .drawer__top{width:100%;display:flex;align-items:center;justify-content:space-between;background:transparent;border:0;padding:20px 22px;color:#fff;font-family:var(--font-display);font-weight:500;font-size:16px;letter-spacing:0.12em;text-transform:uppercase;text-align:left}
+  .drawer__toggle{width:22px;height:22px;border:1px solid rgba(255,255,255,0.32);display:inline-flex;align-items:center;justify-content:center;font-size:16px;line-height:1;color:rgba(255,255,255,0.85)}
+  .drawer__sub{max-height:0;overflow:hidden;transition:max-height .25s ease;background:rgba(255,255,255,0.02)}
+  .drawer__item.is-open .drawer__sub{max-height:600px}
+  .drawer__sub a{display:block;padding:14px 22px 14px 28px;color:rgba(255,255,255,0.82);font-family:var(--font-body);font-size:15px;border-left:2px solid var(--gold);margin-left:12px}
+  .drawer__cta-wrap{padding:22px;margin-top:auto}
+  .drawer__cta{display:block;width:100%;text-align:center;background:var(--gold);color:var(--navy);font-family:var(--font-display);font-weight:600;font-size:13px;letter-spacing:0.14em;text-transform:uppercase;padding:18px 22px;border:1px solid var(--gold)}
+  .drawer-scrim{position:fixed;inset:0;background:rgba(0,0,0,0.55);z-index:95;opacity:0;visibility:hidden;transition:opacity .2s ease,visibility .2s}
+  .drawer-scrim.is-open{opacity:1;visibility:visible}
+
+  /* ===== BOTTOM STRIP / SIDE TAB ===== */
+  .bottom-strip{display:none;position:fixed;left:0;right:0;bottom:0;background:var(--navy);border-top:1px solid rgba(255,255,255,0.1);z-index:40}
+  .bottom-strip a{flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60px;padding:8px 4px;color:#fff;font-family:var(--font-display);font-weight:600;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;gap:4px;border-right:1px solid rgba(255,255,255,0.08)}
+  .bottom-strip a:last-child{border-right:0}
+  .bottom-strip__icon{font-family:var(--font-mono);color:var(--gold-soft);font-size:14px}
+  @media (max-width:899px){.bottom-strip{display:flex}body{padding-bottom:60px}}
+  .side-tab{position:fixed;right:0;top:50%;transform:translateY(-50%) rotate(180deg);writing-mode:vertical-rl;background:var(--gold);color:var(--navy);font-family:var(--font-display);font-weight:600;font-size:12px;letter-spacing:0.2em;text-transform:uppercase;padding:18px 12px;border:0;z-index:45;transition:background-color .2s ease}
+  .side-tab:hover{background:var(--gold-deep)}
+  @media (max-width:899px){.side-tab{display:none}}
+
+  /* ===== SLIDEOUT ===== */
+  .slideout{position:fixed;top:0;right:0;bottom:0;width:min(440px,100%);background:#fff;z-index:110;transform:translateX(100%);transition:transform .28s ease;display:flex;flex-direction:column;overflow-y:auto}
+  .slideout.is-open{transform:translateX(0)}
+  .slideout__head{background:var(--navy);color:#fff;padding:20px 32px;display:flex;align-items:center;justify-content:space-between}
+  .slideout__head h3{margin:0;font-family:var(--font-display);font-weight:600;font-size:18px;letter-spacing:0.14em;text-transform:uppercase}
+  .slideout__close{width:36px;height:36px;background:transparent;border:1px solid rgba(255,255,255,0.3);color:#fff;font-size:16px;line-height:1}
+  .slideout__body{padding:28px 32px 40px}
+  .slideout__label{font-family:var(--font-mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--ink-soft);margin:0 0 10px}
+  .pill-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:8px}
+  .pill{background:#fff;border:1px solid var(--rule-strong);color:var(--ink);padding:8px 14px;font-family:var(--font-mono);font-size:11px;text-transform:uppercase;letter-spacing:0.14em;cursor:pointer}
+  .pill:hover{border-color:var(--navy)}
+  .slideout label{display:block;font-family:var(--font-mono);font-size:11px;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink-soft);margin:16px 0 6px}
+  .slideout input,.slideout select,.slideout textarea{width:100%;border:1px solid var(--rule-strong);padding:12px 14px;font-family:var(--font-body);font-size:15px;color:var(--ink);background:#fff;border-radius:0}
+  .slideout textarea{min-height:100px;resize:vertical}
+  .slideout input:focus,.slideout select:focus,.slideout textarea:focus{outline:none;border-color:var(--navy)}
+  .slideout__submit{margin-top:22px;width:100%;background:var(--navy);color:#fff;border:1px solid var(--navy);font-family:var(--font-display);font-weight:600;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;padding:16px 22px;transition:background-color .2s ease,color .2s ease}
+  .slideout__submit:hover{background:var(--gold);color:var(--navy)}
+
+  /* ===== HERO ===== */
+  .hero{position:relative;background:var(--navy);min-height:74vh;overflow:hidden;color:#fff;display:flex;align-items:flex-end}
+  .hero__bg{position:absolute;inset:0;z-index:0}
+  .hero__bg img{width:100%;height:100%;object-fit:cover;object-position:center;filter:grayscale(100%) contrast(1.05) brightness(0.45)}
+  .hero__overlay{position:absolute;inset:0;background:linear-gradient(to right,rgba(14,28,43,0.92) 0%,rgba(14,28,43,0.72) 55%,rgba(14,28,43,0.45) 100%);z-index:1}
+  .hero__inner{position:relative;z-index:2;width:100%;padding:clamp(80px,10vw,130px) 0 72px}
+  .hero__col{max-width:760px}
+  .hero__crumb{font-family:var(--font-mono);font-size:13px;color:var(--gold-soft);text-transform:uppercase;letter-spacing:0.2em;margin:0 0 22px;display:inline-flex;align-items:center;gap:14px}
+  .hero__crumb .sep{opacity:0.4}
+  .hero h1{font-family:var(--font-display);font-weight:700;font-size:clamp(44px,7vw,80px);text-transform:uppercase;color:#fff;line-height:0.95;margin:0;letter-spacing:0.005em}
+  .hero__rule{display:block;width:96px;height:2px;background:var(--gold);border:0;margin:24px 0}
+  .hero__body{font-family:var(--font-body);font-size:18px;color:rgba(255,255,255,0.85);max-width:60ch;line-height:1.65;margin:0}
+  /* ===== ANCHOR NAV ===== */
+  .anchor-nav{background:var(--navy-2);border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.04);position:sticky;top:84px;z-index:40;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+  @media (max-width:899px){.anchor-nav{top:64px}}
+  .anchor-nav::-webkit-scrollbar{height:4px}
+  .anchor-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1)}
+  .anchor-nav__inner{display:flex;gap:0;align-items:stretch}
+  .anchor-nav__label{font-family:var(--font-mono);font-size:12px;color:var(--gold-soft);text-transform:uppercase;letter-spacing:0.2em;padding:14px 20px 14px 0;border-right:1px solid rgba(255,255,255,0.08);align-self:center;flex-shrink:0}
+  @media (max-width:720px){.anchor-nav__label{display:none}}
+  .anchor-nav a{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.55);padding:14px 20px;border-right:1px solid rgba(255,255,255,0.08);transition:color .15s ease,background-color .15s ease;flex-shrink:0}
+  .anchor-nav a:hover{color:var(--gold-soft);background:rgba(255,255,255,0.02)}
+
+  /* ===== SECTION SHARED ===== */
+  .ind-section{padding:clamp(72px,9vw,110px) 0;scroll-margin-top:140px}
+  .ind-section--cream{background:var(--cream)}
+  .ind-section--paper{background:var(--paper)}
+  .ind-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,5vw,80px);align-items:start}
+  @media (max-width:960px){.ind-grid{grid-template-columns:1fr;gap:48px}}
+  .ind-label{font-family:var(--font-mono);font-size:13px;color:var(--gold);text-transform:uppercase;letter-spacing:0.18em;display:flex;align-items:center;gap:14px;margin:0 0 14px}
+  .ind-label::before{content:"";display:block;width:32px;height:1px;background:var(--gold)}
+  .ind-h2{font-family:var(--font-display);font-weight:700;font-size:clamp(36px,4.2vw,52px);text-transform:uppercase;color:var(--ink);line-height:1.05;max-width:22ch;margin:0 0 24px;letter-spacing:0.005em}
+  .ind-body p{font-family:var(--font-body);font-size:17px;color:var(--ink-soft);line-height:1.7;max-width:64ch;margin:0 0 20px}
+  .ind-body p:last-of-type{margin-bottom:28px}
+  .ind-cta{display:inline-block;background:var(--gold);color:var(--navy);border:1px solid var(--gold);font-family:var(--font-display);font-weight:600;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;padding:16px 26px;margin:28px 0 24px;text-decoration:none;line-height:1;transition:background-color .2s ease,border-color .2s ease}
+  .ind-cta:hover{background:var(--gold-deep);border-color:var(--gold-deep);color:var(--navy)}
+  .ind-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+  .ind-tag{font-family:var(--font-display);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:0.14em;color:var(--gold);border:1px solid var(--gold);padding:9px 16px;display:inline-flex;align-items:center;gap:8px;transition:background-color .15s ease,color .15s ease}
+  .ind-tag:hover{background:var(--gold);color:var(--navy)}
+
+  /* ===== PULLQUOTE ===== */
+  .pullquote{background:var(--navy);color:#fff;padding:36px 38px;margin-top:36px;max-width:560px;position:relative}
+  .pullquote::before{content:"";position:absolute;top:36px;left:0;width:3px;height:calc(100% - 72px);background:var(--gold);transform:translateX(-1px)}
+  .pullquote__rule{display:block;width:48px;height:2px;background:var(--gold);border:0;margin:0 0 22px}
+  .pullquote__q{font-family:var(--font-body);font-style:italic;font-size:18px;color:rgba(255,255,255,0.92);line-height:1.65;margin:0}
+  .pullquote__attr{font-family:var(--font-mono);font-size:12px;color:var(--gold-soft);text-transform:uppercase;letter-spacing:0.16em;margin-top:18px;line-height:1.6;display:block}
+
+  /* ===== SIDE PANEL (visual right column on priority sections) ===== */
+  .ind-side{position:relative;align-self:stretch;min-height:280px;display:flex;flex-direction:column;justify-content:flex-start;padding-top:40px}
+  .ind-side__frame{border:1px solid var(--rule-strong);padding:28px;background:rgba(255,255,255,0.4);position:relative}
+  .ind-section--paper .ind-side__frame{background:var(--cream);border-color:var(--rule)}
+  .ind-side__corner{position:absolute;top:-1px;left:-1px;width:24px;height:24px;border-top:2px solid var(--gold);border-left:2px solid var(--gold)}
+  .ind-side__corner--br{top:auto;left:auto;bottom:-1px;right:-1px;border-top:0;border-left:0;border-bottom:2px solid var(--gold);border-right:2px solid var(--gold)}
+  .ind-side__eyebrow{font-family:var(--font-mono);font-size:12px;color:var(--gold);letter-spacing:0.22em;text-transform:uppercase;margin:0 0 16px;display:block}
+  .ind-side__title{font-family:var(--font-display);font-weight:600;font-size:18px;text-transform:uppercase;color:var(--ink);letter-spacing:0.06em;line-height:1.3;margin:0 0 22px}
+  .ind-stats{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule-strong);margin-top:8px}
+  .ind-stat{padding:18px 0;border-bottom:1px solid var(--rule-strong)}
+  .ind-stat:nth-child(odd){padding-right:18px;border-right:1px solid var(--rule-strong)}
+  .ind-stat:nth-child(even){padding-left:18px}
+  .ind-stat__num{font-family:var(--font-display);font-weight:700;font-size:34px;color:var(--navy);line-height:1;letter-spacing:0.01em;display:block}
+  .ind-stat__lbl{font-family:var(--font-mono);font-size:12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.16em;margin-top:8px;display:block;line-height:1.4}
+
+  .ind-checklist{list-style:none;padding:0;margin:18px 0 0;display:flex;flex-direction:column;gap:14px}
+  .ind-checklist li{font-family:var(--font-body);font-size:14px;color:var(--ink);line-height:1.5;padding-left:26px;position:relative}
+  .ind-checklist li::before{content:"";position:absolute;left:0;top:6px;width:14px;height:8px;border-left:2px solid var(--gold);border-bottom:2px solid var(--gold);transform:rotate(-45deg)}
+
+  /* ===== LICENSING BAND ===== */
+  .lic{background:var(--navy);color:#fff;padding:clamp(56px,7vw,84px) 0;border-top:1px solid rgba(255,255,255,0.06);border-bottom:1px solid rgba(255,255,255,0.06)}
+  .lic__grid{display:grid;grid-template-columns:55fr 45fr;gap:clamp(40px,5vw,72px);align-items:center}
+  @media (max-width:900px){.lic__grid{grid-template-columns:1fr;gap:40px}}
+  .lic__label{font-family:var(--font-mono);font-size:12px;color:var(--gold-soft);text-transform:uppercase;letter-spacing:0.2em;margin:0 0 16px;display:flex;align-items:center;gap:14px}
+  .lic__label::before{content:"";display:block;width:28px;height:1px;background:var(--gold-soft)}
+  .lic h2{font-family:var(--font-display);font-weight:700;font-size:clamp(28px,3.4vw,40px);text-transform:uppercase;color:#fff;line-height:1.05;margin:0 0 16px;letter-spacing:0.005em}
+  .lic__body{font-family:var(--font-body);font-size:16px;color:rgba(255,255,255,0.8);line-height:1.7;max-width:52ch;margin:0}
+  .lic__badges{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  @media (max-width:520px){.lic__badges{grid-template-columns:repeat(2,1fr)}}
+  .lic__badge{background:rgba(255,255,255,0.06);border:1px solid rgba(184,136,42,0.25);padding:18px 20px;display:flex;flex-direction:column;align-items:flex-start;transition:background-color .2s ease,border-color .2s ease}
+  .lic__badge:hover{background:rgba(255,255,255,0.09);border-color:rgba(184,136,42,0.5)}
+  .lic__abbr{font-family:var(--font-display);font-weight:700;font-size:24px;color:var(--gold-soft);line-height:1;letter-spacing:0.04em}
+  .lic__state{font-family:var(--font-mono);font-size:10px;color:rgba(255,255,255,0.5);text-transform:uppercase;letter-spacing:0.16em;margin-top:6px;display:block}
+  .lic__badge--nat{background:rgba(184,136,42,0.12);border-color:rgba(184,136,42,0.4)}
+  .lic__nat-txt{font-family:var(--font-display);font-weight:600;font-size:14px;color:var(--gold-soft);text-transform:uppercase;letter-spacing:0.08em;line-height:1.1}
+  .lic__nat-sub{font-family:var(--font-mono);font-size:10px;color:rgba(255,255,255,0.55);text-transform:uppercase;letter-spacing:0.14em;margin-top:6px;display:block;line-height:1.4}
+
+  /* ===== SECONDARY CARDS ===== */
+  .secondary{background:var(--cream-2);padding:clamp(72px,9vw,110px) 0}
+  .secondary__head{max-width:760px;margin-bottom:clamp(40px,5vw,60px)}
+  .secondary .ind-label{color:var(--gold)}
+  .secondary h2{font-family:var(--font-display);font-weight:700;font-size:clamp(32px,4vw,48px);text-transform:uppercase;color:var(--ink);line-height:1.05;margin:0 0 20px;letter-spacing:0.005em}
+  .secondary__body{font-family:var(--font-body);font-size:17px;color:var(--ink-soft);max-width:58ch;line-height:1.7;margin:0}
+  .sec-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  @media (max-width:960px){.sec-grid{grid-template-columns:repeat(2,1fr)}}
+  @media (max-width:560px){.sec-grid{grid-template-columns:1fr}}
+  .sec-card{background:var(--paper);border:1px solid var(--rule-strong);border-top:3px solid var(--gold);padding:30px 26px;display:flex;flex-direction:column;gap:14px;transition:background-color .18s ease,border-color .18s ease,transform .18s ease;scroll-margin-top:160px}
+  .sec-card:hover{border-color:var(--gold);background:#ECE6D8;transform:translateY(-2px)}
+  .sec-card__icon{color:var(--gold);width:36px;height:36px;display:flex;align-items:center;justify-content:flex-start}
+  .sec-card h3{font-family:var(--font-display);font-weight:700;font-size:15px;text-transform:uppercase;color:var(--ink);margin:0;letter-spacing:0.08em;line-height:1.3}
+  .sec-card__body{font-family:var(--font-body);font-size:15px;color:var(--ink-soft);line-height:1.6;margin:0;flex:1}
+  .sec-card__tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;padding-top:14px;border-top:1px solid var(--rule)}
+  .sec-card__tag{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:0.14em;color:var(--gold-deep);padding:5px 10px;background:rgba(184,136,42,0.08);border:1px solid rgba(184,136,42,0.25);transition:background-color .15s ease,color .15s ease}
+  .sec-card__tag:hover{background:var(--gold);color:var(--navy)}
+
+  /* ===== FINAL CTA ===== */
+  .cta{background:var(--navy);color:#fff;padding:clamp(72px,9vw,110px) 0;border-top:4px solid var(--gold);position:relative;overflow:hidden}
+  .cta::before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 85% 30%,rgba(184,136,42,0.08),transparent 50%);pointer-events:none}
+  .cta__inner{position:relative;display:grid;grid-template-columns:60fr 40fr;gap:clamp(40px,5vw,72px);align-items:center}
+  @media (max-width:900px){.cta__inner{grid-template-columns:1fr;gap:40px}}
+  .cta__sub{font-family:var(--font-mono);font-size:13px;color:var(--gold-soft);text-transform:uppercase;letter-spacing:0.2em;margin:0 0 14px;display:flex;align-items:center;gap:14px}
+  .cta__sub::before{content:"";display:block;width:28px;height:1px;background:var(--gold-soft)}
+  .cta h2{font-family:var(--font-display);font-weight:700;font-size:clamp(36px,4.2vw,52px);text-transform:uppercase;color:#fff;line-height:1.05;margin:0 0 22px;letter-spacing:0.005em}
+  .cta__body{font-family:var(--font-body);font-size:17px;color:rgba(255,255,255,0.8);max-width:50ch;line-height:1.65;margin:0 0 32px}
+  .cta__btn{display:inline-flex;align-items:center;gap:12px;background:var(--gold);color:var(--navy);border:1px solid var(--gold);font-family:var(--font-display);font-weight:600;font-size:14px;letter-spacing:0.16em;text-transform:uppercase;padding:18px 28px;transition:background-color .2s ease,color .2s ease,border-color .2s ease}
+  .cta__btn:hover{background:transparent;color:var(--gold-soft);border-color:var(--gold-soft)}
+  .cta__card{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.1);padding:36px 32px}
+  .cta__card h3{font-family:var(--font-display);font-weight:600;font-size:13px;text-transform:uppercase;color:#fff;letter-spacing:0.18em;margin:0 0 18px}
+  .cta__phone{font-family:var(--font-display);font-weight:700;font-size:clamp(28px,3.4vw,40px);color:var(--gold-soft);display:block;margin:0 0 22px;letter-spacing:0.01em;line-height:1}
+  .cta__phone:hover{color:#fff}
+  .cta__links{display:flex;flex-wrap:wrap;gap:14px}
+  .cta__links a{font-family:var(--font-body);font-size:14px;color:rgba(255,255,255,0.78);padding:8px 14px;border:1px solid rgba(255,255,255,0.18);transition:border-color .15s ease,color .15s ease}
+  .cta__links a:hover{color:var(--gold-soft);border-color:var(--gold-soft)}
+
+  /* ===== FOOTER ===== */
+  .site-footer{background:var(--navy-2);color:rgba(255,255,255,0.7);padding:72px 0 36px;font-size:14px}
+  .footer-grid{display:grid;grid-template-columns:4fr 2fr 2fr 2fr;gap:48px}
+  @media (max-width:900px){.footer-grid{grid-template-columns:1fr 1fr;gap:36px}.footer-col--brand{grid-column:1/-1}}
+  @media (max-width:520px){.footer-grid{grid-template-columns:1fr}.footer-col--brand{grid-column:auto}}
+  .footer-logo{height:42px;width:auto;margin-bottom:22px;filter:brightness(0) invert(1)}
+  .footer-blurb{color:rgba(255,255,255,0.62);font-family:var(--font-body);font-size:14px;max-width:36ch;line-height:1.65;margin:0}
+  .footer-license-line{font-family:var(--font-mono);font-size:11px;color:rgba(255,255,255,0.8);letter-spacing:0.14em;margin-top:18px;display:block;line-height:1.6}
+  .footer-socials{display:flex;gap:10px;margin-top:22px}
+  .footer-socials a{width:38px;height:38px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.78);transition:color .15s ease,border-color .15s ease,background-color .15s ease}
+  .footer-socials a:hover{color:var(--navy);background:var(--gold-soft);border-color:var(--gold-soft)}
+  .footer-head{font-family:var(--font-mono);font-size:10px;color:var(--gold-soft);letter-spacing:0.24em;text-transform:uppercase;margin:0 0 18px;display:block}
+  .footer-link{font-family:var(--font-body);font-size:14px;color:rgba(255,255,255,0.82);display:block;padding:5px 0;transition:color .18s ease}
+  .footer-link:hover{color:var(--gold-soft)}
+  .footer-phone{color:var(--gold-soft);display:block;padding:5px 0;font-family:var(--font-body)}
+  .footer-phone:hover{color:#fff}
+  .footer-email{color:rgba(255,255,255,0.82);display:block;padding:5px 0;font-family:var(--font-body)}
+  .footer-email:hover{color:var(--gold-soft)}
+  .footer-addr-label{font-family:var(--font-mono);font-size:10px;color:var(--gold-soft);text-transform:uppercase;letter-spacing:0.16em;margin-top:14px;display:block}
+  .footer-addr{font-family:var(--font-body);font-size:13px;color:rgba(255,255,255,0.7);line-height:1.6;margin:6px 0 0;font-style:normal}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);margin-top:48px;padding-top:28px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;align-items:center}
+  .footer-bottom > *{font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.45);margin:0}
+  .footer-licenses-strip{font-size:10px !important;color:rgba(255,255,255,0.42) !important;letter-spacing:0.06em !important;text-transform:none !important}
+  .footer-bottom-links{display:flex;gap:18px;flex-wrap:wrap}
+  .footer-bottom-links a:hover{color:var(--gold-soft)}
+  @media (max-width:700px){.footer-bottom{flex-direction:column;align-items:flex-start;text-align:left}}
+
+  /* ===== FAQ ===== */
+  .faq-section{background:var(--cream);padding:clamp(72px,9vw,110px) 0}
+  .faq-intro{max-width:620px;margin-bottom:clamp(40px,5vw,60px)}
+  .faq-intro .ind-label{margin-bottom:14px}
+  .faq-intro h2{font-family:var(--font-display);font-weight:700;font-size:clamp(32px,4vw,48px);text-transform:uppercase;color:var(--ink);line-height:1.05;margin:0 0 16px;letter-spacing:0.005em}
+  .faq-intro p{font-family:var(--font-body);font-size:17px;color:var(--ink-soft);line-height:1.7;margin:0}
+  .faq-list{max-width:820px;border-top:1px solid var(--rule-strong)}
+  .faq-item{border-bottom:1px solid var(--rule-strong)}
+  .faq-q{width:100%;background:none;border:none;padding:22px 0;display:flex;align-items:center;justify-content:space-between;gap:20px;cursor:pointer;text-align:left}
+  .faq-q span{font-family:var(--font-display);font-weight:600;font-size:17px;text-transform:uppercase;letter-spacing:0.04em;color:var(--ink);line-height:1.3;transition:color .15s ease}
+  .faq-q:hover span{color:var(--gold)}
+  .faq-icon{width:20px;height:20px;flex-shrink:0;color:var(--gold);transition:transform .25s ease}
+  .faq-item.open .faq-icon{transform:rotate(45deg)}
+  .faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .faq-a p{font-family:var(--font-body);font-size:16px;color:var(--ink-soft);line-height:1.7;margin:0;padding-bottom:22px;max-width:70ch}
+  .faq-item.open .faq-a{max-height:400px}
+</style>
+</head>
+<body>
+
+  <!-- ===== UTILITY RAIL ===== -->
+  <div class="utility-rail" role="region" aria-label="Operations status">
+    <div class="container">
+      <span class="utility-rail__status">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        GSOC Online · 24/7 Live Monitoring
+      </span>
+      <a class="utility-rail__phone" href="tel:+15615717983" aria-label="Call or text 561-571-7983">
+        Call or Text: (561) 571-7983
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== MAIN NAV ===== -->
+  <header class="nav" role="banner">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="/" aria-label="AYC Security home">
+        <img class="nav__logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security">
+        <span class="nav__vrule" aria-hidden="true"></span>
+        <span class="nav__mark" aria-hidden="true">
+          <span>Est. Boca Raton</span>
+          <span class="veteran">Veteran-Owned</span>
+        </span>
+      </a>
+      <nav class="nav__links" aria-label="Primary">
+        <div class="nav__dropdown-wrap" data-dropdown>
+          <button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="dd-services">
+            Services <span class="nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav__dropdown" id="dd-services" role="menu">
+            <a href="ongoing-security.html" role="menuitem">Ongoing Site Security</a>
+            <a href="disaster-response.html" role="menuitem">Disaster &amp; Emergency Response</a>
+            <a href="community-events.html" role="menuitem">Community, Events &amp; Close Protection</a>
+            <a href="energy-industrial.html" role="menuitem">Energy &amp; Industrial Security</a>
+            <a href="consulting-training.html" role="menuitem">Consulting, Training &amp; Procurement</a>
+            <a href="ayc-intelligence.html" role="menuitem">AYC Intelligence</a>
+          </div>
+        </div>
+        <a class="nav__link" href="industries.html" aria-current="page">Industries</a>
+        <div class="nav__dropdown-wrap" data-dropdown>
+          <button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="dd-about">
+            About <span class="nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav__dropdown" id="dd-about" role="menu">
+            <a href="About.html" role="menuitem">About AYC Security</a>
+            <a href="operations-center.html" role="menuitem">Our Operations Center</a>
+            <a href="About.html#leadership" role="menuitem">Our Leadership Team</a>
+          </div>
+        </div>
+        <a class="nav__link" href="#">Careers</a>
+        <a class="nav__link" href="contact.html">Contact</a>
+        <a class="nav__cta" href="contact.html">Request a Consultation →</a>
+      </nav>
+      <button class="nav__hamburger" type="button" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <a class="tap-call-bar" href="tel:+15615717983">Call or Text (561) 571-7983</a>
+
+  <!-- Mobile drawer -->
+  <div class="drawer-scrim" id="drawer-scrim" aria-hidden="true"></div>
+  <aside class="drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="drawer__head">
+      <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security">
+      <button class="drawer__close" type="button" id="drawer-close" aria-label="Close menu">✕</button>
+    </div>
+    <ul class="drawer__list">
+      <li class="drawer__item" data-accordion>
+        <button class="drawer__top" type="button" aria-expanded="false">
+          <span>Services</span><span class="drawer__toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="drawer__sub">
+          <a href="ongoing-security.html">Ongoing Site Security</a>
+          <a href="disaster-response.html">Disaster &amp; Emergency Response</a>
+          <a href="community-events.html">Community, Events &amp; Close Protection</a>
+          <a href="energy-industrial.html">Energy &amp; Industrial Security</a>
+          <a href="consulting-training.html">Consulting, Training &amp; Procurement</a>
+          <a href="ayc-intelligence.html">AYC Intelligence</a>
+        </div>
+      </li>
+      <li class="drawer__item"><a class="drawer__top" href="industries.html"><span>Industries</span></a></li>
+      <li class="drawer__item" data-accordion>
+        <button class="drawer__top" type="button" aria-expanded="false">
+          <span>About</span><span class="drawer__toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="drawer__sub">
+          <a href="About.html">About AYC Security</a>
+          <a href="operations-center.html">Our Operations Center</a>
+          <a href="About.html#leadership">Our Leadership Team</a>
+        </div>
+      </li>
+      <li class="drawer__item"><a class="drawer__top" href="#"><span>Careers</span></a></li>
+      <li class="drawer__item"><a class="drawer__top" href="contact.html"><span>Contact</span></a></li>
+    </ul>
+    <div class="drawer__cta-wrap">
+      <a class="drawer__cta" href="contact.html">Request a Consultation →</a>
+    </div>
+  </aside>
+
+  <button class="side-tab" type="button" id="side-tab" aria-label="Open contact form">Get in Touch →</button>
+
+  <!-- Slideout -->
+  <aside class="slideout" id="slideout" aria-label="Contact form" aria-hidden="true">
+    <div class="slideout__head">
+      <h3>How Can We Help?</h3>
+      <button class="slideout__close" type="button" id="slideout-close" aria-label="Close contact form">✕</button>
+    </div>
+    <div class="slideout__body">
+      <form>
+        <p class="slideout__label">Service interest</p>
+        <div class="pill-row" role="group" aria-label="Service type">
+          <button class="pill" type="button">Residential</button>
+          <button class="pill" type="button">Commercial</button>
+          <button class="pill" type="button">Event</button>
+          <button class="pill" type="button">Disaster Response</button>
+          <button class="pill" type="button">Industrial</button>
+          <button class="pill" type="button">Not sure</button>
+        </div>
+        <label for="f-name">Name</label>
+        <input id="f-name" type="text" autocomplete="name">
+        <label for="f-email">Email</label>
+        <input id="f-email" type="email" autocomplete="email">
+        <label for="f-phone">Phone (optional)</label>
+        <input id="f-phone" type="tel" autocomplete="tel">
+        <label for="f-service">Service Type</label>
+        <select id="f-service">
+          <option value="">Select…</option>
+          <option>Ongoing Site Security</option>
+          <option>Disaster &amp; Emergency Response</option>
+          <option>Community, Events &amp; Close Protection</option>
+          <option>Energy &amp; Industrial Security</option>
+          <option>Consulting, Training &amp; Procurement</option>
+          <option>AYC Intelligence</option>
+        </select>
+        <label for="f-msg">Message</label>
+        <textarea id="f-msg"></textarea>
+        <button class="slideout__submit" type="submit">Send Us a Message →</button>
+      </form>
+    </div>
+  </aside>
+
+  <nav class="bottom-strip" aria-label="Quick contact">
+    <a href="tel:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">☎</span>Call</a>
+    <a href="sms:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">✉</span>Text</a>
+    <a href="/cdn-cgi/l/email-protection#147d7a727b54756d7767717761667d606d3a777b79"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
+  </nav>
+
+  <!-- ===== HERO ===== -->
+  <section class="hero" data-screen-label="01 Industries Hero">
+    <div class="hero__bg" aria-hidden="true">
+      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80" alt="">
+    </div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <div class="hero__inner">
+      <div class="container">
+        <div class="hero__col">
+          <p class="hero__crumb">
+            <span>AYC Security</span><span class="sep">/</span><span>Industries</span>
+          </p>
+          <h1>Security Built<br>For Your Industry</h1>
+          <hr class="hero__rule">
+          <p class="hero__body">
+            AYC Security serves organizations that need around-the-clock professional security presence. From South Florida residential communities and Nevada mining operations to office towers, retail centers, factories, and warehouses across the United States, AYC brings the same military discipline, legal oversight, and 24/7 GSOC monitoring to every engagement. Every post covered. Every officer verified. Every hour.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== ANCHOR NAV ===== -->
+  <nav class="anchor-nav" aria-label="Industries on this page">
+    <div class="anchor-nav__inner container">
+      <span class="anchor-nav__label">Jump to →</span>
+      <a href="#commercial-real-estate">Commercial Real Estate</a>
+      <a href="#residential-hoa">Residential &amp; HOA</a>
+      <a href="#houses-of-worship">Houses of Worship</a>
+      <a href="#healthcare">Healthcare</a>
+      <a href="#energy-mining-industrial">Energy &amp; Mining</a>
+      <a href="#events-conferences">Events &amp; Conferences</a>
+      <a href="#schools">Schools</a>
+      <a href="#disaster-relief">Disaster Relief</a>
+      <a href="#corporate-legal">Corporate &amp; Legal</a>
+      <a href="#retail">Retail</a>
+      <a href="#transportation">Transportation &amp; Ports</a>
+    </div>
+  </nav>
+
+  <!-- ===== SECTION 1 — COMMERCIAL REAL ESTATE ===== -->
+  <section id="commercial-real-estate" class="ind-section ind-section--cream" data-screen-label="Commercial Real Estate">
+    <div class="container ind-grid">
+      <div class="ind-content">
+        <p class="ind-label">Commercial Real Estate &amp; Office Buildings</p>
+        <h2 class="ind-h2">Protecting the Buildings Where Business Happens</h2>
+        <div class="ind-body">
+          <p>AYC Security provides 24/7 professional security for office buildings, corporate campuses, retail centers, and mixed-use commercial properties, with headquarters in Boca Raton, Florida and operations available nationwide.</p>
+          <p>Property managers and building owners rely on AYC for consistent, monitored officer presence that protects tenants, staff, and assets. Every deployed officer is GPS-confirmed hourly through our Global Security Operations Center, giving property managers accountability without the overhead of managing it internally.</p>
+          <p>AYC also supports commercial real estate clients through AYC Intelligence, our investigative division, which provides background investigations, vendor due diligence, and corporate intelligence services relevant to property management decisions.</p>
+        </div>
+        <a class="ind-cta" href="contact.html">Request a Consultation →</a>
+        <div class="ind-tags">
+          <a class="ind-tag" href="ongoing-security.html">Ongoing Site Security →</a>
+          <a class="ind-tag" href="ayc-intelligence.html">AYC Intelligence →</a>
+          <a class="ind-tag" href="consulting-training.html">Consulting, Training &amp; Procurement →</a>
+        </div>
+      </div>
+      <aside class="ind-side">
+        <div class="ind-side__frame">
+          <span class="ind-side__corner" aria-hidden="true"></span>
+          <span class="ind-side__corner ind-side__corner--br" aria-hidden="true"></span>
+          <span class="ind-side__eyebrow">Capability Snapshot</span>
+          <h3 class="ind-side__title">Office, Corporate &amp; Mixed-Use</h3>
+          <div class="ind-stats">
+            <div class="ind-stat"><span class="ind-stat__num">24/7</span><span class="ind-stat__lbl">GSOC Monitoring</span></div>
+            <div class="ind-stat"><span class="ind-stat__num">1 hr</span><span class="ind-stat__lbl">GPS Check-In Cycle</span></div>
+            <div class="ind-stat"><span class="ind-stat__num">Legal</span><span class="ind-stat__lbl">Counsel Integrated</span></div>
+            <div class="ind-stat"><span class="ind-stat__num">150+</span><span class="ind-stat__lbl">Years Combined Experience</span></div>
+          </div>
+          <ul class="ind-checklist">
+            <li>Lobby, perimeter, and after-hours access control</li>
+            <li>Tenant and visitor management protocols</li>
+            <li>Vendor and contractor due diligence</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 2 — RESIDENTIAL & HOA ===== -->
+  <section id="residential-hoa" class="ind-section ind-section--paper" data-screen-label="Residential &amp; HOA">
+    <div class="container ind-grid">
+      <div class="ind-content">
+        <p class="ind-label">Residential Communities &amp; HOAs</p>
+        <h2 class="ind-h2">Security That Residents Trust, Boards Can Count On</h2>
+        <div class="ind-body">
+          <p>AYC provides uniformed security for gated communities, luxury condominiums, and HOA-managed properties, with a strong presence in South Florida and same-day coverage available for urgent requests.</p>
+          <p>For HOA boards and property managers, officer quality and consistency are the variables that matter most. AYC's deployment model ensures residents see the same well-trained officers, not a rotating roster of unfamiliar faces. Every post is GSOC-monitored, and boards have a direct line to our operations team at any time.</p>
+          <p>Our South Florida residential portfolio includes luxury high-rise condominiums and managed communities in the Boca Raton area, as well as communities across the United States.</p>
+        </div>
+        <a class="ind-cta" href="contact.html">Request a Consultation →</a>
+        <div class="ind-tags">
+          <a class="ind-tag" href="ongoing-security.html">Ongoing Site Security →</a>
+        </div>
+      </div>
+      <aside class="ind-side">
+        <div class="ind-side__frame">
+          <span class="ind-side__corner" aria-hidden="true"></span>
+          <span class="ind-side__corner ind-side__corner--br" aria-hidden="true"></span>
+          <span class="ind-side__eyebrow">Board &amp; Resident Priorities</span>
+          <h3 class="ind-side__title">Consistency. Visibility. Direct Access.</h3>
+          <ul class="ind-checklist">
+            <li>Dedicated officers, not a rotating roster</li>
+            <li>Same-day coverage for urgent requests</li>
+            <li>Direct line to AYC operations leadership</li>
+            <li>GSOC-monitored posts with hourly GPS confirmation</li>
+            <li>Coordinated escalation with local law enforcement</li>
+          </ul>
+        </div>
+        <div class="pullquote">
+          <hr class="pullquote__rule">
+          <p class="pullquote__q">"AYC Security has been a professional and reliable partner for our luxury condominium property. Their team is responsive, courteous, and consistently meets the high standards our residents expect."</p>
+          <span class="pullquote__attr">Brooke Fleishman<br>Property Manager · Concierge Property Solutions LLC</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 3 — HOUSES OF WORSHIP ===== -->
+  <!-- ⚠️ FLAG: Texas synagogue growth confirmed by client. Pending authorization to cite generically or include quote. Follow up before launch. -->
+  <section id="houses-of-worship" class="ind-section ind-section--cream" data-screen-label="Houses of Worship">
+    <div class="container ind-grid">
+      <div class="ind-content">
+        <p class="ind-label">Houses of Worship &amp; Religious Communities</p>
+        <h2 class="ind-h2">Security for Communities Built on Trust</h2>
+        <div class="ind-body">
+          <p>AYC Security provides professional security for synagogues, churches, mosques, and religious campuses, with active deployments in Florida and Texas covering regular weekly services, High Holiday events, and year-round programming.</p>
+          <p>Security for houses of worship carries a responsibility that goes beyond access control. Communities need to feel protected, not surveilled. AYC officers are trained to maintain a professional, visible presence that supports the community's sense of safety while managing access, coordinating with local law enforcement when needed, and responding decisively when threats arise.</p>
+          <p>AYC's experience with religious communities spans routine Shabbat and Sunday coverage, high-attendance holiday events, visiting speaker engagements, and long-term site security programs. Our presence in both Florida and Texas continues to expand as organizations across denominations prioritize active security planning.</p>
+        </div>
+        <a class="ind-cta" href="contact.html">Request a Consultation →</a>
+        <div class="ind-tags">
+          <a class="ind-tag" href="ongoing-security.html">Ongoing Site Security →</a>
+          <a class="ind-tag" href="community-events.html">Community, Events &amp; Close Protection →</a>
+        </div>
+      </div>
+      <aside class="ind-side">
+        <div class="ind-side__frame">
+          <span class="ind-side__corner" aria-hidden="true"></span>
+          <span class="ind-side__corner ind-side__corner--br" aria-hidden="true"></span>
+          <span class="ind-side__eyebrow">Coverage Patterns</span>
+          <h3 class="ind-side__title">Weekly Services to High Holidays</h3>
+          <ul class="ind-checklist">
+            <li>Regular Shabbat, Sunday, and daily service coverage</li>
+            <li>High Holiday and high-attendance event posts</li>
+            <li>Visiting speaker and dignitary engagements</li>
+            <li>School, preschool, and youth program coverage</li>
+            <li>Long-term site security programs</li>
+          </ul>
+        </div>
+        <div class="pullquote">
+          <hr class="pullquote__rule">
+          <p class="pullquote__q">"For the last 20 years I have overseen security companies protecting the largest synagogue in the southeastern United States, with almost 1,000 families as members. AYC is our current provider and I have been continuously impressed by their dedication, hard work, and can-do attitude."</p>
+          <span class="pullquote__attr">David Berger<br>Security Chairman · Boca Raton Synagogue</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 4 — HEALTHCARE ===== -->
+  <!-- ⚠️ FLAG: Healthcare clients — do not name specific hospitals without explicit client authorization. Follow up with team on whether any hospital clients are willing to be referenced generically or provide a quote. -->
+  <section id="healthcare" class="ind-section ind-section--paper" data-screen-label="Healthcare">
+    <div class="container ind-grid">
+      <div class="ind-content">
+        <p class="ind-label">Healthcare &amp; Medical Facilities</p>
+        <h2 class="ind-h2">Security That Understands How Healthcare Works</h2>
+        <div class="ind-body">
+          <p>AYC provides security for hospitals, clinics, and specialized medical facilities, with leadership credentials that include a dedicated Vice President of Healthcare Operations and a Vice President of Medical Training who is a practicing emergency physician with trauma center experience.</p>
+          <p>Healthcare security requires more than a uniformed presence. Officers need to understand patient sensitivity, HIPAA-adjacent environment protocols, and the access control challenges unique to facilities that operate continuously and serve vulnerable populations. AYC's security programs are designed around how healthcare facilities actually function, not adapted from a general commercial template.</p>
+          <p>For healthcare organizations evaluating vendors, staff, or contractors, AYC Intelligence provides background investigations and due diligence services reviewed by in-house legal counsel.</p>
+        </div>
+        <a class="ind-cta" href="contact.html">Request a Consultation →</a>
+        <div class="ind-tags">
+          <a class="ind-tag" href="ongoing-security.html">Ongoing Site Security →</a>
+          <a class="ind-tag" href="consulting-training.html">Consulting, Training &amp; Procurement →</a>
+          <a class="ind-tag" href="ayc-intelligence.html">AYC Intelligence →</a>
+        </div>
+      </div>
+      <aside class="ind-side">
+        <div class="ind-side__frame">
+          <span class="ind-side__corner" aria-hidden="true"></span>
+          <span class="ind-side__corner ind-side__corner--br" aria-hidden="true"></span>
+          <span class="ind-side__eyebrow">Leadership Credentials</span>
+          <h3 class="ind-side__title">Built Around Healthcare Operations</h3>
+          <ul class="ind-checklist">
+            <li>Vice President of Healthcare Operations</li>
+            <li>Vice President of Medical Training, practicing emergency physician with trauma center experience</li>
+            <li>Programs designed around continuous operation</li>
+            <li>HIPAA-adjacent environment protocols</li>
+            <li>Background and vendor due diligence via AYC Intelligence</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 5 — ENERGY, MINING & INDUSTRIAL ===== -->
+  <section id="energy-mining-industrial" class="ind-section ind-section--cream" data-screen-label="Energy &amp; Mining">
+    <div class="container ind-grid">
+      <div class="ind-content">
+        <p class="ind-label">Energy, Mining &amp; Industrial Sites</p>
+        <h2 class="ind-h2">Built for Operations That Cannot Stop</h2>
+        <div class="ind-body">
+          <p>AYC provides specialized security for active mining operations, energy facilities, ports, warehouses, factories, and industrial sites, with confirmed operations in Nevada and Ohio and leadership that includes professionals with direct mining and industrial experience.</p>
+          <p>Industrial security demands officers who understand the operational realities of the site, shift structure, equipment access controls, perimeter integrity across large footprints, and the difference between a credentialed vendor and an unauthorized visitor. AYC's approach is built around those realities, not adapted from a standard commercial security template.</p>
+          <p>Every AYC industrial deployment is GSOC-monitored, with GPS-confirmed hourly check-ins and immediate response protocols designed for complex and remote environments. Armed and unarmed options are available depending on site requirements.</p>
+        </div>
+        <a class="ind-cta" href="contact.html">Request a Consultation →</a>
+        <div class="ind-tags">
+          <a class="ind-tag" href="energy-industrial.html">Energy &amp; Industrial Security →</a>
+          <a class="ind-tag" href="ongoing-security.html">Ongoing Site Security →</a>
+          <a class="ind-tag" href="consulting-training.html">Consulting, Training &amp; Procurement →</a>
+        </div>
+      </div>
+      <aside class="ind-side">
+        <div class="ind-side__frame">
+          <span class="ind-side__corner" aria-hidden="true"></span>
+          <span class="ind-side__corner ind-side__corner--br" aria-hidden="true"></span>
+          <span class="ind-side__eyebrow">Active Deployments</span>
+          <h3 class="ind-side__title">Mining, Energy &amp; Heavy Industry</h3>
+          <div class="ind-stats">
+            <div class="ind-stat"><span class="ind-stat__num">NV</span><span class="ind-stat__lbl">Active Mining Operations</span></div>
+            <div class="ind-stat"><span class="ind-stat__num">OH</span><span class="ind-stat__lbl">Industrial &amp; Manufacturing</span></div>
+            <div class="ind-stat"><span class="ind-stat__num">A / U</span><span class="ind-stat__lbl">Armed or Unarmed Options</span></div>
+            <div class="ind-stat"><span class="ind-stat__num">24/7</span><span class="ind-stat__lbl">GSOC Coverage</span></div>
+          </div>
+          <ul class="ind-checklist">
+            <li>Shift-aligned access and credential management</li>
+            <li>Large-footprint perimeter integrity</li>
+            <li>Response protocols built for remote sites</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== SECTION 6 — EVENTS & CONFERENCES ===== -->
+  <!-- ⚠️ FLAG: Ohio convention — client confirmed event, details pending. Confirm whether "a major multi-day convention in Columbus" can be used generically before launch. -->
+  <section id="events-conferences" class="ind-section ind-section--paper" data-screen-label="Events &amp; Conferences">
+    <div class="container ind-grid">
+      <div class="ind-content">
+        <p class="ind-label">Events &amp; Conferences</p>
+        <h2 class="ind-h2">Professional Security for Every Type of Event</h2>
+        <div class="ind-body">
+          <p>AYC provides event security for galas, conferences, conventions, corporate gatherings, and private functions, with active deployments in Florida and Ohio and same-day coverage available for urgent requests.</p>
+          <p>Event security is as much about guest experience as threat response. AYC officers maintain a professional presence calibrated to the environment, a black-tie gala requires a different bearing than a multi-day conference, and both require something different from a community event. Uniformed and plainclothes options are available to match the context.</p>
+          <p>AYC recently completed coverage for a large multi-day convention in Ohio, alongside an established portfolio of galas, corporate events, and private functions throughout Florida. For principal and executive protection at events, Salvare Global, AYC's dedicated close protection division, is available.</p>
+        </div>
+        <a class="ind-cta" href="contact.html">Request a Consultation →</a>
+        <div class="ind-tags">
+          <a class="ind-tag" href="community-events.html">Community, Events &amp; Close Protection →</a>
+          <a class="ind-tag" href="ongoing-security.html">Ongoing Site Security →</a>
+        </div>
+      </div>
+      <aside class="ind-side">
+        <div class="ind-side__frame">
+          <span class="ind-side__corner" aria-hidden="true"></span>
+          <span class="ind-side__corner ind-side__corner--br" aria-hidden="true"></span>
+          <span class="ind-side__eyebrow">Event Formats</span>
+          <h3 class="ind-side__title">Galas, Conventions &amp; Private Functions</h3>
+          <ul class="ind-checklist">
+            <li>Uniformed and plainclothes deployment options</li>
+            <li>Multi-day convention and conference coverage</li>
+            <li>Black-tie galas and corporate galas</li>
+            <li>Principal and executive protection via Salvare Global</li>
+            <li>Same-day deployment for urgent requests</li>
+          </ul>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <!-- ===== NATIONAL LICENSING BAND ===== -->
+  <section class="lic" aria-labelledby="lic-h" data-screen-label="National Licensing">
+    <div class="container lic__grid">
+      <div class="lic__left">
+        <p class="lic__label">Licensed &amp; Operating Nationally</p>
+        <h2 id="lic-h">Where AYC Operates</h2>
+        <p class="lic__body">AYC holds active licenses in Florida, Nevada, Ohio, Tennessee, and Texas, and operates nationally through a network of vetted regional partners. For multi-state engagements, disaster response operations, and national organizations, our Operations Center coordinates coverage across jurisdictions.</p>
+      </div>
+      <div class="lic__badges" role="list">
+        <div class="lic__badge" role="listitem">
+          <span class="lic__abbr">FL</span><span class="lic__state">Florida</span>
+        </div>
+        <div class="lic__badge" role="listitem">
+          <span class="lic__abbr">NV</span><span class="lic__state">Nevada</span>
+        </div>
+        <div class="lic__badge" role="listitem">
+          <span class="lic__abbr">OH</span><span class="lic__state">Ohio</span>
+        </div>
+        <div class="lic__badge" role="listitem">
+          <span class="lic__abbr">TN</span><span class="lic__state">Tennessee</span>
+        </div>
+        <div class="lic__badge" role="listitem">
+          <span class="lic__abbr">TX</span><span class="lic__state">Texas</span>
+        </div>
+        <div class="lic__badge lic__badge--nat" role="listitem">
+          <span class="lic__nat-txt">+ National Coverage</span>
+          <span class="lic__nat-sub">Through Regional Partners</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SECONDARY INDUSTRIES ===== -->
+  <section class="secondary" aria-labelledby="more-h" data-screen-label="Additional Industries">
+    <div class="container">
+      <div class="secondary__head">
+        <p class="ind-label">Additional Industries Served</p>
+        <h2 id="more-h">More Industries We Serve</h2>
+        <p class="secondary__body">AYC serves organizations across a broad range of sectors. If your industry is not listed above, contact our team, we work across contexts that require professional, accountable security.</p>
+      </div>
+      <div class="sec-grid">
+
+        <article id="schools" class="sec-card">
+          <span class="sec-card__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 13l12-7 12 7-12 7-12-7z"/>
+              <path d="M8 15.5v7c0 2 3.6 3.5 8 3.5s8-1.5 8-3.5v-7"/>
+              <path d="M28 13v6"/>
+            </svg>
+          </span>
+          <h3>Schools &amp; Educational Institutions</h3>
+          <p class="sec-card__body">Campus security, event coverage, and student safety programs for K-12 schools and higher education facilities.</p>
+          <div class="sec-card__tags">
+            <a class="sec-card__tag" href="ongoing-security.html">Ongoing Site Security</a>
+            <a class="sec-card__tag" href="community-events.html">Community, Events &amp; Close Protection</a>
+          </div>
+        </article>
+
+        <!-- ⚠️ FLAG: Do not name Samaritan's Purse on live site. Texas disaster operations referenced in original project docs — confirm with team whether still active and citeable generically before launch. -->
+        <article id="disaster-relief" class="sec-card">
+          <span class="sec-card__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="10" cy="9" r="3"/>
+              <circle cx="22" cy="9" r="3"/>
+              <path d="M4 28c0-4 2.7-6.5 6-6.5h12c3.3 0 6 2.5 6 6.5"/>
+              <path d="M16 16v5M14 19h4"/>
+            </svg>
+          </span>
+          <h3>Humanitarian &amp; Disaster Relief</h3>
+          <p class="sec-card__body">Security personnel for active disaster zones, post-storm recovery sites, and humanitarian operations. AYC supports major national relief organizations with rapid, nationwide deployment.</p>
+          <div class="sec-card__tags">
+            <a class="sec-card__tag" href="disaster-response.html">Disaster &amp; Emergency Response</a>
+          </div>
+        </article>
+
+        <article id="corporate-legal" class="sec-card">
+          <span class="sec-card__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="10" width="26" height="18"/>
+              <path d="M11 10V7a5 5 0 0110 0v3"/>
+              <path d="M3 18h26"/>
+            </svg>
+          </span>
+          <h3>Corporate, Legal &amp; Financial Services</h3>
+          <p class="sec-card__body">AYC Intelligence serves law firms, financial institutions, insurance companies, and corporate legal teams with background investigations, due diligence, and claims investigations reviewed by in-house legal counsel.</p>
+          <div class="sec-card__tags">
+            <a class="sec-card__tag" href="ayc-intelligence.html">AYC Intelligence</a>
+            <a class="sec-card__tag" href="consulting-training.html">Consulting, Training &amp; Procurement</a>
+          </div>
+        </article>
+
+        <article id="retail" class="sec-card">
+          <span class="sec-card__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 13h26v15H3z"/>
+              <path d="M3 13L8 5h16l5 8"/>
+              <path d="M13 28V20h6v8"/>
+              <path d="M3 13c0 2.2 1.8 4 4 4s4-1.8 4-4"/>
+              <path d="M11 13c0 2.2 1.8 4 4 4s4-1.8 4-4"/>
+              <path d="M19 13c0 2.2 1.8 4 4 4s4-1.8 4-4"/>
+            </svg>
+          </span>
+          <h3>Retail &amp; Mixed-Use Properties</h3>
+          <p class="sec-card__body">Uniformed security for shopping centers, retail destinations, and mixed-use developments, with a focus on loss prevention support and consistent visible presence.</p>
+          <div class="sec-card__tags">
+            <a class="sec-card__tag" href="ongoing-security.html">Ongoing Site Security</a>
+          </div>
+        </article>
+
+        <article id="transportation" class="sec-card">
+          <span class="sec-card__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="2" y="10" width="28" height="12"/>
+              <path d="M8 22v4M24 22v4"/>
+              <path d="M2 16h28"/>
+              <path d="M10 10V7M22 10V7M10 7h12"/>
+            </svg>
+          </span>
+          <h3>Transportation, Ports &amp; Cargo</h3>
+          <p class="sec-card__body">Security for ports, terminals, logistics facilities, warehousing, and cargo operations requiring continuous perimeter monitoring and access control.</p>
+          <div class="sec-card__tags">
+            <a class="sec-card__tag" href="energy-industrial.html">Energy &amp; Industrial Security</a>
+            <a class="sec-card__tag" href="ongoing-security.html">Ongoing Site Security</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section class="faq-section" aria-labelledby="faq-h2" data-screen-label="FAQ">
+    <div class="container">
+      <div class="faq-intro">
+        <p class="ind-label">Common Questions</p>
+        <h2 id="faq-h2">Frequently Asked Questions</h2>
+        <p>Answers to the questions organizations ask most before working with AYC.</p>
+      </div>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>What industries does AYC Security serve?</span>
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+          </button>
+          <div class="faq-a" role="region">
+            <p>AYC serves organizations across commercial real estate, residential communities and HOAs, houses of worship, healthcare facilities, energy and mining operations, events and conferences, schools, humanitarian and disaster relief organizations, corporate and legal services, retail properties, and transportation and cargo facilities. If your organization needs professional, monitored security presence, contact our team to discuss your situation.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>Does AYC Security monitor officers 24/7?</span>
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+          </button>
+          <div class="faq-a" role="region">
+            <p>Yes. Every AYC officer deployment is monitored through our Global Security Operations Center, which verifies GPS check-ins from every officer every hour around the clock. A live human operator reviews each check-in. There are no automated systems, no gaps, and no unmonitored posts.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>Can AYC provide same-day security coverage?</span>
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+          </button>
+          <div class="faq-a" role="region">
+            <p>Yes. AYC offers same-day deployment for events, emergency situations, and urgent site coverage requests. Call our team directly at (561) 571-7983 to discuss your timeline and requirements.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>What states is AYC Security licensed in?</span>
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+          </button>
+          <div class="faq-a" role="region">
+            <p>AYC holds active licenses in Florida, Nevada, Ohio, Tennessee, and Texas. For organizations in other states, AYC coordinates coverage through a network of vetted regional partners. Contact our team to discuss coverage options in your area.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>Does AYC provide armed and unarmed security officers?</span>
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+          </button>
+          <div class="faq-a" role="region">
+            <p>Yes. AYC offers both armed and unarmed security officer options depending on the requirements of the engagement. Our team will recommend the appropriate security posture based on your site, industry, and risk profile.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>What makes AYC different from other security companies?</span>
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+          </button>
+          <div class="faq-a" role="region">
+            <p>AYC's primary differentiators are our Global Security Operations Center, which monitors every deployed officer hourly via GPS, and our in-house legal counsel, which is integrated directly into operations. Most security firms deploy officers and provide a morning report. AYC verifies every post, every hour, and responds immediately when something is flagged.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>Can AYC provide security for HOA communities and gated neighborhoods?</span>
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+          </button>
+          <div class="faq-a" role="region">
+            <p>Yes. AYC provides security for gated communities, luxury condominiums, and HOA-managed properties, with a strong presence in South Florida and coverage available nationally. Our officers are consistent and GSOC-monitored, giving boards and property managers direct accountability at all times.</p>
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-q" type="button" aria-expanded="false">
+            <span>How do I request security services from AYC?</span>
+            <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
+          </button>
+          <div class="faq-a" role="region">
+            <p>Contact AYC by phone at (561) 571-7983, by email at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7f161119103f1e061c0c1a1c0a0d160b06511c1012">[email&#160;protected]</a>, or by submitting a request through this website. Our team will respond with a coverage plan and connect you with the right person for your industry and situation.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FINAL CTA ===== -->
+  <section class="cta" aria-labelledby="cta-h" data-screen-label="Final CTA">
+    <div class="container cta__inner">
+      <div class="cta__left">
+        <p class="cta__sub">Same-Day Coverage Available</p>
+        <h2 id="cta-h">Ready When It Matters</h2>
+        <p class="cta__body">Tell us what you need to protect. Our team will match you with the right service and the right people for your industry and situation.</p>
+        <a class="cta__btn" href="contact.html">Request a Consultation →</a>
+      </div>
+      <div class="cta__card">
+        <h3>Connect With Our Team</h3>
+        <a class="cta__phone" href="tel:+15615717983">(561) 571-7983</a>
+        <div class="cta__links">
+          <a href="tel:+15615717983">Call</a>
+          <a href="sms:+15615717983">Text</a>
+          <a href="/cdn-cgi/l/email-protection#fa93949c95ba9b8399899f998f88938e83d4999597">Email</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col footer-col--brand">
+          <img class="footer-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security USA">
+          <p class="footer-blurb">AYC Security USA, a veteran-owned private security firm headquartered in Boca Raton, Florida. 24/7 Global Security Operations Center.</p>
+          <span class="footer-license-line">Licensed &amp; Insured Nationally · Operating Across the United States</span>
+          <div class="footer-socials" aria-label="Social links">
+            <a href="#" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM.2 8h4.6v14H.2V8zm7.6 0h4.4v1.9h.06c.61-1.16 2.1-2.38 4.32-2.38 4.62 0 5.47 3.04 5.47 7v7.48h-4.6V15c0-1.7-.03-3.88-2.36-3.88-2.37 0-2.74 1.85-2.74 3.76V22H7.8V8z"/></svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M22 12a10 10 0 10-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.51 1.49-3.9 3.78-3.9 1.1 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0022 12z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-col" aria-label="Services">
+          <span class="footer-head">Services</span>
+          <a class="footer-link" href="ongoing-security.html">Ongoing Site Security</a>
+          <a class="footer-link" href="disaster-response.html">Disaster &amp; Emergency Response</a>
+          <a class="footer-link" href="community-events.html">Community, Events &amp; Close Protection</a>
+          <a class="footer-link" href="energy-industrial.html">Energy &amp; Industrial Security</a>
+          <a class="footer-link" href="consulting-training.html">Consulting, Training &amp; Procurement</a>
+          <a class="footer-link" href="ayc-intelligence.html">AYC Intelligence</a>
+        </nav>
+
+        <nav class="footer-col" aria-label="Company">
+          <span class="footer-head">Company</span>
+          <a class="footer-link" href="About.html">About AYC Security</a>
+          <a class="footer-link" href="operations-center.html">Our Operations Center</a>
+          <a class="footer-link" href="industries.html">Industries Served</a>
+          <a class="footer-link" href="#">Careers</a>
+          <a class="footer-link" href="contact.html">Contact</a>
+        </nav>
+
+        <div class="footer-col">
+          <span class="footer-head">Contact</span>
+          <a class="footer-phone" href="tel:+15615717983">(561) 571-7983</a>
+          <a class="footer-email" href="/cdn-cgi/l/email-protection#dbb2b5bdb49bbaa2b8a8beb8aea9b2afa2f5b8b4b6"><span class="__cf_email__" data-cfemail="87eee9e1e8c7e6fee4f4e2e4f2f5eef3fea9e4e8ea">[email&#160;protected]</span></a>
+          <span class="footer-addr-label">Florida HQ</span>
+          <address class="footer-addr">7000 W Palmetto Park Rd., Suite 308<br>Boca Raton, FL 33433</address>
+          <span class="footer-addr-label">Ohio</span>
+          <address class="footer-addr">7160 Chagrin Road, Suite 180<br>Chagrin Falls, OH 44023</address>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 AYC Security USA · All Rights Reserved</p>
+        <p class="footer-licenses-strip">FL B3200547 · NV 4383 · OH 20242100525221 · TN 14274 · TX B31026501</p>
+        <div class="footer-bottom-links">
+          <a href="#">Privacy Policy</a>
+          <span aria-hidden="true">·</span>
+          <a href="#">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+  // ---------- Nav dropdowns (desktop hover + click) ----------
+  document.querySelectorAll('[data-dropdown]').forEach(wrap => {
+    const trigger = wrap.querySelector('.nav__trigger');
+    if (!trigger) return;
+    const open  = () => { wrap.classList.add('is-open'); trigger.setAttribute('aria-expanded','true'); };
+    const close = () => { wrap.classList.remove('is-open'); trigger.setAttribute('aria-expanded','false'); };
+    wrap.addEventListener('mouseenter', open);
+    wrap.addEventListener('mouseleave', close);
+    trigger.addEventListener('click', e => { e.preventDefault(); wrap.classList.toggle('is-open'); trigger.setAttribute('aria-expanded', wrap.classList.contains('is-open') ? 'true':'false'); });
+    document.addEventListener('click', e => { if (!wrap.contains(e.target)) close(); });
+  });
+
+  // ---------- Mobile drawer ----------
+  const drawer = document.getElementById('mobile-drawer');
+  const scrim  = document.getElementById('drawer-scrim');
+  const hamburger = document.getElementById('hamburger');
+  const drawerClose = document.getElementById('drawer-close');
+  function openDrawer() {
+    drawer.classList.add('is-open'); scrim.classList.add('is-open');
+    drawer.setAttribute('aria-hidden','false'); scrim.setAttribute('aria-hidden','false');
+    hamburger.setAttribute('aria-expanded','true'); document.body.style.overflow='hidden';
+  }
+  function closeDrawer() {
+    drawer.classList.remove('is-open'); scrim.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden','true'); scrim.setAttribute('aria-hidden','true');
+    hamburger.setAttribute('aria-expanded','false'); document.body.style.overflow='';
+  }
+  hamburger && hamburger.addEventListener('click', openDrawer);
+  drawerClose && drawerClose.addEventListener('click', closeDrawer);
+  scrim && scrim.addEventListener('click', closeDrawer);
+  document.querySelectorAll('[data-accordion]').forEach(item => {
+    const btn = item.querySelector('.drawer__top');
+    btn && btn.addEventListener('click', () => {
+      const isOpen = item.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+      const tog = item.querySelector('.drawer__toggle'); if (tog) tog.textContent = isOpen ? '–' : '+';
+    });
+  });
+
+  // ---------- Side tab slideout ----------
+  const slideout = document.getElementById('slideout');
+  const sideTab = document.getElementById('side-tab');
+  const slideoutClose = document.getElementById('slideout-close');
+  function openSlideout(){ slideout.classList.add('is-open'); slideout.setAttribute('aria-hidden','false'); }
+  function closeSlideout(){ slideout.classList.remove('is-open'); slideout.setAttribute('aria-hidden','true'); }
+  sideTab && sideTab.addEventListener('click', openSlideout);
+  slideoutClose && slideoutClose.addEventListener('click', closeSlideout);
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') { closeDrawer(); closeSlideout(); }
+  });
+
+  // ---------- FAQ accordion ----------
+  document.querySelectorAll('.faq-q').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.faq-item');
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item.open').forEach(el => {
+        el.classList.remove('open');
+        const q = el.querySelector('.faq-q'); if (q) q.setAttribute('aria-expanded','false');
+      });
+      if (!isOpen) {
+        item.classList.add('open');
+        btn.setAttribute('aria-expanded','true');
+      }
+    });
+  });
+
+  // ---------- Pill row select state ----------
+  document.querySelectorAll('.pill-row').forEach(row => {
+    row.addEventListener('click', e => {
+      const pill = e.target.closest('.pill'); if (!pill) return;
+      row.querySelectorAll('.pill').forEach(p => p.style.background = '#fff');
+      pill.style.background = 'var(--cream-2)';
+    });
+  });
+</script>
+</body>
+</html>
