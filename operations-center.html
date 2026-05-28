@@ -1,0 +1,1955 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Global Security Operations Center | AYC Security USA</title>
+<meta name="description" content="AYC Security's Global Security Operations Center monitors every deployed officer via GPS check-in every hour, verified by a live human operator, 24/7, 365 days a year. No automated check-ins. No gaps. No unmonitored posts.">
+<meta property="og:title" content="Global Security Operations Center | AYC Security USA">
+<meta property="og:description" content="24/7 live human monitoring. GPS check-ins every hour, on the hour. No automated check-ins. No gaps. No unmonitored posts.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     TOKENS — parity with About.html
+     ============================================================ */
+  :root {
+    --cream:        #F8F5F0;
+    --cream-2:      #EFEBE3;
+    --paper:        #FFFFFF;
+    --navy:         #0E1C2B;
+    --navy-2:       #0A1622;
+    --gold:         #B8882A;
+    --gold-deep:    #98701F;
+    --gold-soft:    #D9B66B;
+    --ink:          #2A2A28;
+    --ink-soft:     #5A5A56;
+    --rule:         #E4DED2;
+    --rule-strong:  #CFC6B3;
+
+    --font-display: "Oswald", "Arial Narrow", sans-serif;
+    --font-body:    "Inter", system-ui, -apple-system, sans-serif;
+    --font-mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; }
+
+  .container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  @media (max-width: 720px) {
+    .container { padding: 0 20px; }
+  }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ============================================================
+     BUTTONS — sharp corners, no radius
+     ============================================================ */
+  .btn-gold,
+  .btn-outline-light {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 18px 26px;
+    border: 1px solid transparent;
+    border-radius: 0;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+    cursor: pointer;
+  }
+  .btn-gold {
+    background: var(--gold);
+    color: var(--navy);
+    border-color: var(--gold);
+  }
+  .btn-gold:hover,
+  .btn-gold:focus-visible {
+    background: var(--gold-deep);
+    border-color: var(--gold-deep);
+  }
+  .btn-outline-light {
+    background: transparent;
+    color: #fff;
+    border-color: rgba(255,255,255,0.5);
+  }
+  .btn-outline-light:hover,
+  .btn-outline-light:focus-visible {
+    background: #fff;
+    color: var(--navy);
+    border-color: #fff;
+  }
+
+  /* ============================================================
+     UTILITY RAIL
+     ============================================================ */
+  .utility-rail {
+    background: var(--navy-2);
+    color: rgba(255,255,255,0.72);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    height: 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .utility-rail .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .utility-rail__status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .pulse-dot {
+    width: 8px; height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 0 0 rgba(184,136,42,0.7);
+    animation: pulseDot 1.8s ease-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes pulseDot {
+    0%   { box-shadow: 0 0 0 0   rgba(184,136,42,0.55); }
+    70%  { box-shadow: 0 0 0 9px rgba(184,136,42,0);    }
+    100% { box-shadow: 0 0 0 0   rgba(184,136,42,0);    }
+  }
+  .utility-rail__phone { color: rgba(255,255,255,0.85); }
+  .utility-rail__phone:hover { color: var(--gold-soft); }
+  @media (max-width: 720px) {
+    .utility-rail { display: none; }
+  }
+
+  /* ============================================================
+     MAIN NAV
+     ============================================================ */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    height: 84px;
+  }
+  .nav__inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 32px;
+  }
+  .nav__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+  .nav__logo { height: 42px; width: auto; }
+  .nav__vrule {
+    width: 1px; height: 32px;
+    background: rgba(255,255,255,0.18);
+  }
+  .nav__mark {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.62);
+    line-height: 1.4;
+  }
+  .nav__mark span { display: block; }
+  .nav__mark .veteran { color: var(--gold-soft); }
+
+  .nav__links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+  }
+  .nav__link,
+  .nav__trigger {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.92);
+    background: transparent;
+    border: 0;
+    padding: 12px 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 84px;
+    cursor: pointer;
+    transition: color .15s ease;
+    position: relative;
+  }
+  .nav__link:hover,
+  .nav__trigger:hover,
+  .nav__trigger[aria-expanded="true"] {
+    color: var(--gold-soft);
+  }
+  .nav__trigger[aria-current="page"]{
+    color: var(--gold-soft);
+  }
+  .nav__trigger[aria-current="page"]::after{
+    content: "";
+    position: absolute;
+    left: 14px; right: 14px; bottom: 0;
+    height: 2px;
+    background: var(--gold);
+  }
+  .nav__caret {
+    width: 7px; height: 7px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform .2s ease;
+  }
+  .nav__trigger[aria-expanded="true"] .nav__caret {
+    transform: translateY(1px) rotate(225deg);
+  }
+  .nav__cta {
+    margin-left: 16px;
+    background: var(--gold);
+    color: var(--navy);
+    border: 1px solid var(--gold);
+    border-radius: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+    flex-shrink: 0;
+  }
+  .nav__cta:hover,
+  .nav__cta:focus-visible {
+    background: transparent;
+    color: var(--gold-soft);
+    border-color: var(--gold-soft);
+  }
+
+  .nav__dropdown-wrap { position: relative; }
+  .nav__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 320px;
+    background: var(--navy-2);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity .15s ease, transform .15s ease, visibility .15s;
+    z-index: 60;
+  }
+  .nav__dropdown-wrap.is-open .nav__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .nav__dropdown a {
+    display: block;
+    padding: 12px 22px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: rgba(255,255,255,0.88);
+    border-left: 2px solid transparent;
+    transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+  }
+  .nav__dropdown a:hover,
+  .nav__dropdown a:focus-visible,
+  .nav__dropdown a[aria-current="page"]{
+    background: rgba(255,255,255,0.03);
+    border-left-color: var(--gold);
+    color: #fff;
+  }
+  .nav__dropdown a[aria-current="page"]{
+    color: var(--gold-soft);
+  }
+
+  .nav__hamburger {
+    display: none;
+    width: 44px; height: 44px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.18);
+    margin-left: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-direction: column;
+  }
+  .nav__hamburger span {
+    display: block;
+    width: 20px; height: 1.5px;
+    background: #fff;
+  }
+  @media (max-width: 1099px) {
+    .nav__mark { display: none; }
+    .nav__vrule { display: none; }
+  }
+  @media (max-width: 899px) {
+    .nav { height: 64px; }
+    .nav__logo { height: 36px; }
+    .nav__links,
+    .nav__cta { display: none; }
+    .nav__hamburger { display: inline-flex; }
+  }
+
+  /* Mobile tap-to-call */
+  .tap-call-bar {
+    display: none;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 12px;
+    text-align: center;
+  }
+  @media (max-width: 899px) { .tap-call-bar { display: block; } }
+
+  /* Mobile drawer */
+  .drawer {
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: min(420px, 100%);
+    background: var(--navy);
+    z-index: 200;
+    transform: translateX(100%);
+    transition: transform .28s ease;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .drawer.is-open { transform: translateX(0); }
+  .drawer__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .drawer__head img { height: 36px; }
+  .drawer__close {
+    width: 40px; height: 40px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+    border-radius: 0;
+  }
+  .drawer__list { list-style: none; padding: 0; margin: 0; }
+  .drawer__item { border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .drawer__top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: transparent;
+    border: 0;
+    padding: 20px 22px;
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    text-align: left;
+  }
+  .drawer__toggle {
+    width: 22px; height: 22px;
+    border: 1px solid rgba(255,255,255,0.32);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    line-height: 1;
+    color: rgba(255,255,255,0.85);
+  }
+  .drawer__sub {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .25s ease;
+    background: rgba(255,255,255,0.02);
+  }
+  .drawer__item.is-open .drawer__sub { max-height: 600px; }
+  .drawer__sub a {
+    display: block;
+    padding: 14px 22px 14px 28px;
+    color: rgba(255,255,255,0.82);
+    font-family: var(--font-body);
+    font-size: 14px;
+    border-left: 2px solid var(--gold);
+    margin-left: 12px;
+  }
+  .drawer__sub a[aria-current="page"]{ color: var(--gold-soft); }
+  .drawer__cta-wrap { padding: 22px; margin-top: auto; }
+  .drawer__cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 18px 22px;
+    border: 1px solid var(--gold);
+    border-radius: 0;
+  }
+  .drawer-scrim {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 150;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease, visibility .2s;
+  }
+  .drawer-scrim.is-open { opacity: 1; visibility: visible; }
+
+  /* Mobile bottom strip */
+  .bottom-strip {
+    display: none;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    z-index: 40;
+  }
+  .bottom-strip a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    padding: 8px 4px;
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    gap: 4px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .bottom-strip a:last-child { border-right: 0; }
+  .bottom-strip__icon { font-family: var(--font-mono); color: var(--gold-soft); font-size: 14px; }
+  @media (max-width: 899px) {
+    .bottom-strip { display: flex; }
+    body { padding-bottom: 60px; }
+  }
+
+  /* Side tab CTA (desktop only) */
+  .side-tab {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    writing-mode: vertical-rl;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 18px 12px;
+    border: 0;
+    border-radius: 0;
+    z-index: 45;
+    transition: background-color .2s ease;
+  }
+  .side-tab:hover { background: var(--gold-deep); }
+  @media (max-width: 899px) { .side-tab { display: none; } }
+
+  /* Slideout contact panel */
+  .slideout {
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: min(400px, 100%);
+    background: var(--paper);
+    z-index: 210;
+    transform: translateX(100%);
+    transition: transform .3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .slideout.is-open { transform: translateX(0); }
+  .slideout__head {
+    background: var(--navy);
+    color: #fff;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .slideout__head h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .slideout__close {
+    width: 36px; height: 36px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff;
+    font-size: 16px;
+    line-height: 1;
+    border-radius: 0;
+  }
+  .slideout__body { padding: 28px 32px 40px; }
+  .slideout__intro {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin: 0 0 22px;
+  }
+  .slideout label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 16px 0 6px;
+  }
+  .slideout input,
+  .slideout textarea {
+    width: 100%;
+    border: 1px solid var(--rule-strong);
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 15px;
+    padding: 12px 14px;
+    border-radius: 0;
+    transition: border-color .15s ease;
+  }
+  .slideout textarea { min-height: 110px; resize: vertical; }
+  .slideout input:focus,
+  .slideout textarea:focus {
+    outline: none;
+    border-color: var(--navy);
+  }
+  .slideout__submit {
+    margin-top: 22px;
+    width: 100%;
+    background: var(--gold);
+    color: var(--navy);
+    border: 1px solid var(--gold);
+    border-radius: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 16px;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .slideout__submit:hover {
+    background: var(--gold-deep);
+    border-color: var(--gold-deep);
+  }
+
+  /* ============================================================
+     HERO
+     ============================================================ */
+  .hero {
+    position: relative;
+    background: var(--navy);
+    min-height: 80vh;
+    overflow: hidden;
+    isolation: isolate;
+    color: #fff;
+  }
+  .hero__media {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+  }
+  .hero__media img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    filter: grayscale(30%) contrast(1.05) brightness(0.45);
+    display: block;
+  }
+  .hero__overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to right, rgba(14,28,43,0.92) 0%, rgba(14,28,43,0.75) 60%, rgba(14,28,43,0.50) 100%);
+    z-index: 1;
+  }
+  .hero__placeholder-flag {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 3;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 8px 14px;
+    max-width: 380px;
+    line-height: 1.45;
+    text-align: left;
+  }
+  .hero__inner {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: 58fr 42fr;
+    gap: 56px;
+    padding: clamp(80px, 10vw, 140px) 0 80px;
+    align-items: center;
+  }
+  @media (max-width: 960px) {
+    .hero__inner { grid-template-columns: 1fr; gap: 48px; padding-top: clamp(60px, 9vw, 100px); }
+  }
+  .hero__crumbs {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin: 0 0 22px;
+  }
+  .hero__crumbs a { color: var(--gold-soft); opacity: 0.75; }
+  .hero__crumbs a:hover { opacity: 1; }
+  .hero__h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(44px, 6.4vw, 80px);
+    line-height: 0.95;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+  }
+  .hero__rule {
+    width: 96px;
+    height: 2px;
+    background: var(--gold);
+    border: 0;
+    margin: 24px 0;
+  }
+  .hero__lede {
+    font-family: var(--font-body);
+    font-size: 18px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.88);
+    max-width: 56ch;
+    margin: 0;
+  }
+
+  /* GSOC status panel */
+  .gsoc-panel {
+    background: rgba(10,22,34,0.88);
+    border: 1px solid rgba(184,136,42,0.30);
+    padding: 32px;
+    position: relative;
+  }
+  .gsoc-panel__status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+  }
+  .gsoc-panel__rule {
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.4;
+    border: 0;
+    margin: 16px 0;
+  }
+  .gsoc-panel__title {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin: 0;
+  }
+  .gsoc-panel__num {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(64px, 8vw, 88px);
+    line-height: 1;
+    color: #fff;
+    margin: 8px 0 8px;
+    letter-spacing: 0.01em;
+  }
+  .gsoc-panel__sub {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin: 0;
+  }
+  .gsoc-panel__body {
+    font-family: var(--font-body);
+    font-size: 15px;
+    line-height: 1.6;
+    color: rgba(255,255,255,0.78);
+    margin: 0;
+  }
+  .gsoc-panel__footer {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(217,182,107,0.55);
+    margin: 0;
+  }
+
+  /* ============================================================
+     COMMON SECTION HEADER PATTERN
+     ============================================================ */
+  .sec {
+    padding: clamp(72px, 9vw, 110px) 0;
+  }
+  .sec--cream  { background: var(--cream); }
+  .sec--cream-2{ background: var(--cream-2); }
+  .sec--paper  { background: var(--paper); }
+  .sec--navy   { background: var(--navy); color: #fff; }
+
+  .sec__label {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    color: var(--gold);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin: 0 0 18px;
+    display: inline-block;
+  }
+  .sec--navy .sec__label { color: var(--gold-soft); }
+
+  .sec__h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(36px, 4.4vw, 52px);
+    line-height: 1.04;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0 0 22px;
+    max-width: 22ch;
+  }
+  .sec--navy .sec__h2 { color: #fff; }
+
+  .sec__lede {
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 64ch;
+    margin: 0 0 clamp(48px, 6vw, 72px);
+  }
+  .sec--navy .sec__lede { color: rgba(255,255,255,0.78); }
+
+  /* ============================================================
+     PILLAR CARDS — section 1
+     ============================================================ */
+  .pillars {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 900px) {
+    .pillars { grid-template-columns: 1fr; }
+  }
+  .pillar {
+    background: var(--paper);
+    border: 1px solid var(--rule-strong);
+    border-top: 3px solid var(--gold);
+    padding: 32px 28px;
+  }
+  .pillar__icon { width: 40px; height: 40px; display: block; }
+  .pillar__h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 18px 0 10px;
+  }
+  .pillar__body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* ============================================================
+     NUMBERS BAND — section 3
+     ============================================================ */
+  .numbers {
+    padding: clamp(56px, 7vw, 80px) 0;
+    background: var(--navy);
+    color: #fff;
+  }
+  .numbers__grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  @media (max-width: 900px) {
+    .numbers__grid { grid-template-columns: 1fr; }
+  }
+  .num {
+    padding: 40px 24px;
+    text-align: center;
+    border-right: 1px solid rgba(255,255,255,0.12);
+  }
+  .num:last-child { border-right: 0; }
+  @media (max-width: 900px) {
+    .num { border-right: 0; border-bottom: 1px solid rgba(255,255,255,0.12); padding: 28px 0; }
+    .num:last-child { border-bottom: 0; }
+  }
+  .num__n {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(64px, 8.4vw, 96px);
+    line-height: 1;
+    color: var(--gold-soft);
+    margin: 0;
+    letter-spacing: 0.005em;
+  }
+  .num__l {
+    font-family: var(--font-mono);
+    font-size: 14px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.80);
+    margin: 14px 0 0;
+  }
+  .numbers__rule {
+    width: 120px;
+    height: 2px;
+    background: var(--gold);
+    opacity: 0.4;
+    border: 0;
+    margin: 40px auto 32px;
+  }
+  .numbers__statement {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: clamp(20px, 2.4vw, 28px);
+    color: #fff;
+    text-transform: uppercase;
+    text-align: center;
+    letter-spacing: 0.05em;
+    max-width: 640px;
+    margin: 0 auto;
+    line-height: 1.25;
+  }
+
+  /* ============================================================
+     SCOPE — section 4
+     ============================================================ */
+  .scope {
+    display: block;
+    max-width: 720px;
+  }
+  .scope__intro {
+    font-family: var(--font-body);
+    font-size: 16px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin: 0 0 24px;
+  }
+  .scope__cta { margin-top: 28px; display: inline-block; }
+  .expect__cta { margin-top: 40px; }
+  .scope__card {
+    background: var(--paper);
+    border: 1px solid var(--rule-strong);
+    border-top: 3px solid var(--gold);
+    padding: 36px;
+  }
+  .scope__label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--gold);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin: 0 0 22px;
+    display: block;
+  }
+  .scope__row {
+    display: grid;
+    grid-template-columns: 24px 1fr;
+    gap: 14px;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--rule);
+    align-items: start;
+  }
+  .scope__row:last-of-type { border-bottom: 0; }
+  .scope__check {
+    width: 18px; height: 18px;
+    margin-top: 4px;
+    color: var(--gold);
+  }
+  .scope__row-name {
+    display: block;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.10em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 0 0 4px;
+  }
+  .scope__row-note {
+    font-family: var(--font-body);
+    font-size: 15px;
+    color: var(--ink-soft);
+    margin: 0;
+    line-height: 1.55;
+  }
+  .scope__sep {
+    height: 1px;
+    background: var(--rule-strong);
+    margin: 20px 0;
+    border: 0;
+  }
+  .scope__foot {
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: var(--ink-soft);
+    font-style: italic;
+    margin: 0;
+    line-height: 1.55;
+  }
+
+  .scope__side {
+    padding: 36px;
+  }
+  .scope__side-label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--ink-soft);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin: 0 0 18px;
+    display: block;
+  }
+  .scope__side-body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin: 0 0 22px;
+  }
+  .scope__side-link {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold);
+    border-bottom: 1px solid var(--gold-soft);
+    padding-bottom: 4px;
+    display: inline-block;
+  }
+  .scope__side-link:hover { color: var(--gold-deep); }
+
+  /* ============================================================
+     EXPECT — section 5 (3 cards)
+     ============================================================ */
+  .expect {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+  @media (max-width: 900px) {
+    .expect { grid-template-columns: 1fr; }
+  }
+  .ecard {
+    background: var(--paper);
+    border: 1px solid var(--rule-strong);
+    border-top: 3px solid var(--gold);
+    padding: 28px;
+    position: relative;
+  }
+  .ecard__icon { width: 36px; height: 36px; }
+  .ecard__h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink);
+    margin: 18px 0 12px;
+  }
+  .ecard__body {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+  .ecard__flag {
+    display: inline-block;
+    margin-top: 18px;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    padding: 8px 12px;
+    line-height: 1.45;
+  }
+
+  /* ============================================================
+     WHY MATTERS — section 6
+     ============================================================ */
+  .why {
+    display: grid;
+    grid-template-columns: 55fr 45fr;
+    gap: 48px;
+    align-items: start;
+  }
+  @media (max-width: 900px) {
+    .why { grid-template-columns: 1fr; gap: 32px; }
+  }
+  .why__copy p {
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    max-width: 58ch;
+    margin: 0 0 22px;
+  }
+  .why__cta {
+    margin-top: 12px;
+  }
+  .why__cta:hover { color: var(--navy); }
+
+  .pullquote {
+    background: var(--navy);
+    color: #fff;
+    padding: 40px 36px;
+    position: relative;
+  }
+  .pullquote__rule {
+    width: 48px;
+    height: 2px;
+    background: var(--gold);
+    border: 0;
+    margin: 0 0 24px;
+  }
+  .pullquote__q {
+    font-family: var(--font-body);
+    font-size: 19px;
+    line-height: 1.6;
+    font-style: italic;
+    color: rgba(255,255,255,0.88);
+    margin: 0;
+  }
+  .pullquote__attr {
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin: 24px 0 0;
+    line-height: 1.6;
+  }
+
+  /* ============================================================
+     FINAL CTA
+     ============================================================ */
+  .final-cta {
+    background: var(--navy);
+    color: #fff;
+    border-top: 4px solid var(--gold);
+    padding: clamp(72px, 9vw, 110px) 0;
+  }
+  .final-cta__grid {
+    display: grid;
+    grid-template-columns: 60fr 40fr;
+    gap: 56px;
+    align-items: center;
+  }
+  @media (max-width: 900px) {
+    .final-cta__grid { grid-template-columns: 1fr; gap: 36px; }
+  }
+  .final-cta__eyebrow {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-soft);
+    margin: 18px 0 22px;
+    display: block;
+  }
+  .final-cta__h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(36px, 4.4vw, 52px);
+    line-height: 1.02;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0;
+    letter-spacing: 0.005em;
+  }
+  .final-cta__body {
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.65;
+    color: rgba(255,255,255,0.8);
+    max-width: 50ch;
+    margin: 0 0 30px;
+  }
+  .final-cta__right {
+    border-left: 1px solid rgba(255,255,255,0.12);
+    padding-left: 48px;
+  }
+  @media (max-width: 900px) {
+    .final-cta__right { border-left: 0; padding-left: 0; border-top: 1px solid rgba(255,255,255,0.12); padding-top: 28px; }
+  }
+  .final-cta__h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: #fff;
+    margin: 0 0 12px;
+  }
+  .final-cta__phone {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(28px, 3.4vw, 40px);
+    color: var(--gold-soft);
+    letter-spacing: 0.01em;
+    display: block;
+    margin: 0 0 14px;
+  }
+  .final-cta__phone:hover { color: #fff; }
+  .final-cta__links {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+    color: rgba(255,255,255,0.7);
+    font-size: 14px;
+    flex-wrap: wrap;
+  }
+  .final-cta__links a:hover { color: var(--gold-soft); }
+  .final-cta__links span { color: rgba(255,255,255,0.3); }
+
+  /* ============================================================
+     FOOTER — parity with about-part2.html
+     ============================================================ */
+  .site-footer {
+    background: var(--navy-2);
+    color: rgba(255,255,255,0.7);
+    padding: 72px 0 36px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 4fr 2fr 2fr 2fr;
+    gap: 48px;
+  }
+  @media (max-width: 960px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+    .footer-col--brand { grid-column: 1/-1; }
+  }
+  @media (max-width: 560px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-col--brand { grid-column: auto; }
+  }
+  .footer-logo { height: 48px; width: auto; margin-bottom: 22px; filter: brightness(0) invert(1); }
+  .footer-blurb {
+    color: rgba(255,255,255,0.62);
+    font-size: 14px;
+    max-width: 38ch;
+    line-height: 1.65;
+    margin: 0;
+  }
+  .footer-license-line {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,0.8);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+  .footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+  }
+  .footer-socials a {
+    width: 36px; height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.7);
+    transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+  }
+  .footer-socials a:hover {
+    border-color: var(--gold);
+    color: var(--gold-soft);
+    background: rgba(184,136,42,0.08);
+  }
+  .footer-socials svg { width: 16px; height: 16px; }
+  .footer-head {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--gold-soft);
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    margin: 0 0 18px;
+    display: block;
+  }
+  .footer-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.82);
+    display: block;
+    padding: 5px 0;
+    transition: color .18s ease;
+  }
+  .footer-link:hover { color: var(--gold-soft); }
+  .footer-phone { color: var(--gold-soft); display: block; padding: 5px 0; }
+  .footer-phone:hover { color: #fff; }
+  .footer-email { color: rgba(255,255,255,0.82); display: block; padding: 5px 0; }
+  .footer-email:hover { color: var(--gold-soft); }
+  .footer-addr-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-top: 14px;
+    display: block;
+  }
+  .footer-addr {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    margin: 6px 0 0;
+    font-style: normal;
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.10);
+    margin-top: 48px;
+    padding-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-bottom > * {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin: 0;
+  }
+  .footer-bottom .footer-licenses-strip {
+    font-size: 10px;
+    color: rgba(255,255,255,0.42);
+    letter-spacing: 0.06em;
+    text-transform: none;
+  }
+  .footer-bottom-links { display: flex; gap: 18px; flex-wrap: wrap; }
+  .footer-bottom-links a:hover { color: var(--gold-soft); }
+  @media (max-width: 700px) {
+    .footer-bottom { flex-direction: column; align-items: flex-start; text-align: left; }
+  }
+
+  /* Focus rings */
+  .btn-gold:focus-visible,
+  .btn-outline-light:focus-visible,
+  .nav__link:focus-visible,
+  .nav__trigger:focus-visible,
+  .nav__cta:focus-visible,
+  .footer-link:focus-visible,
+  .why__cta:focus-visible,
+  .scope__side-link:focus-visible {
+    outline: 2px solid var(--gold-soft);
+    outline-offset: 3px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============================================================
+       UTILITY RAIL
+       ============================================================ -->
+  <div class="utility-rail" role="region" aria-label="Operations status">
+    <div class="container">
+      <span class="utility-rail__status">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        GSOC Online · 24/7 Live Monitoring
+      </span>
+      <a class="utility-rail__phone" href="tel:+15615717983" aria-label="Call or text 561-571-7983">
+        Call or Text: (561) 571-7983
+      </a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MAIN NAV
+       ============================================================ -->
+  <header class="nav" role="banner">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="/" aria-label="AYC Security home">
+        <img class="nav__logo"
+             src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png"
+             alt="AYC Security">
+        <span class="nav__vrule" aria-hidden="true"></span>
+        <span class="nav__mark" aria-hidden="true">
+          <span>Est. Boca Raton</span>
+          <span class="veteran">Veteran-Owned</span>
+        </span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <div class="nav__dropdown-wrap" data-dropdown>
+          <button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="dd-services">
+            Services <span class="nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav__dropdown" id="dd-services" role="menu">
+            <a href="/services/ongoing-security" role="menuitem">Ongoing Site Security</a>
+            <a href="/services/disaster-response" role="menuitem">Disaster &amp; Emergency Response</a>
+            <a href="/services/community-events" role="menuitem">Community, Events &amp; Close Protection</a>
+            <a href="/services/energy-industrial" role="menuitem">Energy &amp; Industrial Security</a>
+            <a href="/services/consulting-training" role="menuitem">Consulting, Training &amp; Procurement</a>
+            <a href="/services/ayc-intelligence" role="menuitem">AYC Intelligence</a>
+          </div>
+        </div>
+
+        <a class="nav__link" href="/industries">Industries</a>
+
+        <div class="nav__dropdown-wrap" data-dropdown>
+          <button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="dd-about" aria-current="page">
+            About <span class="nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav__dropdown" id="dd-about" role="menu">
+            <a href="/about" role="menuitem">About AYC Security</a>
+            <a href="/operations-center" role="menuitem" aria-current="page">Our Operations Center</a>
+            <a href="/about#leadership" role="menuitem">Our Leadership Team</a>
+          </div>
+        </div>
+
+        <a class="nav__link" href="/careers">Careers</a>
+        <a class="nav__link" href="/contact">Contact</a>
+
+        <a class="nav__cta" href="/contact">Request a Consultation →</a>
+      </nav>
+
+      <button class="nav__hamburger" type="button" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile tap-to-call -->
+  <a class="tap-call-bar" href="tel:+15615717983">Call or Text (561) 571-7983</a>
+
+  <!-- Mobile drawer -->
+  <div class="drawer-scrim" id="drawer-scrim" aria-hidden="true"></div>
+  <aside class="drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="drawer__head">
+      <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security">
+      <button class="drawer__close" type="button" id="drawer-close" aria-label="Close menu">✕</button>
+    </div>
+    <ul class="drawer__list">
+      <li class="drawer__item" data-accordion>
+        <button class="drawer__top" type="button" aria-expanded="false">
+          <span>Services</span>
+          <span class="drawer__toggle" aria-hidden="true">+</span>
+        </button>
+        <div class="drawer__sub">
+          <a href="/services/ongoing-security">Ongoing Site Security</a>
+          <a href="/services/disaster-response">Disaster &amp; Emergency Response</a>
+          <a href="/services/community-events">Community, Events &amp; Close Protection</a>
+          <a href="/services/energy-industrial">Energy &amp; Industrial Security</a>
+          <a href="/services/consulting-training">Consulting, Training &amp; Procurement</a>
+          <a href="/services/ayc-intelligence">AYC Intelligence</a>
+        </div>
+      </li>
+      <li class="drawer__item">
+        <a class="drawer__top" href="/industries"><span>Industries</span></a>
+      </li>
+      <li class="drawer__item is-open" data-accordion>
+        <button class="drawer__top" type="button" aria-expanded="true">
+          <span>About</span>
+          <span class="drawer__toggle" aria-hidden="true">−</span>
+        </button>
+        <div class="drawer__sub">
+          <a href="/about">About AYC Security</a>
+          <a href="/operations-center" aria-current="page">Our Operations Center</a>
+          <a href="/about#leadership">Our Leadership Team</a>
+        </div>
+      </li>
+      <li class="drawer__item">
+        <a class="drawer__top" href="/careers"><span>Careers</span></a>
+      </li>
+      <li class="drawer__item">
+        <a class="drawer__top" href="/contact"><span>Contact</span></a>
+      </li>
+    </ul>
+    <div class="drawer__cta-wrap">
+      <a class="drawer__cta" href="/contact">Request a Consultation →</a>
+    </div>
+  </aside>
+
+  <!-- Side tab CTA (desktop) -->
+  <button class="side-tab" type="button" id="side-tab" aria-label="Open contact form">Get in Touch →</button>
+
+  <!-- Slideout contact panel -->
+  <aside class="slideout" id="slideout" aria-label="Contact form" aria-hidden="true">
+    <div class="slideout__head">
+      <h3>Get in Touch</h3>
+      <button class="slideout__close" type="button" id="slideout-close" aria-label="Close contact form">✕</button>
+    </div>
+    <div class="slideout__body">
+      <p class="slideout__intro">Tell us what you need. The right person will reach out.</p>
+      <form>
+        <label for="f-name">Name *</label>
+        <input id="f-name" type="text" autocomplete="name" required>
+        <label for="f-org">Organization</label>
+        <input id="f-org" type="text" autocomplete="organization">
+        <label for="f-phone">Phone (optional)</label>
+        <input id="f-phone" type="tel" autocomplete="tel">
+        <label for="f-email">Email *</label>
+        <input id="f-email" type="email" autocomplete="email" required>
+        <label for="f-msg">Message</label>
+        <textarea id="f-msg"></textarea>
+        <button class="slideout__submit" type="submit">Send Message →</button>
+      </form>
+    </div>
+  </aside>
+
+  <!-- Mobile bottom strip -->
+  <nav class="bottom-strip" aria-label="Quick contact">
+    <a href="tel:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">☎</span>Call</a>
+    <a href="sms:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">✉</span>Text</a>
+    <a href="/cdn-cgi/l/email-protection#b0d9ded6dff0d1c9d3c3d5d3c5c2d9c4c99ed3dfdd"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
+  </nav>
+
+  <!-- ============================================================
+       HERO
+       ============================================================ -->
+  <section class="hero" aria-labelledby="hero-h1">
+    <div class="hero__media" aria-hidden="true">
+      <img src="https://plus.unsplash.com/premium_photo-1749010150570-366f704b7c96?auto=format&fit=crop&w=1800&q=80"
+           alt="">
+    </div>
+    <div class="hero__overlay" aria-hidden="true"></div>
+    <span class="hero__placeholder-flag" role="note">⚠️ Priority: Replace with real AYC Operations Center photo before launch</span>
+
+    <div class="container">
+      <div class="hero__inner">
+        <div class="hero__left">
+          <p class="hero__crumbs"><a href="/about">About</a> &nbsp;/&nbsp; Operations Center</p>
+          <h1 class="hero__h1" id="hero-h1">Our Clients Rest,<br>We Do Not.</h1>
+          <hr class="hero__rule" aria-hidden="true">
+          <p class="hero__lede">
+            AYC Security's Global Security Operations Center monitors every deployed officer via GPS check-in every hour, on the hour, verified by a live human operator, 24 hours a day, 365 days a year. There are no automated check-ins, no gaps, and no unmonitored posts.
+          </p>
+        </div>
+
+        <aside class="gsoc-panel" aria-label="GSOC status">
+          <span class="gsoc-panel__status">
+            <span class="pulse-dot" aria-hidden="true"></span>
+            GSOC Online · Live
+          </span>
+          <hr class="gsoc-panel__rule" aria-hidden="true">
+          <p class="gsoc-panel__title">Global Security Operations Center</p>
+          <p class="gsoc-panel__num">24/7</p>
+          <p class="gsoc-panel__sub">Live Human Oversight</p>
+          <hr class="gsoc-panel__rule" aria-hidden="true">
+          <p class="gsoc-panel__body">Every check-in is verified by a live operator around the clock. When something is flagged, our team responds immediately.</p>
+          <hr class="gsoc-panel__rule" aria-hidden="true">
+          <p class="gsoc-panel__footer">365 Days · 24 Hours · 0 Unmonitored Posts</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 1 — WHAT IS THE GSOC?
+       ============================================================ -->
+  <section class="sec sec--cream" aria-labelledby="s1-h">
+    <div class="container">
+      <span class="sec__label">What Is the GSOC?</span>
+      <h2 class="sec__h2" id="s1-h">Our Global Security Operations Center</h2>
+      <p class="sec__lede">
+        At the center of AYC's operation is the Global Security Operations Center, a 24/7 monitoring function that ensures every officer at every post is confirmed present and responsive. Staffed by live operators around the clock, it runs every hour of every day of the year.
+      </p>
+
+      <div class="pillars">
+        <article class="pillar">
+          <svg class="pillar__icon" viewBox="0 0 40 40" fill="none" stroke="#B8882A" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <circle cx="20" cy="17" r="5"/>
+            <path d="M20 6C14.477 6 10 10.477 10 16C10 22.5 20 34 20 34C20 34 30 22.5 30 16C30 10.477 25.523 6 20 6Z" stroke-linejoin="round"/>
+          </svg>
+          <h3 class="pillar__h3">GPS Monitoring</h3>
+          <p class="pillar__body">Every deployed officer checks in with GPS confirmation every hour, on the hour. Coverage begins the moment an officer takes a post.</p>
+        </article>
+
+        <article class="pillar">
+          <svg class="pillar__icon" viewBox="0 0 40 40" fill="none" stroke="#B8882A" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <rect x="6" y="8" width="28" height="18" rx="2"/>
+            <path d="M14 32h12M20 26v6"/>
+            <circle cx="20" cy="17" r="4"/>
+          </svg>
+          <h3 class="pillar__h3">Live Human Oversight</h3>
+          <p class="pillar__body">A live person tracks and reviews every check-in. We don't rely on an automated software system that can glitch, flag exceptions after the fact, or be missed by managing personnel.</p>
+        </article>
+
+        <article class="pillar">
+          <svg class="pillar__icon" viewBox="0 0 40 40" fill="none" stroke="#B8882A" stroke-width="1.8" stroke-linecap="round" aria-hidden="true">
+            <path d="M20 6C15.582 6 12 9.582 12 14v8l-3 4h22l-3-4v-8c0-4.418-3.582-8-8-8z" stroke-linejoin="round"/>
+            <path d="M17 26c0 1.657 1.343 3 3 3s3-1.343 3-3"/>
+            <line x1="20" y1="6" x2="20" y2="4"/>
+          </svg>
+          <h3 class="pillar__h3">Immediate Response</h3>
+          <p class="pillar__body">Through live monitoring, our team can notify you and respond to any incidents immediately. This is the AYC difference.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 2 — THE NUMBERS
+       ============================================================ -->
+  <section class="numbers" aria-label="GSOC monitoring at a glance">
+    <div class="container">
+      <div class="numbers__grid">
+        <div class="num">
+          <p class="num__n">365</p>
+          <p class="num__l">Days a Year</p>
+        </div>
+        <div class="num">
+          <p class="num__n">24</p>
+          <p class="num__l">Hours a Day</p>
+        </div>
+        <div class="num">
+          <p class="num__n">0</p>
+          <p class="num__l">Unmonitored Posts</p>
+        </div>
+      </div>
+      <hr class="numbers__rule" aria-hidden="true">
+      <p class="numbers__statement">Every client with AYC security officers receives continuous GSOC monitoring throughout their engagement.</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 4 — WHICH DEPLOYMENTS ARE MONITORED?
+       ============================================================ -->
+  <section class="sec sec--cream-2" aria-labelledby="s4-h">
+    <div class="container">
+      <span class="sec__label">Scope of Monitoring</span>
+      <h2 class="sec__h2" id="s4-h">Where the GSOC Operates</h2>
+      <p class="sec__lede">Our GSOC monitors all active officer deployments across the country.</p>
+
+      <div class="scope">
+        <div class="scope__card">
+          <p class="scope__intro">AYC is proud to offer GSOC monitoring across all of our security services:</p>
+
+          <div class="scope__row">
+            <svg class="scope__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="3 12 9 18 21 6"></polyline>
+            </svg>
+            <div>
+              <span class="scope__row-name">Ongoing Site Security</span>
+              <p class="scope__row-note">All scheduled and on-call officer deployments.</p>
+            </div>
+          </div>
+
+          <div class="scope__row">
+            <svg class="scope__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="3 12 9 18 21 6"></polyline>
+            </svg>
+            <div>
+              <span class="scope__row-name">Community, Events &amp; Close Protection</span>
+              <p class="scope__row-note">Event and protection deployments.</p>
+            </div>
+          </div>
+
+          <div class="scope__row">
+            <svg class="scope__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="3 12 9 18 21 6"></polyline>
+            </svg>
+            <div>
+              <span class="scope__row-name">Energy &amp; Industrial Security</span>
+              <p class="scope__row-note">All active site deployments.</p>
+            </div>
+          </div>
+
+          <!-- Confirm with AYC team: Disaster & Emergency added to GSOC scope -->
+          <div class="scope__row">
+            <svg class="scope__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="3 12 9 18 21 6"></polyline>
+            </svg>
+            <div>
+              <span class="scope__row-name">Disaster &amp; Emergency Response</span>
+              <p class="scope__row-note">All active emergency and humanitarian deployments.</p>
+            </div>
+          </div>
+
+          <hr class="scope__sep" aria-hidden="true">
+          <p class="scope__foot">Each monitored post receives hourly GPS-confirmed check-ins verified by a live operator throughout the deployment.</p>
+          <a class="btn-gold scope__cta" href="services.html">Explore Our Services →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 5 — WHAT CLIENTS CAN EXPECT
+       ============================================================ -->
+  <section class="sec sec--cream" aria-labelledby="s5-h">
+    <div class="container">
+      <span class="sec__label">Client Experience</span>
+      <h2 class="sec__h2" id="s5-h">Accountability You Can Count On</h2>
+      <p class="sec__lede">The GSOC exists to protect your people and your property. These are the confirmed commitments every client receives on a monitored engagement.</p>
+
+      <div class="expect">
+        <article class="ecard">
+          <svg class="ecard__icon" viewBox="0 0 40 40" fill="none" stroke="#B8882A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M9 7c0-1.1.9-2 2-2h4l3 6-3 2c1.5 3.5 4 6 7.5 7.5l2-3 6 3v4c0 1.1-.9 2-2 2C19 26 9 16 9 7z"/>
+          </svg>
+          <h3 class="ecard__h3">Direct Line, Any Time</h3>
+          <p class="ecard__body">You have direct access to our operations team at any time. When you call, you speak with someone who has the experience and authority to help.</p>
+        </article>
+
+        <article class="ecard">
+          <svg class="ecard__icon" viewBox="0 0 40 40" fill="none" stroke="#B8882A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M20 5L9 9v9c0 7 5 12 11 13 6-1 11-6 11-13V9L20 5z"/>
+            <path d="M15 19l3.5 3.5L26 15"/>
+          </svg>
+          <h3 class="ecard__h3">Legal-Grade Documentation</h3>
+          <p class="ecard__body">Every incident, flag, and response is documented to a standard that holds up to legal scrutiny. Our in-house legal counsel is integrated directly into our operational structure.</p>
+        </article>
+
+        <article class="ecard">
+          <svg class="ecard__icon" viewBox="0 0 40 40" fill="none" stroke="#B8882A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="8" y="6" width="24" height="28" rx="1"/>
+            <path d="M13 14h14M13 20h14M13 26h9"/>
+          </svg>
+          <h3 class="ecard__h3">Proactive Communication</h3>
+          <p class="ecard__body">Our team communicates throughout every deployment, keeping you informed and updated as the situation warrants. Reporting formats and communication cadences are confirmed at the start of each engagement.</p>
+        </article>
+      </div>
+      <div class="expect__cta">
+        <a class="btn-gold" href="contact.html">Request a Consultation →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       SECTION 6 — WHY A LIVE OPERATIONS CENTER MATTERS
+       ============================================================ -->
+  <section class="sec sec--paper" aria-labelledby="s6-h">
+    <div class="container">
+      <span class="sec__label">Why It Matters</span>
+      <h2 class="sec__h2" id="s6-h">What Sets Our Operations Center Apart</h2>
+
+      <div class="why">
+        <div class="why__copy">
+          <p>The private security industry has no universal standard for officer verification. Some firms rely on self-reported check-ins or automated software that flags exceptions only after they occur. AYC takes a different approach.</p>
+          <p>AYC's GSOC was built around a straightforward premise: a client who has engaged a security firm should not have to wonder whether their officers are actually on post. GPS check-ins, verified by a live human operator every hour, provide that answer.</p>
+          <p>For clients with legal, insurance, or compliance exposure, this distinction is material. Every monitored post generates documentation that can support an incident response, a legal proceeding, or an internal review.</p>
+          <a class="btn-gold why__cta" href="/contact">Request a Consultation →</a>
+        </div>
+
+        <aside class="pullquote">
+          <hr class="pullquote__rule" aria-hidden="true">
+          <p class="pullquote__q">"For the last 20 years I have overseen security companies protecting the largest synagogue in the southeastern US, with almost 1,000 families as members. AYC is our current provider and I have been continuously impressed by their dedication, hard work, and can-do attitude."</p>
+          <p class="pullquote__attr">David Berger · Security Chairman · Boca Raton Synagogue</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FINAL CTA
+       ============================================================ -->
+  <section class="final-cta" aria-labelledby="cta-h">
+    <div class="container">
+      <div class="final-cta__grid">
+        <div>
+          <h2 class="final-cta__h2" id="cta-h">Ready When It Matters</h2>
+          <span class="final-cta__eyebrow">Same-Day Coverage Available</span>
+          <p class="final-cta__body">Tell us what you need to protect. Our operations team will respond with the right coverage plan and the right personnel.</p>
+          <a class="btn-gold" href="/contact">Request a Consultation →</a>
+        </div>
+
+        <div class="final-cta__right">
+          <h3 class="final-cta__h3">Connect With Our Team</h3>
+          <a class="final-cta__phone" href="tel:+15615717983">(561) 571-7983</a>
+          <div class="final-cta__links">
+            <a href="tel:+15615717983">Call</a>
+            <span aria-hidden="true">·</span>
+            <a href="sms:+15615717983">Text</a>
+            <span aria-hidden="true">·</span>
+            <a href="/cdn-cgi/l/email-protection#b6dfd8d0d9f6d7cfd5c5d3d5c3c4dfc2cf98d5d9db">Email</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col footer-col--brand">
+          <img class="footer-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security USA">
+          <p class="footer-blurb">AYC Security USA, a veteran-owned private security firm headquartered in Boca Raton, Florida. 24/7 Global Security Operations Center.</p>
+          <span class="footer-license-line">Licensed &amp; Insured Nationally · Operating Across the United States</span>
+          <div class="footer-socials" aria-label="Social media">
+            <a href="#" aria-label="LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.55v14H.22V8zM8.34 8h4.36v1.92h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 7v8.44h-4.55v-7.5c0-1.79-.03-4.1-2.5-4.1s-2.88 1.95-2.88 3.97V22H8.34V8z"/>
+              </svg>
+            </a>
+            <a href="#" aria-label="Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-col" aria-label="Services">
+          <span class="footer-head">Services</span>
+          <a class="footer-link" href="/services/ongoing-security">Ongoing Site Security</a>
+          <a class="footer-link" href="/services/disaster-response">Disaster &amp; Emergency Response</a>
+          <a class="footer-link" href="/services/community-events">Community, Events &amp; Close Protection</a>
+          <a class="footer-link" href="/services/energy-industrial">Energy &amp; Industrial Security</a>
+          <a class="footer-link" href="/services/consulting-training">Consulting, Training &amp; Procurement</a>
+          <a class="footer-link" href="/services/ayc-intelligence">AYC Intelligence</a>
+        </nav>
+
+        <nav class="footer-col" aria-label="Company">
+          <span class="footer-head">Company</span>
+          <a class="footer-link" href="/about">About AYC Security</a>
+          <a class="footer-link" href="/operations-center">Our Operations Center</a>
+          <a class="footer-link" href="/industries">Industries Served</a>
+          <a class="footer-link" href="/careers">Careers</a>
+          <a class="footer-link" href="/contact">Contact</a>
+        </nav>
+
+        <div class="footer-col">
+          <span class="footer-head">Contact</span>
+          <a class="footer-phone" href="tel:+15615717983">(561) 571-7983</a>
+          <a class="footer-email" href="/cdn-cgi/l/email-protection#2841464e476849514b5b4d4b5d5a415c51064b4745"><span class="__cf_email__" data-cfemail="bad3d4dcd5fadbc3d9c9dfd9cfc8d3cec394d9d5d7">[email&#160;protected]</span></a>
+
+          <span class="footer-addr-label">Florida HQ</span>
+          <address class="footer-addr">7000 W Palmetto Park Rd., Suite 308<br>Boca Raton, FL 33433</address>
+
+          <span class="footer-addr-label">Ohio</span>
+          <address class="footer-addr">7160 Chagrin Road, Suite 180<br>Chagrin Falls, OH 44023</address>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 AYC Security USA · All Rights Reserved</p>
+        <p class="footer-licenses-strip">FL B3200547 · NV 4383 · OH 20242100525221 · TN 14274 · TX B31026501</p>
+        <div class="footer-bottom-links">
+          <a href="/privacy">Privacy Policy</a>
+          <span aria-hidden="true">·</span>
+          <a href="/terms">Terms of Use</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function () {
+  'use strict';
+
+  // ---------- Desktop dropdowns (hover + click + keyboard) ----------
+  const dropdowns = document.querySelectorAll('[data-dropdown]');
+  let openDropdown = null;
+  let closeTimer = null;
+
+  function openDD(wrap) {
+    if (openDropdown && openDropdown !== wrap) closeDD(openDropdown);
+    wrap.classList.add('is-open');
+    const trigger = wrap.querySelector('.nav__trigger');
+    if (trigger) trigger.setAttribute('aria-expanded', 'true');
+    openDropdown = wrap;
+  }
+  function closeDD(wrap) {
+    wrap.classList.remove('is-open');
+    const trigger = wrap.querySelector('.nav__trigger');
+    if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    if (openDropdown === wrap) openDropdown = null;
+  }
+
+  dropdowns.forEach((wrap) => {
+    const trigger = wrap.querySelector('.nav__trigger');
+    wrap.addEventListener('mouseenter', () => { clearTimeout(closeTimer); openDD(wrap); });
+    wrap.addEventListener('mouseleave', () => {
+      closeTimer = setTimeout(() => closeDD(wrap), 140);
+    });
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (wrap.classList.contains('is-open')) closeDD(wrap);
+      else openDD(wrap);
+    });
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { closeDD(wrap); trigger.focus(); }
+    });
+  });
+  document.addEventListener('click', (e) => {
+    if (!openDropdown) return;
+    if (!openDropdown.contains(e.target)) closeDD(openDropdown);
+  });
+
+  // ---------- Mobile drawer ----------
+  const drawer = document.getElementById('mobile-drawer');
+  const scrim  = document.getElementById('drawer-scrim');
+  const hamburger = document.getElementById('hamburger');
+  const drawerClose = document.getElementById('drawer-close');
+
+  function openDrawer() {
+    drawer.classList.add('is-open');
+    scrim.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    scrim.setAttribute('aria-hidden', 'false');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    scrim.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    scrim.setAttribute('aria-hidden', 'true');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', openDrawer);
+  drawerClose.addEventListener('click', closeDrawer);
+  scrim.addEventListener('click', closeDrawer);
+
+  // Drawer accordions
+  document.querySelectorAll('[data-accordion] > .drawer__top').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const li = btn.closest('[data-accordion]');
+      const open = li.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(open));
+      const tog = btn.querySelector('.drawer__toggle');
+      if (tog) tog.textContent = open ? '−' : '+';
+    });
+  });
+
+  // ---------- Side tab + slideout ----------
+  const sideTab = document.getElementById('side-tab');
+  const slideout = document.getElementById('slideout');
+  const slideoutClose = document.getElementById('slideout-close');
+
+  function openSlideout() {
+    slideout.classList.add('is-open');
+    slideout.setAttribute('aria-hidden', 'false');
+    scrim.classList.add('is-open');
+    scrim.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeSlideout() {
+    slideout.classList.remove('is-open');
+    slideout.setAttribute('aria-hidden', 'true');
+    if (!drawer.classList.contains('is-open')) {
+      scrim.classList.remove('is-open');
+      scrim.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  }
+  sideTab.addEventListener('click', openSlideout);
+  slideoutClose.addEventListener('click', closeSlideout);
+  scrim.addEventListener('click', () => {
+    if (slideout.classList.contains('is-open')) closeSlideout();
+  });
+
+  // Escape closes everything
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (slideout.classList.contains('is-open')) closeSlideout();
+    if (drawer.classList.contains('is-open')) closeDrawer();
+  });
+})();
+</script>
+
+</body>
+</html>
