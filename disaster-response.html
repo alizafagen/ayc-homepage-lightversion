@@ -421,25 +421,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   .hero-grid{grid-template-columns:1fr;gap:32px;}
 }
 
-.placeholder-flag{
-  position:absolute;
-  top:16px;left:16px;
-  z-index:3;
-  background:rgba(184,136,42,0.95);
-  color:var(--navy);
-  font-family:'IBM Plex Mono',monospace;
-  font-size:10px;
-  letter-spacing:0.12em;
-  text-transform:uppercase;
-  padding:6px 10px;
-  border:1px solid rgba(0,0,0,0.2);
-  pointer-events:none;
-}
-.placeholder-flag--hero{
-  top:auto;
-  bottom:16px;
-}
-
 .breadcrumb{
   font-family:'IBM Plex Mono',monospace;
   font-size:11px;
@@ -523,11 +504,11 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 }
 .stat-row{
   display:flex;
-  justify-content:space-between;
-  align-items:baseline;
-  padding:12px 0;
+  flex-direction:column;
+  align-items:flex-start;
+  padding:14px 0;
   border-bottom:1px solid rgba(255,255,255,0.08);
-  gap:16px;
+  gap:6px;
 }
 .stat-row:last-child{border-bottom:none;}
 .stat-num{
@@ -544,9 +525,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   color:rgba(255,255,255,0.6);
   text-transform:uppercase;
   letter-spacing:0.14em;
-  text-align:right;
-  max-width:180px;
-  line-height:1.4;
+  text-align:left;
 }
 
 /* ---------- CALLOUT ---------- */
@@ -1301,7 +1280,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   <div class="drawer-bottom">
     <a href="tel:+15615717983">Call</a>
     <a href="sms:+15615717983">Text</a>
-    <a href="/cdn-cgi/l/email-protection#4a23242c250a2b3329392f293f38233e3364292527">Email</a>
+    <a href="/cdn-cgi/l/email-protection#cda4a3aba28dacb4aebea8aeb8bfa4b9b4e3aea2a0">Email</a>
   </div>
 </div>
 
@@ -1312,7 +1291,6 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 <section class="hero" aria-labelledby="hero-headline">
   <div class="hero-bg" role="img" aria-label="Flood disaster aftermath — replace with real AYC field photo"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
-  <span class="placeholder-flag placeholder-flag--hero" aria-hidden="true">⚠ Placeholder — Replace with Real AYC Field Photo</span>
 
   <div class="container">
     <div class="hero-grid">
@@ -1322,10 +1300,10 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
         </div>
         <h1 id="hero-headline" class="hero-headline">When the situation<br>changes.<br>So do we.</h1>
         <p class="hero-subheadline">Same-day deployment. Nationwide.</p>
-        <p class="hero-body">AYC Security deploys quality security personnel to disaster recovery and humanitarian operations across the country. Whether you need a team on-site today or are planning for contingency operations, we are ready to move.</p>
+        <p class="hero-body">AYC Security deploys quality security personnel to disaster recovery and humanitarian operations across the country and abroad. Whether you need a team on-site today or are planning for contingency operations, we are ready to move.</p>
         <div class="hero-ctas">
           <a class="btn btn-gold" href="tel:+15615717983">Call to discuss your operation →</a>
-          <a class="btn btn-outline-light" href="/contact">Send us your requirements →</a>
+          <a class="btn btn-outline-light" href="/contact">Get Protected →</a>
         </div>
       </div>
 
@@ -1360,10 +1338,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
       <div class="callout-text">
         <p>Disaster environments are unpredictable. The timeline is compressed. The stakes are higher. AYC deploys personnel with the experience to operate in exactly these conditions.</p>
         <p>Armed and unarmed options available. Same-day deployment possible. We integrate with your operations leadership from day one.</p>
-        <p>We operate nationally. Wherever the operation is, we can be there.</p>
+        <p>We operate nationally and internationally. Wherever the operation is, we can be there.</p>
       </div>
       <div class="callout-image">
-        <span class="placeholder-flag" aria-hidden="true">⚠ Placeholder — Real AYC Field Photo</span>
         <img src="https://images.unsplash.com/photo-1640318856811-e5a5e9e63004?auto=format&fit=crop&w=900&q=80" alt="Tornado aftermath — replace with real AYC field photo">
       </div>
     </div>
@@ -1447,7 +1424,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
           </svg>
         </div>
         <h3 class="cap-headline">Nationwide Reach</h3>
-        <p class="cap-body">AYC operates across the United States. Direct deployment or coordination through vetted regional partners — wherever your operation is located.</p>
+        <p class="cap-body">AYC operates across the United States, Canada and internationally. Direct deployment or coordination through vetted regional partners — wherever your operation is located.</p>
       </article>
     </div>
   </div>
@@ -1489,7 +1466,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
           </svg>
         </div>
         <h3 class="pillar-headline">Nationwide Reach</h3>
-        <p class="pillar-body">AYC operates across the United States through direct deployment and a network of vetted regional partners. Whether your operation is on the Gulf Coast or in the Pacific Northwest, we can provide coverage where you need it.</p>
+        <p class="pillar-body">AYC operates across the United States and internationally through direct deployment and a network of vetted regional partners. Wherever your operation is located, we can provide coverage.</p>
       </article>
       <article class="pillar">
         <div class="pillar-icon" aria-hidden="true">
@@ -1500,7 +1477,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
           </svg>
         </div>
         <h3 class="pillar-headline">Oversight &amp; Communication</h3>
-        <p class="pillar-body">You will never need to chase us for an update. AYC provides consistent, proactive communication to organizational leadership throughout every deployment. You have a direct line to our operations team at any time.</p>
+        <p class="pillar-body">AYC provides consistent, proactive communication to organizational leadership throughout every deployment. You will receive regular updates without needing to request them, and our leadership team remains accessible throughout the operation.</p>
       </article>
     </div>
   </div>
@@ -1514,7 +1491,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
       <article class="step-card">
         <div class="step-num">01</div>
         <h3 class="step-headline">Call Us</h3>
-        <p class="step-body">Call or text us directly, any hour. Tell us about your operation, your timeline, and your personnel requirements. We ask the right questions and give you a direct answer on what we can deploy and when. No gatekeeping. No voicemail queue.</p>
+        <p class="step-body">Call or text us directly, any hour. Tell us about your operation, your timeline, and your personnel requirements. We ask the right questions and give you a direct answer on what we can deploy and when.</p>
       </article>
       <article class="step-card">
         <div class="step-num">02</div>
@@ -1524,7 +1501,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
       <article class="step-card">
         <div class="step-num">03</div>
         <h3 class="step-headline">Active Oversight</h3>
-        <p class="step-body">Throughout the deployment, AYC provides consistent operational updates and documentation. Your leadership has a direct line to our team at any time. When the situation changes on the ground, we adapt and communicate — you are never operating in the dark.</p>
+        <p class="step-body">Throughout the deployment, AYC provides consistent operational updates and documentation. Your leadership has a direct line to our leadership team throughout the operation. When the situation changes on the ground, we adapt and communicate — you are never operating in the dark.</p>
       </article>
     </div>
   </div>
@@ -1568,12 +1545,12 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
         <div class="faq-a"><div class="faq-a-inner">Both options are available. The appropriate deployment depends on your operational environment, risk profile, and any state-specific requirements. We work through this with you during the initial call.</div></div>
       </div>
       <div class="faq-item">
-        <button class="faq-q" aria-expanded="false"><span>Can AYC provide security in states where you are not directly licensed?</span><span class="faq-toggle" aria-hidden="true"></span></button>
-        <div class="faq-a"><div class="faq-a-inner">Yes. AYC operates nationally through direct deployment in states where we hold active licenses and through vetted regional partners elsewhere. Wherever your operation is, we can provide coverage.</div></div>
+        <button class="faq-q" aria-expanded="false"><span>Can AYC provide coverage in states where you do not hold an active license?</span><span class="faq-toggle" aria-hidden="true"></span></button>
+        <div class="faq-a"><div class="faq-a-inner">Yes. AYC operates nationally through trusted and vetted regional partners. Wherever your operation is, we can provide coverage.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false"><span>How does AYC communicate with organizational leadership during a deployment?</span><span class="faq-toggle" aria-hidden="true"></span></button>
-        <div class="faq-a"><div class="faq-a-inner">You have a direct line to our operations team at any time. We provide proactive updates and documentation throughout the operation. You will never need to chase us for a situation report.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">You have a direct line to our leadership team throughout the deployment. AYC provides consistent, proactive updates, and clients have the option to be added to our live operational reporting channel for real-time visibility into the deployment.</div></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false"><span>Can AYC coordinate with other organizations or agencies already on site?</span><span class="faq-toggle" aria-hidden="true"></span></button>
@@ -1581,7 +1558,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false"><span>What documentation does AYC provide during and after a deployment?</span><span class="faq-toggle" aria-hidden="true"></span></button>
-        <div class="faq-a"><div class="faq-a-inner">AYC provides thorough incident documentation throughout every operation, informed by our integrated legal counsel. This protects your organization operationally and legally, and provides a clear record of all security events during the deployment.</div></div>
+        <div class="faq-a"><div class="faq-a-inner">AYC provides thorough incident documentation as needed throughout every operation, informed by our integrated legal counsel. This protects your organization operationally and legally, and provides a clear record of all security events during the deployment.</div></div>
       </div>
     </div>
   </div>
@@ -1606,7 +1583,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
         <div class="connect-actions">
           <a class="connect-action" href="tel:+15615717983">Call</a>
           <a class="connect-action" href="sms:+15615717983">Text</a>
-          <a class="connect-action" href="/cdn-cgi/l/email-protection#2940474f466948504a5a4c4a5c5b405d50074a4644">Email</a>
+          <a class="connect-action" href="/cdn-cgi/l/email-protection#177e79717857766e7464727462657e636e3974787a">Email</a>
         </div>
       </div>
     </div>
@@ -1657,7 +1634,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
       <div class="footer-col footer-contact">
         <p class="footer-col-title">Contact</p>
         <a class="contact-phone" href="tel:+15615717983">(561) 571-7983</a>
-        <a class="contact-email" href="/cdn-cgi/l/email-protection#d8b1b6beb798b9a1bbabbdbbadaab1aca1f6bbb7b5"><span class="__cf_email__" data-cfemail="7910171f163918001a0a1c1a0c0b100d00571a1614">[email&#160;protected]</span></a>
+        <a class="contact-email" href="/cdn-cgi/l/email-protection#90f9fef6ffd0f1e9f3e3f5f3e5e2f9e4e9bef3fffd"><span class="__cf_email__" data-cfemail="365f58505976574f5545535543445f424f1855595b">[email&#160;protected]</span></a>
         <p class="contact-block"><strong>Florida HQ</strong>7000 W Palmetto Park Rd., Suite 308, Boca Raton, FL 33433</p>
         <p class="contact-block"><strong>Ohio</strong>7160 Chagrin Road, Suite 180, Chagrin Falls, OH 44023</p>
       </div>
@@ -1681,7 +1658,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 <aside class="slideout" id="slideout" aria-hidden="true" aria-label="Get in touch with AYC Security">
   <button class="slideout-close" id="slideout-close" aria-label="Close form">✕</button>
   <h2>Get in Touch</h2>
-  <p>Tell us about your operation. We will get back to you within one business hour.</p>
+  <p>Tell us about your operation. We will get back to you promptly.</p>
   <form>
     <label for="so-name">Name</label>
     <input id="so-name" name="name" type="text" required>
