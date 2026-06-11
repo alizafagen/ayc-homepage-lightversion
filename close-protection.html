@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ongoing Site Security | 24/7 Guard Services | AYC Security</title>
-<meta name="description" content="AYC Security provides professional 24/7 armed and unarmed security guards for commercial properties, HOAs, hospitals, schools, and residential communities. GPS-monitored. Same-day deployment available. FL, OH, TX, NV, TN licensed.">
-<meta property="og:title" content="Ongoing Site Security | 24/7 Guard Services | AYC Security">
-<meta property="og:description" content="Professional 24/7 armed and unarmed security guards. GPS-monitored. Same-day deployment available.">
+<title>Executive &amp; Close Protection | AYC Security</title>
+<meta name="description" content="AYC Security provides executive protection, personal security details, protective driving, and travel security for executives, high-profile individuals, and organizations in elevated-risk environments. Supported 24/7 by our Global Security Operations Center. FL, OH, TX, NV, TN licensed.">
+<meta property="og:title" content="Executive &amp; Close Protection | AYC Security">
+<meta property="og:description" content="Executive protection, personal security details, protective driving, and travel security. Supported 24/7 by our Global Security Operations Center.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -502,12 +502,14 @@
     margin: 0;
     font-family: var(--font-display);
     font-weight: 600;
-    font-size: 20px;
-    letter-spacing: 0.08em;
+    font-size: 19px;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
+    line-height: 1.2;
   }
   .slideout__close {
     width: 36px; height: 36px;
+    flex-shrink: 0;
     background: transparent;
     border: 1px solid rgba(255,255,255,0.3);
     color: #fff;
@@ -515,6 +517,12 @@
     line-height: 1;
   }
   .slideout__body { padding: 28px 32px 40px; }
+  .slideout__intro {
+    font-size: 15px;
+    color: var(--ink);
+    line-height: 1.7;
+    margin: 0 0 24px;
+  }
   .slideout__label {
     font-family: var(--font-mono);
     font-size: 10px;
@@ -638,11 +646,12 @@
   .hero__sub {
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: clamp(32px, 4.5vw, 56px);
+    font-size: clamp(15px, 1.6vw, 20px);
     color: var(--gold-soft);
     text-transform: uppercase;
-    letter-spacing: 0.04em;
-    margin: 0 0 28px;
+    letter-spacing: 0.06em;
+    line-height: 1.5;
+    margin: 0 0 20px;
   }
   .hero__body {
     font-size: 18px;
@@ -664,58 +673,44 @@
     border-top: 3px solid var(--gold);
     padding: 36px 32px;
   }
-  .hero-card__status {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
+  .hero-card__label {
     font-family: var(--font-mono);
     font-size: 11px;
     color: var(--gold-soft);
     text-transform: uppercase;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.2em;
+    margin: 0;
   }
   .hero-card__rule {
     height: 1px;
     background: rgba(184,136,42,0.3);
     border: 0;
-    margin: 16px 0;
+    margin: 16px 0 20px;
   }
-  .hero-card__head {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 20px;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 0.06em;
-    margin: 0 0 12px;
+  .hero-card__list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
   }
-  .hero-card__body {
+  .hero-card__list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 10px 0;
     font-size: 15px;
-    color: rgba(255,255,255,0.8);
-    line-height: 1.65;
-    margin: 0;
+    color: rgba(255,255,255,0.86);
+    line-height: 1.5;
   }
-  .hero-card__stats {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 16px;
-  }
-  .hero-card__stat-num {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 32px;
-    color: var(--gold-soft);
-    line-height: 1;
-    margin: 0 0 6px;
-  }
-  .hero-card__stat-lbl {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: rgba(255,255,255,0.6);
-    text-transform: uppercase;
-    letter-spacing: 0.14em;
-    margin: 0;
-    line-height: 1.4;
+  .hero-card__list svg { flex-shrink: 0; margin-top: 3px; }
+  .gold-dot {
+    width: 8px; height: 8px;
+    flex-shrink: 0;
+    background: var(--gold);
+    border-radius: 50%;
+    margin-top: 7px;
   }
 
   @media (max-width: 980px) {
@@ -730,353 +725,182 @@
   }
 
   /* ============================================================
-     IN PLAIN TERMS
+     OVERVIEW CALLOUT
      ============================================================ */
-  .plain {
-    background: var(--paper);
-    padding: 56px 0;
-  }
-  .plain__wrap {
-    max-width: 1320px;
-    margin: 0 auto;
-    padding: 0 32px;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0;
-    align-items: stretch;
-  }
-  .plain__panel {
-    background: var(--cream);
+  .overview { background: var(--paper); padding: 56px 0; }
+  .overview .container { max-width: 860px; }
+  .overview-panel {
     border-left: 4px solid var(--gold);
-    padding: 36px 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+    padding: 28px 32px;
+    background: var(--cream);
   }
-  .plain__body {
+  .overview-panel p {
     font-size: 17px;
     color: var(--ink);
     line-height: 1.8;
-    margin: 0;
+    margin: 0 0 18px 0;
   }
-  .plain__body p { margin: 0 0 1.1em; }
-  .plain__body p:last-child { margin-bottom: 0; }
-  .plain__note {
-    font-size: 16px;
-    color: var(--ink-soft);
-    line-height: 1.7;
-    margin: 16px 0 0;
-    padding-top: 16px;
-    border-top: 1px solid var(--rule);
-  }
-  .plain__media {
-    position: relative;
-    overflow: hidden;
-    min-height: 100%;
-    background: var(--cream-2);
-  }
-  .plain__media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  @media (max-width: 768px) {
-    .plain__wrap { grid-template-columns: 1fr; padding: 0 20px; }
-    .plain__media { height: 240px; min-height: 240px; order: -1; }
-    .plain__panel { padding: 28px 24px; }
-  }
+  .overview-panel p:last-child { margin-bottom: 0; }
 
   /* ============================================================
-     TABBED SECTIONS
+     SERVICES GRID
      ============================================================ */
-  .tabs-section {
+  .services {
     background: var(--cream);
     padding: clamp(72px, 9vw, 112px) 0;
   }
-  .tabs-section__head {
+  .services__label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    margin: 0 0 16px;
+  }
+  .services__head {
     font-family: var(--font-display);
     font-weight: 600;
     font-size: clamp(28px, 3.5vw, 44px);
     color: var(--navy);
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    margin: 0 0 48px;
+    margin: 0 0 20px;
   }
-  .tabs__nav {
-    display: flex;
-    gap: 0;
-    border-bottom: 1px solid var(--rule);
-    overflow-x: auto;
-    overflow-y: hidden;
-    margin-bottom: 0;
-    scrollbar-width: thin;
-    -ms-overflow-style: -ms-autohiding-scrollbar;
+  .services__intro {
+    font-size: 16px;
+    color: var(--ink);
+    line-height: 1.7;
+    max-width: 640px;
+    margin: 0 0 56px;
   }
-  .tabs__nav::-webkit-scrollbar { height: 4px; }
-  .tabs__nav::-webkit-scrollbar-thumb { background: var(--rule-strong); }
-
-  .tab {
-    flex-shrink: 0;
-    background: transparent;
-    border: 0;
-    border-bottom: 3px solid transparent;
-    padding: 18px 22px;
-    margin: 0;
-    color: var(--ink-soft);
-    font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 14px;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    cursor: pointer;
-    transition: color .15s ease, border-color .15s ease, background-color .15s ease;
+  .svc-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
   }
-  .tab:hover { color: var(--gold); }
-  .tab.is-active {
-    color: var(--navy);
-    border-bottom-color: var(--gold);
-    font-weight: 600;
-  }
-
-  .tab-panels {
+  .svc-card {
     background: var(--paper);
     border: 1px solid var(--rule);
-    border-top: 0;
-  }
-  .tab-panel {
-    display: none;
-  }
-  .tab-panel.is-active {
-    display: grid;
-    grid-template-columns: 55fr 45fr;
-    align-items: stretch;
-  }
-  .tab-panel__main { padding: 40px; }
-  .tab-panel__media {
-    position: relative;
-    background: var(--cream-2);
-    min-height: 100%;
-    overflow: hidden;
-  }
-  .tab-panel__media img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    display: block;
-  }
-  .tab-panel__placeholder {
-    width: 100%;
-    height: 100%;
-    min-height: 320px;
-    background: var(--navy);
+    border-top: 3px solid var(--gold);
+    padding: 32px;
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;
-    padding: 32px;
-    text-align: center;
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
   }
-  .tab-panel__placeholder-mark {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: 44px;
-    color: var(--gold-soft);
-    letter-spacing: 0.12em;
-    line-height: 1;
-    margin: 0;
+  .svc-card:hover {
+    background: var(--navy);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(14,28,43,0.18);
   }
-  .tab-panel__placeholder-tag {
-    font-family: var(--font-mono);
-    font-size: 11px;
-    color: var(--gold-soft);
-    text-transform: uppercase;
-    letter-spacing: 0.2em;
-    margin: 0;
-  }
-
-  .tab-panel__head-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 22px;
-    margin-bottom: 22px;
-  }
-  .tab-panel__icon {
+  .svc-card:hover .svc-card__head { color: #fff; }
+  .svc-card:hover .svc-card__body { color: rgba(255,255,255,0.82); }
+  .svc-card:hover .svc-card__icon { color: var(--gold-soft); }
+  .svc-card__icon {
     width: 36px; height: 36px;
-    flex-shrink: 0;
     color: var(--gold);
+    margin-bottom: 20px;
   }
-  .tab-panel__head {
+  .svc-card__head {
     font-family: var(--font-display);
-    font-weight: 500;
-    font-size: 22px;
+    font-weight: 600;
+    font-size: 19px;
     color: var(--navy);
     text-transform: uppercase;
     letter-spacing: 0.04em;
-    margin: 4px 0 0;
     line-height: 1.2;
+    margin: 0 0 12px;
   }
-  .tab-panel__body {
+  .svc-card__body {
     font-size: 16px;
     color: var(--ink);
-    line-height: 1.75;
-    max-width: 68ch;
-    margin: 0 0 28px;
-  }
-  .tab-panel__body p { margin: 0 0 1.1em; }
-  .tab-panel__body p:last-child { margin-bottom: 0; }
-  .tab-panel__list {
-    list-style: none;
-    padding: 0;
+    line-height: 1.7;
     margin: 0;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 14px 28px;
   }
-  .tab-panel__list li {
-    display: flex;
-    align-items: flex-start;
-    gap: 12px;
-    font-size: 16px;
-    color: var(--ink);
-    line-height: 1.5;
+  @media (max-width: 980px) {
+    .svc-grid { grid-template-columns: 1fr 1fr; }
   }
-  .tab-panel__check {
-    width: 16px; height: 16px;
-    flex-shrink: 0;
-    color: var(--gold);
-    margin-top: 4px;
-  }
-  .tab-panel__note {
-    border-top: 1px solid var(--rule);
-    margin-top: 28px;
-    padding-top: 16px;
-    font-size: 14px;
-    color: var(--ink-soft);
-    font-style: italic;
-    line-height: 1.6;
-  }
-
-  @media (max-width: 768px) {
-    .tab-panel.is-active { grid-template-columns: 1fr; }
-    .tab-panel__media { min-height: 220px; height: 220px; order: -1; }
-    .tab-panel__placeholder { min-height: 220px; }
-    .tab-panel__main { padding: 28px 22px; }
-    .tab-panel__list { grid-template-columns: 1fr; }
-    .tab-panel__head-row { gap: 16px; flex-direction: column; }
+  @media (max-width: 640px) {
+    .svc-grid { grid-template-columns: 1fr; }
   }
 
   /* ============================================================
-     GSOC CALLOUT (NAVY)
+     SALVARE BRIDGE
      ============================================================ */
-  .gsoc-callout {
-    background: var(--navy);
+  .salvare {
+    background: var(--navy-2);
+    border-top: 3px solid var(--gold);
     color: #fff;
-    padding: clamp(72px, 9vw, 112px) 0;
+    padding: 72px 0;
   }
-  .gsoc-callout__grid {
+  .salvare__grid {
     display: grid;
-    grid-template-columns: 55fr 45fr;
-    gap: 64px;
-    align-items: stretch;
+    grid-template-columns: 1fr;
   }
-  .gsoc-callout__head {
+  .salvare__label {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    margin: 0 0 18px;
+  }
+  .salvare__head {
     font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(36px, 5vw, 64px);
+    font-weight: 600;
+    font-size: clamp(28px, 3.5vw, 44px);
     color: #fff;
     text-transform: uppercase;
-    line-height: 0.98;
-    letter-spacing: 0.005em;
+    line-height: 1.05;
+    letter-spacing: 0.02em;
     margin: 0 0 24px;
   }
-  .gsoc-callout__body {
-    font-size: 17px;
+  .salvare__body {
+    font-size: 16px;
     color: rgba(255,255,255,0.85);
     line-height: 1.8;
     max-width: 52ch;
-    margin: 0 0 44px;
+    margin: 0 0 32px;
   }
-  .gsoc-cards {
+  .salvare__features {
     display: flex;
     flex-direction: column;
-    gap: 12px;
-  }
-  .gsoc-card {
-    background: rgba(255,255,255,0.06);
+    gap: 0;
     border: 1px solid rgba(255,255,255,0.12);
-    padding: 24px 20px;
+    background: rgba(255,255,255,0.04);
+  }
+  .salvare__feature {
     display: flex;
     align-items: flex-start;
     gap: 16px;
+    padding: 22px 24px;
+    border-bottom: 1px solid rgba(255,255,255,0.1);
   }
-  .gsoc-card__icon {
-    width: 36px;
-    height: 36px;
-    flex-shrink: 0;
-    color: var(--gold);
-  }
-  .gsoc-card__head {
-    font-family: var(--font-display);
-    font-weight: 600;
-    font-size: 14px;
-    color: #fff;
-    text-transform: uppercase;
-    letter-spacing: 0.12em;
-    margin: 0 0 6px;
-  }
-  .gsoc-card__body {
-    font-size: 14px;
-    color: rgba(255,255,255,0.8);
-    line-height: 1.6;
-    margin: 0;
-  }
-
-  .gsoc-callout__stats {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid rgba(255,255,255,0.1);
-    padding: 40px 32px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    height: 100%;
-  }
-  .gsoc-callout__stat {
-    display: flex;
-    align-items: flex-end;
-    gap: 16px;
-    padding: 20px 0;
-    border-bottom: 1px solid rgba(255,255,255,0.08);
-  }
-  .gsoc-callout__stat:last-child { border-bottom: 0; }
-  .gsoc-callout__stat-num {
-    font-family: var(--font-display);
-    font-weight: 700;
-    font-size: clamp(48px, 5vw, 72px);
-    color: var(--gold);
-    line-height: 1;
-    margin: 0;
-  }
-  .gsoc-callout__stat-lbl {
+  .salvare__feature:last-child { border-bottom: 0; }
+  .salvare__feature-text { display: block; }
+  .salvare__feature-label {
     font-family: var(--font-mono);
-    font-size: 13px;
+    font-size: 10px;
     color: var(--gold-soft);
     text-transform: uppercase;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.2em;
     margin: 0 0 6px;
-    align-self: flex-end;
-    line-height: 1.3;
   }
-  @media (max-width: 980px) {
-    .gsoc-callout__grid { grid-template-columns: 1fr; gap: 40px; }
+  .salvare__feature-val {
+    font-size: 15px;
+    color: #fff;
+    line-height: 1.55;
+    margin: 0;
+  }
+  @media (max-width: 900px) {
+    .salvare__grid { grid-template-columns: 1fr; gap: 40px; }
   }
 
   /* ============================================================
      HOW IT WORKS
      ============================================================ */
   .how {
-    background: var(--cream-2);
+    background: var(--cream);
     padding: clamp(72px, 9vw, 112px) 0;
   }
   .how__head {
@@ -1138,18 +962,6 @@
     line-height: 1.7;
     margin: 0;
   }
-  .how__step-accent {
-    display: block;
-    margin-top: 20px;
-    padding-top: 16px;
-    border-top: 1px solid var(--rule);
-    font-family: var(--font-mono);
-    font-size: 12px;
-    color: var(--gold);
-    text-transform: uppercase;
-    letter-spacing: 0.16em;
-    line-height: 1.5;
-  }
   @media (max-width: 900px) {
     .how__steps { grid-template-columns: 1fr; gap: 20px; }
     .how__steps::before { display: none; }
@@ -1159,7 +971,7 @@
      TESTIMONIALS
      ============================================================ */
   .testimonials {
-    background: var(--cream);
+    background: var(--cream-2);
     padding: clamp(64px, 8vw, 96px) 0;
   }
   .testimonials__head {
@@ -1175,7 +987,7 @@
   }
   .testimonials__grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 24px;
   }
   .tcard {
@@ -1183,6 +995,11 @@
     background: var(--paper);
     border: 1px solid var(--rule);
     padding: 36px 32px;
+  }
+  .tcard--placeholder {
+    border-style: dashed;
+    border-color: var(--rule-strong);
+    background: var(--cream);
   }
   .tcard__mark {
     position: absolute;
@@ -1205,6 +1022,7 @@
     position: relative;
     z-index: 1;
   }
+  .tcard--placeholder .tcard__quote { color: var(--ink-soft); }
   .tcard__rule {
     width: 40px; height: 1px;
     background: var(--gold);
@@ -1223,15 +1041,15 @@
   .tcard__role {
     font-size: 14px;
     color: var(--ink-soft);
-    margin: 0 0 12px;
+    margin: 0;
   }
-  .tcard__stars {
-    display: inline-flex;
-    gap: 3px;
-    color: var(--gold);
+  .testimonials__note {
+    font-size: 13px;
+    color: var(--ink-soft);
+    text-align: center;
+    margin: 32px 0 0;
   }
-  .tcard__stars svg { width: 16px; height: 16px; }
-  @media (max-width: 800px) {
+  @media (max-width: 900px) {
     .testimonials__grid { grid-template-columns: 1fr; }
   }
 
@@ -1239,7 +1057,7 @@
      FAQ
      ============================================================ */
   .faq {
-    background: var(--cream-2);
+    background: var(--paper);
     padding: clamp(64px, 8vw, 96px) 0;
   }
   .faq__head {
@@ -1310,9 +1128,9 @@
     font-size: 16px;
     color: var(--ink);
     line-height: 1.75;
-    max-width: 72ch;
+    max-width: 62ch;
   }
-  .faq__item.is-open .faq__answer { max-height: 500px; }
+  .faq__item.is-open .faq__answer { max-height: 600px; }
 
   /* ============================================================
      FINAL CTA
@@ -1560,20 +1378,7 @@
     border-left: 2px solid var(--gold);
     z-index: 2;
   }
-  .img-flag--tl { top: 16px; left: 16px; bottom: auto; right: auto; }
   .img-flag--tr { top: 16px; right: 16px; bottom: auto; left: auto; }
-  .coverage-callout {
-    margin-top: 24px;
-    padding: 14px 18px;
-    border: 1px solid var(--gold);
-    border-left: 3px solid var(--gold);
-    font-family: var(--font-mono, monospace);
-    font-size: 13px;
-    letter-spacing: 0.14em;
-    text-transform: uppercase;
-    color: var(--gold);
-    line-height: 1.5;
-  }
 </style>
 </head>
 <body>
@@ -1611,10 +1416,10 @@
             Services <span class="nav__caret" aria-hidden="true"></span>
           </button>
           <div class="nav__dropdown" id="dd-services" role="menu">
-            <a href="/services/ongoing-security" role="menuitem" class="is-active" aria-current="page">Ongoing Site Security</a>
+            <a href="/services/ongoing-security" role="menuitem">Ongoing Site Security</a>
             <a href="/services/disaster-response" role="menuitem">Disaster &amp; Emergency Response</a>
             <a href="/services/community-events" role="menuitem">Community &amp; Events Security</a>
-            <a href="/services/close-protection" role="menuitem">Executive &amp; Close Protection</a>
+            <a href="/services/close-protection" role="menuitem" class="is-active" aria-current="page">Executive &amp; Close Protection</a>
             <a href="/services/energy-industrial" role="menuitem">Energy &amp; Industrial Security</a>
             <a href="/services/consulting-training" role="menuitem">Consulting, Training &amp; Procurement</a>
             <a href="/services/ayc-intelligence" role="menuitem">AYC Intelligence</a>
@@ -1661,10 +1466,10 @@
           <span class="drawer__toggle" aria-hidden="true">−</span>
         </button>
         <div class="drawer__sub">
-          <a href="/services/ongoing-security" aria-current="page">Ongoing Site Security</a>
+          <a href="/services/ongoing-security">Ongoing Site Security</a>
           <a href="/services/disaster-response">Disaster &amp; Emergency Response</a>
           <a href="/services/community-events">Community &amp; Events Security</a>
-          <a href="/services/close-protection">Executive &amp; Close Protection</a>
+          <a href="/services/close-protection" aria-current="page">Executive &amp; Close Protection</a>
           <a href="/services/energy-industrial">Energy &amp; Industrial Security</a>
           <a href="/services/consulting-training">Consulting, Training &amp; Procurement</a>
           <a href="/services/ayc-intelligence">AYC Intelligence</a>
@@ -1700,38 +1505,37 @@
 
   <aside class="slideout" id="slideout" aria-label="Contact form" aria-hidden="true">
     <div class="slideout__head">
-      <h3>How Can We Help?</h3>
+      <h3>Discuss Your Protection Requirements</h3>
       <button class="slideout__close" type="button" id="slideout-close" aria-label="Close contact form">✕</button>
     </div>
     <div class="slideout__body">
+      <p class="slideout__intro">Tell us about the principal, the environment, and the assignment. We respond the same day.</p>
       <form>
         <p class="slideout__label">Service interest</p>
         <div class="pill-row" role="group" aria-label="Service type">
-          <button class="pill is-active" type="button">Ongoing Site Security</button>
-          <button class="pill" type="button">Residential / HOA</button>
-          <button class="pill" type="button">Commercial</button>
-          <button class="pill" type="button">Healthcare</button>
+          <button class="pill is-active" type="button">Executive Protection</button>
+          <button class="pill" type="button">Travel Security</button>
+          <button class="pill" type="button">Estate Security</button>
+          <button class="pill" type="button">Event Close Protection</button>
           <button class="pill" type="button">Other</button>
         </div>
         <label for="f-name">Name</label>
         <input id="f-name" type="text" autocomplete="name">
         <label for="f-email">Email</label>
         <input id="f-email" type="email" autocomplete="email">
-        <label for="f-phone">Phone (optional)</label>
+        <label for="f-phone">Phone</label>
         <input id="f-phone" type="tel" autocomplete="tel">
         <label for="f-service">Service Type</label>
         <select id="f-service">
-          <option>Ongoing Site Security</option>
-          <option>Disaster &amp; Emergency Response</option>
-          <option>Community, Events &amp; Close Protection</option>
-          <option>Energy &amp; Industrial Security</option>
-          <option>Consulting, Training &amp; Procurement</option>
-          <option>AYC Intelligence</option>
+          <option>Executive Protection</option>
+          <option>Travel Security</option>
+          <option>Estate Security</option>
+          <option>Event Close Protection</option>
           <option>Other</option>
         </select>
-        <label for="f-msg">Message</label>
+        <label for="f-msg">Tell us about the assignment</label>
         <textarea id="f-msg"></textarea>
-        <button class="slideout__submit" type="submit">Send Us a Message →</button>
+        <button class="slideout__submit" type="submit">Send Request →</button>
       </form>
     </div>
   </aside>
@@ -1739,7 +1543,7 @@
   <nav class="bottom-strip" aria-label="Quick contact">
     <a href="tel:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">☎</span>Call</a>
     <a href="sms:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">✉</span>Text</a>
-    <a href="/cdn-cgi/l/email-protection#2f464149406f4e564c5c4a4c5a5d465b56014c4042"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
+    <a href="/cdn-cgi/l/email-protection#bad3d4dcd5fadbc3d9c9dfd9cfc8d3cec394d9d5d7"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
   </nav>
 
   <!-- ============================================================
@@ -1747,351 +1551,135 @@
        ============================================================ -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__bg" aria-hidden="true">
-      <img src="https://alizafagen.github.io/ayc-homepage-lightversion/assets/security-guard-front-door-entrance-young-standing-glass-57966210.webp"
-           alt="Professional security guard at building entrance — Dreamstime #57966210, purchase before launch">
+      <img src="https://alizafagen.github.io/ayc-homepage-lightversion/assets/handsome-bodyguard-standing-listening-message-security-earpiece-handsome-bodyguard-standing-listening-message-129233521.webp"
+           alt="Close protection officer on assignment">
     </div>
     <div class="hero__overlay" aria-hidden="true"></div>
-    <span class="img-flag img-flag--tr" aria-hidden="true">⚠️ Watermarked preview — purchase Dreamstime #57966210 and #212499681 before launch</span>
-    <!-- NOTE FOR CLIENT: Purchase a professional security guard photo from Shutterstock (~$29) or Adobe Stock (~$29.99).
-         Search terms: "professional security guard corporate entrance uniform standing"
-         Then replace the src in both images — hero and the split-section callout. -->
+    <span class="img-flag img-flag--tr" aria-hidden="true">⚠️ Watermarked preview: purchase Dreamstime #129233521 before launch</span>
 
     <div class="container">
       <div class="hero__inner">
         <div class="hero__text">
-          <p class="hero__crumbs"><a href="/services">Services</a> &nbsp;/&nbsp; Ongoing Site Security</p>
-          <h1 class="hero__title" id="hero-title">Your Property Security<br>Does Not Stop.</h1>
-          <p class="hero__sub">Neither Do We.</p>
-          <p class="hero__body">AYC provides professional, around-the-clock security for properties and facilities that cannot afford gaps in coverage. Whatever your environment, we build a security presence that is continuous, monitored, and accountable from day one.</p>
+          <p class="hero__crumbs"><a href="/services">Services</a> &nbsp;/&nbsp; Executive &amp; Close Protection</p>
+          <h1 class="hero__title" id="hero-title">Always Ahead. Never Visible.</h1>
+          <p class="hero__sub">Executive protection shaped by intelligence. Calibrated to your risk.</p>
+          <p class="hero__body">AYC Security provides executive and close protection services built on intelligence, advance planning, and discretion. Armed and unarmed. Uniformed and plainclothes. Each protection program is shaped by the individual's risk profile and monitored throughout by our 24/7 Global Security Operations Center.</p>
           <div class="hero__ctas">
-            <a class="btn-gold" href="/contact">Get Protected Now →</a>
+            <a class="btn-gold" href="/contact">Discuss Your Requirements →</a>
             <a class="btn-outline-light" href="tel:+15615717983">Call (561) 571-7983</a>
           </div>
         </div>
 
-        <aside class="hero-card" aria-label="GSOC status">
-          <span class="hero-card__status">
-            <span class="pulse-dot" aria-hidden="true"></span>
-            GSOC Online · 24/7 Active
-          </span>
+        <aside class="hero-card" aria-label="Who we protect">
+          <p class="hero-card__label">Who We Protect</p>
           <hr class="hero-card__rule" aria-hidden="true">
-          <h2 class="hero-card__head">Every Officer. Every Hour.</h2>
-          <p class="hero-card__body">Every deployed officer checks in with GPS confirmation every hour. A live human operator monitors every check-in, 24 hours a day, 365 days a year.</p>
-          <hr class="hero-card__rule" aria-hidden="true">
-          <div class="hero-card__stats">
-            <div>
-              <p class="hero-card__stat-num">24/7</p>
-              <p class="hero-card__stat-lbl">Monitoring</p>
-            </div>
-            <div>
-              <p class="hero-card__stat-num">GPS</p>
-              <p class="hero-card__stat-lbl">Confirmed</p>
-            </div>
-            <div>
-              <p class="hero-card__stat-num">Live</p>
-              <p class="hero-card__stat-lbl">Operators</p>
-            </div>
-          </div>
+          <ul class="hero-card__list">
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Corporate executives and C-suite principals</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>High-profile individuals and public figures</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Political figures and diplomatic personnel</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Organizations at elevated-risk events</li>
+            <li><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Families and estate principals</li>
+          </ul>
         </aside>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       IN PLAIN TERMS
+       OVERVIEW CALLOUT
        ============================================================ -->
-  <section class="plain" aria-label="In plain terms">
-    <div class="plain__wrap">
-      <div class="plain__panel">
-        <div class="plain__body">
-          <p>AYC Security deploys trained, professional security officers to properties and facilities requiring an ongoing, 24/7 security presence. Every officer is monitored by our Global Security Operations Center with GPS-confirmed check-ins every hour of every shift, verified by a live human operator.</p>
-          <p>Armed and unarmed options are available. Every engagement begins with a customized security plan built specifically for your property or facility. Same-day deployment is available for time-sensitive situations.</p>
-        </div>
-        <p class="plain__note">AYC Security operates nationally with active licenses across multiple U.S. states. Wherever your property is located, our team is ready to help.</p>
-      </div>
-      <div class="plain__media">
-        <img src="https://alizafagen.github.io/ayc-homepage-lightversion/assets/security-guard-event-service-security-guard-event-service-officer-his-group-212499681.webp"
-             alt="AYC security officers on deployment — Dreamstime #212499681, purchase before launch">
-        <span class="img-flag img-flag--tr" aria-hidden="true">⚠️ Replace with purchased security guard photo before launch</span>
+  <section class="overview" aria-label="Overview">
+    <div class="container">
+      <div class="overview-panel">
+        <p>Close protection is not about presence alone. The most important work happens before the client moves: threat assessment, advance work, route analysis, venue verification. What appears effortless is the result of preparation they never see.</p>
+        <p>From low-profile personal security to full protection details, every program is built around a specific risk picture, operational environment, and daily requirements. No two assignments are the same.</p>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       TABBED — WHO WE PROTECT
+       SERVICES
        ============================================================ -->
-  <section class="tabs-section" aria-labelledby="tabs-head">
+  <section class="services" aria-labelledby="svc-head">
     <div class="container">
-      <h2 class="tabs-section__head" id="tabs-head">Who We Protect</h2>
+      <p class="services__label">What We Provide</p>
+      <h2 class="services__head" id="svc-head">Executive Protection Services</h2>
+      <p class="services__intro">From single-event VIP coverage to ongoing personal security programs, AYC provides close protection scaled to the assignment and the threat environment.</p>
 
-      <div class="tabs" data-tabs>
-        <div class="tabs__nav" role="tablist" aria-label="Industries we protect">
-          <button class="tab is-active" role="tab" type="button" aria-selected="true" aria-controls="panel-1" id="tab-1" data-target="panel-1">Corporate &amp; Office</button>
-          <button class="tab" role="tab" type="button" aria-selected="false" aria-controls="panel-2" id="tab-2" data-target="panel-2" tabindex="-1">Residential &amp; HOA</button>
-          <button class="tab" role="tab" type="button" aria-selected="false" aria-controls="panel-3" id="tab-3" data-target="panel-3" tabindex="-1">Construction Sites</button>
-          <button class="tab" role="tab" type="button" aria-selected="false" aria-controls="panel-4" id="tab-4" data-target="panel-4" tabindex="-1">Religious Institutions</button>
-          <button class="tab" role="tab" type="button" aria-selected="false" aria-controls="panel-5" id="tab-5" data-target="panel-5" tabindex="-1">Retail &amp; Mixed-Use</button>
-          <button class="tab" role="tab" type="button" aria-selected="false" aria-controls="panel-6" id="tab-6" data-target="panel-6" tabindex="-1">Healthcare &amp; Senior Living</button>
-        </div>
+      <div class="svc-grid">
+        <article class="svc-card">
+          <svg class="svc-card__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <circle cx="18" cy="12" r="6" stroke="currentColor" stroke-width="2"/>
+            <path d="M7 31c0-6 5-10 11-10s11 4 11 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+          <h3 class="svc-card__head">Personal Security Details</h3>
+          <p class="svc-card__body">Dedicated protection personnel scaled to the assignment and the risk environment. Plainclothes or uniformed officers based on the individual's preference.</p>
+        </article>
 
-        <div class="tab-panels">
+        <article class="svc-card">
+          <svg class="svc-card__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <path d="M6 22l2-8h20l2 8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <rect x="5" y="22" width="26" height="7" stroke="currentColor" stroke-width="2"/>
+            <circle cx="11" cy="29" r="2.5" stroke="currentColor" stroke-width="2"/>
+            <circle cx="25" cy="29" r="2.5" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <h3 class="svc-card__head">Protective Drivers &amp; Vehicle Security</h3>
+          <p class="svc-card__body">Vetted drivers with security training and advance route planning.</p>
+        </article>
 
-          <!-- TAB 1 -->
-          <div class="tab-panel is-active" role="tabpanel" id="panel-1" aria-labelledby="tab-1">
-            <div class="tab-panel__main">
-            <div class="tab-panel__head-row">
-              <svg class="tab-panel__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-                <rect x="6" y="4" width="14" height="28" stroke="currentColor" stroke-width="2"/>
-                <rect x="20" y="12" width="10" height="20" stroke="currentColor" stroke-width="2"/>
-                <line x1="9" y1="9" x2="12" y2="9" stroke="currentColor" stroke-width="2"/>
-                <line x1="14" y1="9" x2="17" y2="9" stroke="currentColor" stroke-width="2"/>
-                <line x1="9" y1="14" x2="12" y2="14" stroke="currentColor" stroke-width="2"/>
-                <line x1="14" y1="14" x2="17" y2="14" stroke="currentColor" stroke-width="2"/>
-                <line x1="9" y1="19" x2="12" y2="19" stroke="currentColor" stroke-width="2"/>
-                <line x1="14" y1="19" x2="17" y2="19" stroke="currentColor" stroke-width="2"/>
-                <line x1="9" y1="24" x2="12" y2="24" stroke="currentColor" stroke-width="2"/>
-                <line x1="14" y1="24" x2="17" y2="24" stroke="currentColor" stroke-width="2"/>
-                <line x1="23" y1="17" x2="27" y2="17" stroke="currentColor" stroke-width="2"/>
-                <line x1="23" y1="22" x2="27" y2="22" stroke="currentColor" stroke-width="2"/>
-                <line x1="23" y1="27" x2="27" y2="27" stroke="currentColor" stroke-width="2"/>
-              </svg>
-              <h3 class="tab-panel__head">Corporate Campuses and Office Buildings</h3>
-            </div>
-            <div class="tab-panel__body">
-              <p>Corporate campuses, office towers, and business parks require security that is professional, consistent, and legally accountable. AYC provides uniformed security officers with GSOC-verified hourly check-ins, visitor access management, and incident documentation that protects your organization operationally and legally. Your tenants and stakeholders will always know they're secured.</p>
-            </div>
-            <ul class="tab-panel__list">
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Uniformed and plainclothes officer deployment</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Visitor and access management</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Continuous coverage, including nights, weekends, and holidays</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Incident documentation and reporting</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>24/7 GSOC hourly GPS check-ins</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Warehouse and industrial campus coverage</li>
-            </ul>
-            <p class="tab-panel__note">AYC also has experience providing security during workforce and operational transitions. Contact us to discuss your situation confidentially.</p>
-            </div>
-            <div class="tab-panel__media">
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80"
-                   alt="Corporate office building — replace with AYC client photo">
-            </div>
-          </div>
+        <article class="svc-card">
+          <svg class="svc-card__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <path d="M5 17L18 6l13 11" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M8 15v15h20V15" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <rect x="15" y="21" width="6" height="9" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <h3 class="svc-card__head">Estate &amp; Residential Security</h3>
+          <p class="svc-card__body">Security programs for private residences and family compounds, calibrated to the household's schedule and daily rhythm.</p>
+        </article>
 
-          <!-- TAB 2 -->
-          <div class="tab-panel" role="tabpanel" id="panel-2" aria-labelledby="tab-2" hidden>
-            <div class="tab-panel__main">
-            <div class="tab-panel__head-row">
-              <svg class="tab-panel__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-                <path d="M5 16L18 5l13 11" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                <path d="M8 14v17h20V14" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                <rect x="15" y="20" width="6" height="11" stroke="currentColor" stroke-width="2"/>
-              </svg>
-              <h3 class="tab-panel__head">Residential Communities and HOAs</h3>
-            </div>
-            <div class="tab-panel__body">
-              <p>Gated communities, HOAs, condominium buildings, and luxury residential towers require security officers that residents trust and property managers can rely on. AYC provides access control, patrol services, and GSOC monitoring calibrated to the culture and layout of your community. When residents feel safe, your property reflects it.</p>
-            </div>
-            <ul class="tab-panel__list">
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Access control and gatehouse staffing</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Vehicle and foot patrol</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Resident and visitor management</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>24/7 Coverage, including overnight and weekends</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Incident response and documentation</li>
-            </ul>
-            </div>
-            <div class="tab-panel__media">
-              <img src="https://images.unsplash.com/photo-1759845565036-cbecbcfcb8e2?auto=format&fit=crop&w=900&q=80"
-                   alt="Modern residential apartment building — replace with AYC client photo">
-            </div>
-          </div>
+        <article class="svc-card">
+          <svg class="svc-card__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <circle cx="18" cy="18" r="13" stroke="currentColor" stroke-width="2"/>
+            <ellipse cx="18" cy="18" rx="6" ry="13" stroke="currentColor" stroke-width="2"/>
+            <line x1="5" y1="18" x2="31" y2="18" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <h3 class="svc-card__head">Travel Security</h3>
+          <p class="svc-card__body">Pre-travel intelligence, in-country coordination, and airport logistics. Operations center monitoring throughout. Domestic and international.</p>
+        </article>
 
-          <!-- TAB 3 -->
-          <div class="tab-panel" role="tabpanel" id="panel-3" aria-labelledby="tab-3" hidden>
-            <div class="tab-panel__main">
-            <div class="tab-panel__head-row">
-              <svg class="tab-panel__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-                <path d="M4 30L10 12h16l6 18" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                <line x1="4" y1="30" x2="32" y2="30" stroke="currentColor" stroke-width="2"/>
-                <rect x="14" y="18" width="8" height="12" stroke="currentColor" stroke-width="2"/>
-                <line x1="11" y1="6" x2="11" y2="12" stroke="currentColor" stroke-width="2"/>
-                <line x1="11" y1="6" x2="20" y2="9" stroke="currentColor" stroke-width="2"/>
-              </svg>
-              <h3 class="tab-panel__head">Construction Sites</h3>
-            </div>
-            <div class="tab-panel__body">
-              <p>Active construction sites are among the most vulnerable environments for theft, vandalism, and unauthorized access, particularly overnight and on weekends. AYC provides armed and unarmed site security with GSOC-monitored continuous coverage, designed around the operational rhythm of your job site. Your assets are protected around the clock, even when your crew is not on site.</p>
-            </div>
-            <ul class="tab-panel__list">
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Armed and unarmed officer deployment</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Equipment and materials protection</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Perimeter monitoring and patrol</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>24/7 Coverage, including overnight and weekends</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Coordination with site management</li>
-            </ul>
-            <p class="coverage-callout">
-              Part-Time, Full-Time &amp; 24/7 Coverage Options Available
-            </p>
-            </div>
-            <div class="tab-panel__media">
-              <img src="https://images.unsplash.com/photo-1599707254554-027aeb4deacd?auto=format&fit=crop&w=900&q=80"
-                   alt="Yellow crane and active construction site, Los Angeles">
-            </div>
-          </div>
+        <article class="svc-card">
+          <svg class="svc-card__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <path d="M18 4l11 4v8c0 8-5 13-11 16-6-3-11-8-11-16V8l11-4z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M13 18l3.5 3.5L24 14" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3 class="svc-card__head">Event &amp; Venue Close Protection</h3>
+          <p class="svc-card__body">Advance work, venue assessment, and dedicated officer presence for high-profile event appearances and public-facing engagements.</p>
+        </article>
 
-          <!-- TAB 4 -->
-          <div class="tab-panel" role="tabpanel" id="panel-4" aria-labelledby="tab-4" hidden>
-            <div class="tab-panel__main">
-            <div class="tab-panel__head-row">
-              <svg class="tab-panel__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-                <path d="M18 4l12 5v9c0 7-5 13-12 14-7-1-12-7-12-14V9l12-5z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                <line x1="18" y1="12" x2="18" y2="22" stroke="currentColor" stroke-width="2"/>
-                <line x1="13" y1="17" x2="23" y2="17" stroke="currentColor" stroke-width="2"/>
-              </svg>
-              <h3 class="tab-panel__head">Houses of Worship and Educational Institutions</h3>
-            </div>
-            <div class="tab-panel__body">
-              <p>Protecting a congregation or a school campus means holding a careful balance between vigilance and welcome. AYC security officers are trained for environments where the presence of security must feel reassuring rather than intimidating, while remaining fully prepared to respond when it matters most. Your community deserves to feel safe without feeling watched.</p>
-            </div>
-            <ul class="tab-panel__list">
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Weekend and daily service coverage</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>High-volume event and holiday security</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Campus patrol and access control</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Active threat response preparedness</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>De-escalation</li>
-            </ul>
-            </div>
-            <div class="tab-panel__media">
-              <img src="https://images.unsplash.com/photo-1638707094136-e254bd87ad4a?auto=format&fit=crop&w=900&q=80"
-                   alt="Colorful stained glass windows in a house of worship">
-            </div>
-          </div>
-
-          <!-- TAB 5 -->
-          <div class="tab-panel" role="tabpanel" id="panel-5" aria-labelledby="tab-5" hidden>
-            <div class="tab-panel__main">
-            <div class="tab-panel__head-row">
-              <svg class="tab-panel__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-                <path d="M5 12l3-6h20l3 6" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                <line x1="5" y1="12" x2="31" y2="12" stroke="currentColor" stroke-width="2"/>
-                <path d="M7 12v18h22V12" stroke="currentColor" stroke-width="2"/>
-                <rect x="14" y="18" width="8" height="12" stroke="currentColor" stroke-width="2"/>
-                <path d="M11 12v3a3 3 0 003 3 3 3 0 003-3 3 3 0 003 3 3 3 0 003-3v-3" stroke="currentColor" stroke-width="2"/>
-              </svg>
-              <h3 class="tab-panel__head">Retail Centers and Mixed-Use Developments</h3>
-            </div>
-            <div class="tab-panel__body">
-              <p>Retail centers, malls, and mixed-use developments require security that deters without disrupting the customer experience. AYC provides uniformed patrol, access control, and incident response for retail environments of all sizes. We work closely with property and operations managers to ensure our presence supports your business, not just your safety plan.</p>
-            </div>
-            <ul class="tab-panel__list">
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Armed and unarmed officers available</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Loss prevention support</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>24/7 Coverage, including custom scheduling options</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Incident documentation</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Coordination with management teams</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>GSOC-monitored coverage for every deployed officer</li>
-            </ul>
-            </div>
-            <div class="tab-panel__media">
-              <img src="https://images.unsplash.com/photo-1669429403420-257f3c6aa0f3?auto=format&fit=crop&w=900&q=80"
-                   alt="Modern shopping mall entrance — replace with AYC client photo">
-            </div>
-          </div>
-
-          <!-- TAB 6 -->
-          <div class="tab-panel" role="tabpanel" id="panel-6" aria-labelledby="tab-6" hidden>
-            <div class="tab-panel__main">
-            <div class="tab-panel__head-row">
-              <svg class="tab-panel__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-                <rect x="4" y="4" width="28" height="28" stroke="currentColor" stroke-width="2"/>
-                <line x1="18" y1="11" x2="18" y2="25" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-                <line x1="11" y1="18" x2="25" y2="18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
-              </svg>
-              <h3 class="tab-panel__head">Hospitals, Medical Facilities, and Senior Living</h3>
-            </div>
-            <div class="tab-panel__body">
-              <p>Hospitals, medical offices, nursing homes, and assisted living facilities require security personnel with specific training in de-escalation and patient-facing protocols. AYC provides healthcare-aware security officers for facilities where the wrong response can carry real consequences for patients, residents, and staff alike. We understand the environment. We train for it.</p>
-              <p>AYC's healthcare security team includes medical professionals with direct hospital operations experience, giving us a level of institutional understanding most security firms cannot offer.</p>
-            </div>
-            <ul class="tab-panel__list">
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>De-escalation and patient-facing protocols</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Patient and visitor management</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Emergency response coordination</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>HIPAA-aware incident documentation</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>24/7 GSOC monitoring</li>
-            </ul>
-            </div>
-            <div class="tab-panel__media">
-              <img src="https://images.unsplash.com/photo-1610598809726-e0dd63432bf7?auto=format&fit=crop&w=900&q=80"
-                   alt="Medical center exterior — replace with AYC client photo">
-            </div>
-          </div>
-
-        </div>
+        <article class="svc-card">
+          <svg class="svc-card__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
+            <circle cx="18" cy="18" r="13" stroke="currentColor" stroke-width="2"/>
+            <path d="M18 10v8l6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3 class="svc-card__head">24/7 Operations Center Support</h3>
+          <p class="svc-card__body">All assignments are supported by our 24/7 Global Security Operations Center with persistent monitoring and crisis response.</p>
+        </article>
       </div>
     </div>
   </section>
 
   <!-- ============================================================
-       GSOC CALLOUT
+       SALVARE BRIDGE
        ============================================================ -->
-  <section class="gsoc-callout" aria-labelledby="gsoc-c-head">
+  <section class="salvare" aria-labelledby="salvare-head">
     <div class="container">
-      <div class="gsoc-callout__grid">
+      <div class="salvare__grid">
         <div>
-          <h2 class="gsoc-callout__head" id="gsoc-c-head">Every Officer.<br>Every Hour.<br>Every Property.</h2>
-          <p class="gsoc-callout__body">AYC's Global Security Operations Center tracks every deployed security officer via GPS check-in, every hour, 24 hours a day, 7 days a week. A live human operator monitors every check-in. Not automated software.</p>
-
-          <div class="gsoc-cards">
-            <div class="gsoc-card">
-              <svg class="gsoc-card__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-                <path d="M18 4C12.5 4 8 8.5 8 14c0 7.5 10 18 10 18s10-10.5 10-18c0-5.5-4.5-10-10-10z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                <circle cx="18" cy="14" r="3.5" stroke="currentColor" stroke-width="2"/>
-              </svg>
-              <div>
-                <h3 class="gsoc-card__head">Officer Check-In</h3>
-                <p class="gsoc-card__body">GPS-confirmed. Every hour, on the hour, from every deployed post.</p>
-              </div>
-            </div>
-            <div class="gsoc-card">
-              <svg class="gsoc-card__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-                <rect x="4" y="6" width="28" height="19" rx="1.5" stroke="currentColor" stroke-width="2"/>
-                <line x1="12" y1="31" x2="24" y2="31" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <line x1="18" y1="25" x2="18" y2="31" stroke="currentColor" stroke-width="2"/>
-                <path d="M10 15.5c2-3 5-5 8-5s6 2 8 5c-2 3-5 5-8 5s-6-2-8-5z" stroke="currentColor" stroke-width="1.6"/>
-                <circle cx="18" cy="15.5" r="2.4" fill="currentColor"/>
-              </svg>
-              <div>
-                <h3 class="gsoc-card__head">Live Operator Review</h3>
-                <p class="gsoc-card__body">A real person verifies every check-in. Not automated software.</p>
-              </div>
-            </div>
-            <div class="gsoc-card">
-              <svg class="gsoc-card__icon" viewBox="0 0 36 36" fill="none" aria-hidden="true">
-                <path d="M18 5c-4.5 0-8 3.5-8 8v7l-3 4h22l-3-4v-7c0-4.5-3.5-8-8-8z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
-                <path d="M14 24c0 2.2 1.8 4 4 4s4-1.8 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-                <line x1="18" y1="5" x2="18" y2="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-              </svg>
-              <div>
-                <h3 class="gsoc-card__head">Immediate Response</h3>
-                <p class="gsoc-card__body">A missed check-in or flagged incident triggers an immediate response.</p>
-              </div>
-            </div>
-          </div>
+          <p class="salvare__label">A Division of AYC Security</p>
+          <h2 class="salvare__head" id="salvare-head">For Principals Requiring a Higher Level of Protection</h2>
+          <p class="salvare__body">AYC operates Salvare Global Solutions, our dedicated close protection division for high-net-worth and ultra-high-net-worth individuals and families requiring bespoke, ongoing protection programs.</p>
+          <a class="btn-outline-light" href="https://www.salvareglobal.com" target="_blank" rel="noopener">Visit Salvare Global to Learn More →</a>
         </div>
-
-        <aside class="gsoc-callout__stats" aria-label="GSOC coverage stats">
-          <div class="gsoc-callout__stat">
-            <p class="gsoc-callout__stat-num">24/7</p>
-            <p class="gsoc-callout__stat-lbl">GSOC Monitoring</p>
-          </div>
-          <div class="gsoc-callout__stat">
-            <p class="gsoc-callout__stat-num">365</p>
-            <p class="gsoc-callout__stat-lbl">Days a Year</p>
-          </div>
-          <div class="gsoc-callout__stat">
-            <p class="gsoc-callout__stat-num">0</p>
-            <p class="gsoc-callout__stat-lbl">Unmonitored Posts</p>
-          </div>
-        </aside>
       </div>
     </div>
   </section>
@@ -2105,18 +1693,18 @@
       <div class="how__steps">
         <div class="how__step">
           <p class="how__num">01</p>
-          <h3 class="how__step-head">Consult</h3>
-          <p class="how__step-body">We begin with a conversation. You tell us about your property, your concerns, and your timeline. We listen, ask the right questions, and tell you how we can help.</p>
+          <h3 class="how__step-head">Threat Assessment &amp; Consultation</h3>
+          <p class="how__step-body">We start with a conversation about the individual, their environment, and their risk picture. Travel patterns, public exposure, and operational requirements are assessed before any plan is developed.</p>
         </div>
         <div class="how__step">
           <p class="how__num">02</p>
-          <h3 class="how__step-head">Assess &amp; Plan</h3>
-          <p class="how__step-body">Our team conducts a thorough, timely assessment of your property or facility. From that, we build a security plan tailored specifically to your risks and your needs.</p>
+          <h3 class="how__step-head">Building Your Protection Program</h3>
+          <p class="how__step-body">We build a protection program around the individual's schedule, risk profile, and operational environment. Plainclothes or uniformed, single agent or full detail, every element is purpose-built for the assignment.</p>
         </div>
         <div class="how__step">
           <p class="how__num">03</p>
-          <h3 class="how__step-head">Deploy &amp; Monitor</h3>
-          <p class="how__step-body">We deploy trained security officers and activate GSOC monitoring from day one. Every officer checks in every hour. We communicate proactively throughout your engagement — you will never need to chase us down for an update. For clients moving from another provider, we manage the handoff to ensure no gap in coverage.</p>
+          <h3 class="how__step-head">Continuous Monitoring &amp; Communication</h3>
+          <p class="how__step-body">All assignments are monitored through our Global Security Operations Center. You have a direct line to our leadership team throughout. We communicate proactively.</p>
         </div>
       </div>
     </div>
@@ -2127,37 +1715,31 @@
        ============================================================ -->
   <section class="testimonials" aria-labelledby="t-head">
     <div class="container">
-      <h2 class="testimonials__head" id="t-head">Trusted By Property Managers and Community Leaders Across the Nation</h2>
+      <h2 class="testimonials__head" id="t-head">Trusted by Executives and Organizations</h2>
       <div class="testimonials__grid">
-        <article class="tcard">
+        <article class="tcard tcard--placeholder">
           <span class="tcard__mark" aria-hidden="true">&ldquo;</span>
-          <p class="tcard__quote">AYC Security secured a multi-million dollar luxury condominium property for us, and they were fantastic to work with. I hope to utilize their services again in the future.</p>
+          <p class="tcard__quote">[Close Protection Client Quote: Pending]</p>
           <hr class="tcard__rule" aria-hidden="true">
-          <p class="tcard__name">Brooke Fleishman</p>
-          <p class="tcard__role">Property Manager, Concierge Property Solutions LLC</p>
-          <span class="tcard__stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1l2.2 4.5 5 .7-3.6 3.5.9 5L8 12.3 3.5 14.7l.9-5L.8 6.2l5-.7z"/></svg>
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1l2.2 4.5 5 .7-3.6 3.5.9 5L8 12.3 3.5 14.7l.9-5L.8 6.2l5-.7z"/></svg>
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1l2.2 4.5 5 .7-3.6 3.5.9 5L8 12.3 3.5 14.7l.9-5L.8 6.2l5-.7z"/></svg>
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1l2.2 4.5 5 .7-3.6 3.5.9 5L8 12.3 3.5 14.7l.9-5L.8 6.2l5-.7z"/></svg>
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1l2.2 4.5 5 .7-3.6 3.5.9 5L8 12.3 3.5 14.7l.9-5L.8 6.2l5-.7z"/></svg>
-          </span>
+          <p class="tcard__name">[Name Pending]</p>
+          <p class="tcard__role">Executive, Organization Pending</p>
         </article>
-        <article class="tcard">
+        <article class="tcard tcard--placeholder">
           <span class="tcard__mark" aria-hidden="true">&ldquo;</span>
-          <p class="tcard__quote">For the last 20 years I have been overseeing security companies protecting the largest synagogue in the southeastern US, with almost 1,000 families as members. AYC is our current provider and I have been continuously impressed by their dedication, hard work, and can-do attitude. I would place AYC at the top of that list.</p>
+          <p class="tcard__quote">[Close Protection Client Quote: Pending]</p>
           <hr class="tcard__rule" aria-hidden="true">
-          <p class="tcard__name">David Berger</p>
-          <p class="tcard__role">Security Chairman, Boca Raton Synagogue</p>
-          <span class="tcard__stars" aria-label="5 out of 5 stars">
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1l2.2 4.5 5 .7-3.6 3.5.9 5L8 12.3 3.5 14.7l.9-5L.8 6.2l5-.7z"/></svg>
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1l2.2 4.5 5 .7-3.6 3.5.9 5L8 12.3 3.5 14.7l.9-5L.8 6.2l5-.7z"/></svg>
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1l2.2 4.5 5 .7-3.6 3.5.9 5L8 12.3 3.5 14.7l.9-5L.8 6.2l5-.7z"/></svg>
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1l2.2 4.5 5 .7-3.6 3.5.9 5L8 12.3 3.5 14.7l.9-5L.8 6.2l5-.7z"/></svg>
-            <svg viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"><path d="M8 1l2.2 4.5 5 .7-3.6 3.5.9 5L8 12.3 3.5 14.7l.9-5L.8 6.2l5-.7z"/></svg>
-          </span>
+          <p class="tcard__name">[Name Pending]</p>
+          <p class="tcard__role">[Role Pending]</p>
+        </article>
+        <article class="tcard tcard--placeholder">
+          <span class="tcard__mark" aria-hidden="true">&ldquo;</span>
+          <p class="tcard__quote">[Close Protection Client Quote: Pending]</p>
+          <hr class="tcard__rule" aria-hidden="true">
+          <p class="tcard__name">[Name Pending]</p>
+          <p class="tcard__role">[Role Pending]</p>
         </article>
       </div>
+      <p class="testimonials__note">Testimonials will be updated with confirmed client quotes before launch.</p>
     </div>
   </section>
 
@@ -2170,56 +1752,47 @@
       <div class="faq__wrap" data-faq>
         <div class="faq__item is-open">
           <button class="faq__btn" type="button" aria-expanded="true" aria-controls="faq-1">
-            <span>Does AYC provide 24/7 security for residential communities and HOAs?</span>
+            <span>What is the difference between AYC close protection and Salvare Global?</span>
             <span class="faq__icon" aria-hidden="true"></span>
           </button>
           <div class="faq__answer" id="faq-1">
-            <div class="faq__answer-inner">Yes. AYC provides 24/7 GSOC-monitored security for gated communities, HOAs, condominium buildings, and luxury residential towers. Every officer's GPS check-in is verified every hour by a live operator.</div>
+            <div class="faq__answer-inner">AYC provides executive protection and close protection services for corporate clients, organizational principals, and individuals with event-based or operational security requirements. Salvare Global Solutions is AYC's dedicated division for high-net-worth and ultra-high-net-worth individuals and families requiring bespoke, ongoing personal protection programs. For complex or long-term assignments, we will recommend the right fit.</div>
           </div>
         </div>
         <div class="faq__item">
           <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-2">
-            <span>Does AYC provide both armed and unarmed security officers?</span>
+            <span>Does AYC provide armed or unarmed executive protection?</span>
             <span class="faq__icon" aria-hidden="true"></span>
           </button>
           <div class="faq__answer" id="faq-2">
-            <div class="faq__answer-inner">Yes. AYC offers both armed and unarmed options. The appropriate choice is determined during site assessment based on your environment, risk profile, and operational needs.</div>
+            <div class="faq__answer-inner">Both options are available. The appropriate level of visible security depends on the principal's preference, the threat environment, and the operational context. We work through this during the initial consultation.</div>
           </div>
         </div>
         <div class="faq__item">
           <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-3">
-            <span>Can AYC manage security across multiple properties or locations?</span>
+            <span>Can AYC provide close protection for a single event rather than an ongoing assignment?</span>
             <span class="faq__icon" aria-hidden="true"></span>
           </button>
           <div class="faq__answer" id="faq-3">
-            <div class="faq__answer-inner">Yes. AYC works with clients managing single properties as well as multi-site portfolios across different locations and states.</div>
+            <div class="faq__answer-inner">Yes. We provide close protection for single events, conferences, public appearances, and travel assignments, as well as ongoing personal security programs. Coverage is scoped to the assignment.</div>
           </div>
         </div>
         <div class="faq__item">
           <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-4">
-            <span>What happens when clients transition from another security provider?</span>
+            <span>How does AYC conduct threat assessments for close protection assignments?</span>
             <span class="faq__icon" aria-hidden="true"></span>
           </button>
           <div class="faq__answer" id="faq-4">
-            <div class="faq__answer-inner">AYC manages transitions carefully, coordinating with your team to ensure no gap in coverage during the handoff from a previous provider. Continuity is a priority from day one.</div>
+            <div class="faq__answer-inner">Prior to any deployment, we assess the principal's risk profile, travel patterns, public exposure, and the specific environment of the assignment. This assessment informs personnel selection, protocols, and operational planning.</div>
           </div>
         </div>
         <div class="faq__item">
           <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-5">
-            <span>What types of incidents does AYC document?</span>
+            <span>What areas does AYC provide executive protection services?</span>
             <span class="faq__icon" aria-hidden="true"></span>
           </button>
           <div class="faq__answer" id="faq-5">
-            <div class="faq__answer-inner">AYC officers document incidents including unauthorized access, property damage, disturbances, and any situation requiring response. Documentation is informed by our integrated legal counsel and is designed to protect your organization. Reporting formats and documentation scope can be customized based on engagement type and client requirements.</div>
-          </div>
-        </div>
-        <div class="faq__item">
-          <button class="faq__btn" type="button" aria-expanded="false" aria-controls="faq-6">
-            <span>Does AYC provide security during workforce or operational transitions?</span>
-            <span class="faq__icon" aria-hidden="true"></span>
-          </button>
-          <div class="faq__answer" id="faq-6">
-            <div class="faq__answer-inner">Yes. AYC has experience supporting clients during a range of operational and workforce situations. Contact us to discuss your specific situation confidentially.</div>
+            <div class="faq__answer-inner">AYC provides executive and close protection services throughout the United States and internationally. Contact us to discuss your specific location and requirements.</div>
           </div>
         </div>
       </div>
@@ -2233,10 +1806,10 @@
     <div class="container">
       <div class="final-cta__grid">
         <div>
-          <h2 class="final-cta__head" id="final-head">Ready to Secure Your Property?</h2>
-          <p class="final-cta__sub">Same-Day Deployment Available.</p>
-          <p class="final-cta__body">Tell us about your property. We will put together a security plan built around your needs.</p>
-          <a class="btn-gold final-cta__btn" href="/contact">Get Protected Now →</a>
+          <h2 class="final-cta__head" id="final-head">Discuss Your Protection Requirements</h2>
+          <p class="final-cta__sub">Assessments Begin With a Conversation</p>
+          <p class="final-cta__body">Tell us about the principal, the environment, and the assignment. We will ask the right questions and come back with a clear plan.</p>
+          <a class="btn-gold final-cta__btn" href="/contact">Start the Conversation →</a>
         </div>
         <div class="final-cta__right">
           <p class="final-cta__connect">Connect With Our Team</p>
@@ -2244,7 +1817,7 @@
           <div class="final-cta__row">
             <a href="tel:+15615717983">Call</a>
             <a href="sms:+15615717983">Text</a>
-            <a href="/cdn-cgi/l/email-protection#7b12151d143b1a0218081e180e09120f0255181416">Email</a>
+            <a href="/cdn-cgi/l/email-protection#a9c0c7cfc6e9c8d0cadacccadcdbc0ddd087cac6c4">Email</a>
           </div>
         </div>
       </div>
@@ -2260,7 +1833,7 @@
 
         <div class="footer-col footer-col--brand">
           <img class="footer-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security USA">
-          <p class="footer-blurb">AYC Security USA — a veteran-owned private security firm headquartered in Boca Raton, Florida. 24/7 Global Security Operations Center.</p>
+          <p class="footer-blurb">AYC Security USA, a veteran-owned private security firm headquartered in Boca Raton, Florida. 24/7 Global Security Operations Center.</p>
           <span class="footer-license-line">Licensed &amp; Insured Nationally · Operating Across the United States</span>
           <div class="footer-socials">
             <a class="footer-social" href="https://www.linkedin.com/company/ayc-security/" aria-label="AYC Security on LinkedIn" target="_blank" rel="noopener">
@@ -2280,7 +1853,8 @@
           <span class="footer-head">Services</span>
           <a class="footer-link" href="/services/ongoing-security">Ongoing Site Security</a>
           <a class="footer-link" href="/services/disaster-response">Disaster &amp; Emergency Response</a>
-          <a class="footer-link" href="/services/community-events">Community, Events &amp; Close Protection</a>
+          <a class="footer-link" href="/services/community-events">Community &amp; Events Security</a>
+          <a class="footer-link" href="/services/close-protection">Executive &amp; Close Protection</a>
           <a class="footer-link" href="/services/energy-industrial">Energy &amp; Industrial Security</a>
           <a class="footer-link" href="/services/consulting-training">Consulting, Training &amp; Procurement</a>
           <a class="footer-link" href="/services/ayc-intelligence">AYC Intelligence</a>
@@ -2298,7 +1872,7 @@
         <div class="footer-col">
           <span class="footer-head">Contact</span>
           <a class="footer-phone" href="tel:+15615717983">(561) 571-7983</a>
-          <a class="footer-email" href="/cdn-cgi/l/email-protection#2b42454d446b4a5248584e485e59425f5205484446"><span class="__cf_email__" data-cfemail="5930373f361938203a2a3c3a2c2b302d20773a3634">[email&#160;protected]</span></a>
+          <a class="footer-email" href="/cdn-cgi/l/email-protection#b3daddd5dcf3d2cad0c0d6d0c6c1dac7ca9dd0dcde"><span class="__cf_email__" data-cfemail="c9a0a7afa689a8b0aabaacaabcbba0bdb0e7aaa6a4">[email&#160;protected]</span></a>
 
           <span class="footer-addr-label">Florida HQ</span>
           <address class="footer-addr">7000 W Palmetto Park Rd., Suite 308<br>Boca Raton, FL 33433</address>
@@ -2434,48 +2008,6 @@
       p.classList.add('is-active');
     });
   });
-
-  // ---------- Tabs (Who We Protect) ----------
-  const tabsRoot = document.querySelector('[data-tabs]');
-  if (tabsRoot) {
-    const tabs = Array.from(tabsRoot.querySelectorAll('.tab'));
-    const panels = Array.from(tabsRoot.querySelectorAll('.tab-panel'));
-
-    function activateTab(idx) {
-      tabs.forEach((t, i) => {
-        const on = i === idx;
-        t.classList.toggle('is-active', on);
-        t.setAttribute('aria-selected', String(on));
-        t.tabIndex = on ? 0 : -1;
-      });
-      panels.forEach((p, i) => {
-        const on = i === idx;
-        p.classList.toggle('is-active', on);
-        if (on) p.removeAttribute('hidden');
-        else p.setAttribute('hidden', '');
-      });
-    }
-    tabs.forEach((t, i) => {
-      t.addEventListener('click', () => activateTab(i));
-      t.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') {
-          e.preventDefault();
-          const next = (i + 1) % tabs.length;
-          activateTab(next); tabs[next].focus();
-        } else if (e.key === 'ArrowLeft') {
-          e.preventDefault();
-          const prev = (i - 1 + tabs.length) % tabs.length;
-          activateTab(prev); tabs[prev].focus();
-        } else if (e.key === 'Home') {
-          e.preventDefault();
-          activateTab(0); tabs[0].focus();
-        } else if (e.key === 'End') {
-          e.preventDefault();
-          activateTab(tabs.length - 1); tabs[tabs.length - 1].focus();
-        }
-      });
-    });
-  }
 
   // ---------- FAQ accordions ----------
   document.querySelectorAll('[data-faq] .faq__btn').forEach((btn) => {
