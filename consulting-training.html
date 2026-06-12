@@ -588,8 +588,9 @@
   }
   .offer-item {
     display: flex;
-    align-items: center;
-    gap: 14px;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 8px 0;
     font-family: 'Oswald', sans-serif;
     font-size: 16px;
     letter-spacing: 0.08em;
@@ -769,9 +770,9 @@
   }
   .icon-card:hover { border-color: var(--gold); background: #ECE6D8; }
   .icon-card .icon {
-    width: 36px; height: 36px;
+    width: 28px; height: 28px;
     color: var(--gold);
-    margin-bottom: 18px;
+    flex-shrink: 0;
   }
   .icon-card h3 {
     font-family: 'Oswald', sans-serif;
@@ -901,11 +902,20 @@
     border-top: 3px solid var(--gold);
     padding: 24px 20px;
     text-align: left;
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
   }
+  .train-card:hover {
+    background: var(--navy);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(14,28,43,0.18);
+  }
+  .train-card:hover .train-label { color: #fff; }
+  .train-card:hover .train-desc { color: rgba(255,255,255,0.82); }
+  .train-card:hover .train-icon { color: var(--gold-soft); }
   .train-icon {
     width: 36px; height: 36px;
     color: var(--gold);
-    margin-bottom: 16px;
   }
   .train-icon svg { width: 100%; height: 100%; display: block; }
   .train-label {
@@ -944,7 +954,17 @@
     border: 1px solid var(--rule-strong);
     padding: 28px 24px;
     text-align: left;
+    transition: background 0.25s ease, transform 0.25s ease, box-shadow 0.25s ease;
+    cursor: default;
   }
+  .proc-card:hover {
+    background: var(--navy);
+    transform: translateY(-4px);
+    box-shadow: 0 12px 32px rgba(14,28,43,0.18);
+  }
+  .proc-card:hover h3 { color: #fff; }
+  .proc-card:hover p { color: rgba(255,255,255,0.82); }
+  .proc-card:hover .icon { color: var(--gold-soft); }
   .proc-card .icon {
     width: 36px; height: 36px;
     color: var(--gold);
@@ -1413,8 +1433,9 @@
           <div class="nav-dropdown">
             <a href="ongoing-security.html">Ongoing Site Security</a>
             <a href="disaster-response.html">Disaster &amp; Emergency Response</a>
-            <a href="community-events.html">Community Events &amp; Close Protection</a>
-            <a href="energy-industrial.html">Energy &amp; Industrial Security</a>
+            <a href="community-events.html">Community &amp; Events Security</a>
+            <a href="close-protection.html">Executive &amp; Close Protection</a>
+            <a href="energy-industrial.html">Energy Facilities &amp; Infrastructure</a>
             <a href="consulting-training.html" class="is-current" aria-current="page">Consulting, Training &amp; Procurement</a>
             <a href="#">AYC Intelligence</a>
           </div>
@@ -1455,8 +1476,9 @@
   <h4>Services</h4>
   <a class="m-sublink" href="ongoing-security.html">Ongoing Site Security</a>
   <a class="m-sublink" href="disaster-response.html">Disaster &amp; Emergency Response</a>
-  <a class="m-sublink" href="community-events.html">Community Events &amp; Close Protection</a>
-  <a class="m-sublink" href="energy-industrial.html">Energy &amp; Industrial Security</a>
+  <a class="m-sublink" href="community-events.html">Community &amp; Events Security</a>
+  <a class="m-sublink" href="close-protection.html">Executive &amp; Close Protection</a>
+  <a class="m-sublink" href="energy-industrial.html">Energy Facilities &amp; Infrastructure</a>
   <a class="m-sublink" href="consulting-training.html">Consulting, Training &amp; Procurement</a>
   <a class="m-sublink" href="#">AYC Intelligence</a>
 
@@ -1507,7 +1529,6 @@
     <img src="https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?auto=format&amp;fit=crop&amp;w=1800&amp;q=80" alt="Professional planning and consulting session" />
   </div>
   <div class="hero-overlay" aria-hidden="true"></div>
-  <div class="hero-placeholder-flag">Placeholder, confirm final image before launch</div>
   <div class="container">
     <div class="hero-grid">
       <div>
@@ -1515,11 +1536,10 @@
           <a href="#">Services</a><span class="sep">/</span><span>Consulting, Training &amp; Procurement</span>
         </p>
         <h1 id="heroTitle">
-          <span>Consulting.</span>
-          <span class="gold">Training.</span>
-          <span>Procurement</span>
+          <span>From the Field.</span>
+          <span class="gold">To Your Program.</span>
         </h1>
-        <p class="hero-sub">AYC Security offers institutional-grade consulting, targeted training, and operational procurement support, built on 150 years of combined military, law enforcement, and legal experience.</p>
+        <p class="hero-sub">AYC brings 150 years of combined military, law enforcement, and legal experience to every consulting, training, and procurement engagement. We have operated in the environments we advise on.</p>
         <div class="hero-ctas">
           <a class="btn btn-gold" href="contact.html">Request a Consultation →</a>
           <a class="btn btn-outline-light" href="tel:+15615717983">Call (561) 571-7983</a>
@@ -1530,12 +1550,12 @@
         <p class="offer-label">What We Offer</p>
         <hr class="offer-rule" />
         <ul class="offer-list">
-          <li class="offer-item"><span class="offer-dot" aria-hidden="true"></span>Security Consulting</li>
-          <li class="offer-item"><span class="offer-dot" aria-hidden="true"></span>Security Training</li>
-          <li class="offer-item"><span class="offer-dot" aria-hidden="true"></span>Procurement Support</li>
+          <li class="offer-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Security Consulting</li>
+          <li class="offer-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Security Training</li>
+          <li class="offer-item"><svg width="16" height="16" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Procurement Support</li>
         </ul>
         <hr class="offer-rule" />
-        <p class="offer-foot">Armed &amp; Unarmed · Nationwide Delivery</p>
+        <p class="offer-foot">Consulting · Training · Procurement</p>
       </aside>
     </div>
   </div>
@@ -1547,15 +1567,14 @@
     <div class="overview-grid">
       <div class="overview-text">
         <hr class="gold-rule" />
-        <p>AYC brings operational experience to every consulting and training engagement. Whether you are designing a security program from scratch, training a workforce for emergency response, or sourcing the right equipment, our team has done it in real environments.</p>
-        <p>Our consulting directorate includes DEA veterans, Marine Corps officers, legal counsel, and a board-certified emergency physician. Armed and unarmed options available. Nationwide delivery. Short timelines.</p>
+        <p>Every engagement starts the same way: we listen. We ask about your environment, your existing capabilities, and the gaps you already know about. What we build from there is specific to you, not adapted from somewhere else.</p>
+        <p>With 150 years of combined operational experience across military, federal law enforcement, and private security, AYC brings field-tested perspective to every engagement. We consult, train, and procure across the United States, Canada, and internationally.</p>
       </div>
       <div class="overview-image">
         <div class="img-frame" style="position:relative;">
           <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80"
                alt="Strategic planning session"
                style="width:100%;height:100%;object-fit:cover;min-height:340px;display:block;filter:grayscale(20%) contrast(1.05);" />
-          <span class="img-flag" style="position:absolute;bottom:12px;left:12px;background:var(--gold);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:10px;padding:4px 8px;text-transform:uppercase;letter-spacing:0.1em;" aria-hidden="true">Placeholder, Replace with AYC Photo</span>
         </div>
       </div>
     </div>
@@ -1571,12 +1590,11 @@
           <img src="https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?auto=format&fit=crop&w=900&q=80"
                alt="Security planning session at whiteboard"
                style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:grayscale(15%) contrast(1.05);" />
-          <span class="img-flag" style="position:absolute;top:12px;left:12px;background:var(--gold);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:10px;padding:4px 8px;text-transform:uppercase;letter-spacing:0.1em;" aria-hidden="true">Placeholder, Replace with AYC Photo</span>
         </div>
       </div>
       <div class="text-col">
         <p class="sec-identifier">Consulting</p>
-        <h2 class="sec-title" id="consultingTitle">Security Built<br />For Your Program</h2>
+        <h2 class="sec-title" id="consultingTitle">Your Program.<br />Our Expertise.</h2>
         <p class="sec-body">From threat assessments and penetration testing to crisis planning and emergency response frameworks, AYC's consulting team builds programs grounded in operational reality.</p>
         <p class="sec-body">Our team has operated in environments ranging from deployed military operations to nuclear site security. Every recommendation we deliver is tested against real-world conditions, not academic standards. In-house legal counsel is integrated into every engagement.</p>
         <p class="sec-body">Our consulting engagements include: managing costs and risks, developing integrated security solutions, cooperating with and optimizing your existing systems, redesigning protocols to meet current industry standards, and where applicable, identifying and leveraging available government funding mechanisms.</p>
@@ -1586,16 +1604,19 @@
 
     <div class="consulting-cards">
       <article class="icon-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
         <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <circle cx="18" cy="18" r="12" />
           <circle cx="18" cy="18" r="5" />
           <path d="M18 2v6M18 28v6M2 18h6M28 18h6" />
         </svg>
         <h3>Threat Assessment &amp; Risk Analysis</h3>
+        </div>
         <p>Systematic identification of vulnerabilities across people, processes, and physical infrastructure. Risk scoring, analysis, and documented mitigation recommendations.</p>
       </article>
 
       <article class="icon-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
         <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="8" y="15" width="20" height="14" />
           <path d="M12 15v-4a6 6 0 0 1 12 0v4" />
@@ -1603,49 +1624,59 @@
           <path d="M22 12l4-4M26 8l4 4" />
         </svg>
         <h3>Penetration Testing</h3>
+        </div>
         <p>Controlled testing of your security posture to find gaps before they are exploited.</p>
       </article>
 
       <article class="icon-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
         <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="5" y="5" width="26" height="26" />
           <rect x="11" y="11" width="14" height="14" />
           <path d="M5 13h26M5 23h26M13 5v26M23 5v26" />
         </svg>
         <h3>Security System Design</h3>
+        </div>
         <p>Camera placement, access control, perimeter design, and integrated technology planning built for your specific environment.</p>
       </article>
 
       <article class="icon-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
         <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M18 4l13 5v9c0 8-5.5 14-13 17C10.5 32 5 26 5 18V9z" />
           <path d="M18 13v8" />
           <circle cx="18" cy="25" r="1" fill="currentColor" />
         </svg>
         <h3>Crisis Management</h3>
+        </div>
         <p>Clear protocols, chain-of-command structures, and documented response plans for the scenarios that matter most.</p>
       </article>
 
       <article class="icon-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
         <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <rect x="8" y="6" width="20" height="26" />
           <path d="M14 4h8v4h-8z" />
           <path d="M12 18l4 4 8-8" />
         </svg>
         <h3>Security Auditing</h3>
+        </div>
         <p>Independent review of your current program against industry standards, with a documented findings report.</p>
       </article>
 
       <article class="icon-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
         <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
           <path d="M18 4l13 5v9c0 8-5.5 14-13 17C10.5 32 5 26 5 18V9z" />
           <path d="M19 11l-5 9h5l-2 7 5-9h-5z" fill="currentColor" stroke="none" />
         </svg>
         <h3>Emergency Response Planning</h3>
+        </div>
         <p>Site-specific plans for fire, medical emergency, active threat, and natural disaster scenarios, reviewed by legal counsel.</p>
       </article>
 
       <article class="icon-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:12px;">
         <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
           <rect x="8" y="14" width="20" height="16"/>
           <path d="M12 14v-4a6 6 0 0112 0v4"/>
@@ -1653,6 +1684,7 @@
           <path d="M18 24v3"/>
         </svg>
         <h3>Kidnap &amp; Ransom / Crisis Response</h3>
+        </div>
         <p>Specialized consulting for high-risk scenarios including kidnap and ransom situations, hostage negotiation support, and executive threat response planning.</p>
       </article>
     </div>
@@ -1666,25 +1698,41 @@
       <div class="text-col">
         <p class="sec-identifier">Training</p>
         <h2 class="sec-title" id="trainingTitle">Arm Your Team<br />For Every Threat</h2>
-        <p class="sec-body">AYC's training courses help clients create safer, more productive working environments. Whether a corporate leadership team, a security staff at a retail complex, or a nonprofit organization, every program is built on the latest lessons from military, law enforcement, and private security practice, filtered for civilian applicability.</p>
-        <p class="sec-body">Two things set AYC training apart. First, rigorous analysis ensures every course fits your organization's specific context, culture, and regulatory environment. Second, every program is reviewed by our in-house legal counsel so it is legally and ethically sound, reducing the liability concerns organizations rightly have when procuring training.</p>
-        <p class="sec-body">We offer courses in one, two, and three-day formats, delivered in-person and virtually. Custom programs are available.</p>
+        <p class="sec-body">AYC's training courses help clients create safer, more productive working environments. From corporate leadership teams and retail security staff to nonprofit organizations, every program is built on the latest lessons from military, law enforcement, and private security practice, filtered for civilian applicability.</p>
+        <p class="sec-body">Every AYC training program is built for the organization receiving it. Context, culture, and regulatory environment shape the curriculum before a single session is designed. In-house legal counsel reviews every program before delivery, so what you receive is operationally applicable and legally sound.</p>
+        <div style="margin-top:24px;display:flex;flex-direction:column;gap:10px;">
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin-top:3px;flex-shrink:0;" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span style="font-size:16px;color:var(--ink);">One, two, and three-day formats available</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin-top:3px;flex-shrink:0;" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span style="font-size:16px;color:var(--ink);">In-person and virtual delivery</span>
+          </div>
+          <div style="display:flex;align-items:flex-start;gap:10px;">
+            <svg width="16" height="16" viewBox="0 0 16 16" fill="none" style="margin-top:3px;flex-shrink:0;" aria-hidden="true"><path d="M2 8.5L6 12.5L14 3.5" stroke="#B8882A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span style="font-size:16px;color:var(--ink);">Custom programs available on request</span>
+          </div>
+        </div>
 
       </div>
 
       <div class="training-photo-wrap">
         <div style="position:relative;width:100%;height:100%;min-height:480px;">
-          <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?auto=format&fit=crop&w=900&q=80"
-               alt="Instructor-led security training session"
+          <img src="https://images.unsplash.com/photo-1758691736433-4078b93abd72?auto=format&fit=crop&w=900&q=80"
+               alt="Professional training presentation in corporate boardroom"
                style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(15%) contrast(1.05);" />
-          <span class="img-flag" style="position:absolute;top:12px;right:12px;background:var(--gold);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:10px;padding:4px 8px;text-transform:uppercase;letter-spacing:0.1em;" aria-hidden="true">Placeholder, Replace with AYC Photo</span>
         </div>
-        <p class="training-caption">In-Person + Virtual Delivery Available</p>
       </div>
     </div>
 
+    <div style="margin-top:56px;margin-bottom:40px;padding-top:32px;border-top:1px solid var(--rule);">
+      <p style="font-family:'IBM Plex Mono',monospace;font-size:12px;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold);margin:0 0 10px;">Course Offerings</p>
+      <p style="font-size:17px;color:var(--ink);margin:0;">Available as standalone sessions or combined programs, scaled to your organization's size and needs.</p>
+    </div>
     <div class="training-cards">
       <article class="train-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
         <div class="train-icon" aria-hidden="true">
           <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
             <circle cx="18" cy="12" r="5"/>
@@ -1693,9 +1741,11 @@
           </svg>
         </div>
         <h3 class="train-label">Workplace Violence Prevention</h3>
+        </div>
         <p class="train-desc">Awareness, de-escalation, intervention, and bystander protocols for workplace and public environments.</p>
       </article>
       <article class="train-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
         <div class="train-icon" aria-hidden="true">
           <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
             <circle cx="18" cy="18" r="13"/>
@@ -1704,9 +1754,11 @@
           </svg>
         </div>
         <h3 class="train-label">Active Shooter Response</h3>
+        </div>
         <p class="train-desc">Run-Hide-Fight frameworks, lockdown procedures, and coordinated staff response under active threat.</p>
       </article>
       <article class="train-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
         <div class="train-icon" aria-hidden="true">
           <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
             <path d="M4 6h28v18H20l-6 6v-6H4z"/>
@@ -1714,18 +1766,22 @@
           </svg>
         </div>
         <h3 class="train-label">Workplace Harassment Mitigation</h3>
+        </div>
         <p class="train-desc">Identifying, documenting, and responding to workplace harassment in legally sound and culturally sensitive ways.</p>
       </article>
       <article class="train-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
         <div class="train-icon" aria-hidden="true">
           <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
             <path d="M18 4c0 6-8 8-8 16a8 8 0 0016 0c0-4-2-7-4-9 0 3-2 5-4 5 2-4 0-8 0-12z"/>
           </svg>
         </div>
         <h3 class="train-label">Fire Safety</h3>
+        </div>
         <p class="train-desc">Emergency evacuation procedures, fire prevention protocols, and response coordination for workplace environments.</p>
       </article>
       <article class="train-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
         <div class="train-icon" aria-hidden="true">
           <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
             <path d="M4 6h18v12H16l-4 4v-4H4z"/>
@@ -1733,9 +1789,11 @@
           </svg>
         </div>
         <h3 class="train-label">Communication Skills</h3>
+        </div>
         <p class="train-desc">Effective communication under pressure, clear command language, and interpersonal skills for security and leadership teams.</p>
       </article>
       <article class="train-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
         <div class="train-icon" aria-hidden="true">
           <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
             <path d="M18 4v28M8 32h20"/>
@@ -1745,9 +1803,11 @@
           </svg>
         </div>
         <h3 class="train-label">Use of Force Law</h3>
+        </div>
         <p class="train-desc">Legal standards governing use of force, documentation requirements, and reporting obligations for security professionals.</p>
       </article>
       <article class="train-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
         <div class="train-icon" aria-hidden="true">
           <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
             <circle cx="11" cy="12" r="4"/>
@@ -1758,9 +1818,11 @@
           </svg>
         </div>
         <h3 class="train-label">Difficult Conversations</h3>
+        </div>
         <p class="train-desc">Frameworks for handling conflict, delivering difficult feedback, and de-escalating tense interpersonal situations.</p>
       </article>
       <article class="train-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
         <div class="train-icon" aria-hidden="true">
           <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
             <rect x="14" y="4" width="8" height="28"/>
@@ -1768,9 +1830,11 @@
           </svg>
         </div>
         <h3 class="train-label">First Aid / CPR</h3>
+        </div>
         <p class="train-desc">Bleed control, CPR, AED operation, and mass casualty triage. Led by a board-certified emergency physician.</p>
       </article>
       <article class="train-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
         <div class="train-icon" aria-hidden="true">
           <svg viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square">
             <path d="M2 22l6-6 4 2 6-6 6 4 8-8"/>
@@ -1778,6 +1842,7 @@
           </svg>
         </div>
         <h3 class="train-label">Alternative Dispute Resolution</h3>
+        </div>
         <p class="train-desc">Mediation techniques, negotiation frameworks, and conflict resolution tools for organizational leaders and security managers.</p>
       </article>
     </div>
@@ -1786,16 +1851,17 @@
       <div class="ldm-inner">
         <div class="ldm-text">
           <span class="sec-id">Leadership &amp; Decision-Making</span>
-          <h3 class="ldm-head">A Distinct Program. The Same Standard.</h3>
+          <h3 class="ldm-head">A Certified Leadership Curriculum. The Same Operational Standard.</h3>
           <p class="ldm-body">AYC's Leadership and Decision-Making program is a dedicated curriculum developed for executives, security leaders, and organizational teams. Built on proven military and law enforcement instructional methods, it covers decision games, critical thinking, adult learning theory, curriculum design, and high-stakes communication.</p>
           <p class="ldm-body">We offer workshops from one day to two weeks. Facilitated in-person and virtually. Custom engagements available. Our instructors have delivered programs for the US Naval Academy, the FBI National Academy, the Baltic Defence College, Microsoft, and Ernst and Young.</p>
-          <p class="ldm-body">Sample workshop formats include: Decision-Forcing Cases, Tactical Decision Games, Educational Wargames, Critical Thinking intensives, and Curriculum Design and Development engagements.</p>
+          <p class="ldm-body">Sample workshop formats include: Decision-Forcing Cases, Tactical Decision Games, Educational Wargames, Critical Thinking intensives, and Curriculum Design and Development engagements. Participants receive a certificate of completion, suitable for professional profiles and organizational records.</p>
           <a href="contact.html" class="btn-outline-navy">Request a Leadership Program →</a>
         </div>
         <div class="ldm-aside">
           <div class="ldm-stat"><span class="ldm-num">1–10</span><span class="ldm-lbl">Day workshop formats</span></div>
           <div class="ldm-stat"><span class="ldm-num">In-person &amp; Virtual</span><span class="ldm-lbl">Delivery available</span></div>
           <div class="ldm-stat"><span class="ldm-num">Custom</span><span class="ldm-lbl">Engagements on request</span></div>
+          <div class="ldm-stat"><span class="ldm-num">Certificate</span><span class="ldm-lbl">Of completion awarded</span></div>
         </div>
       </div>
     </div>
@@ -1811,49 +1877,56 @@
           <img src="https://images.unsplash.com/photo-1481597262637-0545b18186ea?auto=format&fit=crop&w=900&q=80"
                alt="Security surveillance camera"
                style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:grayscale(20%) contrast(1.1) brightness(0.9);" />
-          <span class="img-flag" style="position:absolute;top:12px;left:12px;background:var(--gold);color:#fff;font-family:'IBM Plex Mono',monospace;font-size:10px;padding:4px 8px;text-transform:uppercase;letter-spacing:0.1em;" aria-hidden="true">Placeholder, Replace with AYC Photo</span>
         </div>
       </div>
       <div class="text-col">
         <p class="sec-identifier">Procurement</p>
-        <h2 class="sec-title" id="procurementTitle">Better Equipment.<br />Stronger Programs</h2>
-        <p class="sec-body">AYC Security is a trusted partner for defense and law enforcement procurement. The equipment and personnel market is crowded and specifications are technical. Our operational experience cuts through both, so you get the right equipment, on time, and within budget.</p>
+        <h2 class="sec-title" id="procurementTitle">There When<br />You Need Us</h2>
+        <p class="sec-body">AYC Security is a trusted partner for defense and law enforcement procurement. When equipment is needed quickly and correctly, the difference is not always price, it is access, communication, and speed. Our operational experience cuts through the complexity so you get the right equipment on the right timeline.</p>
         <p class="sec-body">Every product we help source goes through rigorous vetting to meet the highest standards of safety, quality, and operational effectiveness. Our global network of suppliers and manufacturers means we can source advanced and innovative solutions from around the world.</p>
-        <p class="sec-body">We work closely with each client to develop customized procurement solutions that fit their mission, budget, and operational environment. Your mission is our mission.</p>
+        <p class="sec-body">We work closely with each client to develop procurement solutions that fit their mission, budget, and operational environment.</p>
       </div>
     </div>
 
     <div class="procurement-cards">
       <article class="proc-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
         <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
           <path d="M4 10h28v18H4zM4 14h28M10 10V7M26 10V7"/>
           <circle cx="18" cy="22" r="3"/>
         </svg>
         <h3>Defense Procurement</h3>
+        </div>
         <p>Advanced weaponry, armored vehicles, electronic systems, and communication gear. From small arms and personal protective equipment to military-grade sensing and communications systems.</p>
       </article>
       <article class="proc-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
         <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
           <path d="M18 4L6 10v10c0 8 5.4 14.8 12 16 6.6-1.2 12-8 12-16V10L18 4z"/>
           <path d="M12 18l4 4 8-8"/>
         </svg>
         <h3>Law Enforcement Equipment</h3>
+        </div>
         <p>Body armor, tactical gear, surveillance technology, access control hardware, and communications equipment for law enforcement agencies and private security operations.</p>
       </article>
       <article class="proc-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
         <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
           <rect x="4" y="8" width="28" height="20"/>
           <path d="M12 8V6h12v2M4 16h28M12 22h12"/>
         </svg>
         <h3>Logistics &amp; Supply Chain</h3>
+        </div>
         <p>Streamlined supply chain management ensuring products are delivered on time and in optimal condition. We coordinate procurement, delivery, and logistics so your team stays mission-ready.</p>
       </article>
       <article class="proc-card">
+        <div style="display:flex;align-items:center;gap:12px;margin-bottom:8px;">
         <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
           <circle cx="18" cy="18" r="13"/>
           <path d="M5 18h26M18 5c-4 4-6 8-6 13s2 9 6 13M18 5c4 4 6 8 6 13s-2 9-6 13"/>
         </svg>
         <h3>Global Sourcing Network</h3>
+        </div>
         <p>AYC's established global network of suppliers and manufacturers allows us to source the most advanced and innovative products from around the world, matching capability to mission.</p>
       </article>
     </div>
@@ -1874,7 +1947,7 @@
           <path d="M20 13l1.8 3.6 4 .6-2.9 2.8.7 4-3.6-1.9-3.6 1.9.7-4-2.9-2.8 4-.6z" />
         </svg>
         <h3>150 Years of Operational Experience</h3>
-        <p>Our consulting and training team includes DEA veterans, Marine Corps officers, and instructors from the US Naval Academy and FBI National Academy. That depth is present in every engagement.</p>
+        <p>150 years of combined operational experience across military, federal law enforcement, legal practice, and private security. That depth is present in every engagement.</p>
       </article>
 
       <article class="pillar">
@@ -1885,7 +1958,7 @@
           <path d="M10 12l-5 10h10z" />
           <path d="M30 12l-5 10h10z" />
         </svg>
-        <h3>Legal Counsel in Operations</h3>
+        <h3>Integrated Legal Counsel</h3>
         <p>AYC's General Counsel is embedded in operations. Every consulting engagement and training program accounts for use-of-force law, documentation standards, and liability exposure from day one.</p>
       </article>
 
@@ -1895,8 +1968,8 @@
           <circle cx="20" cy="20" r="8" />
           <circle cx="20" cy="20" r="2" fill="currentColor" stroke="none" />
         </svg>
-        <h3>We Operate What We Recommend</h3>
-        <p>Our consultants run active security programs across the country. Every recommendation is field-tested, not drawn from a textbook.</p>
+        <h3>From Concept to Execution</h3>
+        <p>AYC does not just advise. We run active security programs across the country. When we recommend a protocol, a tool, or a training framework, it is because we have used it. That operational grounding is in every deliverable.</p>
       </article>
 
       <article class="pillar">
@@ -1904,8 +1977,8 @@
           <path d="M20 4c-6 0-11 5-11 11 0 8 11 21 11 21s11-13 11-21c0-6-5-11-11-11z" />
           <circle cx="20" cy="15" r="4" />
         </svg>
-        <h3>Nationwide Delivery</h3>
-        <p>Licensed in Florida, Nevada, Ohio, Tennessee, and Texas. Nationwide reach through direct deployment and vetted regional partners.</p>
+        <h3>National &amp; International Reach</h3>
+        <p>AYC consults, trains, and procures across the United States, Canada, and internationally. Wherever you need us, we can help.</p>
       </article>
     </div>
   </div>
@@ -1919,7 +1992,7 @@
       <div class="step">
         <span class="step-num">01</span>
         <h3>Consult</h3>
-        <p>Tell us about your program, your team, and your goals. We ask the right questions, including your threat environment, existing protocols, and timeline. Direct conversation, no gatekeeping.</p>
+        <p>Tell us about your program, your team, and your goals. We ask the right questions, including your threat environment, existing protocols, and timeline.</p>
       </div>
       <div class="step">
         <span class="step-num">02</span>
@@ -1929,7 +2002,7 @@
       <div class="step">
         <span class="step-num">03</span>
         <h3>Deliver</h3>
-        <p>We execute in-person, virtually, or on-site. With full documentation, incident reporting, and proactive communication throughout. You will never need to chase us for an update.</p>
+        <p>Depending on the program and needs, our experienced team can help execute plans in-person, on-site, or virtually. We communicate proactively throughout.</p>
       </div>
     </div>
   </div>
@@ -1973,7 +2046,7 @@
           How long does a consulting engagement take?
           <span class="faq-toggle" aria-hidden="true"></span>
         </button>
-        <div class="faq-a"><p>Scope varies. A focused threat assessment for a single facility typically takes one to two weeks. A full security audit with system design recommendations runs four to six weeks. We give you a timeline estimate after an initial discovery call.</p></div>
+        <div class="faq-a"><p>Timelines vary by scope and complexity. We provide a clear timeline estimate after an initial discovery call.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
@@ -1994,7 +2067,7 @@
           Are your services available nationwide?
           <span class="faq-toggle" aria-hidden="true"></span>
         </button>
-        <div class="faq-a"><p>Yes. AYC delivers consulting, training, and procurement support across the United States. Licensed in Florida, Nevada, Ohio, Tennessee, and Texas.</p></div>
+        <div class="faq-a"><p>Yes. AYC provides consulting, training, and procurement services across the United States, Canada, and internationally.</p></div>
       </div>
     </div>
   </div>
@@ -2005,9 +2078,9 @@
   <div class="container">
     <div class="final-grid">
       <div>
-        <h2 id="ctaTitle">Ready to Strengthen Your Program</h2>
-        <p class="final-eyebrow">Nationwide Coverage.</p>
-        <p class="body">Tell us about your program. We will tell you how we can help.</p>
+        <h2 id="ctaTitle">Discuss Your Program Requirements</h2>
+        <p class="final-eyebrow">Consulting. Training. Procurement.</p>
+        <p class="body">Tell us what you need. We will ask the right questions and come back with a clear plan.</p>
         <a class="btn btn-gold" href="contact.html">Request a Consultation →</a>
       </div>
       <div class="final-right">
@@ -2016,7 +2089,7 @@
         <div class="final-actions">
           <a href="tel:+15615717983">Call</a>
           <a href="sms:+15615717983">Text</a>
-          <a href="/cdn-cgi/l/email-protection#71181f171e3110081202141204031805085f121e1c">Email</a>
+          <a href="/cdn-cgi/l/email-protection#026b6c646d42637b6171676177706b767b2c616d6f">Email</a>
         </div>
       </div>
     </div>
@@ -2045,8 +2118,9 @@
         <ul>
           <li><a href="ongoing-security.html">Ongoing Site Security</a></li>
           <li><a href="disaster-response.html">Disaster &amp; Emergency Response</a></li>
-          <li><a href="community-events.html">Community, Events &amp; Close Protection</a></li>
-          <li><a href="energy-industrial.html">Energy &amp; Industrial Security</a></li>
+          <li><a href="community-events.html">Community &amp; Events Security</a></li>
+          <li><a href="close-protection.html">Executive &amp; Close Protection</a></li>
+          <li><a href="energy-industrial.html">Energy Facilities &amp; Infrastructure</a></li>
           <li><a href="consulting-training.html">Consulting, Training &amp; Procurement</a></li>
           <li><a href="#">AYC Intelligence</a></li>
         </ul>
@@ -2064,7 +2138,7 @@
       <div class="footer-col footer-contact">
         <h4>Contact</h4>
         <p><strong>Phone</strong><a href="tel:+15615717983">(561) 571-7983</a></p>
-        <p><strong>Email</strong><a href="/cdn-cgi/l/email-protection#4b22252d240b2a3228382e283e39223f3265282426"><span class="__cf_email__" data-cfemail="3f565159507f5e465c4c5a5c4a4d564b46115c5052">[email&#160;protected]</span></a></p>
+        <p><strong>Email</strong><a href="/cdn-cgi/l/email-protection#076e69616847667e6474626472756e737e2964686a"><span class="__cf_email__" data-cfemail="0a63646c654a6b7369796f697f78637e7324696567">[email&#160;protected]</span></a></p>
         <p><strong>Florida HQ</strong>7000 W Palmetto Park Rd., Suite 308<br />Boca Raton, FL 33433</p>
         <p><strong>Ohio Office</strong>7160 Chagrin Road, Suite 180<br />Chagrin Falls, OH 44023</p>
       </div>
