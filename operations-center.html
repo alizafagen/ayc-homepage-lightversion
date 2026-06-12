@@ -753,11 +753,12 @@
   }
   .gsoc-panel__footer {
     font-family: var(--font-mono);
-    font-size: 11px;
-    letter-spacing: 0.18em;
+    font-size: 13px;
+    letter-spacing: 0.1em;
     text-transform: uppercase;
-    color: rgba(217,182,107,0.55);
+    color: rgba(217,182,107,0.82);
     margin: 0;
+    line-height: 2;
   }
 
   /* ============================================================
@@ -1383,8 +1384,9 @@
           <div class="nav__dropdown" id="dd-services" role="menu">
             <a href="/services/ongoing-security" role="menuitem">Ongoing Site Security</a>
             <a href="/services/disaster-response" role="menuitem">Disaster &amp; Emergency Response</a>
-            <a href="/services/community-events" role="menuitem">Community, Events &amp; Close Protection</a>
-            <a href="/services/energy-industrial" role="menuitem">Energy &amp; Industrial Security</a>
+            <a href="/services/community-events" role="menuitem">Community &amp; Events Security</a>
+            <a href="/services/close-protection" role="menuitem">Executive &amp; Close Protection</a>
+            <a href="/services/energy-industrial" role="menuitem">Energy Facilities &amp; Infrastructure</a>
             <a href="/services/consulting-training" role="menuitem">Consulting, Training &amp; Procurement</a>
             <a href="/services/ayc-intelligence" role="menuitem">AYC Intelligence</a>
           </div>
@@ -1434,8 +1436,9 @@
         <div class="drawer__sub">
           <a href="/services/ongoing-security">Ongoing Site Security</a>
           <a href="/services/disaster-response">Disaster &amp; Emergency Response</a>
-          <a href="/services/community-events">Community, Events &amp; Close Protection</a>
-          <a href="/services/energy-industrial">Energy &amp; Industrial Security</a>
+          <a href="/services/community-events">Community &amp; Events Security</a>
+          <a href="/services/close-protection">Executive &amp; Close Protection</a>
+          <a href="/services/energy-industrial">Energy Facilities &amp; Infrastructure</a>
           <a href="/services/consulting-training">Consulting, Training &amp; Procurement</a>
           <a href="/services/ayc-intelligence">AYC Intelligence</a>
         </div>
@@ -1497,7 +1500,7 @@
   <nav class="bottom-strip" aria-label="Quick contact">
     <a href="tel:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">☎</span>Call</a>
     <a href="sms:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">✉</span>Text</a>
-    <a href="/cdn-cgi/l/email-protection#b0d9ded6dff0d1c9d3c3d5d3c5c2d9c4c99ed3dfdd"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
+    <a href="/cdn-cgi/l/email-protection#fe97909891be9f879d8d9b9d8b8c978a87d09d9193"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
   </nav>
 
   <!-- ============================================================
@@ -1509,7 +1512,6 @@
            alt="">
     </div>
     <div class="hero__overlay" aria-hidden="true"></div>
-    <span class="hero__placeholder-flag" role="note">⚠️ Priority: Replace with real AYC Operations Center photo before launch</span>
 
     <div class="container">
       <div class="hero__inner">
@@ -1520,6 +1522,10 @@
           <p class="hero__lede">
             AYC Security's Global Security Operations Center monitors every deployed officer via GPS check-in every hour, on the hour, verified by a live human operator, 24 hours a day, 365 days a year. There are no automated check-ins, no gaps, and no unmonitored posts.
           </p>
+          <div style="margin-top:28px;display:flex;gap:16px;flex-wrap:wrap;">
+            <a class="btn-gold" href="/contact">Request a Consultation →</a>
+            <a class="btn-outline-light" href="tel:+15615717983" style="display:inline-flex;align-items:center;gap:10px;padding:13px 24px;border:2px solid rgba(255,255,255,0.45);color:#fff;font-family:var(--font-display);font-size:14px;letter-spacing:0.1em;text-transform:uppercase;text-decoration:none;transition:border-color .2s,background .2s;">Call (561) 571-7983</a>
+          </div>
         </div>
 
         <aside class="gsoc-panel" aria-label="GSOC status">
@@ -1534,7 +1540,7 @@
           <hr class="gsoc-panel__rule" aria-hidden="true">
           <p class="gsoc-panel__body">Every check-in is verified by a live operator around the clock. When something is flagged, our team responds immediately.</p>
           <hr class="gsoc-panel__rule" aria-hidden="true">
-          <p class="gsoc-panel__footer">365 Days · 24 Hours · 0 Unmonitored Posts</p>
+          <p class="gsoc-panel__footer">365 Days<br>24 Hours<br>0 Unmonitored Posts</p>
         </aside>
       </div>
     </div>
@@ -1578,7 +1584,7 @@
             <line x1="20" y1="6" x2="20" y2="4"/>
           </svg>
           <h3 class="pillar__h3">Immediate Response</h3>
-          <p class="pillar__body">Through live monitoring, our team can notify you and respond to any incidents immediately. This is the AYC difference.</p>
+          <p class="pillar__body">Through live monitoring, our team can notify you and respond to any incidents immediately.</p>
         </article>
       </div>
     </div>
@@ -1614,12 +1620,12 @@
   <section class="sec sec--cream-2" aria-labelledby="s4-h">
     <div class="container">
       <span class="sec__label">Scope of Monitoring</span>
-      <h2 class="sec__h2" id="s4-h">Where the GSOC Operates</h2>
+      <h2 class="sec__h2" id="s4-h">Every Officer. Every Hour.</h2>
       <p class="sec__lede">Our GSOC monitors all active officer deployments across the country.</p>
 
       <div class="scope">
         <div class="scope__card">
-          <p class="scope__intro">AYC is proud to offer GSOC monitoring across all of our security services:</p>
+          <p class="scope__intro">AYC provides GSOC monitoring across all active officer deployments:</p>
 
           <div class="scope__row">
             <svg class="scope__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -1627,7 +1633,7 @@
             </svg>
             <div>
               <span class="scope__row-name">Ongoing Site Security</span>
-              <p class="scope__row-note">All scheduled and on-call officer deployments.</p>
+              <p class="scope__row-note">Every scheduled officer is GPS-confirmed on post every hour, around the clock.</p>
             </div>
           </div>
 
@@ -1636,8 +1642,8 @@
               <polyline points="3 12 9 18 21 6"></polyline>
             </svg>
             <div>
-              <span class="scope__row-name">Community, Events &amp; Close Protection</span>
-              <p class="scope__row-note">Event and protection deployments.</p>
+              <span class="scope__row-name">Community &amp; Events Security</span>
+              <p class="scope__row-note">Officers at your event or institution are monitored in real time throughout the entire deployment.</p>
             </div>
           </div>
 
@@ -1646,8 +1652,18 @@
               <polyline points="3 12 9 18 21 6"></polyline>
             </svg>
             <div>
-              <span class="scope__row-name">Energy &amp; Industrial Security</span>
-              <p class="scope__row-note">All active site deployments.</p>
+              <span class="scope__row-name">Executive &amp; Close Protection</span>
+              <p class="scope__row-note">Close protection officers are continuously monitored, confirming coverage is in place at all times.</p>
+            </div>
+          </div>
+
+          <div class="scope__row">
+            <svg class="scope__check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="3 12 9 18 21 6"></polyline>
+            </svg>
+            <div>
+              <span class="scope__row-name">Energy Facilities &amp; Infrastructure</span>
+              <p class="scope__row-note">Every officer at your facility checks in hourly, ensuring no shift gaps or coverage lapses go undetected.</p>
             </div>
           </div>
 
@@ -1658,7 +1674,7 @@
             </svg>
             <div>
               <span class="scope__row-name">Disaster &amp; Emergency Response</span>
-              <p class="scope__row-note">All active emergency and humanitarian deployments.</p>
+              <p class="scope__row-note">Emergency deployments receive the same hourly GPS verification as all other AYC operations.</p>
             </div>
           </div>
 
@@ -1677,15 +1693,16 @@
     <div class="container">
       <span class="sec__label">Client Experience</span>
       <h2 class="sec__h2" id="s5-h">Accountability You Can Count On</h2>
-      <p class="sec__lede">The GSOC exists to protect your people and your property. These are the confirmed commitments every client receives on a monitored engagement.</p>
+      <p class="sec__lede">The GSOC exists to protect your people and your property. These are the standards every client can expect on a monitored engagement.</p>
 
       <div class="expect">
         <article class="ecard">
           <svg class="ecard__icon" viewBox="0 0 40 40" fill="none" stroke="#B8882A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <path d="M9 7c0-1.1.9-2 2-2h4l3 6-3 2c1.5 3.5 4 6 7.5 7.5l2-3 6 3v4c0 1.1-.9 2-2 2C19 26 9 16 9 7z"/>
+            <circle cx="20" cy="17" r="5"/>
+            <path d="M20 6C14.477 6 10 10.477 10 16C10 22.5 20 34 20 34C20 34 30 22.5 30 16C30 10.477 25.523 6 20 6Z" stroke-linejoin="round"/>
           </svg>
-          <h3 class="ecard__h3">Direct Line, Any Time</h3>
-          <p class="ecard__body">You have direct access to our operations team at any time. When you call, you speak with someone who has the experience and authority to help.</p>
+          <h3 class="ecard__h3">GPS-Confirmed Coverage</h3>
+          <p class="ecard__body">Every AYC officer is GPS-confirmed on post every hour by a live human operator, giving you continuous, verified confirmation that every post is covered.</p>
         </article>
 
         <article class="ecard">
@@ -1694,16 +1711,16 @@
             <path d="M15 19l3.5 3.5L26 15"/>
           </svg>
           <h3 class="ecard__h3">Legal-Grade Documentation</h3>
-          <p class="ecard__body">Every incident, flag, and response is documented to a standard that holds up to legal scrutiny. Our in-house legal counsel is integrated directly into our operational structure.</p>
+          <p class="ecard__body">AYC can provide incident documentation, flag reports, and engagement records on request. Our in-house legal counsel is integrated directly into our operational structure, ensuring documentation meets the standards your legal or compliance teams require.</p>
         </article>
 
         <article class="ecard">
           <svg class="ecard__icon" viewBox="0 0 40 40" fill="none" stroke="#B8882A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <rect x="8" y="6" width="24" height="28" rx="1"/>
-            <path d="M13 14h14M13 20h14M13 26h9"/>
+            <path d="M6 8a2 2 0 012-2h24a2 2 0 012 2v16a2 2 0 01-2 2H22l-4 6v-6H8a2 2 0 01-2-2V8z"/>
+            <path d="M13 15h14M13 21h9"/>
           </svg>
           <h3 class="ecard__h3">Proactive Communication</h3>
-          <p class="ecard__body">Our team communicates throughout every deployment, keeping you informed and updated as the situation warrants. Reporting formats and communication cadences are confirmed at the start of each engagement.</p>
+          <p class="ecard__body">Our team communicates proactively throughout every engagement. Clients have a direct line to AYC's leadership team and, depending on the scope of your program, can explore real-time update options. Reporting formats are confirmed at the start of each engagement.</p>
         </article>
       </div>
       <div class="expect__cta">
@@ -1724,7 +1741,7 @@
         <div class="why__copy">
           <p>The private security industry has no universal standard for officer verification. Some firms rely on self-reported check-ins or automated software that flags exceptions only after they occur. AYC takes a different approach.</p>
           <p>AYC's GSOC was built around a straightforward premise: a client who has engaged a security firm should not have to wonder whether their officers are actually on post. GPS check-ins, verified by a live human operator every hour, provide that answer.</p>
-          <p>For clients with legal, insurance, or compliance exposure, this distinction is material. Every monitored post generates documentation that can support an incident response, a legal proceeding, or an internal review.</p>
+          <p>For clients with legal, insurance, or compliance exposure, the distinction between automated and human-verified monitoring is material. When documentation is needed, the record exists.</p>
           <a class="btn-gold why__cta" href="/contact">Request a Consultation →</a>
         </div>
 
@@ -1744,8 +1761,8 @@
     <div class="container">
       <div class="final-cta__grid">
         <div>
-          <h2 class="final-cta__h2" id="cta-h">Ready When It Matters</h2>
-          <span class="final-cta__eyebrow">Same-Day Coverage Available</span>
+          <h2 class="final-cta__h2" id="cta-h">Our Operations Never Stop</h2>
+          <span class="final-cta__eyebrow">24/7 · Live Human Monitoring</span>
           <p class="final-cta__body">Tell us what you need to protect. Our operations team will respond with the right coverage plan and the right personnel.</p>
           <a class="btn-gold" href="/contact">Request a Consultation →</a>
         </div>
@@ -1758,7 +1775,7 @@
             <span aria-hidden="true">·</span>
             <a href="sms:+15615717983">Text</a>
             <span aria-hidden="true">·</span>
-            <a href="/cdn-cgi/l/email-protection#b6dfd8d0d9f6d7cfd5c5d3d5c3c4dfc2cf98d5d9db">Email</a>
+            <a href="/cdn-cgi/l/email-protection#94fdfaf2fbd4f5edf7e7f1f7e1e6fde0edbaf7fbf9">Email</a>
           </div>
         </div>
       </div>
@@ -1794,8 +1811,9 @@
           <span class="footer-head">Services</span>
           <a class="footer-link" href="/services/ongoing-security">Ongoing Site Security</a>
           <a class="footer-link" href="/services/disaster-response">Disaster &amp; Emergency Response</a>
-          <a class="footer-link" href="/services/community-events">Community, Events &amp; Close Protection</a>
-          <a class="footer-link" href="/services/energy-industrial">Energy &amp; Industrial Security</a>
+          <a class="footer-link" href="/services/community-events">Community &amp; Events Security</a>
+          <a class="footer-link" href="/services/close-protection">Executive &amp; Close Protection</a>
+          <a class="footer-link" href="/services/energy-industrial">Energy Facilities &amp; Infrastructure</a>
           <a class="footer-link" href="/services/consulting-training">Consulting, Training &amp; Procurement</a>
           <a class="footer-link" href="/services/ayc-intelligence">AYC Intelligence</a>
         </nav>
@@ -1812,7 +1830,7 @@
         <div class="footer-col">
           <span class="footer-head">Contact</span>
           <a class="footer-phone" href="tel:+15615717983">(561) 571-7983</a>
-          <a class="footer-email" href="/cdn-cgi/l/email-protection#2841464e476849514b5b4d4b5d5a415c51064b4745"><span class="__cf_email__" data-cfemail="bad3d4dcd5fadbc3d9c9dfd9cfc8d3cec394d9d5d7">[email&#160;protected]</span></a>
+          <a class="footer-email" href="/cdn-cgi/l/email-protection#0b62656d644b6a7268786e687e79627f7225686466"><span class="__cf_email__" data-cfemail="4920272f260928302a3a2c2a3c3b203d30672a2624">[email&#160;protected]</span></a>
 
           <span class="footer-addr-label">Florida HQ</span>
           <address class="footer-addr">7000 W Palmetto Park Rd., Suite 308<br>Boca Raton, FL 33433</address>
