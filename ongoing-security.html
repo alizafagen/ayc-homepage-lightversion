@@ -596,7 +596,7 @@
   .hero__bg img {
     width: 100%; height: 100%;
     object-fit: cover;
-    object-position: center;
+    object-position: center top;
     filter: grayscale(100%) contrast(1.05) brightness(0.85);
   }
   .hero__overlay {
@@ -638,7 +638,7 @@
   .hero__sub {
     font-family: var(--font-display);
     font-weight: 500;
-    font-size: clamp(24px, 3vw, 40px);
+    font-size: clamp(32px, 4.5vw, 56px);
     color: var(--gold-soft);
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -1562,6 +1562,18 @@
   }
   .img-flag--tl { top: 16px; left: 16px; bottom: auto; right: auto; }
   .img-flag--tr { top: 16px; right: 16px; bottom: auto; left: auto; }
+  .coverage-callout {
+    margin-top: 24px;
+    padding: 14px 18px;
+    border: 1px solid var(--gold);
+    border-left: 3px solid var(--gold);
+    font-family: var(--font-mono, monospace);
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--gold);
+    line-height: 1.5;
+  }
 </style>
 </head>
 <body>
@@ -1601,8 +1613,9 @@
           <div class="nav__dropdown" id="dd-services" role="menu">
             <a href="/services/ongoing-security" role="menuitem" class="is-active" aria-current="page">Ongoing Site Security</a>
             <a href="/services/disaster-response" role="menuitem">Disaster &amp; Emergency Response</a>
-            <a href="/services/community-events" role="menuitem">Community, Events &amp; Close Protection</a>
-            <a href="/services/energy-industrial" role="menuitem">Energy &amp; Industrial Security</a>
+            <a href="/services/community-events" role="menuitem">Community &amp; Events Security</a>
+            <a href="/services/close-protection" role="menuitem">Executive &amp; Close Protection</a>
+            <a href="/services/energy-industrial" role="menuitem">Energy Facilities &amp; Infrastructure</a>
             <a href="/services/consulting-training" role="menuitem">Consulting, Training &amp; Procurement</a>
             <a href="/services/ayc-intelligence" role="menuitem">AYC Intelligence</a>
           </div>
@@ -1650,8 +1663,9 @@
         <div class="drawer__sub">
           <a href="/services/ongoing-security" aria-current="page">Ongoing Site Security</a>
           <a href="/services/disaster-response">Disaster &amp; Emergency Response</a>
-          <a href="/services/community-events">Community, Events &amp; Close Protection</a>
-          <a href="/services/energy-industrial">Energy &amp; Industrial Security</a>
+          <a href="/services/community-events">Community &amp; Events Security</a>
+          <a href="/services/close-protection">Executive &amp; Close Protection</a>
+          <a href="/services/energy-industrial">Energy Facilities &amp; Infrastructure</a>
           <a href="/services/consulting-training">Consulting, Training &amp; Procurement</a>
           <a href="/services/ayc-intelligence">AYC Intelligence</a>
         </div>
@@ -1697,7 +1711,7 @@
           <button class="pill" type="button">Residential / HOA</button>
           <button class="pill" type="button">Commercial</button>
           <button class="pill" type="button">Healthcare</button>
-          <button class="pill" type="button">Not sure</button>
+          <button class="pill" type="button">Other</button>
         </div>
         <label for="f-name">Name</label>
         <input id="f-name" type="text" autocomplete="name">
@@ -1709,10 +1723,12 @@
         <select id="f-service">
           <option>Ongoing Site Security</option>
           <option>Disaster &amp; Emergency Response</option>
-          <option>Community, Events &amp; Close Protection</option>
-          <option>Energy &amp; Industrial Security</option>
+          <option>Community &amp; Events Security</option>
+          <option>Executive &amp; Close Protection</option>
+          <option>Energy Facilities &amp; Infrastructure</option>
           <option>Consulting, Training &amp; Procurement</option>
           <option>AYC Intelligence</option>
+          <option>Other</option>
         </select>
         <label for="f-msg">Message</label>
         <textarea id="f-msg"></textarea>
@@ -1724,7 +1740,7 @@
   <nav class="bottom-strip" aria-label="Quick contact">
     <a href="tel:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">☎</span>Call</a>
     <a href="sms:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">✉</span>Text</a>
-    <a href="/cdn-cgi/l/email-protection#d3babdb5bc93b2aab0a0b6b0a6a1baa7aafdb0bcbe"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
+    <a href="/cdn-cgi/l/email-protection#2f464149406f4e564c5c4a4c5a5d465b56014c4042"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
   </nav>
 
   <!-- ============================================================
@@ -1732,21 +1748,23 @@
        ============================================================ -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__bg" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1529478490015-00f1a2f8f5cd?auto=format&fit=crop&w=1800&q=80"
-           alt="Professional security officer on duty">
+      <img src="https://alizafagen.github.io/ayc-homepage-lightversion/assets/security-guard-front-door-entrance-young-standing-glass-57966210.webp"
+           alt="Professional security guard at building entrance — Dreamstime #57966210, purchase before launch">
     </div>
     <div class="hero__overlay" aria-hidden="true"></div>
-    <span class="img-flag" aria-hidden="true">Placeholder — replace with real AYC photo</span>
+    <!-- NOTE FOR CLIENT: Purchase a professional security guard photo from Shutterstock (~$29) or Adobe Stock (~$29.99).
+         Search terms: "professional security guard corporate entrance uniform standing"
+         Then replace the src in both images — hero and the split-section callout. -->
 
     <div class="container">
       <div class="hero__inner">
         <div class="hero__text">
           <p class="hero__crumbs"><a href="/services">Services</a> &nbsp;/&nbsp; Ongoing Site Security</p>
-          <h1 class="hero__title" id="hero-title">Your Property<br>Does Not Stop.</h1>
+          <h1 class="hero__title" id="hero-title">Your Property Security<br>Does Not Stop.</h1>
           <p class="hero__sub">Neither Do We.</p>
           <p class="hero__body">AYC provides professional, around-the-clock security for properties and facilities that cannot afford gaps in coverage. Whatever your environment, we build a security presence that is continuous, monitored, and accountable from day one.</p>
           <div class="hero__ctas">
-            <a class="btn-gold" href="/contact">Get Protected Now →</a>
+            <a class="btn-gold" href="/contact">Start the Conversation →</a>
             <a class="btn-outline-light" href="tel:+15615717983">Call (561) 571-7983</a>
           </div>
         </div>
@@ -1787,14 +1805,13 @@
       <div class="plain__panel">
         <div class="plain__body">
           <p>AYC Security deploys trained, professional security officers to properties and facilities requiring an ongoing, 24/7 security presence. Every officer is monitored by our Global Security Operations Center with GPS-confirmed check-ins every hour of every shift, verified by a live human operator.</p>
-          <p>Armed and unarmed options are available. Every engagement begins with a customized security plan built specifically for your property or facility. Same-day deployment is available for time-sensitive situations.</p>
+          <p>Armed and unarmed options are available. Every engagement begins with a security plan built specifically for your property or facility. Same-day deployment is available for time-sensitive situations.</p>
         </div>
         <p class="plain__note">AYC Security operates nationally with active licenses across multiple U.S. states. Wherever your property is located, our team is ready to help.</p>
       </div>
       <div class="plain__media">
-        <img src="https://images.unsplash.com/photo-1529478490015-00f1a2f8f5cd?auto=format&fit=crop&w=900&q=80"
-             alt="Professional security officer on duty">
-        <span class="img-flag img-flag--tl" aria-hidden="true">Placeholder — replace with real AYC photo</span>
+        <img src="https://alizafagen.github.io/ayc-homepage-lightversion/assets/security-guard-event-service-security-guard-event-service-officer-his-group-212499681.webp"
+             alt="AYC security officers on deployment — Dreamstime #212499681, purchase before launch">
       </div>
     </div>
   </section>
@@ -1810,8 +1827,8 @@
         <div class="tabs__nav" role="tablist" aria-label="Industries we protect">
           <button class="tab is-active" role="tab" type="button" aria-selected="true" aria-controls="panel-1" id="tab-1" data-target="panel-1">Corporate &amp; Office</button>
           <button class="tab" role="tab" type="button" aria-selected="false" aria-controls="panel-2" id="tab-2" data-target="panel-2" tabindex="-1">Residential &amp; HOA</button>
-          <button class="tab" role="tab" type="button" aria-selected="false" aria-controls="panel-3" id="tab-3" data-target="panel-3" tabindex="-1">Construction &amp; Industrial</button>
-          <button class="tab" role="tab" type="button" aria-selected="false" aria-controls="panel-4" id="tab-4" data-target="panel-4" tabindex="-1">Worship &amp; Schools</button>
+          <button class="tab" role="tab" type="button" aria-selected="false" aria-controls="panel-3" id="tab-3" data-target="panel-3" tabindex="-1">Construction Sites</button>
+          <button class="tab" role="tab" type="button" aria-selected="false" aria-controls="panel-4" id="tab-4" data-target="panel-4" tabindex="-1">Religious Institutions</button>
           <button class="tab" role="tab" type="button" aria-selected="false" aria-controls="panel-5" id="tab-5" data-target="panel-5" tabindex="-1">Retail &amp; Mixed-Use</button>
           <button class="tab" role="tab" type="button" aria-selected="false" aria-controls="panel-6" id="tab-6" data-target="panel-6" tabindex="-1">Healthcare &amp; Senior Living</button>
         </div>
@@ -1840,21 +1857,21 @@
               <h3 class="tab-panel__head">Corporate Campuses and Office Buildings</h3>
             </div>
             <div class="tab-panel__body">
-              <p>Corporate campuses, office towers, and business parks require security that is professional, consistent, and legally accountable. AYC provides uniformed security officers with GSOC-verified hourly check-ins, visitor access management, and incident documentation that protects your organization operationally and legally. Your tenants and stakeholders will always know coverage is confirmed.</p>
+              <p>Corporate campuses, office towers, and business parks require security that is professional, consistent, and legally accountable. AYC provides uniformed security officers with GSOC-verified hourly check-ins, visitor access management, and incident documentation that protects your organization operationally and legally. Your tenants and stakeholders will always know they're secured.</p>
             </div>
             <ul class="tab-panel__list">
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Uniformed and plainclothes officer deployment</li>
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Visitor and access management</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Overnight and weekend coverage</li>
+              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Continuous coverage, including nights, weekends, and holidays</li>
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Incident documentation and reporting</li>
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>24/7 GSOC hourly GPS check-ins</li>
+              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Warehouse and industrial campus coverage</li>
             </ul>
             <p class="tab-panel__note">AYC also has experience providing security during workforce and operational transitions. Contact us to discuss your situation confidentially.</p>
             </div>
             <div class="tab-panel__media">
               <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80"
                    alt="Corporate office building — replace with AYC client photo">
-              <span class="img-flag img-flag--tr" aria-hidden="true">Placeholder — replace with real AYC client photo</span>
             </div>
           </div>
 
@@ -1876,14 +1893,13 @@
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Access control and gatehouse staffing</li>
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Vehicle and foot patrol</li>
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Resident and visitor management</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>After-hours and overnight coverage</li>
+              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>24/7 Coverage, including overnight and weekends</li>
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Incident response and documentation</li>
             </ul>
             </div>
             <div class="tab-panel__media">
               <img src="https://images.unsplash.com/photo-1759845565036-cbecbcfcb8e2?auto=format&fit=crop&w=900&q=80"
                    alt="Modern residential apartment building — replace with AYC client photo">
-              <span class="img-flag img-flag--tr" aria-hidden="true">Placeholder — replace with real AYC client photo</span>
             </div>
           </div>
 
@@ -1898,23 +1914,25 @@
                 <line x1="11" y1="6" x2="11" y2="12" stroke="currentColor" stroke-width="2"/>
                 <line x1="11" y1="6" x2="20" y2="9" stroke="currentColor" stroke-width="2"/>
               </svg>
-              <h3 class="tab-panel__head">Construction Sites and Industrial Facilities</h3>
+              <h3 class="tab-panel__head">Construction Sites</h3>
             </div>
             <div class="tab-panel__body">
-              <p>Active construction sites and industrial facilities are among the most vulnerable environments for theft, vandalism, and unauthorized access — particularly overnight and on weekends. AYC provides armed and unarmed site security with GSOC-monitored continuous coverage, designed around the operational rhythm of your job site. Your assets are protected around the clock, even when your crew is not on site.</p>
+              <p>Active construction sites are among the most vulnerable environments for theft, vandalism, and unauthorized access, particularly overnight and on weekends. AYC provides armed and unarmed site security with GSOC-monitored continuous coverage, designed around the operational rhythm of your job site. Your assets are protected around the clock, even when your crew is not on site.</p>
             </div>
             <ul class="tab-panel__list">
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Armed and unarmed officer deployment</li>
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Equipment and materials protection</li>
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Perimeter monitoring and patrol</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>After-hours and weekend coverage</li>
+              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>24/7 Coverage, including overnight and weekends</li>
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Coordination with site management</li>
             </ul>
+            <p class="coverage-callout">
+              Part-Time, Full-Time &amp; 24/7 Coverage Options Available
+            </p>
             </div>
             <div class="tab-panel__media">
-              <img src="https://images.unsplash.com/photo-1755943807913-5f999c562f45?auto=format&fit=crop&w=900&q=80"
-                   alt="Industrial construction site — replace with AYC client photo">
-              <span class="img-flag img-flag--tr" aria-hidden="true">Placeholder — replace with real AYC client photo</span>
+              <img src="https://images.unsplash.com/photo-1599707254554-027aeb4deacd?auto=format&fit=crop&w=900&q=80"
+                   alt="Yellow crane and active construction site, Los Angeles">
             </div>
           </div>
 
@@ -1927,23 +1945,22 @@
                 <line x1="18" y1="12" x2="18" y2="22" stroke="currentColor" stroke-width="2"/>
                 <line x1="13" y1="17" x2="23" y2="17" stroke="currentColor" stroke-width="2"/>
               </svg>
-              <h3 class="tab-panel__head">Houses of Worship and Educational Institutions</h3>
+              <h3 class="tab-panel__head">Religious Institutions and Educational Facilities</h3>
             </div>
             <div class="tab-panel__body">
               <p>Protecting a congregation or a school campus means holding a careful balance between vigilance and welcome. AYC security officers are trained for environments where the presence of security must feel reassuring rather than intimidating, while remaining fully prepared to respond when it matters most. Your community deserves to feel safe without feeling watched.</p>
             </div>
             <ul class="tab-panel__list">
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Weekend and daily service coverage</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>High-event and holiday security</li>
+              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>High-volume event and holiday security</li>
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Campus patrol and access control</li>
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Active threat response preparedness</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>De-escalation trained officers</li>
+              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>De-escalation</li>
             </ul>
             </div>
             <div class="tab-panel__media">
-              <img src="https://images.unsplash.com/photo-1612388839403-4d732790455b?auto=format&fit=crop&w=900&q=80"
-                   alt="Synagogue sanctuary interior — replace with AYC client photo">
-              <span class="img-flag img-flag--tr" aria-hidden="true">Placeholder — replace with real AYC client photo</span>
+              <img src="https://images.unsplash.com/photo-1638707094136-e254bd87ad4a?auto=format&fit=crop&w=900&q=80"
+                   alt="Colorful stained glass windows in a house of worship">
             </div>
           </div>
 
@@ -1964,17 +1981,17 @@
               <p>Retail centers, malls, and mixed-use developments require security that deters without disrupting the customer experience. AYC provides uniformed patrol, access control, and incident response for retail environments of all sizes. We work closely with property and operations managers to ensure our presence supports your business, not just your safety plan.</p>
             </div>
             <ul class="tab-panel__list">
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Uniformed floor and patrol presence</li>
+              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Armed and unarmed officers available</li>
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Loss prevention support</li>
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>After-hours and overnight coverage</li>
+              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>24/7 Coverage, including custom scheduling options</li>
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Incident documentation</li>
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Coordination with management teams</li>
+              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>GSOC-monitored coverage for every deployed officer</li>
             </ul>
             </div>
             <div class="tab-panel__media">
               <img src="https://images.unsplash.com/photo-1669429403420-257f3c6aa0f3?auto=format&fit=crop&w=900&q=80"
                    alt="Modern shopping mall entrance — replace with AYC client photo">
-              <span class="img-flag img-flag--tr" aria-hidden="true">Placeholder — replace with real AYC client photo</span>
             </div>
           </div>
 
@@ -1990,11 +2007,11 @@
               <h3 class="tab-panel__head">Hospitals, Medical Facilities, and Senior Living</h3>
             </div>
             <div class="tab-panel__body">
-              <p>Hospitals, medical offices, nursing homes, and assisted living facilities require security personnel with specific training in de-escalation, patient-facing protocols, and HIPAA-adjacent environment standards. AYC provides healthcare-aware security officers for facilities where the wrong response can carry real consequences for patients, residents, and staff alike. We understand the environment. We train for it.</p>
+              <p>Hospitals, medical offices, nursing homes, and assisted living facilities require security personnel with specific training in de-escalation and patient-facing protocols. AYC provides healthcare-aware security officers for facilities where the wrong response can carry real consequences for patients, residents, and staff alike. We understand the environment. We train for it.</p>
               <p>AYC's healthcare security team includes medical professionals with direct hospital operations experience, giving us a level of institutional understanding most security firms cannot offer.</p>
             </div>
             <ul class="tab-panel__list">
-              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>De-escalation trained officers</li>
+              <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>De-escalation and patient-facing protocols</li>
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Patient and visitor management</li>
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>Emergency response coordination</li>
               <li><svg class="tab-panel__check" viewBox="0 0 16 16" fill="none" aria-hidden="true"><path d="M3 8.5L6.5 12 13 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>HIPAA-aware incident documentation</li>
@@ -2004,7 +2021,6 @@
             <div class="tab-panel__media">
               <img src="https://images.unsplash.com/photo-1610598809726-e0dd63432bf7?auto=format&fit=crop&w=900&q=80"
                    alt="Medical center exterior — replace with AYC client photo">
-              <span class="img-flag img-flag--tr" aria-hidden="true">Placeholder — replace with real AYC client photo</span>
             </div>
           </div>
 
@@ -2021,7 +2037,7 @@
       <div class="gsoc-callout__grid">
         <div>
           <h2 class="gsoc-callout__head" id="gsoc-c-head">Every Officer.<br>Every Hour.<br>Every Property.</h2>
-          <p class="gsoc-callout__body">AYC's Global Security Operations Center tracks every deployed security officer via GPS check-in, every hour, 24 hours a day, 7 days a week. A live human operator monitors every check-in. Not automated software. Not a morning report. If something flags, we respond immediately.</p>
+          <p class="gsoc-callout__body">AYC's Global Security Operations Center tracks every deployed security officer via GPS check-in, every hour, 24 hours a day, 7 days a week. A live human operator monitors every check-in. Not automated software.</p>
 
           <div class="gsoc-cards">
             <div class="gsoc-card">
@@ -2044,7 +2060,7 @@
               </svg>
               <div>
                 <h3 class="gsoc-card__head">Live Operator Review</h3>
-                <p class="gsoc-card__body">A real person verifies every check-in. Not automated software. Not a morning summary.</p>
+                <p class="gsoc-card__body">A real person verifies every check-in. Not automated software.</p>
               </div>
             </div>
             <div class="gsoc-card">
@@ -2055,7 +2071,7 @@
               </svg>
               <div>
                 <h3 class="gsoc-card__head">Immediate Response</h3>
-                <p class="gsoc-card__body">A missed check-in or flagged incident triggers an immediate response. Not a report. Action.</p>
+                <p class="gsoc-card__body">A missed check-in or flagged incident triggers an immediate response.</p>
               </div>
             </div>
           </div>
@@ -2094,12 +2110,12 @@
         <div class="how__step">
           <p class="how__num">02</p>
           <h3 class="how__step-head">Assess &amp; Plan</h3>
-          <p class="how__step-body">Our team conducts a thorough, timely assessment of your property or facility. From that, we build a security plan tailored specifically to your risks and your needs. Not a template. Yours.</p>
+          <p class="how__step-body">Our team conducts a thorough, timely assessment of your property or facility. From that, we build a security plan specific to your risks and your needs.</p>
         </div>
         <div class="how__step">
           <p class="how__num">03</p>
           <h3 class="how__step-head">Deploy &amp; Monitor</h3>
-          <p class="how__step-body">We deploy trained security officers and activate GSOC monitoring from day one. Every officer checks in every hour. You have a direct line to our operations team at any time, and we communicate proactively — you will never need to chase us down for an update. For clients moving from another provider, we manage the handoff to ensure no gap in coverage.</p>
+          <p class="how__step-body">We deploy trained security officers and activate GSOC monitoring from day one. Every officer checks in every hour. We communicate proactively throughout your engagement. For clients moving from another provider, we manage the handoff to ensure no gap in coverage.</p>
         </div>
       </div>
     </div>
@@ -2193,7 +2209,7 @@
             <span class="faq__icon" aria-hidden="true"></span>
           </button>
           <div class="faq__answer" id="faq-5">
-            <div class="faq__answer-inner">AYC officers document all incidents, including unauthorized access, property damage, disturbances, and any situation requiring response. Documentation is informed by our integrated legal counsel and is designed to protect your organization.</div>
+            <div class="faq__answer-inner">AYC officers document incidents including unauthorized access, property damage, disturbances, and any situation requiring response. Documentation is informed by our integrated legal counsel and is designed to protect your organization. Reporting formats and documentation scope can be customized based on engagement type and client requirements.</div>
           </div>
         </div>
         <div class="faq__item">
@@ -2216,10 +2232,10 @@
     <div class="container">
       <div class="final-cta__grid">
         <div>
-          <h2 class="final-cta__head" id="final-head">Ready to Secure Your Property?</h2>
+          <h2 class="final-cta__head" id="final-head">Tell Us What Needs Protecting.</h2>
           <p class="final-cta__sub">Same-Day Deployment Available.</p>
           <p class="final-cta__body">Tell us about your property. We will put together a security plan built around your needs.</p>
-          <a class="btn-gold final-cta__btn" href="/contact">Get Protected Now →</a>
+          <a class="btn-gold final-cta__btn" href="/contact">Start the Conversation →</a>
         </div>
         <div class="final-cta__right">
           <p class="final-cta__connect">Connect With Our Team</p>
@@ -2227,7 +2243,7 @@
           <div class="final-cta__row">
             <a href="tel:+15615717983">Call</a>
             <a href="sms:+15615717983">Text</a>
-            <a href="/cdn-cgi/l/email-protection#e58c8b838aa5849c8696808690978c919ccb868a88">Email</a>
+            <a href="/cdn-cgi/l/email-protection#7b12151d143b1a0218081e180e09120f0255181416">Email</a>
           </div>
         </div>
       </div>
@@ -2243,7 +2259,7 @@
 
         <div class="footer-col footer-col--brand">
           <img class="footer-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security USA">
-          <p class="footer-blurb">AYC Security USA — a veteran-owned private security firm headquartered in Boca Raton, Florida. 24/7 Global Security Operations Center.</p>
+          <p class="footer-blurb">AYC Security USA, a veteran-owned private security firm headquartered in Boca Raton, Florida. 24/7 Global Security Operations Center.</p>
           <span class="footer-license-line">Licensed &amp; Insured Nationally · Operating Across the United States</span>
           <div class="footer-socials">
             <a class="footer-social" href="https://www.linkedin.com/company/ayc-security/" aria-label="AYC Security on LinkedIn" target="_blank" rel="noopener">
@@ -2263,8 +2279,9 @@
           <span class="footer-head">Services</span>
           <a class="footer-link" href="/services/ongoing-security">Ongoing Site Security</a>
           <a class="footer-link" href="/services/disaster-response">Disaster &amp; Emergency Response</a>
-          <a class="footer-link" href="/services/community-events">Community, Events &amp; Close Protection</a>
-          <a class="footer-link" href="/services/energy-industrial">Energy &amp; Industrial Security</a>
+          <a class="footer-link" href="/services/community-events">Community &amp; Events Security</a>
+          <a class="footer-link" href="/services/close-protection">Executive &amp; Close Protection</a>
+          <a class="footer-link" href="/services/energy-industrial">Energy Facilities &amp; Infrastructure</a>
           <a class="footer-link" href="/services/consulting-training">Consulting, Training &amp; Procurement</a>
           <a class="footer-link" href="/services/ayc-intelligence">AYC Intelligence</a>
         </nav>
@@ -2281,7 +2298,7 @@
         <div class="footer-col">
           <span class="footer-head">Contact</span>
           <a class="footer-phone" href="tel:+15615717983">(561) 571-7983</a>
-          <a class="footer-email" href="/cdn-cgi/l/email-protection#ef86818980af8e968c9c8a8c9a9d869b96c18c8082"><span class="__cf_email__" data-cfemail="84edeae2ebc4e5fde7f7e1e7f1f6edf0fdaae7ebe9">[email&#160;protected]</span></a>
+          <a class="footer-email" href="/cdn-cgi/l/email-protection#2b42454d446b4a5248584e485e59425f5205484446"><span class="__cf_email__" data-cfemail="5930373f361938203a2a3c3a2c2b302d20773a3634">[email&#160;protected]</span></a>
 
           <span class="footer-addr-label">Florida HQ</span>
           <address class="footer-addr">7000 W Palmetto Park Rd., Suite 308<br>Boca Raton, FL 33433</address>
