@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Security for Office Buildings, HOAs, Healthcare &amp; More | AYC Security USA</title>
+<title>Industries We Serve | Commercial, Healthcare, Energy, HOA &amp; More | AYC Security USA</title>
 <meta name="description" content="AYC Security serves commercial real estate, residential HOAs, houses of worship, healthcare facilities, energy and mining operations, events, schools, disaster relief organizations, and corporate clients. Licensed in Florida, Nevada, Ohio, Tennessee, and Texas.">
 <meta property="og:title" content="Industries We Serve | AYC Security USA">
 <meta property="og:description" content="Industry-specific security from a veteran-owned firm. Licensed in FL, NV, OH, TN, TX with national coverage through vetted regional partners.">
@@ -131,15 +131,15 @@
   .hero__rule{display:block;width:96px;height:2px;background:var(--gold);border:0;margin:24px 0}
   .hero__body{font-family:var(--font-body);font-size:18px;color:rgba(255,255,255,0.85);max-width:60ch;line-height:1.65;margin:0}
   /* ===== ANCHOR NAV ===== */
-  .anchor-nav{background:var(--navy-2);border-top:1px solid rgba(255,255,255,0.08);border-bottom:1px solid rgba(255,255,255,0.04);position:sticky;top:84px;z-index:40;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:thin}
+  .anchor-nav{background:var(--paper);border-bottom:2px solid var(--rule);position:sticky;top:84px;z-index:40;overflow-x:auto;white-space:nowrap;-webkit-overflow-scrolling:touch;scrollbar-width:thin;scrollbar-color:var(--rule-strong) transparent}
   @media (max-width:899px){.anchor-nav{top:64px}}
-  .anchor-nav::-webkit-scrollbar{height:4px}
-  .anchor-nav::-webkit-scrollbar-thumb{background:rgba(255,255,255,0.1)}
+  .anchor-nav::-webkit-scrollbar{height:3px}
+  .anchor-nav::-webkit-scrollbar-thumb{background:var(--rule-strong)}
   .anchor-nav__inner{display:flex;gap:0;align-items:stretch}
-  .anchor-nav__label{font-family:var(--font-mono);font-size:12px;color:var(--gold-soft);text-transform:uppercase;letter-spacing:0.2em;padding:14px 20px 14px 0;border-right:1px solid rgba(255,255,255,0.08);align-self:center;flex-shrink:0}
+  .anchor-nav__label{font-family:var(--font-mono);font-size:12px;color:var(--ink-soft);text-transform:uppercase;letter-spacing:0.2em;padding:0 20px 0 0;border-right:1px solid var(--rule);display:flex;align-items:center;flex-shrink:0}
   @media (max-width:720px){.anchor-nav__label{display:none}}
-  .anchor-nav a{font-family:var(--font-mono);font-size:12px;text-transform:uppercase;letter-spacing:0.14em;color:rgba(255,255,255,0.55);padding:14px 20px;border-right:1px solid rgba(255,255,255,0.08);transition:color .15s ease,background-color .15s ease;flex-shrink:0}
-  .anchor-nav a:hover{color:var(--gold-soft);background:rgba(255,255,255,0.02)}
+  .anchor-nav a{font-family:var(--font-display);font-weight:500;font-size:13px;text-transform:uppercase;letter-spacing:0.1em;color:var(--ink-soft);padding:16px 20px;border-bottom:3px solid transparent;text-decoration:none;display:inline-flex;align-items:center;transition:color .15s ease,border-color .15s ease;flex-shrink:0}
+  .anchor-nav a:hover{color:var(--gold);border-bottom-color:rgba(184,136,42,0.3)}
 
   /* ===== SECTION SHARED ===== */
   .ind-section{padding:clamp(72px,9vw,110px) 0;scroll-margin-top:140px}
@@ -147,13 +147,12 @@
   .ind-section--paper{background:var(--paper)}
   .ind-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,5vw,80px);align-items:start}
   @media (max-width:960px){.ind-grid{grid-template-columns:1fr;gap:48px}}
-  .ind-label{font-family:var(--font-mono);font-size:13px;color:var(--gold);text-transform:uppercase;letter-spacing:0.18em;display:flex;align-items:center;gap:14px;margin:0 0 14px}
-  .ind-label::before{content:"";display:block;width:32px;height:1px;background:var(--gold)}
+  .ind-label{font-family:var(--font-mono);font-size:13px;color:var(--gold);text-transform:uppercase;letter-spacing:0.18em;display:block;margin:0 0 14px}
   .ind-h2{font-family:var(--font-display);font-weight:700;font-size:clamp(36px,4.2vw,52px);text-transform:uppercase;color:var(--ink);line-height:1.05;max-width:22ch;margin:0 0 24px;letter-spacing:0.005em}
   .ind-body p{font-family:var(--font-body);font-size:17px;color:var(--ink-soft);line-height:1.7;max-width:64ch;margin:0 0 20px}
   .ind-body p:last-of-type{margin-bottom:28px}
-  .ind-cta{display:inline-block;background:var(--gold);color:var(--navy);border:1px solid var(--gold);font-family:var(--font-display);font-weight:600;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;padding:16px 26px;margin:28px 0 24px;text-decoration:none;line-height:1;transition:background-color .2s ease,border-color .2s ease}
-  .ind-cta:hover{background:var(--gold-deep);border-color:var(--gold-deep);color:var(--navy)}
+  .ind-cta{display:inline-block;background:var(--gold);color:#fff;border:1px solid var(--gold);font-family:var(--font-display);font-weight:600;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;padding:16px 26px;margin:28px 0 24px;text-decoration:none;line-height:1;transition:background-color .2s ease,border-color .2s ease}
+  .ind-cta:hover{background:var(--gold-deep);border-color:var(--gold-deep);color:#fff}
   .ind-tags{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
   .ind-tag{font-family:var(--font-display);font-weight:500;font-size:12px;text-transform:uppercase;letter-spacing:0.14em;color:var(--gold);border:1px solid var(--gold);padding:9px 16px;display:inline-flex;align-items:center;gap:8px;transition:background-color .15s ease,color .15s ease}
   .ind-tag:hover{background:var(--gold);color:var(--navy)}
@@ -169,8 +168,6 @@
   .ind-side{position:relative;align-self:stretch;min-height:280px;display:flex;flex-direction:column;justify-content:flex-start;padding-top:40px}
   .ind-side__frame{border:1px solid var(--rule-strong);padding:28px;background:rgba(255,255,255,0.4);position:relative}
   .ind-section--paper .ind-side__frame{background:var(--cream);border-color:var(--rule)}
-  .ind-side__corner{position:absolute;top:-1px;left:-1px;width:24px;height:24px;border-top:2px solid var(--gold);border-left:2px solid var(--gold)}
-  .ind-side__corner--br{top:auto;left:auto;bottom:-1px;right:-1px;border-top:0;border-left:0;border-bottom:2px solid var(--gold);border-right:2px solid var(--gold)}
   .ind-side__eyebrow{font-family:var(--font-mono);font-size:12px;color:var(--gold);letter-spacing:0.22em;text-transform:uppercase;margin:0 0 16px;display:block}
   .ind-side__title{font-family:var(--font-display);font-weight:600;font-size:18px;text-transform:uppercase;color:var(--ink);letter-spacing:0.06em;line-height:1.3;margin:0 0 22px}
   .ind-stats{display:grid;grid-template-columns:1fr 1fr;gap:0;border-top:1px solid var(--rule-strong);margin-top:8px}
@@ -318,8 +315,9 @@
           <div class="nav__dropdown" id="dd-services" role="menu">
             <a href="ongoing-security.html" role="menuitem">Ongoing Site Security</a>
             <a href="disaster-response.html" role="menuitem">Disaster &amp; Emergency Response</a>
-            <a href="community-events.html" role="menuitem">Community, Events &amp; Close Protection</a>
-            <a href="energy-industrial.html" role="menuitem">Energy &amp; Industrial Security</a>
+            <a href="community-events.html" role="menuitem">Community &amp; Events Security</a>
+            <a href="close-protection.html" role="menuitem">Executive &amp; Close Protection</a>
+            <a href="energy-industrial.html" role="menuitem">Energy Facilities &amp; Infrastructure</a>
             <a href="consulting-training.html" role="menuitem">Consulting, Training &amp; Procurement</a>
             <a href="ayc-intelligence.html" role="menuitem">AYC Intelligence</a>
           </div>
@@ -362,8 +360,9 @@
         <div class="drawer__sub">
           <a href="ongoing-security.html">Ongoing Site Security</a>
           <a href="disaster-response.html">Disaster &amp; Emergency Response</a>
-          <a href="community-events.html">Community, Events &amp; Close Protection</a>
-          <a href="energy-industrial.html">Energy &amp; Industrial Security</a>
+          <a href="community-events.html">Community &amp; Events Security</a>
+          <a href="close-protection.html">Executive &amp; Close Protection</a>
+          <a href="energy-industrial.html">Energy Facilities &amp; Infrastructure</a>
           <a href="consulting-training.html">Consulting, Training &amp; Procurement</a>
           <a href="ayc-intelligence.html">AYC Intelligence</a>
         </div>
@@ -404,7 +403,7 @@
           <button class="pill" type="button">Event</button>
           <button class="pill" type="button">Disaster Response</button>
           <button class="pill" type="button">Industrial</button>
-          <button class="pill" type="button">Not sure</button>
+          <button class="pill" type="button">Other</button>
         </div>
         <label for="f-name">Name</label>
         <input id="f-name" type="text" autocomplete="name">
@@ -417,8 +416,9 @@
           <option value="">Select…</option>
           <option>Ongoing Site Security</option>
           <option>Disaster &amp; Emergency Response</option>
-          <option>Community, Events &amp; Close Protection</option>
-          <option>Energy &amp; Industrial Security</option>
+          <option>Community &amp; Events Security</option>
+          <option>Executive &amp; Close Protection</option>
+          <option>Energy Facilities &amp; Infrastructure</option>
           <option>Consulting, Training &amp; Procurement</option>
           <option>AYC Intelligence</option>
         </select>
@@ -432,7 +432,7 @@
   <nav class="bottom-strip" aria-label="Quick contact">
     <a href="tel:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">☎</span>Call</a>
     <a href="sms:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">✉</span>Text</a>
-    <a href="/cdn-cgi/l/email-protection#147d7a727b54756d7767717761667d606d3a777b79"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
+    <a href="/cdn-cgi/l/email-protection#ea83848c85aa8b9389998f899f98839e93c4898587"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
   </nav>
 
   <!-- ===== HERO ===== -->
@@ -450,7 +450,7 @@
           <h1>Security Built<br>For Your Industry</h1>
           <hr class="hero__rule">
           <p class="hero__body">
-            AYC Security serves organizations that need around-the-clock professional security presence. From South Florida residential communities and Nevada mining operations to office towers, retail centers, factories, and warehouses across the United States, AYC brings the same military discipline, legal oversight, and 24/7 GSOC monitoring to every engagement. Every post covered. Every officer verified. Every hour.
+            AYC Security serves organizations that need professional, around-the-clock security. From residential communities and mining operations to office towers, energy facilities, pipelines, data centers, and construction sites, we bring the same military discipline, legal oversight, and 24/7 GSOC monitoring to every engagement. Every post covered. Every officer verified. Every hour.
           </p>
         </div>
       </div>
@@ -460,18 +460,12 @@
   <!-- ===== ANCHOR NAV ===== -->
   <nav class="anchor-nav" aria-label="Industries on this page">
     <div class="anchor-nav__inner container">
-      <span class="anchor-nav__label">Jump to →</span>
       <a href="#commercial-real-estate">Commercial Real Estate</a>
       <a href="#residential-hoa">Residential &amp; HOA</a>
       <a href="#houses-of-worship">Houses of Worship</a>
       <a href="#healthcare">Healthcare</a>
-      <a href="#energy-mining-industrial">Energy &amp; Mining</a>
+      <a href="#energy-mining-industrial">Energy &amp; Infrastructure</a>
       <a href="#events-conferences">Events &amp; Conferences</a>
-      <a href="#schools">Schools</a>
-      <a href="#disaster-relief">Disaster Relief</a>
-      <a href="#corporate-legal">Corporate &amp; Legal</a>
-      <a href="#retail">Retail</a>
-      <a href="#transportation">Transportation &amp; Ports</a>
     </div>
   </nav>
 
@@ -484,7 +478,6 @@
         <div class="ind-body">
           <p>AYC Security provides 24/7 professional security for office buildings, corporate campuses, retail centers, and mixed-use commercial properties, with headquarters in Boca Raton, Florida and operations available nationwide.</p>
           <p>Property managers and building owners rely on AYC for consistent, monitored officer presence that protects tenants, staff, and assets. Every deployed officer is GPS-confirmed hourly through our Global Security Operations Center, giving property managers accountability without the overhead of managing it internally.</p>
-          <p>AYC also supports commercial real estate clients through AYC Intelligence, our investigative division, which provides background investigations, vendor due diligence, and corporate intelligence services relevant to property management decisions.</p>
         </div>
         <a class="ind-cta" href="contact.html">Request a Consultation →</a>
         <div class="ind-tags">
@@ -495,8 +488,6 @@
       </div>
       <aside class="ind-side">
         <div class="ind-side__frame">
-          <span class="ind-side__corner" aria-hidden="true"></span>
-          <span class="ind-side__corner ind-side__corner--br" aria-hidden="true"></span>
           <span class="ind-side__eyebrow">Capability Snapshot</span>
           <h3 class="ind-side__title">Office, Corporate &amp; Mixed-Use</h3>
           <div class="ind-stats">
@@ -520,11 +511,10 @@
     <div class="container ind-grid">
       <div class="ind-content">
         <p class="ind-label">Residential Communities &amp; HOAs</p>
-        <h2 class="ind-h2">Security That Residents Trust, Boards Can Count On</h2>
+        <h2 class="ind-h2">Security That Residents Trust and Boards Can Count On</h2>
         <div class="ind-body">
           <p>AYC provides uniformed security for gated communities, luxury condominiums, and HOA-managed properties, with a strong presence in South Florida and same-day coverage available for urgent requests.</p>
-          <p>For HOA boards and property managers, officer quality and consistency are the variables that matter most. AYC's deployment model ensures residents see the same well-trained officers, not a rotating roster of unfamiliar faces. Every post is GSOC-monitored, and boards have a direct line to our operations team at any time.</p>
-          <p>Our South Florida residential portfolio includes luxury high-rise condominiums and managed communities in the Boca Raton area, as well as communities across the United States.</p>
+          <p>For HOA boards and property managers, officer quality and consistency are the variables that matter most. AYC's deployment model ensures residents see the same well-trained officers, not a rotating roster of unfamiliar faces. Every post is GSOC-monitored, and boards have a direct line to our leadership team at any time.</p>
         </div>
         <a class="ind-cta" href="contact.html">Request a Consultation →</a>
         <div class="ind-tags">
@@ -533,14 +523,12 @@
       </div>
       <aside class="ind-side">
         <div class="ind-side__frame">
-          <span class="ind-side__corner" aria-hidden="true"></span>
-          <span class="ind-side__corner ind-side__corner--br" aria-hidden="true"></span>
           <span class="ind-side__eyebrow">Board &amp; Resident Priorities</span>
           <h3 class="ind-side__title">Consistency. Visibility. Direct Access.</h3>
           <ul class="ind-checklist">
             <li>Dedicated officers, not a rotating roster</li>
             <li>Same-day coverage for urgent requests</li>
-            <li>Direct line to AYC operations leadership</li>
+            <li>Direct line to AYC leadership team</li>
             <li>GSOC-monitored posts with hourly GPS confirmation</li>
             <li>Coordinated escalation with local law enforcement</li>
           </ul>
@@ -562,20 +550,17 @@
         <p class="ind-label">Houses of Worship &amp; Religious Communities</p>
         <h2 class="ind-h2">Security for Communities Built on Trust</h2>
         <div class="ind-body">
-          <p>AYC Security provides professional security for synagogues, churches, mosques, and religious campuses, with active deployments in Florida and Texas covering regular weekly services, High Holiday events, and year-round programming.</p>
+          <p>AYC Security provides professional security for synagogues, churches, mosques, and religious campuses, covering regular weekly services, High Holiday events, and year-round programming.</p>
           <p>Security for houses of worship carries a responsibility that goes beyond access control. Communities need to feel protected, not surveilled. AYC officers are trained to maintain a professional, visible presence that supports the community's sense of safety while managing access, coordinating with local law enforcement when needed, and responding decisively when threats arise.</p>
-          <p>AYC's experience with religious communities spans routine Shabbat and Sunday coverage, high-attendance holiday events, visiting speaker engagements, and long-term site security programs. Our presence in both Florida and Texas continues to expand as organizations across denominations prioritize active security planning.</p>
         </div>
         <a class="ind-cta" href="contact.html">Request a Consultation →</a>
         <div class="ind-tags">
           <a class="ind-tag" href="ongoing-security.html">Ongoing Site Security →</a>
-          <a class="ind-tag" href="community-events.html">Community, Events &amp; Close Protection →</a>
+          <a class="ind-tag" href="community-events.html">Community &amp; Events Security →</a>
         </div>
       </div>
       <aside class="ind-side">
         <div class="ind-side__frame">
-          <span class="ind-side__corner" aria-hidden="true"></span>
-          <span class="ind-side__corner ind-side__corner--br" aria-hidden="true"></span>
           <span class="ind-side__eyebrow">Coverage Patterns</span>
           <h3 class="ind-side__title">Weekly Services to High Holidays</h3>
           <ul class="ind-checklist">
@@ -603,9 +588,8 @@
         <p class="ind-label">Healthcare &amp; Medical Facilities</p>
         <h2 class="ind-h2">Security That Understands How Healthcare Works</h2>
         <div class="ind-body">
-          <p>AYC provides security for hospitals, clinics, and specialized medical facilities, with leadership credentials that include a dedicated Vice President of Healthcare Operations and a Vice President of Medical Training who is a practicing emergency physician with trauma center experience.</p>
+          <p>AYC provides security for hospitals, clinics, and specialized medical facilities, with programs built around how healthcare environments actually function.</p>
           <p>Healthcare security requires more than a uniformed presence. Officers need to understand patient sensitivity, HIPAA-adjacent environment protocols, and the access control challenges unique to facilities that operate continuously and serve vulnerable populations. AYC's security programs are designed around how healthcare facilities actually function, not adapted from a general commercial template.</p>
-          <p>For healthcare organizations evaluating vendors, staff, or contractors, AYC Intelligence provides background investigations and due diligence services reviewed by in-house legal counsel.</p>
         </div>
         <a class="ind-cta" href="contact.html">Request a Consultation →</a>
         <div class="ind-tags">
@@ -616,8 +600,6 @@
       </div>
       <aside class="ind-side">
         <div class="ind-side__frame">
-          <span class="ind-side__corner" aria-hidden="true"></span>
-          <span class="ind-side__corner ind-side__corner--br" aria-hidden="true"></span>
           <span class="ind-side__eyebrow">Leadership Credentials</span>
           <h3 class="ind-side__title">Built Around Healthcare Operations</h3>
           <ul class="ind-checklist">
@@ -636,29 +618,26 @@
   <section id="energy-mining-industrial" class="ind-section ind-section--cream" data-screen-label="Energy &amp; Mining">
     <div class="container ind-grid">
       <div class="ind-content">
-        <p class="ind-label">Energy, Mining &amp; Industrial Sites</p>
+        <p class="ind-label">Energy, Pipelines &amp; Infrastructure</p>
         <h2 class="ind-h2">Built for Operations That Cannot Stop</h2>
         <div class="ind-body">
-          <p>AYC provides specialized security for active mining operations, energy facilities, ports, warehouses, factories, and industrial sites, with confirmed operations in Nevada and Ohio and leadership that includes professionals with direct mining and industrial experience.</p>
+          <p>AYC provides specialized security for energy facilities, pipelines, data centers, mining operations, maritime ports, warehouses, and industrial sites, with confirmed operations in Nevada and Ohio and leadership with direct industrial experience.</p>
           <p>Industrial security demands officers who understand the operational realities of the site, shift structure, equipment access controls, perimeter integrity across large footprints, and the difference between a credentialed vendor and an unauthorized visitor. AYC's approach is built around those realities, not adapted from a standard commercial security template.</p>
-          <p>Every AYC industrial deployment is GSOC-monitored, with GPS-confirmed hourly check-ins and immediate response protocols designed for complex and remote environments. Armed and unarmed options are available depending on site requirements.</p>
         </div>
         <a class="ind-cta" href="contact.html">Request a Consultation →</a>
         <div class="ind-tags">
-          <a class="ind-tag" href="energy-industrial.html">Energy &amp; Industrial Security →</a>
+          <a class="ind-tag" href="energy-industrial.html">Energy Facilities &amp; Infrastructure →</a>
           <a class="ind-tag" href="ongoing-security.html">Ongoing Site Security →</a>
           <a class="ind-tag" href="consulting-training.html">Consulting, Training &amp; Procurement →</a>
         </div>
       </div>
       <aside class="ind-side">
         <div class="ind-side__frame">
-          <span class="ind-side__corner" aria-hidden="true"></span>
-          <span class="ind-side__corner ind-side__corner--br" aria-hidden="true"></span>
           <span class="ind-side__eyebrow">Active Deployments</span>
-          <h3 class="ind-side__title">Mining, Energy &amp; Heavy Industry</h3>
+          <h3 class="ind-side__title">Energy, Pipelines &amp; Infrastructure</h3>
           <div class="ind-stats">
             <div class="ind-stat"><span class="ind-stat__num">NV</span><span class="ind-stat__lbl">Active Mining Operations</span></div>
-            <div class="ind-stat"><span class="ind-stat__num">OH</span><span class="ind-stat__lbl">Industrial &amp; Manufacturing</span></div>
+            <div class="ind-stat"><span class="ind-stat__num">OH</span><span class="ind-stat__lbl">Operations</span></div>
             <div class="ind-stat"><span class="ind-stat__num">A / U</span><span class="ind-stat__lbl">Armed or Unarmed Options</span></div>
             <div class="ind-stat"><span class="ind-stat__num">24/7</span><span class="ind-stat__lbl">GSOC Coverage</span></div>
           </div>
@@ -666,6 +645,8 @@
             <li>Shift-aligned access and credential management</li>
             <li>Large-footprint perimeter integrity</li>
             <li>Response protocols built for remote sites</li>
+            <li>Pipeline and critical infrastructure monitoring</li>
+            <li>Data center perimeter and access security</li>
           </ul>
         </div>
       </aside>
@@ -680,27 +661,24 @@
         <p class="ind-label">Events &amp; Conferences</p>
         <h2 class="ind-h2">Professional Security for Every Type of Event</h2>
         <div class="ind-body">
-          <p>AYC provides event security for galas, conferences, conventions, corporate gatherings, and private functions, with active deployments in Florida and Ohio and same-day coverage available for urgent requests.</p>
-          <p>Event security is as much about guest experience as threat response. AYC officers maintain a professional presence calibrated to the environment, a black-tie gala requires a different bearing than a multi-day conference, and both require something different from a community event. Uniformed and plainclothes options are available to match the context.</p>
-          <p>AYC recently completed coverage for a large multi-day convention in Ohio, alongside an established portfolio of galas, corporate events, and private functions throughout Florida. For principal and executive protection at events, Salvare Global, AYC's dedicated close protection division, is available.</p>
+          <p>AYC provides event security for galas, conferences, conventions, corporate gatherings, and private functions, with same-day coverage available for urgent requests.</p>
+          <p>Event security is as much about guest experience as threat response. AYC officers maintain a professional presence calibrated to the environment. A black-tie gala requires a different bearing than a multi-day conference; both require something different from a community event. Uniformed and plainclothes options are available to match the context.</p>
         </div>
         <a class="ind-cta" href="contact.html">Request a Consultation →</a>
         <div class="ind-tags">
-          <a class="ind-tag" href="community-events.html">Community, Events &amp; Close Protection →</a>
+          <a class="ind-tag" href="community-events.html">Community &amp; Events Security →</a>
+          <a class="ind-tag" href="close-protection.html">Executive &amp; Close Protection →</a>
           <a class="ind-tag" href="ongoing-security.html">Ongoing Site Security →</a>
         </div>
       </div>
       <aside class="ind-side">
         <div class="ind-side__frame">
-          <span class="ind-side__corner" aria-hidden="true"></span>
-          <span class="ind-side__corner ind-side__corner--br" aria-hidden="true"></span>
           <span class="ind-side__eyebrow">Event Formats</span>
           <h3 class="ind-side__title">Galas, Conventions &amp; Private Functions</h3>
           <ul class="ind-checklist">
             <li>Uniformed and plainclothes deployment options</li>
             <li>Multi-day convention and conference coverage</li>
             <li>Black-tie galas and corporate galas</li>
-            <li>Principal and executive protection via Salvare Global</li>
             <li>Same-day deployment for urgent requests</li>
           </ul>
         </div>
@@ -714,7 +692,7 @@
       <div class="lic__left">
         <p class="lic__label">Licensed &amp; Operating Nationally</p>
         <h2 id="lic-h">Where AYC Operates</h2>
-        <p class="lic__body">AYC holds active licenses in Florida, Nevada, Ohio, Tennessee, and Texas, and operates nationally through a network of vetted regional partners. For multi-state engagements, disaster response operations, and national organizations, our Operations Center coordinates coverage across jurisdictions.</p>
+        <p class="lic__body">AYC holds active licenses in Florida, Nevada, Ohio, Tennessee, and Texas, and operates nationally through a network of vetted regional partners. For multi-state engagements, disaster response operations, and national organizations, AYC coordinates coverage across jurisdictions through direct deployment and regional partnerships.</p>
       </div>
       <div class="lic__badges" role="list">
         <div class="lic__badge" role="listitem">
@@ -746,7 +724,7 @@
       <div class="secondary__head">
         <p class="ind-label">Additional Industries Served</p>
         <h2 id="more-h">More Industries We Serve</h2>
-        <p class="secondary__body">AYC serves organizations across a broad range of sectors. If your industry is not listed above, contact our team, we work across contexts that require professional, accountable security.</p>
+        <p class="secondary__body">AYC serves organizations across a broad range of sectors. If your industry is not listed above, contact our team. We work across any context that requires professional, accountable security.</p>
       </div>
       <div class="sec-grid">
 
@@ -762,7 +740,7 @@
           <p class="sec-card__body">Campus security, event coverage, and student safety programs for K-12 schools and higher education facilities.</p>
           <div class="sec-card__tags">
             <a class="sec-card__tag" href="ongoing-security.html">Ongoing Site Security</a>
-            <a class="sec-card__tag" href="community-events.html">Community, Events &amp; Close Protection</a>
+            <a class="sec-card__tag" href="community-events.html">Community &amp; Events Security</a>
           </div>
         </article>
 
@@ -829,8 +807,24 @@
           <h3>Transportation, Ports &amp; Cargo</h3>
           <p class="sec-card__body">Security for ports, terminals, logistics facilities, warehousing, and cargo operations requiring continuous perimeter monitoring and access control.</p>
           <div class="sec-card__tags">
-            <a class="sec-card__tag" href="energy-industrial.html">Energy &amp; Industrial Security</a>
+            <a class="sec-card__tag" href="energy-industrial.html">Energy Facilities &amp; Infrastructure</a>
             <a class="sec-card__tag" href="ongoing-security.html">Ongoing Site Security</a>
+          </div>
+        </article>
+
+        <article id="construction" class="sec-card">
+          <span class="sec-card__icon" aria-hidden="true">
+            <svg width="32" height="32" viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 28h24M8 28V14l8-6 8 6v14"/>
+              <path d="M13 28v-8h6v8"/>
+              <path d="M4 14h4M24 14h4"/>
+            </svg>
+          </span>
+          <h3>Construction &amp; Industrial Sites</h3>
+          <p class="sec-card__body">Short-term and contract security for active construction sites, ground-up builds, and industrial projects. Part-time, full-time, and 24/7 coverage options available. Same-day deployment available for time-sensitive project starts.</p>
+          <div class="sec-card__tags">
+            <a class="sec-card__tag" href="ongoing-security.html">Ongoing Site Security</a>
+            <a class="sec-card__tag" href="energy-industrial.html">Energy Facilities &amp; Infrastructure</a>
           </div>
         </article>
 
@@ -854,7 +848,7 @@
             <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
           </button>
           <div class="faq-a" role="region">
-            <p>AYC serves organizations across commercial real estate, residential communities and HOAs, houses of worship, healthcare facilities, energy and mining operations, events and conferences, schools, humanitarian and disaster relief organizations, corporate and legal services, retail properties, and transportation and cargo facilities. If your organization needs professional, monitored security presence, contact our team to discuss your situation.</p>
+            <p>AYC serves organizations across commercial real estate, residential communities and HOAs, houses of worship, healthcare facilities, energy facilities, pipelines, data centers, mining operations, events and conferences, schools, construction sites, humanitarian and disaster relief organizations, corporate and legal services, retail properties, and transportation and cargo facilities. If your organization needs professional, monitored security presence, contact our team to discuss your situation.</p>
           </div>
         </div>
 
@@ -880,11 +874,11 @@
 
         <div class="faq-item">
           <button class="faq-q" type="button" aria-expanded="false">
-            <span>What states is AYC Security licensed in?</span>
+            <span>Does AYC Security operate nationally?</span>
             <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
           </button>
           <div class="faq-a" role="region">
-            <p>AYC holds active licenses in Florida, Nevada, Ohio, Tennessee, and Texas. For organizations in other states, AYC coordinates coverage through a network of vetted regional partners. Contact our team to discuss coverage options in your area.</p>
+            <p>Yes. AYC operates nationally through direct deployment and a network of vetted regional partners. Whether your organization is in Florida, Nevada, Texas, Ohio, or anywhere across the United States, contact our team to discuss coverage options for your specific location and requirements.</p>
           </div>
         </div>
 
@@ -904,7 +898,7 @@
             <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
           </button>
           <div class="faq-a" role="region">
-            <p>AYC's primary differentiators are our Global Security Operations Center, which monitors every deployed officer hourly via GPS, and our in-house legal counsel, which is integrated directly into operations. Most security firms deploy officers and provide a morning report. AYC verifies every post, every hour, and responds immediately when something is flagged.</p>
+            <p>Several things set AYC apart. Every deployed officer is monitored 24/7 through our Global Security Operations Center, GPS-confirmed every hour by a live human operator. Our in-house legal counsel is integrated directly into operations. We respond quickly, communicate proactively, and keep you informed throughout every engagement. You do not need to follow up with us.</p>
           </div>
         </div>
 
@@ -924,7 +918,7 @@
             <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
           </button>
           <div class="faq-a" role="region">
-            <p>Contact AYC by phone at (561) 571-7983, by email at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="7f161119103f1e061c0c1a1c0a0d160b06511c1012">[email&#160;protected]</a>, or by submitting a request through this website. Our team will respond with a coverage plan and connect you with the right person for your industry and situation.</p>
+            <p>Contact AYC by phone at (561) 571-7983, by email at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="650c0b030a25041c0616000610170c111c4b060a08">[email&#160;protected]</a>, or by submitting a request through this website. Our team will respond with a coverage plan and connect you with the right person for your industry and situation.</p>
           </div>
         </div>
 
@@ -937,8 +931,8 @@
     <div class="container cta__inner">
       <div class="cta__left">
         <p class="cta__sub">Same-Day Coverage Available</p>
-        <h2 id="cta-h">Ready When It Matters</h2>
-        <p class="cta__body">Tell us what you need to protect. Our team will match you with the right service and the right people for your industry and situation.</p>
+        <h2 id="cta-h">Every Industry. One Standard.</h2>
+        <p class="cta__body">Tell us what you need to protect. We will connect you with the right coverage for your industry.</p>
         <a class="cta__btn" href="contact.html">Request a Consultation →</a>
       </div>
       <div class="cta__card">
@@ -947,7 +941,7 @@
         <div class="cta__links">
           <a href="tel:+15615717983">Call</a>
           <a href="sms:+15615717983">Text</a>
-          <a href="/cdn-cgi/l/email-protection#fa93949c95ba9b8399899f998f88938e83d4999597">Email</a>
+          <a href="/cdn-cgi/l/email-protection#51383f373e1130283222343224233825287f323e3c">Email</a>
         </div>
       </div>
     </div>
@@ -976,8 +970,9 @@
           <span class="footer-head">Services</span>
           <a class="footer-link" href="ongoing-security.html">Ongoing Site Security</a>
           <a class="footer-link" href="disaster-response.html">Disaster &amp; Emergency Response</a>
-          <a class="footer-link" href="community-events.html">Community, Events &amp; Close Protection</a>
-          <a class="footer-link" href="energy-industrial.html">Energy &amp; Industrial Security</a>
+          <a class="footer-link" href="community-events.html">Community &amp; Events Security</a>
+          <a class="footer-link" href="close-protection.html">Executive &amp; Close Protection</a>
+          <a class="footer-link" href="energy-industrial.html">Energy Facilities &amp; Infrastructure</a>
           <a class="footer-link" href="consulting-training.html">Consulting, Training &amp; Procurement</a>
           <a class="footer-link" href="ayc-intelligence.html">AYC Intelligence</a>
         </nav>
@@ -994,7 +989,7 @@
         <div class="footer-col">
           <span class="footer-head">Contact</span>
           <a class="footer-phone" href="tel:+15615717983">(561) 571-7983</a>
-          <a class="footer-email" href="/cdn-cgi/l/email-protection#dbb2b5bdb49bbaa2b8a8beb8aea9b2afa2f5b8b4b6"><span class="__cf_email__" data-cfemail="87eee9e1e8c7e6fee4f4e2e4f2f5eef3fea9e4e8ea">[email&#160;protected]</span></a>
+          <a class="footer-email" href="/cdn-cgi/l/email-protection#60090e060f2001190313050315120914194e030f0d"><span class="__cf_email__" data-cfemail="e68f888089a6879f8595838593948f929fc885898b">[email&#160;protected]</span></a>
           <span class="footer-addr-label">Florida HQ</span>
           <address class="footer-addr">7000 W Palmetto Park Rd., Suite 308<br>Boca Raton, FL 33433</address>
           <span class="footer-addr-label">Ohio</span>
