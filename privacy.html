@@ -1,0 +1,1258 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Privacy Policy | AYC Security USA</title>
+<meta name="description" content="Privacy Policy for the AYC Security USA website. What information we collect when you use this site, how we use it, and how we protect it.">
+<meta property="og:title" content="Privacy Policy | AYC Security USA">
+<meta property="og:description" content="Privacy Policy explaining what information the AYC Security USA website collects and how we protect it.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     TOKENS — parity with site
+     ============================================================ */
+  :root {
+    --cream:        #F8F5F0;
+    --cream-2:      #EFEBE3;
+    --paper:        #FFFFFF;
+    --navy:         #0E1C2B;
+    --navy-2:       #0A1622;
+    --gold:         #B8882A;
+    --gold-deep:    #98701F;
+    --gold-soft:    #D9B66B;
+    --ink:          #2A2A28;
+    --ink-soft:     #5A5A56;
+    --rule:         #E4DED2;
+    --rule-strong:  #CFC6B3;
+
+    --font-display: "Oswald", "Arial Narrow", sans-serif;
+    --font-body:    "Inter", system-ui, -apple-system, sans-serif;
+    --font-mono:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", monospace;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+  img, svg { display: block; max-width: 100%; }
+  a { color: inherit; text-decoration: none; }
+  button { font: inherit; cursor: pointer; }
+
+  .container {
+    width: 100%;
+    max-width: 1320px;
+    margin: 0 auto;
+    padding: 0 32px;
+  }
+  @media (max-width: 720px) {
+    .container { padding: 0 20px; }
+  }
+
+  .sr-only {
+    position: absolute; width: 1px; height: 1px;
+    padding: 0; margin: -1px; overflow: hidden;
+    clip: rect(0,0,0,0); white-space: nowrap; border: 0;
+  }
+
+  /* ============================================================
+     UTILITY RAIL
+     ============================================================ */
+  .utility-rail {
+    background: var(--navy-2);
+    color: rgba(255,255,255,0.72);
+    font-family: var(--font-mono);
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    height: 36px;
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .utility-rail .container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+  }
+  .utility-rail__status {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .pulse-dot {
+    width: 8px; height: 8px;
+    background: var(--gold);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 0 0 rgba(184,136,42,0.7);
+    animation: pulseDot 1.8s ease-out infinite;
+    flex-shrink: 0;
+  }
+  @keyframes pulseDot {
+    0%   { box-shadow: 0 0 0 0   rgba(184,136,42,0.55); }
+    70%  { box-shadow: 0 0 0 9px rgba(184,136,42,0);    }
+    100% { box-shadow: 0 0 0 0   rgba(184,136,42,0);    }
+  }
+  .utility-rail__phone { color: rgba(255,255,255,0.85); }
+  .utility-rail__phone:hover { color: var(--gold-soft); }
+  @media (max-width: 720px) {
+    .utility-rail { display: none; }
+  }
+
+  /* ============================================================
+     MAIN NAV
+     ============================================================ */
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--navy);
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    height: 84px;
+  }
+  .nav__inner {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    gap: 32px;
+  }
+  .nav__brand {
+    display: inline-flex;
+    align-items: center;
+    gap: 14px;
+    flex-shrink: 0;
+  }
+  .nav__logo { height: 42px; width: auto; }
+  .nav__vrule {
+    width: 1px; height: 32px;
+    background: rgba(255,255,255,0.18);
+  }
+  .nav__mark {
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.62);
+    line-height: 1.4;
+  }
+  .nav__mark span { display: block; }
+  .nav__mark .veteran { color: var(--gold-soft); }
+
+  .nav__links {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    margin-left: auto;
+  }
+  .nav__link,
+  .nav__trigger {
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.92);
+    background: transparent;
+    border: 0;
+    padding: 12px 14px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    height: 84px;
+    cursor: pointer;
+    transition: color .15s ease;
+    position: relative;
+  }
+  .nav__link:hover,
+  .nav__trigger:hover,
+  .nav__trigger[aria-expanded="true"] {
+    color: var(--gold-soft);
+  }
+  .nav__caret {
+    width: 7px; height: 7px;
+    border-right: 1.5px solid currentColor;
+    border-bottom: 1.5px solid currentColor;
+    transform: translateY(-2px) rotate(45deg);
+    transition: transform .2s ease;
+  }
+  .nav__trigger[aria-expanded="true"] .nav__caret {
+    transform: translateY(1px) rotate(225deg);
+  }
+  .nav__cta {
+    margin-left: 16px;
+    background: var(--gold);
+    color: var(--navy);
+    border: 1px solid var(--gold);
+    border-radius: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 14px 22px;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+    flex-shrink: 0;
+  }
+  .nav__cta:hover,
+  .nav__cta:focus-visible {
+    background: transparent;
+    color: var(--gold-soft);
+    border-color: var(--gold-soft);
+  }
+
+  .nav__dropdown-wrap { position: relative; }
+  .nav__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 320px;
+    background: var(--navy-2);
+    border: 1px solid rgba(255,255,255,0.08);
+    padding: 8px 0;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-4px);
+    transition: opacity .15s ease, transform .15s ease, visibility .15s;
+    z-index: 60;
+  }
+  .nav__dropdown-wrap.is-open .nav__dropdown {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  .nav__dropdown a {
+    display: block;
+    padding: 12px 22px;
+    font-family: var(--font-body);
+    font-size: 14px;
+    color: rgba(255,255,255,0.88);
+    border-left: 2px solid transparent;
+    transition: background-color .15s ease, border-color .15s ease, color .15s ease;
+  }
+  .nav__dropdown a:hover,
+  .nav__dropdown a:focus-visible {
+    background: rgba(255,255,255,0.03);
+    border-left-color: var(--gold);
+    color: #fff;
+  }
+
+  .nav__hamburger {
+    display: none;
+    width: 44px; height: 44px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.18);
+    margin-left: auto;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    flex-direction: column;
+  }
+  .nav__hamburger span {
+    display: block;
+    width: 20px; height: 1.5px;
+    background: #fff;
+  }
+  @media (max-width: 1099px) {
+    .nav__mark { display: none; }
+    .nav__vrule { display: none; }
+  }
+  @media (max-width: 899px) {
+    .nav { height: 64px; }
+    .nav__logo { height: 36px; }
+    .nav__links,
+    .nav__cta { display: none; }
+    .nav__hamburger { display: inline-flex; }
+  }
+
+  /* Mobile tap-to-call */
+  .tap-call-bar {
+    display: none;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 12px;
+    text-align: center;
+  }
+  @media (max-width: 899px) { .tap-call-bar { display: block; } }
+
+  /* Mobile drawer */
+  .drawer {
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: min(420px, 100%);
+    background: var(--navy);
+    z-index: 200;
+    transform: translateX(100%);
+    transition: transform .28s ease;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .drawer.is-open { transform: translateX(0); }
+  .drawer__head {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 20px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+  }
+  .drawer__head img { height: 36px; }
+  .drawer__close {
+    width: 40px; height: 40px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.2);
+    color: #fff;
+    font-size: 18px;
+    line-height: 1;
+    border-radius: 0;
+  }
+  .drawer__list { list-style: none; padding: 0; margin: 0; }
+  .drawer__item { border-bottom: 1px solid rgba(255,255,255,0.06); }
+  .drawer__link {
+    display: block;
+    padding: 20px 22px;
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+  }
+  .drawer__link:hover { color: var(--gold-soft); }
+  .drawer__cta-wrap { padding: 22px; margin-top: auto; }
+  .drawer__cta {
+    display: block;
+    width: 100%;
+    text-align: center;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 18px 22px;
+    border: 1px solid var(--gold);
+    border-radius: 0;
+  }
+  .drawer-scrim {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.55);
+    z-index: 150;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .2s ease, visibility .2s;
+  }
+  .drawer-scrim.is-open { opacity: 1; visibility: visible; }
+
+  /* Mobile bottom strip */
+  .bottom-strip {
+    display: none;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    z-index: 40;
+  }
+  .bottom-strip a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    padding: 8px 4px;
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    gap: 4px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .bottom-strip a:last-child { border-right: 0; }
+  .bottom-strip__icon { font-family: var(--font-mono); color: var(--gold-soft); font-size: 14px; }
+  @media (max-width: 899px) {
+    .bottom-strip { display: flex; }
+    body { padding-bottom: 60px; }
+  }
+
+  /* Side tab CTA (desktop only) */
+  .side-tab {
+    position: fixed;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%) rotate(180deg);
+    writing-mode: vertical-rl;
+    background: var(--gold);
+    color: var(--navy);
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    padding: 18px 12px;
+    border: 0;
+    border-radius: 0;
+    z-index: 45;
+    transition: background-color .2s ease;
+  }
+  .side-tab:hover { background: var(--gold-deep); }
+  @media (max-width: 899px) { .side-tab { display: none; } }
+
+  /* Slideout contact panel */
+  .slideout {
+    position: fixed;
+    top: 0; right: 0; bottom: 0;
+    width: min(400px, 100%);
+    background: var(--paper);
+    z-index: 210;
+    transform: translateX(100%);
+    transition: transform .3s ease;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+  }
+  .slideout.is-open { transform: translateX(0); }
+  .slideout__head {
+    background: var(--navy);
+    color: #fff;
+    padding: 28px 32px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .slideout__head h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 20px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+  .slideout__close {
+    width: 36px; height: 36px;
+    background: transparent;
+    border: 1px solid rgba(255,255,255,0.25);
+    color: #fff;
+    font-size: 16px;
+    line-height: 1;
+    border-radius: 0;
+  }
+  .slideout__body { padding: 28px 32px 40px; }
+  .slideout__intro {
+    font-size: 14px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+    margin: 0 0 22px;
+  }
+  .slideout label {
+    display: block;
+    font-family: var(--font-mono);
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 16px 0 6px;
+  }
+  .slideout input,
+  .slideout textarea {
+    width: 100%;
+    border: 1px solid var(--rule-strong);
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--font-body);
+    font-size: 15px;
+    padding: 12px 14px;
+    border-radius: 0;
+    transition: border-color .15s ease;
+  }
+  .slideout textarea { min-height: 110px; resize: vertical; }
+  .slideout input:focus,
+  .slideout textarea:focus {
+    outline: none;
+    border-color: var(--navy);
+  }
+  .slideout__submit {
+    margin-top: 22px;
+    width: 100%;
+    background: var(--gold);
+    color: var(--navy);
+    border: 1px solid var(--gold);
+    border-radius: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 13px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    padding: 16px;
+    transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+  }
+  .slideout__submit:hover {
+    background: var(--gold-deep);
+    border-color: var(--gold-deep);
+  }
+
+  /* ============================================================
+     PAGE HEADER (legal/utility)
+     ============================================================ */
+  .legal-head {
+    background: var(--cream);
+    border-bottom: 1px solid var(--rule);
+    padding: clamp(48px, 7vw, 84px) 0 clamp(36px, 5vw, 52px);
+  }
+  .legal-head__crumbs {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin: 0 0 22px;
+  }
+  .legal-head__crumbs a { color: var(--gold-deep); }
+  .legal-head__crumbs a:hover { color: var(--gold); }
+  .legal-head__crumbs span { color: var(--rule-strong); margin: 0 8px; }
+  .legal-head__h1 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(40px, 6vw, 68px);
+    line-height: 0.98;
+    letter-spacing: 0.005em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin: 0;
+  }
+  .legal-head__rule {
+    width: 96px;
+    height: 2px;
+    background: var(--gold);
+    border: 0;
+    margin: 24px 0 22px;
+  }
+
+  /* ============================================================
+     LEGAL BODY
+     ============================================================ */
+  .legal-body {
+    padding: clamp(48px, 7vw, 88px) 0 clamp(64px, 9vw, 104px);
+  }
+  .legal-col {
+    max-width: 760px;
+    margin: 0 auto;
+  }
+  .legal-intro {
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink);
+    margin: 0 0 clamp(40px, 5vw, 56px);
+    text-align: left;
+  }
+  .legal-section { margin: 0 0 clamp(40px, 5vw, 54px); }
+  .legal-section:last-child { margin-bottom: 0; }
+  .legal-section__h2 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 1.15;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin: 0;
+  }
+  .legal-section__rule {
+    width: 48px;
+    height: 1px;
+    background: var(--gold);
+    border: 0;
+    margin: 14px 0 22px;
+  }
+  .legal-section p {
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.75;
+    color: var(--ink);
+    margin: 0 0 18px;
+    text-align: left;
+  }
+  .legal-section p:last-child { margin-bottom: 0; }
+  .legal-section a.inline-link {
+    color: var(--gold-deep);
+    border-bottom: 1px solid var(--rule-strong);
+    transition: color .15s ease, border-color .15s ease;
+  }
+  .legal-section a.inline-link:hover {
+    color: var(--gold);
+    border-bottom-color: var(--gold);
+  }
+  .legal-list {
+    margin: 0 0 18px;
+    padding: 0 0 0 22px;
+  }
+  .legal-list li {
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0 0 10px;
+    padding-left: 6px;
+  }
+  .legal-list li::marker { color: var(--gold); }
+
+  .legal-contact {
+    background: var(--paper);
+    border: 1px solid var(--rule-strong);
+    border-top: 3px solid var(--gold);
+    padding: 28px 30px;
+    margin-top: 6px;
+  }
+  .legal-contact__name {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin: 0 0 12px;
+  }
+  .legal-contact p {
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--ink-soft);
+    margin: 0 0 4px;
+  }
+  .legal-contact a { color: var(--gold-deep); }
+  .legal-contact a:hover { color: var(--gold); }
+
+  /* Subsection heading inside a legal section */
+  .legal-subhead {
+    font-family: var(--font-mono);
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--gold-deep);
+    margin: 26px 0 10px;
+  }
+
+  /* Pre-launch legal-review warning block */
+  .legal-flag {
+    border: 2px solid var(--gold);
+    background: rgba(184,136,42,0.06);
+    padding: 20px 24px;
+    margin: 18px 0;
+  }
+  .legal-flag__title {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 15px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin: 0 0 12px;
+  }
+  .legal-flag__body {
+    font-family: var(--font-mono);
+    font-size: 13px;
+    line-height: 1.7;
+    color: var(--ink);
+    margin: 0;
+  }
+
+  /* ============================================================
+     FOOTER
+     ============================================================ */
+  .site-footer {
+    background: var(--navy-2);
+    color: rgba(255,255,255,0.7);
+    padding: 72px 0 36px;
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+  }
+  .footer-grid {
+    display: grid;
+    grid-template-columns: 4fr 2fr 2fr 2fr;
+    gap: 48px;
+  }
+  @media (max-width: 960px) {
+    .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+    .footer-col--brand { grid-column: 1/-1; }
+  }
+  @media (max-width: 560px) {
+    .footer-grid { grid-template-columns: 1fr; }
+    .footer-col--brand { grid-column: auto; }
+  }
+  .footer-logo { height: 48px; width: auto; margin-bottom: 22px; filter: brightness(0) invert(1); }
+  .footer-blurb {
+    color: rgba(255,255,255,0.62);
+    font-size: 14px;
+    max-width: 38ch;
+    line-height: 1.65;
+    margin: 0;
+  }
+  .footer-license-line {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    color: rgba(255,255,255,0.8);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    display: block;
+    margin-top: 16px;
+    line-height: 1.6;
+  }
+  .footer-socials {
+    display: flex;
+    gap: 12px;
+    margin-top: 22px;
+  }
+  .footer-socials a {
+    width: 36px; height: 36px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(255,255,255,0.18);
+    color: rgba(255,255,255,0.7);
+    transition: background-color .2s ease, border-color .2s ease, color .2s ease;
+  }
+  .footer-socials a:hover {
+    border-color: var(--gold);
+    color: var(--gold-soft);
+    background: rgba(184,136,42,0.08);
+  }
+  .footer-socials svg { width: 16px; height: 16px; }
+  .footer-head {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--gold-soft);
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    margin: 0 0 18px;
+    display: block;
+  }
+  .footer-link {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    color: rgba(255,255,255,0.82);
+    display: block;
+    padding: 5px 0;
+    transition: color .18s ease;
+  }
+  .footer-link:hover { color: var(--gold-soft); }
+  .footer-phone { color: var(--gold-soft); display: block; padding: 5px 0; }
+  .footer-phone:hover { color: #fff; }
+  .footer-email { color: rgba(255,255,255,0.82); display: block; padding: 5px 0; }
+  .footer-email:hover { color: var(--gold-soft); }
+  .footer-addr-label {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 10px;
+    color: var(--gold-soft);
+    text-transform: uppercase;
+    letter-spacing: 0.16em;
+    margin-top: 14px;
+    display: block;
+  }
+  .footer-addr {
+    font-family: 'Inter', sans-serif;
+    font-size: 13px;
+    color: rgba(255,255,255,0.7);
+    line-height: 1.6;
+    margin: 6px 0 0;
+    font-style: normal;
+  }
+  .footer-bottom {
+    border-top: 1px solid rgba(255,255,255,0.10);
+    margin-top: 48px;
+    padding-top: 28px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-bottom > * {
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.45);
+    margin: 0;
+  }
+  .footer-bottom .footer-licenses-strip {
+    font-size: 10px;
+    color: rgba(255,255,255,0.42);
+    letter-spacing: 0.06em;
+    text-transform: none;
+  }
+  .footer-bottom-links { display: flex; gap: 18px; flex-wrap: wrap; }
+  .footer-bottom-links a:hover { color: var(--gold-soft); }
+  .footer-bottom-links a[aria-current="page"] { color: var(--gold-soft); }
+  @media (max-width: 700px) {
+    .footer-bottom { flex-direction: column; align-items: flex-start; text-align: left; }
+  }
+
+  /* Focus rings */
+  .nav__link:focus-visible,
+  .nav__trigger:focus-visible,
+  .nav__cta:focus-visible,
+  .footer-link:focus-visible,
+  .inline-link:focus-visible,
+  .side-tab:focus-visible {
+    outline: 2px solid var(--gold-soft);
+    outline-offset: 3px;
+  }
+</style>
+</head>
+<body>
+
+  <!-- ============================================================
+       UTILITY RAIL
+       ============================================================ -->
+  <div class="utility-rail" role="region" aria-label="Operations status">
+    <div class="container">
+      <span class="utility-rail__status">
+        <span class="pulse-dot" aria-hidden="true"></span>
+        GSOC Online · 24/7 Live Monitoring
+      </span>
+      <a class="utility-rail__phone" href="tel:+15615717983" aria-label="Call or text 561-571-7983">
+        Call or Text: (561) 571-7983
+      </a>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       MAIN NAV
+       ============================================================ -->
+  <header class="nav" role="banner">
+    <div class="container nav__inner">
+      <a class="nav__brand" href="/" aria-label="AYC Security home">
+        <img class="nav__logo"
+             src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png"
+             alt="AYC Security">
+        <span class="nav__vrule" aria-hidden="true"></span>
+        <span class="nav__mark" aria-hidden="true">
+          <span>Est. Boca Raton</span>
+          <span class="veteran">Veteran-Owned</span>
+        </span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <div class="nav__dropdown-wrap" data-dropdown>
+          <button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="dd-services">
+            Services <span class="nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav__dropdown" id="dd-services" role="menu">
+            <a href="/services/ongoing-security" role="menuitem">Ongoing Site Security</a>
+            <a href="/services/disaster-response" role="menuitem">Disaster &amp; Emergency Response</a>
+            <a href="/services/community-events" role="menuitem">Community &amp; Events Security</a>
+            <a href="/services/close-protection" role="menuitem">Executive &amp; Close Protection</a>
+            <a href="/services/energy-industrial" role="menuitem">Energy Facilities &amp; Infrastructure</a>
+            <a href="/services/consulting-training" role="menuitem">Consulting, Training &amp; Procurement</a>
+            <a href="/services/ayc-intelligence" role="menuitem">AYC Intelligence</a>
+          </div>
+        </div>
+
+        <a class="nav__link" href="/industries">Industries</a>
+
+        <div class="nav__dropdown-wrap" data-dropdown>
+          <button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="dd-about">
+            About <span class="nav__caret" aria-hidden="true"></span>
+          </button>
+          <div class="nav__dropdown" id="dd-about" role="menu">
+            <a href="/about" role="menuitem">About AYC Security</a>
+            <a href="/operations-center" role="menuitem">Our Operations Center</a>
+            <a href="/about#leadership" role="menuitem">Our Leadership Team</a>
+          </div>
+        </div>
+
+        <a class="nav__link" href="/careers">Careers</a>
+        <a class="nav__link" href="/contact">Contact</a>
+
+        <a class="nav__cta" href="/contact">Request a Consultation →</a>
+      </nav>
+
+      <button class="nav__hamburger" type="button" aria-label="Open menu" aria-controls="mobile-drawer" aria-expanded="false" id="hamburger">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile tap-to-call -->
+  <a class="tap-call-bar" href="tel:+15615717983">Call or Text (561) 571-7983</a>
+
+  <!-- Mobile drawer (flat list — utility page) -->
+  <div class="drawer-scrim" id="drawer-scrim" aria-hidden="true"></div>
+  <aside class="drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
+    <div class="drawer__head">
+      <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security">
+      <button class="drawer__close" type="button" id="drawer-close" aria-label="Close menu">✕</button>
+    </div>
+    <ul class="drawer__list">
+      <li class="drawer__item"><a class="drawer__link" href="/services/ongoing-security">Ongoing Site Security</a></li>
+      <li class="drawer__item"><a class="drawer__link" href="/services/disaster-response">Disaster &amp; Emergency Response</a></li>
+      <li class="drawer__item"><a class="drawer__link" href="/services/community-events">Community &amp; Events Security</a></li>
+      <li class="drawer__item"><a class="drawer__link" href="/services/close-protection">Executive &amp; Close Protection</a></li>
+      <li class="drawer__item"><a class="drawer__link" href="/services/energy-industrial">Energy Facilities &amp; Infrastructure</a></li>
+      <li class="drawer__item"><a class="drawer__link" href="/services/consulting-training">Consulting, Training &amp; Procurement</a></li>
+      <li class="drawer__item"><a class="drawer__link" href="/services/ayc-intelligence">AYC Intelligence</a></li>
+      <li class="drawer__item"><a class="drawer__link" href="/industries">Industries</a></li>
+      <li class="drawer__item"><a class="drawer__link" href="/about">About AYC Security</a></li>
+      <li class="drawer__item"><a class="drawer__link" href="/operations-center">Our Operations Center</a></li>
+      <li class="drawer__item"><a class="drawer__link" href="/careers">Careers</a></li>
+      <li class="drawer__item"><a class="drawer__link" href="/contact">Contact</a></li>
+    </ul>
+    <div class="drawer__cta-wrap">
+      <a class="drawer__cta" href="/contact">Request a Consultation →</a>
+    </div>
+  </aside>
+
+  <!-- Side tab CTA (desktop) -->
+  <button class="side-tab" type="button" id="side-tab" aria-label="Open contact form">Get in Touch →</button>
+
+  <!-- Slideout contact panel -->
+  <aside class="slideout" id="slideout" aria-label="Contact form" aria-hidden="true">
+    <div class="slideout__head">
+      <h3>Get in Touch</h3>
+      <button class="slideout__close" type="button" id="slideout-close" aria-label="Close contact form">✕</button>
+    </div>
+    <div class="slideout__body">
+      <p class="slideout__intro">Tell us what you need. The right person will reach out.</p>
+      <form>
+        <label for="f-name">Name *</label>
+        <input id="f-name" type="text" autocomplete="name" required>
+        <label for="f-email">Email *</label>
+        <input id="f-email" type="email" autocomplete="email" required>
+        <label for="f-phone">Phone</label>
+        <input id="f-phone" type="tel" autocomplete="tel">
+        <label for="f-msg">Message</label>
+        <textarea id="f-msg"></textarea>
+        <button class="slideout__submit" type="submit">Send →</button>
+      </form>
+    </div>
+  </aside>
+
+  <!-- Mobile bottom strip -->
+  <nav class="bottom-strip" aria-label="Quick contact">
+    <a href="tel:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">☎</span>Call</a>
+    <a href="sms:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">✉</span>Text</a>
+    <a href="/cdn-cgi/l/email-protection#94fdfaf2fbd4f5edf7e7f1f7e1e6fde0edbaf7fbf9"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
+  </nav>
+
+  <!-- ============================================================
+       PAGE HEADER
+       ============================================================ -->
+  <section class="legal-head" aria-labelledby="legal-h1">
+    <div class="container">
+      <div class="legal-col">
+        <p class="legal-head__crumbs"><a href="/">Home</a><span aria-hidden="true">/</span>Privacy Policy</p>
+        <h1 class="legal-head__h1" id="legal-h1">Privacy Policy</h1>
+        <hr class="legal-head__rule" aria-hidden="true">
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       LEGAL BODY
+       ============================================================ -->
+  <main class="legal-body">
+    <div class="container">
+      <div class="legal-col">
+
+        <p class="legal-intro">
+          AYC Security USA respects your privacy. This Privacy Policy explains what information we collect when you use this website, how we use it, and how we protect it. By using this website, you agree to the practices described here.
+        </p>
+
+        <section class="legal-section">
+          <h2 class="legal-section__h2">Information We Collect</h2>
+          <hr class="legal-section__rule" aria-hidden="true">
+
+          <p class="legal-subhead">Website Visitors</p>
+          <p>When you browse this website, we may collect basic technical information automatically, including your IP address, browser type, device type, the pages you visit, and the time and date of your visit. This information is collected to help us understand how the website is used and to keep it functioning properly. We do not use it to identify you personally.</p>
+
+          <p class="legal-subhead">Contact Form</p>
+          <p>When you submit the contact form on this website, we collect the information you provide, which may include your name, email address, phone number, company or organization name, property or site address, country and state, service interest, message, and how you heard about us. We use this information to respond to your inquiry and connect you with the right member of our team.</p>
+
+          <p class="legal-subhead">Careers Application Form</p>
+          <div class="legal-flag" role="note">
+            <p class="legal-flag__title">Legal Review Required Before Publishing</p>
+            <p class="legal-flag__body">PLACEHOLDER — DATA COLLECTION DISCLOSURE FOR CAREERS FORM MUST BE COMPLETED BY LEGAL COUNSEL BEFORE THIS PAGE IS PUBLISHED. The careers application collects name, email, phone, address, date of birth, driver's license number, employment history, and criminal history disclosure. Proper legal disclosure language is required under applicable state and federal law.</p>
+          </div>
+        </section>
+
+        <section class="legal-section">
+          <h2 class="legal-section__h2">How We Use Your Information</h2>
+          <hr class="legal-section__rule" aria-hidden="true">
+          <p>We use the information we collect for the following purposes:</p>
+          <ul class="legal-list">
+            <li>To respond to inquiries submitted through the contact form.</li>
+            <li>To evaluate employment applications submitted through the careers form.</li>
+            <li>To improve and maintain the website.</li>
+            <li>To communicate with you about your inquiry or application.</li>
+            <li>To comply with legal obligations.</li>
+          </ul>
+          <p>We do not sell, rent, or share your personal information with third parties for marketing purposes.</p>
+        </section>
+
+        <section class="legal-section">
+          <h2 class="legal-section__h2">Cookies and Tracking</h2>
+          <hr class="legal-section__rule" aria-hidden="true">
+          <p>This website may use cookies and similar technologies to support basic website functionality and to understand how visitors use the site. A cookie is a small text file stored on your device when you visit a website.</p>
+          <p>We do not use cookies for advertising or to track you across other websites. If you prefer not to accept cookies, you can adjust your browser settings to refuse them. Doing so may affect how some parts of the website function.</p>
+        </section>
+
+        <section class="legal-section">
+          <h2 class="legal-section__h2">Third-Party Services</h2>
+          <hr class="legal-section__rule" aria-hidden="true">
+          <p>This website is hosted on Netlify. Form submissions are processed through Netlify Forms. These services may collect technical information as part of operating the website. We encourage you to review Netlify's own privacy policy at <a class="inline-link" href="https://www.netlify.com" target="_blank" rel="noopener">netlify.com</a> for details on how they handle data.</p>
+          <p>This website may contain links to third-party websites, including our social media pages on LinkedIn and Facebook. We are not responsible for the privacy practices of those sites and encourage you to review their policies directly.</p>
+        </section>
+
+        <section class="legal-section">
+          <h2 class="legal-section__h2">Data Retention</h2>
+          <hr class="legal-section__rule" aria-hidden="true">
+          <p>We retain contact form submissions and careers application data for as long as necessary to respond to your inquiry or complete the hiring process. If you would like us to delete your information, please contact us directly and we will do so where legally permitted.</p>
+        </section>
+
+        <section class="legal-section">
+          <h2 class="legal-section__h2">Security</h2>
+          <hr class="legal-section__rule" aria-hidden="true">
+          <p>We take reasonable precautions to protect the information submitted through this website. This website uses HTTPS encryption for all data in transit. However, no method of transmission over the internet is completely secure, and we cannot guarantee absolute security.</p>
+        </section>
+
+        <section class="legal-section">
+          <h2 class="legal-section__h2">Children</h2>
+          <hr class="legal-section__rule" aria-hidden="true">
+          <p>This website is not directed at children under the age of 13. We do not knowingly collect personal information from children. If you believe a child has submitted information through this website, please contact us and we will delete it promptly.</p>
+        </section>
+
+        <section class="legal-section">
+          <h2 class="legal-section__h2">Your Rights</h2>
+          <hr class="legal-section__rule" aria-hidden="true">
+          <p>Depending on where you are located, you may have certain rights regarding your personal information, including the right to access, correct, or delete it. To exercise any of these rights, contact us directly using the information in the section below. We will respond to your request as promptly as possible.</p>
+        </section>
+
+        <section class="legal-section">
+          <h2 class="legal-section__h2">Changes to This Policy</h2>
+          <hr class="legal-section__rule" aria-hidden="true">
+          <p>We may update this Privacy Policy from time to time to reflect changes in our practices or applicable law. When we do, we will post the revised policy on this page. We encourage you to review it periodically.</p>
+        </section>
+
+        <section class="legal-section">
+          <h2 class="legal-section__h2">Contact</h2>
+          <hr class="legal-section__rule" aria-hidden="true">
+          <p>If you have questions about this Privacy Policy or how we handle your information, please contact us.</p>
+          <div class="legal-contact">
+            <p class="legal-contact__name">AYC Security USA</p>
+            <p>7000 W Palmetto Park Rd., Suite 308</p>
+            <p>Boca Raton, FL 33433</p>
+            <p>Phone: <a href="tel:+15615717983">(561) 571-7983</a></p>
+            <p>Email: <a href="/cdn-cgi/l/email-protection#432a2d252c03223a2030262036312a373a6d202c2e"><span class="__cf_email__" data-cfemail="127b7c747d52736b7161777167607b666b3c717d7f">[email&#160;protected]</span></a></p>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+
+        <div class="footer-col footer-col--brand">
+          <img class="footer-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security USA">
+          <p class="footer-blurb">AYC Security USA, a veteran-owned private security firm headquartered in Boca Raton, Florida. 24/7 Global Security Operations Center.</p>
+          <span class="footer-license-line">Licensed &amp; Insured Nationally · Operating Across the United States</span>
+          <div class="footer-socials" aria-label="Social media">
+            <a href="https://www.linkedin.com/company/ayc-security/" target="_blank" rel="noopener" aria-label="AYC Security on LinkedIn">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M4.98 3.5C4.98 4.88 3.87 6 2.5 6S0 4.88 0 3.5 1.11 1 2.5 1s2.48 1.12 2.48 2.5zM.22 8h4.55v14H.22V8zM8.34 8h4.36v1.92h.06c.61-1.15 2.1-2.36 4.32-2.36 4.62 0 5.47 3.04 5.47 7v8.44h-4.55v-7.5c0-1.79-.03-4.1-2.5-4.1s-2.88 1.95-2.88 3.97V22H8.34V8z"/>
+              </svg>
+            </a>
+            <a href="https://www.facebook.com/aycsecure/" target="_blank" rel="noopener" aria-label="AYC Security on Facebook">
+              <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M22 12a10 10 0 1 0-11.56 9.88v-6.99H7.9V12h2.54V9.8c0-2.5 1.49-3.89 3.78-3.89 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56V12h2.77l-.44 2.89h-2.33v6.99A10 10 0 0 0 22 12z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <nav class="footer-col" aria-label="Services">
+          <span class="footer-head">Services</span>
+          <a class="footer-link" href="/services/ongoing-security">Ongoing Site Security</a>
+          <a class="footer-link" href="/services/disaster-response">Disaster &amp; Emergency Response</a>
+          <a class="footer-link" href="/services/community-events">Community &amp; Events Security</a>
+          <a class="footer-link" href="/services/close-protection">Executive &amp; Close Protection</a>
+          <a class="footer-link" href="/services/energy-industrial">Energy Facilities &amp; Infrastructure</a>
+          <a class="footer-link" href="/services/consulting-training">Consulting, Training &amp; Procurement</a>
+          <a class="footer-link" href="/services/ayc-intelligence">AYC Intelligence</a>
+        </nav>
+
+        <nav class="footer-col" aria-label="Company">
+          <span class="footer-head">Company</span>
+          <a class="footer-link" href="/about">About AYC Security</a>
+          <a class="footer-link" href="/operations-center">Our Operations Center</a>
+          <a class="footer-link" href="/industries">Industries Served</a>
+          <a class="footer-link" href="/careers">Careers</a>
+          <a class="footer-link" href="/contact">Contact</a>
+        </nav>
+
+        <div class="footer-col">
+          <span class="footer-head">Contact</span>
+          <a class="footer-phone" href="tel:+15615717983">(561) 571-7983</a>
+          <a class="footer-email" href="/cdn-cgi/l/email-protection#e1888f878ea18098829284829493889598cf828e8c"><span class="__cf_email__" data-cfemail="0d64636b624d6c746e7e686e787f647974236e6260">[email&#160;protected]</span></a>
+
+          <span class="footer-addr-label">Florida HQ</span>
+          <address class="footer-addr">7000 W Palmetto Park Rd., Suite 308<br>Boca Raton, FL 33433</address>
+
+          <span class="footer-addr-label">Ohio</span>
+          <address class="footer-addr">7160 Chagrin Road, Suite 180<br>Chagrin Falls, OH 44023</address>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 AYC Security USA · All Rights Reserved</p>
+        <p class="footer-licenses-strip">FL B3200547 · NV 4383 · OH 20242100525221 · TN 14274 · TX B31026501</p>
+        <div class="footer-bottom-links">
+          <a href="/privacy" aria-current="page">Privacy</a>
+          <span aria-hidden="true">·</span>
+          <a href="/terms">Terms</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+(function () {
+  'use strict';
+
+  // ---------- Desktop dropdowns (hover + click + keyboard) ----------
+  const dropdowns = document.querySelectorAll('[data-dropdown]');
+  let openDropdown = null;
+  let closeTimer = null;
+
+  function openDD(wrap) {
+    if (openDropdown && openDropdown !== wrap) closeDD(openDropdown);
+    wrap.classList.add('is-open');
+    const trigger = wrap.querySelector('.nav__trigger');
+    if (trigger) trigger.setAttribute('aria-expanded', 'true');
+    openDropdown = wrap;
+  }
+  function closeDD(wrap) {
+    wrap.classList.remove('is-open');
+    const trigger = wrap.querySelector('.nav__trigger');
+    if (trigger) trigger.setAttribute('aria-expanded', 'false');
+    if (openDropdown === wrap) openDropdown = null;
+  }
+
+  dropdowns.forEach((wrap) => {
+    const trigger = wrap.querySelector('.nav__trigger');
+    wrap.addEventListener('mouseenter', () => { clearTimeout(closeTimer); openDD(wrap); });
+    wrap.addEventListener('mouseleave', () => {
+      closeTimer = setTimeout(() => closeDD(wrap), 140);
+    });
+    trigger.addEventListener('click', (e) => {
+      e.preventDefault();
+      if (wrap.classList.contains('is-open')) closeDD(wrap);
+      else openDD(wrap);
+    });
+    trigger.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') { closeDD(wrap); trigger.focus(); }
+    });
+  });
+  document.addEventListener('click', (e) => {
+    if (!openDropdown) return;
+    if (!openDropdown.contains(e.target)) closeDD(openDropdown);
+  });
+
+  // ---------- Mobile drawer ----------
+  const drawer = document.getElementById('mobile-drawer');
+  const scrim  = document.getElementById('drawer-scrim');
+  const hamburger = document.getElementById('hamburger');
+  const drawerClose = document.getElementById('drawer-close');
+
+  function openDrawer() {
+    drawer.classList.add('is-open');
+    scrim.classList.add('is-open');
+    drawer.setAttribute('aria-hidden', 'false');
+    scrim.setAttribute('aria-hidden', 'false');
+    hamburger.setAttribute('aria-expanded', 'true');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeDrawer() {
+    drawer.classList.remove('is-open');
+    scrim.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+    scrim.setAttribute('aria-hidden', 'true');
+    hamburger.setAttribute('aria-expanded', 'false');
+    document.body.style.overflow = '';
+  }
+  hamburger.addEventListener('click', openDrawer);
+  drawerClose.addEventListener('click', closeDrawer);
+  scrim.addEventListener('click', closeDrawer);
+
+  // ---------- Side tab + slideout ----------
+  const sideTab = document.getElementById('side-tab');
+  const slideout = document.getElementById('slideout');
+  const slideoutClose = document.getElementById('slideout-close');
+
+  function openSlideout() {
+    slideout.classList.add('is-open');
+    slideout.setAttribute('aria-hidden', 'false');
+    scrim.classList.add('is-open');
+    scrim.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeSlideout() {
+    slideout.classList.remove('is-open');
+    slideout.setAttribute('aria-hidden', 'true');
+    if (!drawer.classList.contains('is-open')) {
+      scrim.classList.remove('is-open');
+      scrim.setAttribute('aria-hidden', 'true');
+      document.body.style.overflow = '';
+    }
+  }
+  sideTab.addEventListener('click', openSlideout);
+  slideoutClose.addEventListener('click', closeSlideout);
+  scrim.addEventListener('click', () => {
+    if (slideout.classList.contains('is-open')) closeSlideout();
+  });
+
+  // Escape closes everything
+  document.addEventListener('keydown', (e) => {
+    if (e.key !== 'Escape') return;
+    if (slideout.classList.contains('is-open')) closeSlideout();
+    if (drawer.classList.contains('is-open')) closeDrawer();
+  });
+
+  // Prevent demo form reload
+  document.querySelectorAll('form').forEach((f) => {
+    f.addEventListener('submit', (e) => { e.preventDefault(); });
+  });
+})();
+</script>
+
+</body>
+</html>

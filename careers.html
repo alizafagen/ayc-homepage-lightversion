@@ -395,6 +395,72 @@
     font-size: 28px;
     cursor: pointer;
   }
+  .drawer-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .drawer-item {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .drawer-top-link {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 20px 24px;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+  }
+  .drawer-top-link:hover { color: var(--gold-soft); }
+  .drawer-acc-item {
+    border-bottom: 1px solid rgba(255,255,255,0.06);
+  }
+  .drawer-acc-btn {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 24px;
+    background: transparent;
+    border: none;
+    color: #fff;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+  }
+  .drawer-acc-btn:hover { color: var(--gold-soft); }
+  .drawer-acc-icon {
+    font-family: 'IBM Plex Mono', monospace;
+    color: var(--gold-soft);
+    font-size: 18px;
+    line-height: 1;
+    transition: transform .2s;
+  }
+  .drawer-acc-item.is-open .drawer-acc-icon { transform: rotate(45deg); }
+  .drawer-acc-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .3s ease;
+    background: rgba(0,0,0,0.2);
+  }
+  .drawer-acc-item.is-open .drawer-acc-panel { max-height: 500px; }
+  .drawer-acc-panel a {
+    display: block;
+    padding: 13px 24px 13px 36px;
+    color: rgba(255,255,255,0.82);
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    border-left: 2px solid var(--gold);
+    margin-left: 12px;
+  }
+  .drawer-acc-panel a:hover { color: #fff; }
   .mobile-drawer nav {
     display: flex;
     flex-direction: column;
@@ -927,7 +993,7 @@
   <header class="main-nav" role="banner">
     <div class="container-wide">
       <div class="nav-left">
-        <a href="index.html" aria-label="AYC Security home">
+        <a href="/" aria-label="AYC Security home">
           <img class="nav-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" />
         </a>
         <div class="nav-rule" aria-hidden="true"></div>
@@ -961,7 +1027,7 @@
             <a href="/about#leadership" role="menuitem">Our Leadership Team</a>
           </div>
         </div>
-        <a class="nav-item" href="careers.html" aria-current="page">Careers</a>
+        <a class="nav-item" href="/careers" aria-current="page">Careers</a>
         <a class="nav-item" href="/contact">Contact</a>
       </nav>
 
@@ -982,21 +1048,40 @@
       <img class="nav-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" />
       <button class="mobile-drawer-close" id="drawer-close" aria-label="Close menu">✕</button>
     </div>
-    <nav aria-label="Mobile main">
-      <a href="/services/ongoing-security">Ongoing Site Security</a>
-      <a href="/services/disaster-response">Disaster Response</a>
-      <a href="/services/community-events">Community &amp; Events Security</a>
-      <a href="/services/close-protection">Executive &amp; Close Protection</a>
-      <a href="/services/energy-industrial">Energy &amp; Infrastructure</a>
-      <a href="/services/consulting-training">Consulting &amp; Training</a>
-      <a href="/services/ayc-intelligence">AYC Intelligence</a>
-      <a href="/industries">Industries</a>
-      <a href="/about">About</a>
-      <a href="/operations-center">Operations Center</a>
-      <a href="careers.html">Careers</a>
-      <a href="/contact">Contact</a>
-    </nav>
-    <a class="btn-gold" href="#careers-form">Apply Now →</a>
+    <ul class="drawer-list">
+      <li class="drawer-acc-item">
+        <button class="drawer-acc-btn" type="button" aria-expanded="false">
+          <span>Services</span>
+          <span class="drawer-acc-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="drawer-acc-panel">
+          <a href="/services/ongoing-security">Ongoing Site Security</a>
+          <a href="/services/disaster-response">Disaster &amp; Emergency Response</a>
+          <a href="/services/community-events">Community &amp; Events Security</a>
+          <a href="/services/close-protection">Executive &amp; Close Protection</a>
+          <a href="/services/energy-industrial">Energy Facilities &amp; Infrastructure</a>
+          <a href="/services/consulting-training">Consulting, Training &amp; Procurement</a>
+          <a href="/services/ayc-intelligence">AYC Intelligence</a>
+        </div>
+      </li>
+      <li class="drawer-item"><a class="drawer-top-link" href="/industries">Industries</a></li>
+      <li class="drawer-acc-item">
+        <button class="drawer-acc-btn" type="button" aria-expanded="false">
+          <span>About</span>
+          <span class="drawer-acc-icon" aria-hidden="true">+</span>
+        </button>
+        <div class="drawer-acc-panel">
+          <a href="/about">About AYC Security</a>
+          <a href="/operations-center">Our Operations Center</a>
+          <a href="/about#leadership">Our Leadership Team</a>
+        </div>
+      </li>
+      <li class="drawer-item"><a class="drawer-top-link" href="/careers" aria-current="page">Careers</a></li>
+      <li class="drawer-item"><a class="drawer-top-link" href="/contact">Contact</a></li>
+    </ul>
+    <div style="padding:22px;">
+      <a class="btn-gold" href="#careers-form" style="display:block;width:100%;text-align:center;">Apply Now →</a>
+    </div>
   </div>
 
   <!-- SIDE TAB -->
@@ -1031,7 +1116,7 @@
   <section class="page-header" aria-labelledby="page-title">
     <div class="container">
       <div class="breadcrumb">
-        <a href="index.html">Home</a> / Careers
+        <a href="/">Home</a> / Careers
       </div>
       <h1 id="page-title" class="page-title">Careers at AYC Security</h1>
       <p class="page-tagline">Protecting with Pride. Serving with Strength.</p>
@@ -1395,7 +1480,7 @@
             </p>
             <p class="veteran-callout__contact">
               Questions? Email us at
-              <a href="/cdn-cgi/l/email-protection#2940474f466948504a5a4c4a5c5b405d50074a4644"><span class="__cf_email__" data-cfemail="0f666169604f6e766c7c6a6c7a7d667b76216c6062">[email&#160;protected]</span></a>
+              <a href="/cdn-cgi/l/email-protection#c1a8afa7ae81a0b8a2b2a4a2b4b3a8b5b8efa2aeac"><span class="__cf_email__" data-cfemail="c1a8afa7ae81a0b8a2b2a4a2b4b3a8b5b8efa2aeac">[email&#160;protected]</span></a>
             </p>
           </div>
 
@@ -1462,10 +1547,10 @@
             letter-spacing:0.04em; margin-bottom:10px;">
             (561) 571-7983
           </a>
-          <a href="/cdn-cgi/l/email-protection#f29b9c949db2938b9181979187809b868bdc919d9f" style="font-family:'Inter',sans-serif; font-size:16px;
+          <a href="/cdn-cgi/l/email-protection#adc4c3cbc2edccd4cedec8ced8dfc4d9d483cec2c0" style="font-family:'Inter',sans-serif; font-size:16px;
             color:rgba(255,255,255,0.75); text-decoration:none;
             display:block; margin-bottom:14px;">
-            <span class="__cf_email__" data-cfemail="fe97909891be9f879d8d9b9d8b8c978a87d09d9193">[email&#160;protected]</span>
+            <span class="__cf_email__" data-cfemail="e881868e87a889918b9b8d8b9d9a819c91c68b8785">[email&#160;protected]</span>
           </a>
           
         </div>
@@ -1596,7 +1681,7 @@
             color:rgba(255,255,255,0.82); display:block;
             padding:5px 0; text-decoration:none;">
             Industries Served</a>
-          <a href="careers.html"
+          <a href="/careers"
             style="font-family:'Inter',sans-serif; font-size:14px;
             color:rgba(255,255,255,0.82); display:block;
             padding:5px 0; text-decoration:none;">
@@ -1620,10 +1705,10 @@
             color:#D9B66B; display:block; padding:5px 0;
             text-decoration:none;">
             (561) 571-7983</a>
-          <a href="/cdn-cgi/l/email-protection#462f28202906273f2535232533342f323f6825292b" style="font-family:'Inter',sans-serif; font-size:14px;
+          <a href="/cdn-cgi/l/email-protection#b1d8dfd7def1d0c8d2c2d4d2c4c3d8c5c89fd2dedc" style="font-family:'Inter',sans-serif; font-size:14px;
             color:rgba(255,255,255,0.82); display:block;
             padding:5px 0; text-decoration:none;">
-            <span class="__cf_email__" data-cfemail="e1888f878ea18098829284829493889598cf828e8c">[email&#160;protected]</span></a>
+            <span class="__cf_email__" data-cfemail="60090e060f2001190313050315120914194e030f0d">[email&#160;protected]</span></a>
           <span style="font-family:'IBM Plex Mono',monospace;
             font-size:10px; letter-spacing:0.16em;
             text-transform:uppercase; color:#D9B66B;
@@ -1688,7 +1773,7 @@
     <div class="grid">
       <a href="tel:+15615717983">Call</a>
       <a href="sms:+15615717983">Text</a>
-      <a href="/cdn-cgi/l/email-protection#452c2b232a05243c2636202630372c313c6b262a28">Email</a>
+      <a href="/cdn-cgi/l/email-protection#076e69616847667e6474626472756e737e2964686a">Email</a>
     </div>
   </nav>
 
@@ -1725,6 +1810,15 @@
   hamburger.addEventListener('click', openDrawer);
   drawerClose.addEventListener('click', closeDrawer);
   drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', closeDrawer));
+
+  // Drawer accordions
+  document.querySelectorAll('.drawer-acc-item .drawer-acc-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const item = btn.closest('.drawer-acc-item');
+      const isOpen = item.classList.toggle('is-open');
+      btn.setAttribute('aria-expanded', String(isOpen));
+    });
+  });
 
   // Side tab / slideout
   const sideTab = document.getElementById('side-tab');

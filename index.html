@@ -23,9 +23,9 @@
     --rule:        #E4DED2;
     --rule-strong: #CFC6B3;
 
-    --f-display: "Oswald", "Helvetica Neue", Arial, sans-serif;
-    --f-body:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-    --f-mono:    "IBM Plex Mono", ui-monospace, monospace;
+    --font-display: "Oswald", "Helvetica Neue", Arial, sans-serif;
+    --font-body:    "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-mono:    "IBM Plex Mono", ui-monospace, monospace;
 
     --maxw: 1280px;
     --gutter: clamp(20px, 4vw, 56px);
@@ -34,7 +34,7 @@
   * { box-sizing: border-box; }
   html, body { margin: 0; padding: 0; }
   body {
-    font-family: var(--f-body);
+    font-family: var(--font-body);
     color: var(--ink);
     background: var(--cream);
     font-weight: 400;
@@ -59,7 +59,7 @@
   .util-rail {
     background: var(--navy-2);
     color: rgba(255,255,255,0.72);
-    font-family: var(--f-mono);
+    font-family: var(--font-mono);
     font-size: 11px;
     letter-spacing: 0.14em;
     text-transform: uppercase;
@@ -104,7 +104,7 @@
   .brand .mark {
     display: flex; flex-direction: column; line-height: 1.1;
     border-left: 1px solid rgba(255,255,255,0.18); padding-left: 14px;
-    font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.22em;
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em;
     color: rgba(255,255,255,0.62); text-transform: uppercase;
   }
   .brand .mark span { margin-top: 5px; color: var(--gold-soft); }
@@ -116,7 +116,7 @@
   .nav ul.primary > li { position: relative; }
   .nav ul.primary > li > a,
   .nav ul.primary > li > button {
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-size: 14px; font-weight: 500; letter-spacing: 0.12em;
     text-transform: uppercase; color: rgba(255,255,255,0.92);
     padding: 12px 0; display: inline-flex; align-items: center; gap: 6px;
@@ -132,14 +132,14 @@
   .nav .cta {
     display: inline-flex; align-items: center; gap: 10px;
     background: var(--gold); color: var(--navy);
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 600; font-size: 13px; letter-spacing: 0.14em;
     text-transform: uppercase;
     padding: 14px 22px; border: 1px solid var(--gold);
     transition: background .2s, color .2s;
   }
   .nav .cta:hover { background: transparent; color: var(--gold-soft); border-color: var(--gold-soft); }
-  .nav .cta .arrow { font-family: var(--f-mono); }
+  .nav .cta .arrow { font-family: var(--font-mono); }
 
   .dropdown {
     position: absolute; top: calc(100% + 6px); left: -18px;
@@ -157,7 +157,7 @@
   .dropdown a {
     display: block;
     padding: 12px 22px;
-    font-family: var(--f-body);
+    font-family: var(--font-body);
     text-transform: none; letter-spacing: 0;
     font-size: 14px; color: rgba(255,255,255,0.9);
     border-left: 2px solid transparent;
@@ -200,10 +200,10 @@
     background: var(--gold); color: var(--navy);
     text-align: center;
     padding: 12px var(--gutter);
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 600; font-size: 14px; letter-spacing: 0.1em; text-transform: uppercase;
   }
-  .mobile-call .tel { font-family: var(--f-mono); letter-spacing: 0.04em; margin-left: 8px; }
+  .mobile-call .tel { font-family: var(--font-mono); letter-spacing: 0.04em; margin-left: 8px; }
   @media (max-width: 900px) { .mobile-call { display: block; } }
 
   .drawer {
@@ -230,7 +230,7 @@
     display: flex; align-items: center; justify-content: space-between;
     width: 100%;
     padding: 20px var(--gutter);
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-size: 16px; font-weight: 500;
     letter-spacing: 0.08em; text-transform: uppercase;
     min-height: 56px;
@@ -243,7 +243,7 @@
   .drawer .acc-panel.open { max-height: 700px; }
   .drawer .acc-panel a {
     display: block; padding: 14px var(--gutter); padding-left: calc(var(--gutter) + 16px);
-    font-family: var(--f-body);
+    font-family: var(--font-body);
     font-size: 15px; color: rgba(255,255,255,0.82); min-height: 48px;
     border-left: 2px solid var(--gold); margin-left: var(--gutter);
     text-transform: none; letter-spacing: 0;
@@ -252,10 +252,10 @@
     display: block; margin: 24px var(--gutter);
     background: var(--gold); color: var(--navy); text-align: center;
     padding: 18px;
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 600; text-transform: uppercase; letter-spacing: 0.14em;
   }
-  .drawer .plus { font-family: var(--f-mono); color: var(--gold-soft); font-weight: 400; transition: transform .2s; display: inline-block; }
+  .drawer .plus { font-family: var(--font-mono); color: var(--gold-soft); font-weight: 400; transition: transform .2s; display: inline-block; }
   .drawer li.open .plus { transform: rotate(45deg); }
 
   .m-strip {
@@ -267,7 +267,7 @@
   .m-strip a {
     flex: 1; padding: 12px 6px; text-align: center;
     color: #fff;
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-size: 12px; font-weight: 600; letter-spacing: 0.14em;
     text-transform: uppercase;
     display: flex; flex-direction: column; gap: 4px; align-items: center;
@@ -275,7 +275,7 @@
     min-height: 60px; justify-content: center;
   }
   .m-strip a:first-child { border-left: 0; }
-  .m-strip a .ico { color: var(--gold-soft); font-family: var(--f-mono); font-size: 16px; letter-spacing: 0; }
+  .m-strip a .ico { color: var(--gold-soft); font-family: var(--font-mono); font-size: 16px; letter-spacing: 0; }
   @media (max-width: 900px) {
     .m-strip { display: flex; }
     body { padding-bottom: 60px; }
@@ -314,7 +314,7 @@
     align-items: end;
   }
   .hero .eyebrow {
-    font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.28em;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.28em;
     text-transform: uppercase; color: var(--gold-soft);
     display: inline-flex; align-items: center; gap: 14px;
     margin-bottom: 28px;
@@ -323,7 +323,7 @@
     content: ""; width: 42px; height: 1px; background: var(--gold-soft);
   }
   .hero h1 {
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 600;
     font-size: clamp(48px, 7.4vw, 104px);
     line-height: 0.98;
@@ -337,7 +337,7 @@
     font-weight: 700;
   }
   .hero .sub {
-    font-family: var(--f-body);
+    font-family: var(--font-body);
     font-size: clamp(16px, 1.2vw, 19px);
     line-height: 1.6;
     color: rgba(255,255,255,0.95);
@@ -360,14 +360,14 @@
 
   .btn {
     display: inline-flex; align-items: center; gap: 12px;
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 600; font-size: 13px; letter-spacing: 0.16em;
     text-transform: uppercase;
     padding: 18px 26px;
     border: 1px solid transparent;
     transition: background .2s, color .2s, border-color .2s, transform .15s;
   }
-  .btn .arrow { font-family: var(--f-mono); transition: transform .2s; }
+  .btn .arrow { font-family: var(--font-mono); transition: transform .2s; }
   .btn:hover .arrow { transform: translateX(4px); }
   .btn-gold { background: var(--gold); color: var(--navy); border-color: var(--gold); }
   .btn-gold:hover { background: var(--gold-deep); border-color: var(--gold-deep); }
@@ -400,7 +400,7 @@
   }
   .hero .gsoc-panel .status {
     display: inline-flex; align-items: center; gap: 14px;
-    font-family: var(--f-mono);
+    font-family: var(--font-mono);
     font-size: 10px; letter-spacing: 0.24em; text-transform: uppercase;
     color: rgba(255,255,255,0.85);
     margin-bottom: 22px;
@@ -412,7 +412,7 @@
     animation: pulse 2.4s infinite;
   }
   .hero .gsoc-panel .gp-title {
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.14em;
@@ -426,7 +426,7 @@
     margin-bottom: 22px;
   }
   .hero .gsoc-panel .gp-num {
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 700;
     font-size: clamp(80px, 9vw, 124px);
     line-height: 0.9;
@@ -434,13 +434,13 @@
     letter-spacing: -0.02em;
   }
   .hero .gsoc-panel .gp-num-cap {
-    font-family: var(--f-mono);
+    font-family: var(--font-mono);
     font-size: 14px; letter-spacing: 0.18em; text-transform: uppercase;
     color: var(--gold-soft);
     margin-top: 8px; margin-bottom: 22px;
   }
   .hero .gsoc-panel .gp-body {
-    font-family: var(--f-body);
+    font-family: var(--font-body);
     font-size: 16px;
     line-height: 1.6;
     color: rgba(255,255,255,0.85);
@@ -466,7 +466,7 @@
   .ticker-band .ticker-row {
     display: flex; align-items: center; gap: 28px;
     padding-right: 28px;
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 500;
     font-size: clamp(14px, 1.1vw, 18px);
     text-transform: uppercase;
@@ -488,12 +488,12 @@
     .ticker-band .ticker-track { animation: none; }
   }
   .hero-proof .item .label {
-    font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.24em;
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em;
     text-transform: uppercase; color: rgba(255,255,255,0.65);
     margin-bottom: 8px;
   }
   .hero-proof .item .val {
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-size: clamp(28px, 2.6vw, 36px);
     line-height: 1.05;
     letter-spacing: 0.02em;
@@ -511,11 +511,11 @@
     padding-top: 4px;
   }
   .hero-proof .phone-cta .lbl {
-    font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.24em;
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em;
     text-transform: uppercase; color: rgba(255,255,255,0.65);
   }
   .hero-proof .phone-cta .num {
-    font-family: var(--f-mono); font-size: 20px; color: var(--gold-soft); letter-spacing: 0.02em;
+    font-family: var(--font-mono); font-size: 20px; color: var(--gold-soft); letter-spacing: 0.02em;
   }
 
   @media (max-width: 900px) {
@@ -542,7 +542,7 @@
   }
   .gsoc .badge {
     display: inline-flex; align-items: center; gap: 14px;
-    font-family: var(--f-mono);
+    font-family: var(--font-mono);
     font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
     color: rgba(255,255,255,0.85);
     padding-right: 36px;
@@ -557,7 +557,7 @@
   }
   .gsoc h2 {
     margin: 0;
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 500;
     font-size: clamp(20px, 2vw, 26px);
     line-height: 1.3;
@@ -568,14 +568,14 @@
   }
   .gsoc h2 .accent { color: var(--gold-soft); }
   .gsoc .meta {
-    font-family: var(--f-mono);
+    font-family: var(--font-mono);
     font-size: 11px; letter-spacing: 0.18em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.7);
     text-align: right;
     white-space: nowrap;
   }
-  .gsoc .meta b { display: block; color: #fff; font-family: var(--f-display); font-size: 22px; letter-spacing: 0.08em; margin-bottom: 4px; font-weight: 600; }
+  .gsoc .meta b { display: block; color: #fff; font-family: var(--font-display); font-size: 22px; letter-spacing: 0.08em; margin-bottom: 4px; font-weight: 600; }
   @media (max-width: 900px) {
     .gsoc { padding: 36px 0; }
     .gsoc .inner { grid-template-columns: 1fr; gap: 20px; }
@@ -592,7 +592,7 @@
   .section--cream2 { background: var(--cream-2); }
 
   .eyebrow {
-    font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.26em;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.26em;
     text-transform: uppercase; color: var(--gold);
     display: inline-flex; align-items: center; gap: 14px;
     margin-bottom: 22px;
@@ -600,7 +600,7 @@
   .eyebrow::before { content:""; width: 42px; height: 1px; background: var(--gold); }
 
   .h-display {
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 500;
     font-size: clamp(36px, 5vw, 64px);
     line-height: 1.05;
@@ -613,7 +613,7 @@
   .h-display .accent { color: var(--gold); font-weight: 600; }
 
   .lede {
-    font-family: var(--f-body);
+    font-family: var(--font-body);
     font-size: 17px;
     color: var(--ink-soft);
     line-height: 1.65;
@@ -645,12 +645,12 @@
     min-width: 60%;
   }
   .about .media .badge .num {
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-size: 44px; font-weight: 600;
     color: var(--navy); line-height: 1;
   }
   .about .media .badge .cap {
-    font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.22em;
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.22em;
     color: var(--navy); text-transform: uppercase;
     max-width: 18ch; line-height: 1.5; opacity: 0.85;
   }
@@ -666,7 +666,7 @@
     border-left: 3px solid var(--gold);
     padding: 8px 0 8px 22px;
     margin: 30px 0;
-    font-family: var(--f-body);
+    font-family: var(--font-body);
     font-size: 18px;
     font-style: normal;
     font-weight: 500;
@@ -677,13 +677,13 @@
   .about .cta-link {
     display: inline-flex; align-items: center; gap: 12px;
     margin-top: 18px;
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 600; font-size: 13px; letter-spacing: 0.16em;
     text-transform: uppercase;
     color: var(--navy);
     padding-bottom: 6px; border-bottom: 1px solid var(--gold);
   }
-  .about .cta-link .arrow { color: var(--gold); font-family: var(--f-mono); transition: transform .2s; }
+  .about .cta-link .arrow { color: var(--gold); font-family: var(--font-mono); transition: transform .2s; }
   .about .cta-link:hover .arrow { transform: translateX(6px); }
 
   @media (max-width: 900px) {
@@ -717,11 +717,11 @@
   .apart .item:nth-child(3n) { border-right: 0; padding-right: 0; }
   .apart .item:nth-child(1), .apart .item:nth-child(2), .apart .item:nth-child(3) { padding-top: 36px; }
   .apart .item .num {
-    font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.2em;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.2em;
     color: var(--gold);
   }
   .apart .item .lead {
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-size: 24px;
     font-weight: 500;
     line-height: 1.15;
@@ -731,7 +731,7 @@
     padding-right: 16px;
   }
   .apart .item .supp {
-    font-family: var(--f-body);
+    font-family: var(--font-body);
     font-size: 15px;
     line-height: 1.55;
     color: var(--ink-soft);
@@ -799,7 +799,7 @@
     gap: 12px;
   }
   .svc-name {
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-size: 22px;
     font-weight: 500;
     text-transform: uppercase;
@@ -808,13 +808,13 @@
     line-height: 1.2;
   }
   .svc-desc {
-    font-family: var(--f-body);
+    font-family: var(--font-body);
     font-size: 15px; color: var(--ink);
     line-height: 1.6;
     flex-grow: 1;
   }
   .svc-go {
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-size: 12px; color: var(--navy);
     font-weight: 600; letter-spacing: 0.16em;
     text-transform: uppercase;
@@ -823,7 +823,7 @@
     padding-top: 14px;
     border-top: 1px solid var(--rule);
   }
-  .svc-go .arrow { color: var(--gold); font-family: var(--f-mono); transition: transform .2s; }
+  .svc-go .arrow { color: var(--gold); font-family: var(--font-mono); transition: transform .2s; }
   .svc-card:hover .svc-go .arrow { transform: translateX(4px); }
 
   /* Placeholder image flag (pre-launch) */
@@ -831,7 +831,7 @@
   .img-flag {
     position: absolute; z-index: 3;
     background: var(--gold); color: var(--navy);
-    font-family: var(--f-mono);
+    font-family: var(--font-mono);
     font-size: 10px; letter-spacing: 0.06em; line-height: 1.35;
     text-transform: uppercase;
     padding: 7px 10px; max-width: 72%;
@@ -872,7 +872,7 @@
     margin-bottom: 18px;
   }
   .ind-name {
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-size: 18px;
     font-weight: 500;
     text-transform: uppercase;
@@ -882,7 +882,7 @@
     margin-bottom: 8px;
   }
   .ind-desc {
-    font-family: var(--f-body);
+    font-family: var(--font-body);
     font-size: 14px; color: var(--ink-soft);
     line-height: 1.55;
   }
@@ -924,7 +924,7 @@
   .t-card.featured .stars { color: var(--gold-soft); }
   .t-card .quote-mark {
     position: absolute; top: 18px; right: 24px;
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     color: rgba(184,136,42,0.18);
     font-size: 100px; line-height: 1;
     pointer-events: none;
@@ -932,7 +932,7 @@
   }
   .t-card.featured .quote-mark { color: rgba(184,136,42,0.32); }
   .t-card blockquote {
-    font-family: var(--f-body);
+    font-family: var(--font-body);
     font-weight: 400;
     font-size: 16px;
     line-height: 1.6;
@@ -953,7 +953,7 @@
   }
   .t-card.featured .attr { border-top-color: rgba(255,255,255,0.18); }
   .t-card .attr .name {
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -970,7 +970,7 @@
     position: absolute; top: 0; left: 36px;
     transform: translateY(-50%);
     background: var(--gold); color: var(--navy);
-    font-family: var(--f-mono);
+    font-family: var(--font-mono);
     font-size: 10px; letter-spacing: 0.22em;
     text-transform: uppercase;
     padding: 6px 12px;
@@ -1007,7 +1007,7 @@
   .faq-q {
     display: flex; align-items: center; justify-content: space-between;
     gap: 32px; padding: 28px 0; width: 100%; text-align: left;
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 500; font-size: clamp(18px, 1.6vw, 22px);
     text-transform: uppercase;
     letter-spacing: 0.03em;
@@ -1018,7 +1018,7 @@
   .faq-q .chev {
     width: 36px; height: 36px; border: 1px solid var(--rule-strong);
     display: inline-flex; align-items: center; justify-content: center;
-    color: var(--gold); font-family: var(--f-mono); font-size: 22px; line-height: 1;
+    color: var(--gold); font-family: var(--font-mono); font-size: 22px; line-height: 1;
     flex-shrink: 0;
     transition: transform .3s ease, background .2s, color .2s;
   }
@@ -1059,7 +1059,7 @@
     gap: 72px; align-items: center;
   }
   .cta-band h2 {
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 500;
     font-size: clamp(32px, 4.6vw, 60px);
     line-height: 1.05;
@@ -1080,11 +1080,11 @@
     display: grid; gap: 16px;
   }
   .cta-band .side .label {
-    font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.24em;
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em;
     color: rgba(255,255,255,0.6); text-transform: uppercase;
   }
   .cta-band .side .tel {
-    font-family: var(--f-mono); font-size: 26px; color: var(--gold-soft);
+    font-family: var(--font-mono); font-size: 26px; color: var(--gold-soft);
     letter-spacing: 0.02em;
   }
   .cta-band .side .actions {
@@ -1094,7 +1094,7 @@
   .cta-band .side .actions a {
     text-align: center; padding: 14px 6px;
     border: 1px solid rgba(255,255,255,0.28);
-    font-family: var(--f-display); font-size: 12px; letter-spacing: 0.16em;
+    font-family: var(--font-display); font-size: 12px; letter-spacing: 0.16em;
     text-transform: uppercase;
     transition: background .2s, color .2s, border-color .2s;
     font-weight: 600;
@@ -1129,7 +1129,7 @@
     margin: 0 0 18px;
   }
   footer .brand-col .lic-line {
-    font-family: var(--f-mono);
+    font-family: var(--font-mono);
     font-size: 11px;
     color: rgba(255,255,255,0.8);
     letter-spacing: 0.14em;
@@ -1137,26 +1137,26 @@
     line-height: 1.6;
   }
   footer h4 {
-    font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.24em;
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.24em;
     text-transform: uppercase; color: var(--gold-soft);
     margin: 0 0 22px; font-weight: 400;
   }
   footer ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
-  footer ul a { color: rgba(255,255,255,0.82); font-family: var(--f-body); }
+  footer ul a { color: rgba(255,255,255,0.82); font-family: var(--font-body); }
   footer ul a:hover { color: var(--gold-soft); }
   footer .contact-tel {
-    font-family: var(--f-body);
+    font-family: var(--font-body);
     color: var(--gold-soft) !important;
     letter-spacing: 0.01em;
   }
   footer .bottom {
     display: flex; align-items: center; justify-content: space-between;
     padding-top: 28px; gap: 24px; flex-wrap: wrap;
-    font-family: var(--f-mono); font-size: 11px; letter-spacing: 0.14em;
+    font-family: var(--font-mono); font-size: 11px; letter-spacing: 0.14em;
     text-transform: uppercase; color: rgba(255,255,255,0.45);
   }
   footer .bottom .lic-nums {
-    font-family: var(--f-mono); font-size: 10px;
+    font-family: var(--font-mono); font-size: 10px;
     color: rgba(255,255,255,0.42); text-transform: none; letter-spacing: 0.06em;
   }
   footer .bottom a { color: rgba(255,255,255,0.55); }
@@ -1176,7 +1176,7 @@
     writing-mode: vertical-rl;
     background: var(--gold); color: var(--navy);
     padding: 18px 12px;
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 600; font-size: 12px; letter-spacing: 0.2em;
     text-transform: uppercase; z-index: 40;
     border: 0; cursor: pointer;
@@ -1200,7 +1200,7 @@
     padding: 24px 28px; display: flex; justify-content: space-between; align-items: center;
   }
   .slideout-head h3 {
-    font-family: var(--f-display); font-size: 22px; font-weight: 500;
+    font-family: var(--font-display); font-size: 22px; font-weight: 500;
     text-transform: uppercase; letter-spacing: 0.06em;
     margin: 0;
   }
@@ -1213,7 +1213,7 @@
     padding: 28px; display: grid; gap: 18px; flex-grow: 1; overflow-y: auto;
   }
   .slideout label {
-    font-family: var(--f-mono); font-size: 10px; letter-spacing: 0.2em;
+    font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.2em;
     text-transform: uppercase; color: var(--navy);
     display: block; margin-bottom: 8px;
   }
@@ -1223,7 +1223,7 @@
     border: 1px solid var(--rule-strong); font: inherit; color: var(--ink);
     background: var(--paper);
     border-radius: 0;
-    font-family: var(--f-body);
+    font-family: var(--font-body);
   }
   .slideout input:focus, .slideout select:focus, .slideout textarea:focus {
     outline: none; border-color: var(--gold);
@@ -1231,7 +1231,7 @@
   .slideout button[type=submit] {
     background: var(--navy); color: #fff;
     padding: 16px;
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 600; font-size: 13px;
     letter-spacing: 0.16em; text-transform: uppercase;
     margin-top: 6px; transition: background .2s;
@@ -1243,7 +1243,7 @@
   }
   .slideout .pill-group { display: flex; flex-wrap: wrap; gap: 8px; }
   .slideout .pill {
-    font-family: var(--f-body);
+    font-family: var(--font-body);
     font-size: 13px; font-weight: 500;
     color: var(--navy);
     background: var(--paper); border: 1px solid var(--rule-strong);
@@ -1356,7 +1356,7 @@
     margin-top: 2px;
   }
   .apart-list .apart-label {
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 600;
     text-transform: uppercase;
     letter-spacing: 0.04em;
@@ -1366,7 +1366,7 @@
     margin-bottom: 4px;
   }
   .apart-list .apart-supp {
-    font-family: var(--f-body);
+    font-family: var(--font-body);
     font-size: 15px;
     line-height: 1.5;
     color: var(--ink);
@@ -1455,7 +1455,7 @@
   .cta-band h2 .secondary,
   .cta-band .secondary {
     display: block;
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 500;
     font-size: clamp(20px, 2vw, 28px);
     letter-spacing: 0.02em;
@@ -1464,7 +1464,7 @@
     line-height: 1.25;
   }
   .cta-band .side .side-title {
-    font-family: var(--f-display);
+    font-family: var(--font-display);
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 0.06em;
@@ -1474,7 +1474,7 @@
     white-space: nowrap;
   }
   .cta-band .side .side-sub {
-    font-family: var(--f-body);
+    font-family: var(--font-body);
     font-size: 14px;
     color: rgba(255,255,255,0.9);
     line-height: 1.5;
@@ -1601,7 +1601,7 @@
       <h1>Protecting<br/>Tomorrow,<br/><span class="today">Today.</span></h1>
       <p class="sub">AYC Security delivers professional, 24/7 monitored security for commercial properties, residential communities, houses of worship, disaster operations, and energy facilities — <b>with same-day deployment when it matters most.</b></p>
       <div class="actions">
-        <a class="btn btn-gold" href="/contact">Get Protected Today <span class="arrow">→</span></a>
+        <a class="btn btn-gold" href="/contact">Request a Consultation <span class="arrow">→</span></a>
         <a class="btn btn-outline-light" href="tel:+15615717983">Call (561) 571-7983</a>
       </div>
     </div>
@@ -1624,21 +1624,21 @@
       <span>Veteran-Owned</span><span class="dot">·</span>
       <span>Same-Day Deployment Available</span><span class="dot">·</span>
       <span>Legal Counsel in Operations</span><span class="dot">·</span>
-      <span>Renowned Global Security Operations Center Monitored 24/7</span><span class="dot">·</span>
+      <span>Global Security Operations Center · 24/7 Live Human Monitoring</span><span class="dot">·</span>
       <span>Veteran-Owned</span><span class="dot">·</span>
       <span>Same-Day Deployment Available</span><span class="dot">·</span>
       <span>Legal Counsel in Operations</span><span class="dot">·</span>
-      <span>Renowned Global Security Operations Center Monitored 24/7</span><span class="dot">·</span>
+      <span>Global Security Operations Center · 24/7 Live Human Monitoring</span><span class="dot">·</span>
     </div>
     <div class="ticker-row" aria-hidden="true">
       <span>Veteran-Owned</span><span class="dot">·</span>
       <span>Same-Day Deployment Available</span><span class="dot">·</span>
       <span>Legal Counsel in Operations</span><span class="dot">·</span>
-      <span>Renowned Global Security Operations Center Monitored 24/7</span><span class="dot">·</span>
+      <span>Global Security Operations Center · 24/7 Live Human Monitoring</span><span class="dot">·</span>
       <span>Veteran-Owned</span><span class="dot">·</span>
       <span>Same-Day Deployment Available</span><span class="dot">·</span>
       <span>Legal Counsel in Operations</span><span class="dot">·</span>
-      <span>Renowned Global Security Operations Center Monitored 24/7</span><span class="dot">·</span>
+      <span>Global Security Operations Center · 24/7 Live Human Monitoring</span><span class="dot">·</span>
     </div>
   </div>
 </section>
@@ -1660,7 +1660,7 @@
         <p>AYC Security was founded by professionals with over 150 combined years of experience across military special operations, law enforcement, criminal law, and direct work with disaster relief.</p>
         <div class="callout">Our Global Security Operations Center monitors every deployed officer around the clock, with hourly GPS-confirmed check-ins verified by a live human operator. Not automated software.</div>
         <p>Contact AYC Security for experience that matters.</p>
-        <a href="/contact" class="btn btn-gold about-cta-btn">Get Protected Now <span class="arrow">→</span></a>
+        <a href="/contact" class="btn btn-gold about-cta-btn">Start the Conversation <span class="arrow">→</span></a>
       </div>
     </div>
   </div>
@@ -1995,6 +1995,14 @@
         <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" />
         <p>AYC Security USA — a veteran-owned private security firm headquartered in Boca Raton, Florida. 24/7 Global Security Operations Center.</p>
         <div class="lic-line">Licensed &amp; Insured Nationally · Operating Across the United States</div>
+        <div class="footer-socials" style="display:flex;gap:12px;margin-top:22px;" aria-label="Social media">
+          <a href="https://www.linkedin.com/company/ayc-security/" target="_blank" rel="noopener" aria-label="AYC Security on LinkedIn" style="width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.7);transition:border-color .2s,color .2s;" onmouseover="this.style.color='var(--gold-soft)';this.style.borderColor='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,0.7)';this.style.borderColor='rgba(255,255,255,0.18)'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z"/><circle cx="4" cy="4" r="2"/></svg>
+          </a>
+          <a href="https://www.facebook.com/aycsecure/" target="_blank" rel="noopener" aria-label="AYC Security on Facebook" style="width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(255,255,255,0.18);color:rgba(255,255,255,0.7);transition:border-color .2s,color .2s;" onmouseover="this.style.color='var(--gold-soft)';this.style.borderColor='var(--gold)'" onmouseout="this.style.color='rgba(255,255,255,0.7)';this.style.borderColor='rgba(255,255,255,0.18)'">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg>
+          </a>
+        </div>
       </div>
       <div>
         <h4>Services</h4>
@@ -2023,7 +2031,14 @@
         <ul>
           <li><a class="contact-tel" href="tel:+15615717983">(561) 571-7983</a></li>
           <li><a href="/cdn-cgi/l/email-protection#6c05020a032c0d150f1f090f191e051815420f0301"><span class="__cf_email__" data-cfemail="066f68606946677f6575636573746f727f2865696b">[email&#160;protected]</span></a></li>
-          <li>Boca Raton, FL</li>
+          <li>
+            <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-soft);display:block;margin-bottom:4px;">Florida HQ</span>
+            7000 W Palmetto Park Rd., Suite 308<br>Boca Raton, FL 33433
+          </li>
+          <li style="margin-top:10px;">
+            <span style="font-family:var(--font-mono);font-size:10px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-soft);display:block;margin-bottom:4px;">Ohio</span>
+            7160 Chagrin Road, Suite 180<br>Chagrin Falls, OH 44023
+          </li>
         </ul>
       </div>
     </div>
