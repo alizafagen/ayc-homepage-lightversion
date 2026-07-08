@@ -700,10 +700,12 @@
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center;
     display: block;
     filter: grayscale(25%) contrast(1.05) brightness(0.88);
     transition: transform 0.3s ease;
   }
+  .card-img img.crop-top { object-position: center 15%; }
   .service-card:hover .card-img img {
     transform: scale(1.04);
   }
@@ -1142,6 +1144,39 @@
   .footer-bottom .center { text-align: center; }
   .footer-bottom-links { display: flex; gap: 18px; }
   .footer-bottom-links a:hover { color: var(--gold-soft); }
+
+/* Mobile bottom strip */
+.bottom-strip {
+  display: none;
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  background: var(--navy);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  z-index: 40;
+}
+.bottom-strip a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  padding: 8px 4px;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  gap: 4px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.bottom-strip a:last-child { border-right: 0; }
+.bottom-strip__icon { font-family: var(--font-mono); color: var(--gold-soft); font-size: 14px; }
+@media (max-width: 899px) {
+  .bottom-strip { display: flex; }
+  body { padding-bottom: 60px; }
+}
 </style>
 </head>
 <body data-screen-label="Services Landing">
@@ -1157,11 +1192,17 @@
   </div>
 </div>
 
+<nav class="bottom-strip" aria-label="Quick contact">
+  <a href="tel:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">☎</span>Call</a>
+  <a href="sms:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">✉</span>Text</a>
+  <a href="/cdn-cgi/l/email-protection#01686f676e4160786272646274736875782f626e6c"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
+</nav>
+
 <!-- ============ MAIN NAV ============ -->
 <header class="main-nav">
   <div class="container">
     <div class="nav-brand">
-      <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" />
+      <img src="/images/ayc-logo.png" alt="AYC Security" />
       <span class="brand-rule" aria-hidden="true"></span>
       <span class="brand-text">Est. Boca Raton<span class="gold">Veteran-Owned</span></span>
     </div>
@@ -1270,7 +1311,7 @@
 <!-- ============ HERO ============ -->
 <section class="hero" aria-labelledby="heroTitle" data-screen-label="01 Hero">
   <div class="hero-bg" aria-hidden="true">
-    <img src="https://alizafagen.github.io/ayc-homepage-lightversion/assets/IMG_7280.JPG" alt="AYC Security officers on deployment" />
+    <img src="/images/ayc-security-team-boca-raton.jpg" alt="AYC Security officers on deployment" />
   </div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="container">
@@ -1318,7 +1359,7 @@
       <!-- CARD 1 -->
       <a class="service-card" href="/services/ongoing-security">
         <div class="card-img">
-          <img src="https://alizafagen.github.io/ayc-homepage-lightversion/assets/security-guard-front-door-entrance-young-standing-glass-57966210.webp" alt="AYC security officer at building entrance" />
+          <img src="/images/security-guard-patrol-commercial-property-florida.webp" alt="AYC security officer at building entrance" />
         </div>
         <div class="card-body">
           <h3>Ongoing Site Security</h3>
@@ -1330,7 +1371,7 @@
       <!-- CARD 2 -->
       <a class="service-card" href="/services/disaster-response">
         <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1547683905-f686c993aae5?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Disaster response scene" />
+          <img src="/images/hurricane-flood-disaster-response.webp" alt="Disaster response scene" />
         </div>
         <div class="card-body">
           <h3>Disaster &amp; Emergency Response</h3>
@@ -1342,7 +1383,7 @@
       <!-- CARD 3 -->
       <a class="service-card" href="/services/community-events">
         <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Security at a community event" />
+          <img src="/images/community-event-security.webp" alt="Security at a community event" />
         </div>
         <div class="card-body">
           <h3>Community &amp; Events Security</h3>
@@ -1354,7 +1395,7 @@
       <!-- CARD 3B -->
       <a class="service-card" href="/services/close-protection">
         <div class="card-img">
-          <img src="https://alizafagen.github.io/ayc-homepage-lightversion/assets/handsome-bodyguard-standing-listening-message-security-earpiece-handsome-bodyguard-standing-listening-message-129233521.webp" alt="Close protection officer on assignment" />
+          <img class="crop-top" src="/images/executive-close-protection-officer-florida.webp" alt="Close protection officer on assignment" />
         </div>
         <div class="card-body">
           <h3>Executive &amp; Close Protection</h3>
@@ -1366,7 +1407,7 @@
       <!-- CARD 4 -->
       <a class="service-card" href="/services/energy-industrial">
         <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1735379595209-a8cd4acfb2c1?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Industrial facility and port at dawn" />
+          <img src="/images/industrial-port-facility-security.webp" alt="Industrial facility and port at dawn" />
         </div>
         <div class="card-body">
           <h3>Energy Facilities &amp; Infrastructure</h3>
@@ -1378,7 +1419,7 @@
       <!-- CARD 5 -->
       <a class="service-card" href="/services/consulting-training">
         <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Security planning and consulting session" />
+          <img src="/images/security-consulting-planning-session.webp" alt="Security planning and consulting session" />
         </div>
         <div class="card-body">
           <h3>Consulting, Training &amp; Procurement</h3>
@@ -1390,7 +1431,7 @@
       <!-- CARD 6 -->
       <a class="service-card" href="/services/ayc-intelligence">
         <div class="card-img">
-          <img src="https://images.unsplash.com/photo-1509718443690-d8e2fb3474b7?auto=format&amp;fit=crop&amp;w=900&amp;q=80" alt="Dark office with monitor glow, corporate intelligence environment" />
+          <img src="/images/corporate-intelligence-monitoring-room.webp" alt="Dark office with monitor glow, corporate intelligence environment" />
         </div>
         <div class="card-body">
           <h3>AYC Intelligence</h3>
@@ -1533,7 +1574,7 @@
         <div class="final-actions">
           <a href="tel:+15615717983">Call</a>
           <a href="sms:+15615717983">Text</a>
-          <a href="/cdn-cgi/l/email-protection#2940474f466948504a5a4c4a5c5b405d50074a4644">Email</a>
+          <a href="/cdn-cgi/l/email-protection#61080f070e2100180212040214130815184f020e0c">Email</a>
         </div>
       </div>
     </div>
@@ -1545,7 +1586,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col footer-brand">
-        <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" />
+        <img src="/images/ayc-logo.png" alt="AYC Security" />
         <p class="footer-desc">AYC Security USA, a veteran-owned private security firm headquartered in Boca Raton, Florida. 24/7 Global Security Operations Center.</p>
         <p class="footer-license">Licensed &amp; Insured Nationally · Operating Across the United States</p>
         <div class="footer-socials">
@@ -1582,7 +1623,7 @@
       <div class="footer-col footer-contact">
         <h4>Contact</h4>
         <p><strong>Phone</strong><a href="tel:+15615717983">(561) 571-7983</a></p>
-        <p><strong>Email</strong><a href="/cdn-cgi/l/email-protection#e980878f86a988908a9a8c8a9c9b809d90c78a8684"><span class="__cf_email__" data-cfemail="5e373038311e3f273d2d3b3d2b2c372a27703d3133">[email&#160;protected]</span></a></p>
+        <p><strong>Email</strong><a href="/cdn-cgi/l/email-protection#bfd6d1d9d0ffdec6dcccdadccacdd6cbc691dcd0d2"><span class="__cf_email__" data-cfemail="96fff8f0f9d6f7eff5e5f3f5e3e4ffe2efb8f5f9fb">[email&#160;protected]</span></a></p>
         <p><strong>Florida HQ</strong>7000 W Palmetto Park Rd., Suite 308<br />Boca Raton, FL 33433</p>
         <p><strong>Ohio Office</strong>7160 Chagrin Road, Suite 180<br />Chagrin Falls, OH 44023</p>
       </div>
@@ -1591,8 +1632,8 @@
       <span>© 2026 AYC Security USA · All Rights Reserved</span>
       <span class="center">FL B3200547 · NV 4383 · OH 20242100525221 · TN 14274 · TX B31026501</span>
       <span class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
       </span>
     </div>
   </div>

@@ -172,6 +172,7 @@
     padding: 8px 0;
     transition: color .15s ease;
     cursor: pointer;
+    text-decoration: none;
   }
   .nav-link:hover, .nav-link.is-current { color: var(--gold-soft); }
   .nav-link .caret {
@@ -1402,6 +1403,38 @@
   .footer-bottom .center { text-align: center; }
   .footer-bottom-links { display: flex; gap: 18px; }
   .footer-bottom-links a:hover { color: var(--gold-soft); }
+  /* Mobile bottom strip */
+  .bottom-strip {
+    display: none;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    z-index: 40;
+  }
+  .bottom-strip a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    padding: 8px 4px;
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    gap: 4px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .bottom-strip a:last-child { border-right: 0; }
+  .bottom-strip__icon { font-family: var(--font-mono); color: var(--gold-soft); font-size: 14px; }
+  @media (max-width: 899px) {
+    .bottom-strip { display: flex; }
+    body { padding-bottom: 60px; }
+  }
 </style>
 </head>
 <body data-screen-label="Consulting Training Procurement">
@@ -1417,11 +1450,17 @@
   </div>
 </div>
 
+<nav class="bottom-strip" aria-label="Quick contact">
+  <a href="tel:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">☎</span>Call</a>
+  <a href="sms:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">✉</span>Text</a>
+  <a href="/cdn-cgi/l/email-protection#6e070008012e0f170d1d0b0d1b1c071a17400d0103"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
+</nav>
+
 <!-- ============ MAIN NAV ============ -->
 <header class="main-nav">
   <div class="container">
     <div class="nav-brand">
-      <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" />
+      <img src="/images/ayc-logo.png" alt="AYC Security" />
       <span class="brand-rule" aria-hidden="true"></span>
       <span class="brand-text">Est. Boca Raton<span class="gold">Veteran-Owned</span></span>
     </div>
@@ -1429,7 +1468,7 @@
     <nav aria-label="Primary">
       <ul class="nav-center">
         <li>
-          <button class="nav-link" aria-haspopup="true">Services <span class="caret" aria-hidden="true"></span></button>
+          <a href="/services" class="nav-link" aria-haspopup="true">Services <span class="caret" aria-hidden="true"></span></a>
           <div class="nav-dropdown">
             <a href="/services/ongoing-security">Ongoing Site Security</a>
             <a href="/services/disaster-response">Disaster &amp; Emergency Response</a>
@@ -1526,7 +1565,7 @@
 <!-- ============ HERO ============ -->
 <section class="hero" aria-labelledby="heroTitle" data-screen-label="01 Hero">
   <div class="hero-bg" aria-hidden="true">
-    <img src="https://images.unsplash.com/photo-1532619675605-1ede6c2ed2b0?auto=format&amp;fit=crop&amp;w=1800&amp;q=80" alt="Professional planning and consulting session" />
+    <img src="/images/security-consulting-planning-session.webp" alt="Professional planning and consulting session" />
   </div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="container">
@@ -1572,7 +1611,7 @@
       </div>
       <div class="overview-image">
         <div class="img-frame" style="position:relative;">
-          <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=900&q=80"
+          <img src="/images/security-strategic-planning-session.webp"
                alt="Strategic planning session"
                style="width:100%;height:100%;object-fit:cover;min-height:340px;display:block;filter:grayscale(20%) contrast(1.05);" />
         </div>
@@ -1587,9 +1626,9 @@
     <div class="split-5050">
       <div style="overflow:hidden;">
         <div style="position:relative;width:100%;height:100%;min-height:480px;">
-          <img src="https://images.unsplash.com/photo-1532622785990-d2c36a76f5a6?auto=format&fit=crop&w=900&q=80"
+          <img src="/images/security-planning-whiteboard-session.webp"
                alt="Security planning session at whiteboard"
-               style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:grayscale(15%) contrast(1.05);" />
+               style="width:100%;height:100%;object-fit:cover;object-position:68% center;transform:scale(1.18);display:block;filter:grayscale(15%) contrast(1.05);" />
         </div>
       </div>
       <div class="text-col">
@@ -1719,7 +1758,7 @@
 
       <div class="training-photo-wrap">
         <div style="position:relative;width:100%;height:100%;min-height:480px;">
-          <img src="https://images.unsplash.com/photo-1758691736433-4078b93abd72?auto=format&fit=crop&w=900&q=80"
+          <img src="/images/security-training-boardroom-presentation.webp"
                alt="Professional training presentation in corporate boardroom"
                style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(15%) contrast(1.05);" />
         </div>
@@ -1874,7 +1913,7 @@
     <div class="split-5050">
       <div style="overflow:hidden;">
         <div style="position:relative;width:100%;height:100%;min-height:480px;">
-          <img src="https://images.unsplash.com/photo-1481597262637-0545b18186ea?auto=format&fit=crop&w=900&q=80"
+          <img src="/images/security-surveillance-camera.webp"
                alt="Security surveillance camera"
                style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:grayscale(20%) contrast(1.1) brightness(0.9);" />
         </div>
@@ -1883,7 +1922,7 @@
         <p class="sec-identifier">Procurement</p>
         <h2 class="sec-title" id="procurementTitle">There When<br />You Need Us</h2>
         <p class="sec-body">AYC Security is a trusted partner for defense and law enforcement procurement. When equipment is needed quickly and correctly, the difference is not always price, it is access, communication, and speed. Our operational experience cuts through the complexity so you get the right equipment on the right timeline.</p>
-        <p class="sec-body">Every product we help source goes through rigorous vetting to meet the highest standards of safety, quality, and operational effectiveness. Our global network of suppliers and manufacturers means we can source advanced and innovative solutions from around the world.</p>
+        <p class="sec-body">Every product we help source goes through rigorous vetting to meet the highest standards of safety, quality, and operational effectiveness. Our global network of suppliers and manufacturers means we can source specialized solutions from around the world.</p>
         <p class="sec-body">We work closely with each client to develop procurement solutions that fit their mission, budget, and operational environment.</p>
       </div>
     </div>
@@ -1927,7 +1966,7 @@
         </svg>
         <h3>Global Sourcing Network</h3>
         </div>
-        <p>AYC's established global network of suppliers and manufacturers allows us to source the most advanced and innovative products from around the world, matching capability to mission.</p>
+        <p>AYC's established global network of suppliers and manufacturers allows us to source specialized products from around the world, matching capability to mission.</p>
       </article>
     </div>
   </div>
@@ -2015,8 +2054,8 @@
     <div class="test-grid">
       <article class="test-card">
         <span class="quote-mark" aria-hidden="true">“</span>
-        <p class="quote">"Working with AYC gave us a security framework that actually reflects how our organization operates. Their team understood our environment before they made a single recommendation."</p>
-        <p class="attribution">[Name Pending, Client Quote to Be Confirmed]</p>
+        <p class="quote">"Having worked in the construction supply industry, and now running my own vehicle accessory manufacturing business, I have learned that site security is an important part of ensuring my company remains profitable. The consulting services provided by AYC Security have helped me keep my business secure and maintain profitability. I highly recommend any business retain their services."</p>
+        <p class="attribution">Ralf S., CEO</p>
         <span class="tag">Security Consulting Engagement</span>
       </article>
       <article class="test-card">
@@ -2089,7 +2128,7 @@
         <div class="final-actions">
           <a href="tel:+15615717983">Call</a>
           <a href="sms:+15615717983">Text</a>
-          <a href="/cdn-cgi/l/email-protection#0e676068614e6f776d7d6b6d7b7c677a77206d6163">Email</a>
+          <a href="/cdn-cgi/l/email-protection#fe97909891be9f879d8d9b9d8b8c978a87d09d9193">Email</a>
         </div>
       </div>
     </div>
@@ -2101,7 +2140,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col footer-brand">
-        <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" />
+        <img src="/images/ayc-logo.png" alt="AYC Security" />
         <p class="footer-desc">AYC Security USA, a veteran-owned private security firm headquartered in Boca Raton, Florida. 24/7 Global Security Operations Center.</p>
         <p class="footer-license">Licensed &amp; Insured Nationally · Operating Across the United States</p>
         <div class="footer-socials">
@@ -2138,7 +2177,7 @@
       <div class="footer-col footer-contact">
         <h4>Contact</h4>
         <p><strong>Phone</strong><a href="tel:+15615717983">(561) 571-7983</a></p>
-        <p><strong>Email</strong><a href="/cdn-cgi/l/email-protection#e980878f86a988908a9a8c8a9c9b809d90c78a8684"><span class="__cf_email__" data-cfemail="8be2e5ede4cbeaf2e8f8eee8fef9e2fff2a5e8e4e6">[email&#160;protected]</span></a></p>
+        <p><strong>Email</strong><a href="/cdn-cgi/l/email-protection#82ebece4edc2e3fbe1f1e7e1f7f0ebf6fbace1edef"><span class="__cf_email__" data-cfemail="70191e161f3011091303151305021904095e131f1d">[email&#160;protected]</span></a></p>
         <p><strong>Florida HQ</strong>7000 W Palmetto Park Rd., Suite 308<br />Boca Raton, FL 33433</p>
         <p><strong>Ohio Office</strong>7160 Chagrin Road, Suite 180<br />Chagrin Falls, OH 44023</p>
       </div>
@@ -2147,8 +2186,8 @@
       <span>© 2026 AYC Security USA · All Rights Reserved</span>
       <span class="center">FL B3200547 · NV 4383 · OH 20242100525221 · TN 14274 · TX B31026501</span>
       <span class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
       </span>
     </div>
   </div>

@@ -172,6 +172,7 @@
     padding: 8px 0;
     transition: color .15s ease;
     cursor: pointer;
+    text-decoration: none;
   }
   .nav-link:hover, .nav-link.is-current { color: var(--gold-soft); }
   .nav-link .caret {
@@ -773,7 +774,7 @@
     text-align: left;
     transition: border-color .18s, background .18s;
   }
-  .icon-card:hover { border-color: var(--gold); background: #ECE6D8; }
+  .icon-card:hover { border-color: var(--gold); background: var(--cream-2); }
   .icon-card .icon {
     width: 36px; height: 36px;
     color: var(--gold);
@@ -1350,7 +1351,7 @@
   .intel-sec.cream-2 .intel-card { background: var(--paper); }
   .intel-card:hover {
     border-color: var(--gold);
-    background: #ECE6D8;
+    background: var(--cream-2);
   }
   .intel-sec.paper .intel-card:hover,
   .intel-sec.cream-2 .intel-card:hover {
@@ -1607,6 +1608,38 @@
   .footer-bottom .center { text-align: center; }
   .footer-bottom-links { display: flex; gap: 18px; }
   .footer-bottom-links a:hover { color: var(--gold-soft); }
+  /* Mobile bottom strip */
+  .bottom-strip {
+    display: none;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    z-index: 40;
+  }
+  .bottom-strip a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    padding: 8px 4px;
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    gap: 4px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .bottom-strip a:last-child { border-right: 0; }
+  .bottom-strip__icon { font-family: var(--font-mono); color: var(--gold-soft); font-size: 14px; }
+  @media (max-width: 899px) {
+    .bottom-strip { display: flex; }
+    body { padding-bottom: 60px; }
+  }
 </style>
 </head>
 <body data-screen-label="AYC Intelligence">
@@ -1622,11 +1655,17 @@
   </div>
 </div>
 
+<nav class="bottom-strip" aria-label="Quick contact">
+  <a href="tel:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">☎</span>Call</a>
+  <a href="sms:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">✉</span>Text</a>
+  <a href="/cdn-cgi/l/email-protection#88e1e6eee7c8e9f1ebfbedebfdfae1fcf1a6ebe7e5"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
+</nav>
+
 <!-- ============ MAIN NAV ============ -->
 <header class="main-nav">
   <div class="container">
     <div class="nav-brand">
-      <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" />
+      <img src="/images/ayc-logo.png" alt="AYC Security" />
       <span class="brand-rule" aria-hidden="true"></span>
       <span class="brand-text">Est. Boca Raton<span class="gold">Veteran-Owned</span></span>
     </div>
@@ -1634,7 +1673,7 @@
     <nav aria-label="Primary">
       <ul class="nav-center">
         <li>
-          <button class="nav-link" aria-haspopup="true">Services <span class="caret" aria-hidden="true"></span></button>
+          <a href="/services" class="nav-link" aria-haspopup="true">Services <span class="caret" aria-hidden="true"></span></a>
           <div class="nav-dropdown">
             <a href="/services/ongoing-security">Ongoing Site Security</a>
             <a href="/services/disaster-response">Disaster &amp; Emergency Response</a>
@@ -1731,7 +1770,7 @@
 <!-- ============ HERO ============ -->
 <section class="hero" aria-labelledby="heroTitle" data-screen-label="01 Hero">
   <div class="hero-bg" aria-hidden="true">
-    <img src="https://images.unsplash.com/photo-1694702730868-a34da58c1427?auto=format&amp;fit=crop&amp;w=1800&amp;q=80" alt="Corporate office building, AYC Intelligence" />
+    <img src="/images/ayc-intelligence-corporate-office.webp" alt="Corporate office building, AYC Intelligence" />
   </div>
   <div class="hero-overlay" aria-hidden="true"></div>
   <div class="container">
@@ -1787,7 +1826,7 @@
     <div class="split-5050">
       <div style="overflow:hidden;position:relative;height:100%;min-height:480px;">
         <img
-          src="https://images.unsplash.com/photo-1486312338219-ce68d2c6f44d?auto=format&fit=crop&w=900&q=80"
+          src="/images/background-investigation-research.webp"
           alt="Professional working on a laptop, background investigation research"
           style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:grayscale(20%) contrast(1.05);"
         />
@@ -1882,7 +1921,7 @@
       <div style="overflow:hidden;">
         <div style="position:relative;width:100%;height:100%;min-height:480px;">
           <img
-            src="https://images.unsplash.com/photo-1509718443690-d8e2fb3474b7?auto=format&fit=crop&w=900&q=80"
+            src="/images/corporate-intelligence-monitoring-room.webp"
             alt="Dark office with monitor glow, corporate intelligence surveillance environment"
             style="width:100%;height:100%;object-fit:cover;object-position:center top;display:block;filter:grayscale(15%) contrast(1.05);"
           />
@@ -1972,7 +2011,7 @@
       <div style="overflow:hidden;">
         <div style="position:relative;width:100%;height:100%;min-height:480px;">
           <img
-            src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=900&q=80"
+            src="/images/claims-investigation-document-review.webp"
             alt="Professional reviewing and signing a document, claims investigation"
             style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:grayscale(20%) contrast(1.05);"
           />
@@ -2263,7 +2302,7 @@
         <div class="final-actions">
           <a href="tel:+15615717983">Call</a>
           <a href="sms:+15615717983">Text</a>
-          <a href="/cdn-cgi/l/email-protection#2f464149406f4e564c5c4a4c5a5d465b56014c4042">Email</a>
+          <a href="/cdn-cgi/l/email-protection#036a6d656c43627a6070666076716a777a2d606c6e">Email</a>
         </div>
       </div>
     </div>
@@ -2275,7 +2314,7 @@
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col footer-brand">
-        <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" />
+        <img src="/images/ayc-logo.png" alt="AYC Security" />
         <p class="footer-desc">AYC Security USA, a veteran-owned private security firm headquartered in Boca Raton, Florida. 24/7 Global Security Operations Center.</p>
         <p class="footer-license">Licensed &amp; Insured Nationally · Operating Across the United States</p>
         <div class="footer-socials">
@@ -2312,7 +2351,7 @@
       <div class="footer-col footer-contact">
         <h4>Contact</h4>
         <p><strong>Phone</strong><a href="tel:+15615717983">(561) 571-7983</a></p>
-        <p><strong>Email</strong><a href="/cdn-cgi/l/email-protection#7b12151d143b1a0218081e180e09120f0255181416"><span class="__cf_email__" data-cfemail="3f565159507f5e465c4c5a5c4a4d564b46115c5052">[email&#160;protected]</span></a></p>
+        <p><strong>Email</strong><a href="/cdn-cgi/l/email-protection#6900070f062908100a1a0c0a1c1b001d10470a0604"><span class="__cf_email__" data-cfemail="81e8efe7eec1e0f8e2f2e4e2f4f3e8f5f8afe2eeec">[email&#160;protected]</span></a></p>
         <p><strong>Florida HQ</strong>7000 W Palmetto Park Rd., Suite 308<br />Boca Raton, FL 33433</p>
         <p><strong>Ohio Office</strong>7160 Chagrin Road, Suite 180<br />Chagrin Falls, OH 44023</p>
       </div>
@@ -2321,8 +2360,8 @@
       <span>© 2026 AYC Security USA · All Rights Reserved</span>
       <span class="center">FL B3200547 · NV 4383 · OH 20242100525221 · TN 14274 · TX B31026501</span>
       <span class="footer-bottom-links">
-        <a href="#">Privacy Policy</a>
-        <a href="#">Terms of Use</a>
+        <a href="/privacy">Privacy Policy</a>
+        <a href="/terms">Terms of Use</a>
       </span>
     </div>
   </div>

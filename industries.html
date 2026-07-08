@@ -147,7 +147,7 @@
   .ind-section--paper{background:var(--paper)}
   .ind-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:clamp(40px,5vw,80px);align-items:start}
   @media (max-width:960px){.ind-grid{grid-template-columns:1fr;gap:48px}}
-  .ind-label{font-family:var(--font-mono);font-size:13px;color:var(--gold);text-transform:uppercase;letter-spacing:0.18em;display:block;margin:0 0 14px}
+  .ind-label{font-family:var(--font-mono);font-weight:500;font-size:19px;color:var(--gold);text-transform:uppercase;letter-spacing:0.1em;display:block;margin:0 0 16px}
   .ind-h2{font-family:var(--font-display);font-weight:700;font-size:clamp(36px,4.2vw,52px);text-transform:uppercase;color:var(--ink);line-height:1.05;max-width:22ch;margin:0 0 24px;letter-spacing:0.005em}
   .ind-body p{font-family:var(--font-body);font-size:17px;color:var(--ink-soft);line-height:1.7;max-width:64ch;margin:0 0 20px}
   .ind-body p:last-of-type{margin-bottom:28px}
@@ -300,7 +300,7 @@
   <header class="nav" role="banner">
     <div class="container nav__inner">
       <a class="nav__brand" href="/" aria-label="AYC Security home">
-        <img class="nav__logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security">
+        <img class="nav__logo" src="/images/ayc-logo.png" alt="AYC Security">
         <span class="nav__vrule" aria-hidden="true"></span>
         <span class="nav__mark" aria-hidden="true">
           <span>Est. Boca Raton</span>
@@ -309,9 +309,9 @@
       </a>
       <nav class="nav__links" aria-label="Primary">
         <div class="nav__dropdown-wrap" data-dropdown>
-          <button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="dd-services">
+          <a href="/services" class="nav__trigger" aria-haspopup="true" aria-controls="dd-services">
             Services <span class="nav__caret" aria-hidden="true"></span>
-          </button>
+          </a>
           <div class="nav__dropdown" id="dd-services" role="menu">
             <a href="/services/ongoing-security" role="menuitem">Ongoing Site Security</a>
             <a href="/services/disaster-response" role="menuitem">Disaster &amp; Emergency Response</a>
@@ -349,7 +349,7 @@
   <div class="drawer-scrim" id="drawer-scrim" aria-hidden="true"></div>
   <aside class="drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
     <div class="drawer__head">
-      <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security">
+      <img src="/images/ayc-logo.png" alt="AYC Security">
       <button class="drawer__close" type="button" id="drawer-close" aria-label="Close menu">✕</button>
     </div>
     <ul class="drawer__list">
@@ -432,13 +432,13 @@
   <nav class="bottom-strip" aria-label="Quick contact">
     <a href="tel:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">☎</span>Call</a>
     <a href="sms:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">✉</span>Text</a>
-    <a href="/cdn-cgi/l/email-protection#1970777f765978607a6a7c7a6c6b706d60377a7674"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
+    <a href="/cdn-cgi/l/email-protection#c3aaada5ac83a2baa0b0a6a0b6b1aab7baeda0acae"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
   </nav>
 
   <!-- ===== HERO ===== -->
   <section class="hero" data-screen-label="01 Industries Hero">
     <div class="hero__bg" aria-hidden="true">
-      <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1800&q=80" alt="">
+      <img src="/images/corporate-office-building-security.webp" alt="">
     </div>
     <div class="hero__overlay" aria-hidden="true"></div>
     <div class="hero__inner">
@@ -564,8 +564,8 @@
           <span class="ind-side__eyebrow">Coverage Patterns</span>
           <h3 class="ind-side__title">Weekly Services to High Holidays</h3>
           <ul class="ind-checklist">
+            <li>Holiday and high-attendance event posts</li>
             <li>Regular Shabbat, Sunday, and daily service coverage</li>
-            <li>High Holiday and high-attendance event posts</li>
             <li>Visiting speaker and dignitary engagements</li>
             <li>School, preschool, and youth program coverage</li>
             <li>Long-term site security programs</li>
@@ -603,7 +603,6 @@
           <span class="ind-side__eyebrow">Leadership Credentials</span>
           <h3 class="ind-side__title">Built Around Healthcare Operations</h3>
           <ul class="ind-checklist">
-            <li>Vice President of Healthcare Operations</li>
             <li>Vice President of Medical Training, practicing emergency physician with trauma center experience</li>
             <li>Programs designed around continuous operation</li>
             <li>HIPAA-adjacent environment protocols</li>
@@ -918,7 +917,7 @@
             <svg class="faq-icon" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="10" y1="4" x2="10" y2="16"/><line x1="4" y1="10" x2="16" y2="10"/></svg>
           </button>
           <div class="faq-a" role="region">
-            <p>Contact AYC by phone at (561) 571-7983, by email at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="f29b9c949db2938b9181979187809b868bdc919d9f">[email&#160;protected]</a>, or by submitting a request through this website. Our team will respond with a coverage plan and connect you with the right person for your industry and situation.</p>
+            <p>Contact AYC by phone at (561) 571-7983, by email at <a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="6c05020a032c0d150f1f090f191e051815420f0301">[email&#160;protected]</a>, or by submitting a request through this website. Our team will respond with a coverage plan and connect you with the right person for your industry and situation.</p>
           </div>
         </div>
 
@@ -941,7 +940,7 @@
         <div class="cta__links">
           <a href="tel:+15615717983">Call</a>
           <a href="sms:+15615717983">Text</a>
-          <a href="/cdn-cgi/l/email-protection#0d64636b624d6c746e7e686e787f647974236e6260">Email</a>
+          <a href="/cdn-cgi/l/email-protection#a0c9cec6cfe0c1d9c3d3c5c3d5d2c9d4d98ec3cfcd">Email</a>
         </div>
       </div>
     </div>
@@ -953,7 +952,7 @@
       <div class="footer-grid">
 
         <div class="footer-col footer-col--brand">
-          <img class="footer-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security USA">
+          <img class="footer-logo" src="/images/ayc-logo.png" alt="AYC Security USA">
           <p class="footer-blurb">AYC Security USA, a veteran-owned private security firm headquartered in Boca Raton, Florida. 24/7 Global Security Operations Center.</p>
           <span class="footer-license-line">Licensed &amp; Insured Nationally · Operating Across the United States</span>
           <div class="footer-socials" aria-label="Social links">
@@ -989,7 +988,7 @@
         <div class="footer-col">
           <span class="footer-head">Contact</span>
           <a class="footer-phone" href="tel:+15615717983">(561) 571-7983</a>
-          <a class="footer-email" href="/cdn-cgi/l/email-protection#dbb2b5bdb49bbaa2b8a8beb8aea9b2afa2f5b8b4b6"><span class="__cf_email__" data-cfemail="70191e161f3011091303151305021904095e131f1d">[email&#160;protected]</span></a>
+          <a class="footer-email" href="/cdn-cgi/l/email-protection#5b32353d341b3a2238283e382e29322f2275383436"><span class="__cf_email__" data-cfemail="4e272028210e2f372d3d2b2d3b3c273a37602d2123">[email&#160;protected]</span></a>
           <span class="footer-addr-label">Florida HQ</span>
           <address class="footer-addr">7000 W Palmetto Park Rd., Suite 308<br>Boca Raton, FL 33433</address>
           <span class="footer-addr-label">Ohio</span>
@@ -1002,9 +1001,9 @@
         <p>© 2026 AYC Security USA · All Rights Reserved</p>
         <p class="footer-licenses-strip">FL B3200547 · NV 4383 · OH 20242100525221 · TN 14274 · TX B31026501</p>
         <div class="footer-bottom-links">
-          <a href="#">Privacy Policy</a>
+          <a href="/privacy">Privacy Policy</a>
           <span aria-hidden="true">·</span>
-          <a href="#">Terms of Use</a>
+          <a href="/terms">Terms of Use</a>
         </div>
       </div>
     </div>
@@ -1019,7 +1018,13 @@
     const close = () => { wrap.classList.remove('is-open'); trigger.setAttribute('aria-expanded','false'); };
     wrap.addEventListener('mouseenter', open);
     wrap.addEventListener('mouseleave', close);
-    trigger.addEventListener('click', e => { e.preventDefault(); wrap.classList.toggle('is-open'); trigger.setAttribute('aria-expanded', wrap.classList.contains('is-open') ? 'true':'false'); });
+    trigger.addEventListener('click', e => {
+      const href = trigger.getAttribute('href');
+      if (href && href !== '#') { window.location.href = href; return; }
+      e.preventDefault();
+      wrap.classList.toggle('is-open');
+      trigger.setAttribute('aria-expanded', wrap.classList.contains('is-open') ? 'true' : 'false');
+    });
     document.addEventListener('click', e => { if (!wrap.contains(e.target)) close(); });
   });
 

@@ -1545,23 +1545,6 @@
     outline-offset: 3px;
   }
 
-  /* Placeholder flag */
-  .img-flag {
-    position: absolute;
-    left: 16px;
-    bottom: 16px;
-    background: rgba(0,0,0,0.6);
-    color: var(--gold-soft);
-    font-family: var(--font-mono);
-    font-size: 10px;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    padding: 6px 10px;
-    border-left: 2px solid var(--gold);
-    z-index: 2;
-  }
-  .img-flag--tl { top: 16px; left: 16px; bottom: auto; right: auto; }
-  .img-flag--tr { top: 16px; right: 16px; bottom: auto; left: auto; }
   .coverage-callout {
     margin-top: 24px;
     padding: 14px 18px;
@@ -1596,7 +1579,7 @@
     <div class="container nav__inner">
       <a class="nav__brand" href="/" aria-label="AYC Security home">
         <img class="nav__logo"
-             src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png"
+             src="/images/ayc-logo.png"
              alt="AYC Security">
         <span class="nav__vrule" aria-hidden="true"></span>
         <span class="nav__mark" aria-hidden="true">
@@ -1607,9 +1590,9 @@
 
       <nav class="nav__links" aria-label="Primary">
         <div class="nav__dropdown-wrap" data-dropdown>
-          <button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="dd-services">
+          <a href="/services" class="nav__trigger" aria-haspopup="true" aria-controls="dd-services">
             Services <span class="nav__caret" aria-hidden="true"></span>
-          </button>
+          </a>
           <div class="nav__dropdown" id="dd-services" role="menu">
             <a href="/services/ongoing-security" role="menuitem" class="is-active" aria-current="page">Ongoing Site Security</a>
             <a href="/services/disaster-response" role="menuitem">Disaster &amp; Emergency Response</a>
@@ -1651,7 +1634,7 @@
   <div class="drawer-scrim" id="drawer-scrim" aria-hidden="true"></div>
   <aside class="drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
     <div class="drawer__head">
-      <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security">
+      <img src="/images/ayc-logo.png" alt="AYC Security">
       <button class="drawer__close" type="button" id="drawer-close" aria-label="Close menu">✕</button>
     </div>
     <ul class="drawer__list">
@@ -1748,13 +1731,10 @@
        ============================================================ -->
   <section class="hero" aria-labelledby="hero-title">
     <div class="hero__bg" aria-hidden="true">
-      <img src="https://alizafagen.github.io/ayc-homepage-lightversion/assets/security-guard-front-door-entrance-young-standing-glass-57966210.webp"
-           alt="Professional security guard at building entrance — Dreamstime #57966210, purchase before launch">
+      <img src="/images/security-guard-patrol-commercial-property-florida.webp"
+           alt="Professional security guard at building entrance">
     </div>
     <div class="hero__overlay" aria-hidden="true"></div>
-    <!-- NOTE FOR CLIENT: Purchase a professional security guard photo from Shutterstock (~$29) or Adobe Stock (~$29.99).
-         Search terms: "professional security guard corporate entrance uniform standing"
-         Then replace the src in both images — hero and the split-section callout. -->
 
     <div class="container">
       <div class="hero__inner">
@@ -1810,8 +1790,8 @@
         <p class="plain__note">AYC Security operates nationally with active licenses across multiple U.S. states. Wherever your property is located, our team is ready to help.</p>
       </div>
       <div class="plain__media">
-        <img src="https://alizafagen.github.io/ayc-homepage-lightversion/assets/security-guard-event-service-security-guard-event-service-officer-his-group-212499681.webp"
-             alt="AYC security officers on deployment — Dreamstime #212499681, purchase before launch">
+        <img src="/images/security-guard-patrol-commercial-property-florida.webp"
+             alt="AYC security officer on patrol at a commercial property">
       </div>
     </div>
   </section>
@@ -1870,8 +1850,8 @@
             <p class="tab-panel__note">AYC also has experience providing security during workforce and operational transitions. Contact us to discuss your situation confidentially.</p>
             </div>
             <div class="tab-panel__media">
-              <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=900&q=80"
-                   alt="Corporate office building — replace with AYC client photo">
+              <img src="/images/corporate-office-building-security.webp"
+                   alt="Corporate office building">
             </div>
           </div>
 
@@ -1898,8 +1878,8 @@
             </ul>
             </div>
             <div class="tab-panel__media">
-              <img src="https://images.unsplash.com/photo-1759845565036-cbecbcfcb8e2?auto=format&fit=crop&w=900&q=80"
-                   alt="Modern residential apartment building — replace with AYC client photo">
+              <img src="/images/residential-apartment-building-security.webp"
+                   alt="Modern residential apartment building">
             </div>
           </div>
 
@@ -1931,7 +1911,7 @@
             </p>
             </div>
             <div class="tab-panel__media">
-              <img src="https://images.unsplash.com/photo-1599707254554-027aeb4deacd?auto=format&fit=crop&w=900&q=80"
+              <img src="/images/construction-site-crane-security.webp"
                    alt="Yellow crane and active construction site, Los Angeles">
             </div>
           </div>
@@ -1959,7 +1939,7 @@
             </ul>
             </div>
             <div class="tab-panel__media">
-              <img src="https://images.unsplash.com/photo-1638707094136-e254bd87ad4a?auto=format&fit=crop&w=900&q=80"
+              <img src="/images/house-of-worship-security.webp"
                    alt="Colorful stained glass windows in a house of worship">
             </div>
           </div>
@@ -1990,8 +1970,8 @@
             </ul>
             </div>
             <div class="tab-panel__media">
-              <img src="https://images.unsplash.com/photo-1669429403420-257f3c6aa0f3?auto=format&fit=crop&w=900&q=80"
-                   alt="Modern shopping mall entrance — replace with AYC client photo">
+              <img src="/images/shopping-mall-security.webp"
+                   alt="Modern shopping mall entrance">
             </div>
           </div>
 
@@ -2019,8 +1999,8 @@
             </ul>
             </div>
             <div class="tab-panel__media">
-              <img src="https://images.unsplash.com/photo-1610598809726-e0dd63432bf7?auto=format&fit=crop&w=900&q=80"
-                   alt="Medical center exterior — replace with AYC client photo">
+              <img src="/images/medical-center-security.webp"
+                   alt="Medical center exterior">
             </div>
           </div>
 
@@ -2258,7 +2238,7 @@
       <div class="footer-grid">
 
         <div class="footer-col footer-col--brand">
-          <img class="footer-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security USA">
+          <img class="footer-logo" src="/images/ayc-logo.png" alt="AYC Security USA">
           <p class="footer-blurb">AYC Security USA, a veteran-owned private security firm headquartered in Boca Raton, Florida. 24/7 Global Security Operations Center.</p>
           <span class="footer-license-line">Licensed &amp; Insured Nationally · Operating Across the United States</span>
           <div class="footer-socials">
@@ -2350,6 +2330,8 @@
     wrap.addEventListener('mouseenter', () => { clearTimeout(closeTimer); openDD(wrap); });
     wrap.addEventListener('mouseleave', () => { closeTimer = setTimeout(() => closeDD(wrap), 140); });
     trigger.addEventListener('click', (e) => {
+      const href = trigger.getAttribute('href');
+      if (href && href !== '#') { window.location.href = href; return; }
       e.preventDefault();
       if (wrap.classList.contains('is-open')) closeDD(wrap);
       else openDD(wrap);

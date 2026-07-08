@@ -332,36 +332,37 @@
     .mobile-tap-call { display: block; }
   }
 
-  /* ============ MOBILE BOTTOM STRIP ============ */
-  .mobile-bottom-strip {
+  /* Mobile bottom strip */
+  .bottom-strip {
     display: none;
     position: fixed;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    z-index: 80;
+    left: 0; right: 0; bottom: 0;
     background: var(--navy);
     border-top: 1px solid rgba(255,255,255,0.1);
+    z-index: 40;
   }
-  .mobile-bottom-strip .grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-  }
-  .mobile-bottom-strip a {
-    padding: 14px 4px;
-    text-align: center;
-    color: var(--gold-soft);
-    font-family: 'Oswald', sans-serif;
+  .bottom-strip a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    padding: 8px 4px;
+    color: #fff;
+    font-family: var(--font-display);
     font-weight: 600;
     font-size: 12px;
-    letter-spacing: 0.16em;
+    letter-spacing: 0.14em;
     text-transform: uppercase;
+    gap: 4px;
     border-right: 1px solid rgba(255,255,255,0.08);
   }
-  .mobile-bottom-strip a:last-child { border-right: none; }
-  @media (max-width: 900px) {
-    .mobile-bottom-strip { display: block; }
-    body { padding-bottom: 52px; }
+  .bottom-strip a:last-child { border-right: 0; }
+  .bottom-strip__icon { font-family: var(--font-mono); color: var(--gold-soft); font-size: 14px; }
+  @media (max-width: 899px) {
+    .bottom-strip { display: flex; }
+    body { padding-bottom: 60px; }
   }
 
   /* ============ MOBILE DRAWER ============ */
@@ -1181,7 +1182,7 @@
     <div class="container-wide">
       <div class="nav-left">
         <a href="/" aria-label="AYC Security home">
-          <img class="nav-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" />
+          <img class="nav-logo" src="/images/ayc-logo.png" alt="AYC Security" />
         </a>
         <div class="nav-rule" aria-hidden="true"></div>
         <div class="brand-mark">
@@ -1192,7 +1193,7 @@
 
       <nav class="nav-center" aria-label="Main">
         <div class="nav-item" tabindex="0" role="button" aria-haspopup="true">
-          <span>Services</span>
+          <a href="/services" class="nav-item-services" style="color:inherit;text-decoration:none;">Services</a>
           <span class="caret" aria-hidden="true"></span>
           <div class="nav-dropdown" role="menu">
             <a href="/services/ongoing-security" role="menuitem">Ongoing Site Security</a>
@@ -1232,7 +1233,7 @@
   <!-- MOBILE DRAWER -->
   <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Mobile menu" aria-hidden="true">
     <div class="mobile-drawer-head">
-      <img class="nav-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" />
+      <img class="nav-logo" src="/images/ayc-logo.png" alt="AYC Security" />
       <button class="mobile-drawer-close" id="drawer-close" aria-label="Close menu">✕</button>
     </div>
     <nav aria-label="Mobile main">
@@ -1296,7 +1297,9 @@
 
         <!-- LEFT: FORM -->
         <div>
-          <form id="contact-form" novalidate>
+          <form id="contact-form" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" novalidate>
+            <input type="hidden" name="form-name" value="contact" />
+            <p style="display:none;"><label>Do not fill this out: <input name="bot-field" /></label></p>
             <h2 class="form-headline">Send Us a Message</h2>
             <p class="form-subtext">Fill out the form below and a member of our team will be in touch. Fields marked * are required.</p>
 
@@ -1417,7 +1420,7 @@
               <span class="tile-label">Text</span>
               <span class="tile-value">(561) 571-7983</span>
             </a>
-            <a class="contact-tile" href="/cdn-cgi/l/email-protection#bfd6d1d9d0ffdec6dcccdadccacdd6cbc691dcd0d2">
+            <a class="contact-tile" href="/cdn-cgi/l/email-protection#f49d9a929bb4958d9787919781869d808dda979b99">
               <span class="tile-icon" aria-hidden="true">
                 <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter">
                   <path d="M3 6h18v12H3z"/>
@@ -1425,7 +1428,7 @@
                 </svg>
               </span>
               <span class="tile-label">Email</span>
-              <span class="tile-value email"><span class="__cf_email__" data-cfemail="670e09010827061e0414020412150e131e4904080a">[email&#160;protected]</span></span>
+              <span class="tile-value email"><span class="__cf_email__" data-cfemail="11787f777e5170687262747264637865683f727e7c">[email&#160;protected]</span></span>
             </a>
           </div>
         </div>
@@ -1567,7 +1570,7 @@
               text-align:center; color:#fff;
               text-decoration:none; display:block;"
               aria-label="Text (561) 571-7983">TEXT</a>
-            <a href="/cdn-cgi/l/email-protection#bcd5d2dad3fcddc5dfcfd9dfc9ced5c8c592dfd3d1" style="border:1px solid rgba(255,255,255,0.28);
+            <a href="/cdn-cgi/l/email-protection#10797e767f5071697363757365627964693e737f7d" style="border:1px solid rgba(255,255,255,0.28);
               font-family:'Oswald',sans-serif; font-weight:600;
               font-size:12px; letter-spacing:0.16em;
               text-transform:uppercase; padding:14px 6px;
@@ -1588,7 +1591,7 @@
         grid-template-columns:4fr 2fr 2fr 2fr; gap:48px;">
 
         <div>
-          <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png"
+          <img src="/images/ayc-logo.png"
             alt="AYC Security USA"
             style="height:42px; width:auto; margin-bottom:22px;
             display:block;">
@@ -1727,10 +1730,10 @@
             color:#D9B66B; display:block; padding:5px 0;
             text-decoration:none;">
             (561) 571-7983</a>
-          <a href="/cdn-cgi/l/email-protection#a3cacdc5cce3c2dac0d0c6c0d6d1cad7da8dc0ccce" style="font-family:'Inter',sans-serif; font-size:14px;
+          <a href="/cdn-cgi/l/email-protection#a5cccbc3cae5c4dcc6d6c0c6d0d7ccd1dc8bc6cac8" style="font-family:'Inter',sans-serif; font-size:14px;
             color:rgba(255,255,255,0.82); display:block;
             padding:5px 0; text-decoration:none;">
-            <span class="__cf_email__" data-cfemail="9df4f3fbf2ddfce4feeef8fee8eff4e9e4b3fef2f0">[email&#160;protected]</span></a>
+            <span class="__cf_email__" data-cfemail="3851565e577859415b4b5d5b4d4a514c41165b5755">[email&#160;protected]</span></a>
           <span style="font-family:'IBM Plex Mono',monospace;
             font-size:10px; letter-spacing:0.16em;
             text-transform:uppercase; color:#D9B66B;
@@ -1791,12 +1794,10 @@
   </footer>
 
   <!-- MOBILE BOTTOM STRIP -->
-  <nav class="mobile-bottom-strip" aria-label="Quick contact">
-    <div class="grid">
-      <a href="tel:+15615717983">Call</a>
-      <a href="sms:+15615717983">Text</a>
-      <a href="/cdn-cgi/l/email-protection#d3babdb5bc93b2aab0a0b6b0a6a1baa7aafdb0bcbe">Email</a>
-    </div>
+  <nav class="bottom-strip" aria-label="Quick contact">
+    <a href="tel:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">☎</span>Call</a>
+    <a href="sms:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">✉</span>Text</a>
+    <a href="/cdn-cgi/l/email-protection#85ecebe3eac5e4fce6f6e0e6f0f7ecf1fcabe6eae8"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
   </nav>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
@@ -1922,10 +1923,6 @@
     countrySel.addEventListener('change', updateStateField);
   }
 
-  // Prevent actual form submission (visual only)
-  document.getElementById('contact-form').addEventListener('submit', (e) => {
-    e.preventDefault();
-  });
 
   // Close drawer/slideout with Escape
   document.addEventListener('keydown', (e) => {

@@ -87,6 +87,7 @@
     color:#fff;letter-spacing:.12em;text-transform:uppercase;
     padding:8px 0;position:relative;display:inline-flex;align-items:center;gap:6px;
     cursor:pointer;
+    text-decoration:none;
   }
   .nav-center a:hover, .nav-center .nav-dropdown-trigger:hover{color:var(--gold-soft);}
   .caret{width:8px;height:8px;border-right:1.5px solid currentColor;border-bottom:1.5px solid currentColor;transform:rotate(45deg) translate(-2px,-2px);display:inline-block;}
@@ -98,6 +99,11 @@
     opacity:0;visibility:hidden;transform:translateY(8px);
     transition:opacity .2s ease,transform .2s ease,visibility .2s;
     box-shadow:0 18px 40px rgba(0,0,0,0.35);
+    pointer-events:none;
+  }
+  .nav-dropdown:hover .nav-dropdown-menu,
+  .nav-dropdown:focus-within .nav-dropdown-menu{
+    pointer-events:auto;
   }
   .nav-dropdown:hover .nav-dropdown-menu, .nav-dropdown:focus-within .nav-dropdown-menu{
     opacity:1;visibility:visible;transform:translateY(0);
@@ -173,7 +179,7 @@
   /* ---------- Hero ---------- */
   .hero{
     position:relative;min-height:82vh;
-    background:url('https://alizafagen.github.io/ayc-homepage-lightversion/assets/IMG_7280.JPG') center/cover no-repeat;
+    background:url('/images/ayc-security-team-boca-raton.jpg') center/cover no-repeat;
     color:#fff;display:flex;align-items:center;
   }
   .hero::before{
@@ -449,6 +455,39 @@
   }
   .footer-bottom a{color:rgba(255,255,255,0.6);margin-left:18px;}
 
+  /* Mobile bottom strip */
+  .bottom-strip {
+    display: none;
+    position: fixed;
+    left: 0; right: 0; bottom: 0;
+    background: var(--navy);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    z-index: 40;
+  }
+  .bottom-strip a {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 60px;
+    padding: 8px 4px;
+    color: #fff;
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    gap: 4px;
+    border-right: 1px solid rgba(255,255,255,0.08);
+  }
+  .bottom-strip a:last-child { border-right: 0; }
+  .bottom-strip__icon { font-family: var(--font-mono); color: var(--gold-soft); font-size: 14px; }
+  @media (max-width: 899px) {
+    .bottom-strip { display: flex; }
+    body { padding-bottom: 60px; }
+  }
+
   /* Reduced motion */
   @media (prefers-reduced-motion:reduce){
     *,*::before,*::after{animation-duration:0.001ms !important;transition-duration:0.001ms !important;}
@@ -468,12 +507,18 @@
   </div>
 </div>
 
+<nav class="bottom-strip" aria-label="Quick contact">
+  <a href="tel:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">☎</span>Call</a>
+  <a href="sms:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">✉</span>Text</a>
+  <a href="/cdn-cgi/l/email-protection#21484f474e6140584252444254534855580f424e4c"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
+</nav>
+
 <!-- Main Nav -->
 <header class="main-nav" role="banner">
   <div class="container">
     <div class="nav-left">
       <a href="/" aria-label="AYC Security home">
-        <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" class="nav-logo">
+        <img src="/images/ayc-logo.png" alt="AYC Security" class="nav-logo">
       </a>
       <div class="nav-rule" aria-hidden="true"></div>
       <div class="nav-tagline">
@@ -484,7 +529,7 @@
 
     <nav class="nav-center" aria-label="Primary">
       <div class="nav-dropdown">
-        <span class="nav-dropdown-trigger" tabindex="0" aria-haspopup="true">Services <span class="caret" aria-hidden="true"></span></span>
+        <a href="/services" class="nav-dropdown-trigger" aria-haspopup="true">Services <span class="caret" aria-hidden="true"></span></a>
         <div class="nav-dropdown-menu" role="menu">
           <a href="/services/ongoing-security">Ongoing Site Security</a>
           <a href="/services/disaster-response">Disaster &amp; Emergency Response</a>
@@ -521,7 +566,7 @@
 <!-- Mobile drawer -->
 <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Mobile navigation">
   <div class="mobile-drawer-head">
-    <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" style="height:40px;filter:brightness(0) invert(1);">
+    <img src="/images/ayc-logo.png" alt="AYC Security" style="height:40px;filter:brightness(0) invert(1);">
     <button class="mobile-drawer-close" aria-label="Close menu" id="mobile-close">×</button>
   </div>
   <nav aria-label="Mobile primary">
@@ -609,7 +654,7 @@
 <!-- ===================== SECTION 1: COMMUNITY ===================== -->
 <section class="split-section community-section" id="community" style="background:var(--cream);padding:0;" aria-labelledby="community-headline">
   <div class="split-grid">
-    <img class="split-image" src="https://images.unsplash.com/photo-1776437210753-0a8ac2a83d0e?auto=format&fit=crop&w=900&q=80" alt="Community center building surrounded by palm trees">
+    <img class="split-image" src="/images/community-center-palm-trees-florida.webp" alt="Community center building surrounded by palm trees">
     <div class="split-content">
       <span class="section-label">Community Security</span>
       <h2 class="section-headline" id="community-headline">Where community gathers,<br>we stand watch.</h2>
@@ -648,7 +693,7 @@
       <a href="/contact" class="btn btn-outline-navy" style="margin-top:24px;align-self:flex-start;">Request Event Coverage →</a>
     </div>
     <div style="position:relative;width:100%;min-height:480px;">
-      <img class="split-image" src="https://images.unsplash.com/photo-1659273144088-202efb9b86c8?auto=format&fit=crop&w=900&q=80" alt="Security officers at an outdoor event" style="object-fit:cover;width:100%;height:100%;position:absolute;inset:0;">
+      <img class="split-image" src="/images/outdoor-event-security-officers.webp" alt="Security officers at an outdoor event" style="object-fit:cover;width:100%;height:100%;position:absolute;inset:0;">
     </div>
   </div>
 </section>
@@ -757,7 +802,7 @@
         <div class="ctex">
           <a href="tel:+15615717983">Call</a>
           <a href="sms:+15615717983">Text</a>
-          <a href="/cdn-cgi/l/email-protection#40292e262f0021392333252335322934396e232f2d">Email</a>
+          <a href="/cdn-cgi/l/email-protection#89e0e7efe6c9e8f0eafaeceafcfbe0fdf0a7eae6e4">Email</a>
         </div>
       </div>
     </div>
@@ -769,7 +814,7 @@
   <div class="container">
     <div class="footer-grid">
       <div>
-        <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security" class="footer-logo">
+        <img src="/images/ayc-logo.png" alt="AYC Security" class="footer-logo">
         <p class="footer-desc">Veteran-owned professional security services. Headquartered in Boca Raton, Florida. Ongoing site security, event coverage, close protection, and consulting.</p>
         <div class="footer-license">Licensed FL · OH · TX · NV · TN</div>
         <div class="footer-social">
@@ -808,7 +853,7 @@
           <span class="label">Phone</span>
           <a href="tel:+15615717983">(561) 571-7983</a>
           <span class="label">Email</span>
-          <a href="/cdn-cgi/l/email-protection#5930373f361938203a2a3c3a2c2b302d20773a3634"><span class="__cf_email__" data-cfemail="bdd4d3dbd2fddcc4deced8dec8cfd4c9c493ded2d0">[email&#160;protected]</span></a>
+          <a href="/cdn-cgi/l/email-protection#2940474f466948504a5a4c4a5c5b405d50074a4644"><span class="__cf_email__" data-cfemail="b8d1d6ded7f8d9c1dbcbdddbcdcad1ccc196dbd7d5">[email&#160;protected]</span></a>
           <span class="label">Florida HQ</span>
           <span class="line">7000 W Palmetto Park Rd., Suite 308</span>
           <span class="line">Boca Raton, FL 33433</span>

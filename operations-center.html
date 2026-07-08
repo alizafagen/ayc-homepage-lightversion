@@ -1350,7 +1350,7 @@
     <div class="container nav__inner">
       <a class="nav__brand" href="/" aria-label="AYC Security home">
         <img class="nav__logo"
-             src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png"
+             src="/images/ayc-logo.png"
              alt="AYC Security">
         <span class="nav__vrule" aria-hidden="true"></span>
         <span class="nav__mark" aria-hidden="true">
@@ -1361,9 +1361,9 @@
 
       <nav class="nav__links" aria-label="Primary">
         <div class="nav__dropdown-wrap" data-dropdown>
-          <button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="dd-services">
+          <a href="/services" class="nav__trigger" aria-haspopup="true" aria-controls="dd-services">
             Services <span class="nav__caret" aria-hidden="true"></span>
-          </button>
+          </a>
           <div class="nav__dropdown" id="dd-services" role="menu">
             <a href="/services/ongoing-security" role="menuitem">Ongoing Site Security</a>
             <a href="/services/disaster-response" role="menuitem">Disaster &amp; Emergency Response</a>
@@ -1407,7 +1407,7 @@
   <div class="drawer-scrim" id="drawer-scrim" aria-hidden="true"></div>
   <aside class="drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
     <div class="drawer__head">
-      <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security">
+      <img src="/images/ayc-logo.png" alt="AYC Security">
       <button class="drawer__close" type="button" id="drawer-close" aria-label="Close menu">✕</button>
     </div>
     <ul class="drawer__list">
@@ -1483,7 +1483,7 @@
   <nav class="bottom-strip" aria-label="Quick contact">
     <a href="tel:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">☎</span>Call</a>
     <a href="sms:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">✉</span>Text</a>
-    <a href="/cdn-cgi/l/email-protection#523b3c343d12332b3121373127203b262b7c313d3f"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
+    <a href="/cdn-cgi/l/email-protection#0e676068614e6f776d7d6b6d7b7c677a77206d6163"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
   </nav>
 
   <!-- ============================================================
@@ -1491,7 +1491,7 @@
        ============================================================ -->
   <section class="hero" aria-labelledby="hero-h1">
     <div class="hero__media" aria-hidden="true">
-      <img src="https://plus.unsplash.com/premium_photo-1749010150570-366f704b7c96?auto=format&fit=crop&w=1800&q=80"
+      <img src="/images/security-operations-center-cctv-monitoring.webp"
            alt="">
     </div>
     <div class="hero__overlay" aria-hidden="true"></div>
@@ -1757,7 +1757,7 @@
             <span aria-hidden="true">·</span>
             <a href="sms:+15615717983">Text</a>
             <span aria-hidden="true">·</span>
-            <a href="/cdn-cgi/l/email-protection#b4dddad2dbf4d5cdd7c7d1d7c1c6ddc0cd9ad7dbd9">Email</a>
+            <a href="/cdn-cgi/l/email-protection#d6bfb8b0b996b7afb5a5b3b5a3a4bfa2aff8b5b9bb">Email</a>
           </div>
         </div>
       </div>
@@ -1772,7 +1772,7 @@
       <div class="footer-grid">
 
         <div class="footer-col footer-col--brand">
-          <img class="footer-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security USA">
+          <img class="footer-logo" src="/images/ayc-logo.png" alt="AYC Security USA">
           <p class="footer-blurb">AYC Security USA, a veteran-owned private security firm headquartered in Boca Raton, Florida. 24/7 Global Security Operations Center.</p>
           <span class="footer-license-line">Licensed &amp; Insured Nationally · Operating Across the United States</span>
           <div class="footer-socials" aria-label="Social media">
@@ -1812,7 +1812,7 @@
         <div class="footer-col">
           <span class="footer-head">Contact</span>
           <a class="footer-phone" href="tel:+15615717983">(561) 571-7983</a>
-          <a class="footer-email" href="/cdn-cgi/l/email-protection#3f565159507f5e465c4c5a5c4a4d564b46115c5052"><span class="__cf_email__" data-cfemail="553c3b333a15342c3626303620273c212c7b363a38">[email&#160;protected]</span></a>
+          <a class="footer-email" href="/cdn-cgi/l/email-protection#2940474f466948504a5a4c4a5c5b405d50074a4644"><span class="__cf_email__" data-cfemail="620b0c040d22031b0111070117100b161b4c010d0f">[email&#160;protected]</span></a>
 
           <span class="footer-addr-label">Florida HQ</span>
           <address class="footer-addr">7000 W Palmetto Park Rd., Suite 308<br>Boca Raton, FL 33433</address>
@@ -1865,6 +1865,11 @@
       closeTimer = setTimeout(() => closeDD(wrap), 140);
     });
     trigger.addEventListener('click', (e) => {
+      const href = trigger.getAttribute('href');
+      if (href && href !== '#') {
+        window.location.href = href;
+        return;
+      }
       e.preventDefault();
       if (wrap.classList.contains('is-open')) closeDD(wrap);
       else openDD(wrap);

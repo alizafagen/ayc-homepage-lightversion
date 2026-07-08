@@ -402,7 +402,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 }
 .hero-bg{
   position:absolute;inset:0;z-index:0;
-  background-image:url('https://images.unsplash.com/photo-1547683905-f686c993aae5?auto=format&fit=crop&w=1800&q=80');
+  background-image:url('/images/hurricane-flood-disaster-response.webp');
   background-size:cover;
   background-position:center;
 }
@@ -1195,6 +1195,39 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   white-space:nowrap;border:0;
 }
 
+/* Mobile bottom strip */
+.bottom-strip {
+  display: none;
+  position: fixed;
+  left: 0; right: 0; bottom: 0;
+  background: var(--navy);
+  border-top: 1px solid rgba(255,255,255,0.1);
+  z-index: 40;
+}
+.bottom-strip a {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 60px;
+  padding: 8px 4px;
+  color: #fff;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 12px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  gap: 4px;
+  border-right: 1px solid rgba(255,255,255,0.08);
+}
+.bottom-strip a:last-child { border-right: 0; }
+.bottom-strip__icon { font-family: var(--font-mono); color: var(--gold-soft); font-size: 14px; }
+@media (max-width: 899px) {
+  .bottom-strip { display: flex; }
+  body { padding-bottom: 60px; }
+}
+
 </style>
 </head>
 <body>
@@ -1210,11 +1243,17 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   </div>
 </div>
 
+<nav class="bottom-strip" aria-label="Quick contact">
+  <a href="tel:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">☎</span>Call</a>
+  <a href="sms:+15615717983"><span class="bottom-strip__icon" aria-hidden="true">✉</span>Text</a>
+  <a href="/cdn-cgi/l/email-protection#6a03040c052a0b1309190f091f18031e1344090507"><span class="bottom-strip__icon" aria-hidden="true">@</span>Email</a>
+</nav>
+
 <!-- ============ MAIN NAV ============ -->
 <header class="main-nav" role="banner">
   <div class="container">
     <a href="/" class="brand" aria-label="AYC Security home">
-      <img class="brand-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security">
+      <img class="brand-logo" src="/images/ayc-logo.png" alt="AYC Security">
       <span class="brand-rule" aria-hidden="true"></span>
       <span class="brand-meta">
         <span class="meta-line1">Est. Boca Raton</span>
@@ -1223,8 +1262,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
     </a>
 
     <nav class="nav-center" aria-label="Primary">
-      <div class="nav-item" data-dropdown="services" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false">
-        Services <span class="caret" aria-hidden="true">▾</span>
+      <div class="nav-item" data-dropdown="services" tabindex="0" role="button" aria-haspopup="true" aria-expanded="false" data-href="/services">
+        <a href="/services" class="nav-item-link" style="color:inherit;text-decoration:none;">Services</a> <span class="caret" aria-hidden="true">▾</span>
         <div class="nav-dropdown" role="menu">
           <a href="/services/ongoing-security" role="menuitem">Ongoing Site Security</a>
           <a href="/services/disaster-response" role="menuitem">Disaster &amp; Emergency Response</a>
@@ -1261,7 +1300,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   <button class="close-btn" id="drawer-close" aria-label="Close menu">✕</button>
   <a class="tap-to-call" href="tel:+15615717983">Tap to Call: (561) 571-7983</a>
   <nav class="drawer-links" aria-label="Mobile">
-    <a href="/services/ongoing-security">Services</a>
+    <a href="/services">Services</a>
     <a class="drawer-sub" href="/services/ongoing-security">Ongoing Site Security</a>
     <a class="drawer-sub" href="/services/disaster-response">Disaster &amp; Emergency Response</a>
     <a class="drawer-sub" href="/services/community-events">Community &amp; Events Security</a>
@@ -1282,7 +1321,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   <div class="drawer-bottom">
     <a href="tel:+15615717983">Call</a>
     <a href="sms:+15615717983">Text</a>
-    <a href="/cdn-cgi/l/email-protection#d7beb9b1b897b6aeb4a4b2b4a2a5bea3aef9b4b8ba">Email</a>
+    <a href="/cdn-cgi/l/email-protection#b9d0d7dfd6f9d8c0dacadcdacccbd0cdc097dad6d4">Email</a>
   </div>
 </div>
 
@@ -1291,21 +1330,21 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
 
 <!-- ============ HERO ============ -->
 <section class="hero" aria-labelledby="hero-headline">
-  <div class="hero-bg" role="img" aria-label="Flood disaster aftermath — replace with real AYC field photo"></div>
+  <div class="hero-bg" role="img" aria-label="Flood disaster aftermath"></div>
   <div class="hero-overlay" aria-hidden="true"></div>
 
   <div class="container">
     <div class="hero-grid">
       <div class="hero-left">
         <div class="breadcrumb">
-          <a href="/services/ongoing-security">Services</a> / Disaster &amp; Emergency Response
+          <a href="/services">Services</a> / Disaster &amp; Emergency Response
         </div>
         <h1 id="hero-headline" class="hero-headline">When the situation<br>changes.<br>So do we.</h1>
         <p class="hero-subheadline">Same-day deployment. Nationwide.</p>
         <p class="hero-body">AYC Security deploys quality security personnel to disaster recovery and humanitarian operations across the country and abroad. Whether you need a team on-site today or are planning for contingency operations, we are ready to move.</p>
         <div class="hero-ctas">
           <a class="btn btn-gold" href="tel:+15615717983">Call to discuss your operation →</a>
-          <a class="btn btn-outline-light" href="/contact">Get Protected →</a>
+          <a class="btn btn-outline-light" href="/contact">Request a Consultation →</a>
         </div>
       </div>
 
@@ -1343,7 +1382,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
         <p>We operate nationally and internationally. Wherever the operation is, we can be there.</p>
       </div>
       <div class="callout-image">
-        <img src="https://images.unsplash.com/photo-1640318856811-e5a5e9e63004?auto=format&fit=crop&w=900&q=80" alt="Tornado aftermath — replace with real AYC field photo">
+        <img src="/images/tornado-aftermath-disaster-response.webp" alt="Tornado aftermath">
       </div>
     </div>
   </div>
@@ -1585,7 +1624,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
         <div class="connect-actions">
           <a class="connect-action" href="tel:+15615717983">Call</a>
           <a class="connect-action" href="sms:+15615717983">Text</a>
-          <a class="connect-action" href="/cdn-cgi/l/email-protection#f39a9d959cb3928a9080969086819a878add909c9e">Email</a>
+          <a class="connect-action" href="/cdn-cgi/l/email-protection#1e777078715e7f677d6d7b7d6b6c776a67307d7173">Email</a>
         </div>
       </div>
     </div>
@@ -1597,7 +1636,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   <div class="container">
     <div class="footer-grid">
       <div class="footer-col footer-about">
-        <img class="footer-logo" src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security">
+        <img class="footer-logo" src="/images/ayc-logo.png" alt="AYC Security">
         <p class="footer-blurb">AYC Security USA — a veteran-owned private security firm headquartered in Boca Raton, Florida. 24/7 Global Security Operations Center.</p>
         <p class="footer-license">Licensed &amp; Insured Nationally · Operating Across the United States</p>
         <div class="footer-social">
@@ -1636,7 +1675,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
       <div class="footer-col footer-contact">
         <p class="footer-col-title">Contact</p>
         <a class="contact-phone" href="tel:+15615717983">(561) 571-7983</a>
-        <a class="contact-email" href="/cdn-cgi/l/email-protection#0c65626a634c6d756f7f696f797e657875226f6361"><span class="__cf_email__" data-cfemail="87eee9e1e8c7e6fee4f4e2e4f2f5eef3fea9e4e8ea">[email&#160;protected]</span></a>
+        <a class="contact-email" href="/cdn-cgi/l/email-protection#355c5b535a75544c5646505640475c414c1b565a58"><span class="__cf_email__" data-cfemail="9bf2f5fdf4dbfae2f8e8fef8eee9f2efe2b5f8f4f6">[email&#160;protected]</span></a>
         <p class="contact-block"><strong>Florida HQ</strong>7000 W Palmetto Park Rd., Suite 308, Boca Raton, FL 33433</p>
         <p class="contact-block"><strong>Ohio</strong>7160 Chagrin Road, Suite 180, Chagrin Falls, OH 44023</p>
       </div>
@@ -1688,6 +1727,7 @@ navItems.forEach(item => {
   });
   item.addEventListener('click', e => {
     if (e.target.closest('.nav-dropdown a')) return;
+    if (e.target.closest('.nav-item-link')) return;
     item.classList.toggle('open');
     item.setAttribute('aria-expanded', item.classList.contains('open'));
   });

@@ -852,16 +852,6 @@
     margin-top: 28px;
     align-self: flex-start;
   }
-  .img-flag {
-    position: absolute;
-    top: 14px;
-    left: 14px;
-    background: rgba(14,28,43,0.75);
-    color: #fff;
-    font-family: var(--font-body);
-    font-size: 11px;
-    padding: 6px 12px;
-  }
 
   @media (max-width: 899px) {
     .story__grid { grid-template-columns: 1fr; min-height: 0; }
@@ -1176,7 +1166,7 @@
   .flip-card {
     width: 100%;
     max-width: 280px;
-    min-height: 440px;
+    min-height: 500px;
     background: transparent;
     border: 0;
     padding: 0;
@@ -1185,7 +1175,10 @@
     text-align: left;
   }
   @media (max-width: 899px) {
-    .flip-card { max-width: none; }
+    .flip-card { max-width: none; min-height: 510px; }
+  }
+  @media (max-width: 599px) {
+    .flip-card { min-height: 600px; }
   }
   .flip-inner {
     position: relative;
@@ -1200,11 +1193,17 @@
   .card-back {
     position: absolute;
     inset: 0;
-    min-height: 440px;
+    min-height: 500px;
     backface-visibility: hidden;
     -webkit-backface-visibility: hidden;
     transform: translateZ(0);
     -webkit-font-smoothing: antialiased;
+  }
+  @media (max-width: 899px) {
+    .card-front, .card-back { min-height: 510px; }
+  }
+  @media (max-width: 599px) {
+    .card-front, .card-back { min-height: 600px; }
   }
   .card-front {
     background: #fff;
@@ -1215,14 +1214,14 @@
   }
   .card-photo {
     width: 100%;
-    height: 220px;
-    object-fit: contain;
+    aspect-ratio: 4 / 5;
+    object-fit: cover;
     object-position: center;
     background: var(--cream);
   }
   .card-photo--placeholder {
     width: 100%;
-    height: 220px;
+    aspect-ratio: 4 / 5;
     background: var(--navy);
     display: flex;
     align-items: center;
@@ -1309,11 +1308,11 @@
     overflow-y: auto;
     padding-right: 6px;
     scrollbar-width: thin;
-    scrollbar-color: #B8882A rgba(255,255,255,0.1);
+    scrollbar-color: var(--gold) rgba(255,255,255,0.1);
   }
   .card-bio-wrap::-webkit-scrollbar { width: 4px; }
   .card-bio-wrap::-webkit-scrollbar-track { background: rgba(255,255,255,0.05); }
-  .card-bio-wrap::-webkit-scrollbar-thumb { background: #B8882A; border-radius: 2px; }
+  .card-bio-wrap::-webkit-scrollbar-thumb { background: var(--gold); border-radius: 2px; }
   .card-bio {
     font-family: var(--font-body);
     font-size: 14px;
@@ -1370,32 +1369,119 @@
     font-family: var(--font-body);
     font-size: 16px;
     color: var(--ink-soft);
-    margin: 0 0 40px;
+    margin: 0 0 36px;
     max-width: 640px;
   }
-  @media (min-width: 900px) {
-    .mobile-scroll-hint { display: none; }
+
+  .org-box { font-family: var(--font-display); text-transform: uppercase; line-height: 1.25; text-align: left; }
+  .org-apex-row { display: flex; justify-content: center; }
+  .org-apex.org-box {
+    font-weight: 700; font-size: 18px; letter-spacing: 0.02em; text-align: center;
+    background: var(--gold); color: var(--navy); padding: 18px 44px;
   }
-  .org-placeholder-overlay {
-    position: absolute;
-    top: 12px;
-    left: 12px;
-    z-index: 2;
-    background: rgba(14,28,43,0.75);
-    color: #fff;
-    font-family: var(--font-body);
-    font-size: 11px;
-    padding: 6px 12px;
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
+  .org-role.org-box {
+    font-weight: 700; font-size: 14px; color: #fff; background: var(--navy); text-align: center;
+    border-top: 4px solid var(--gold); padding: 16px 10px; min-height: 50px;
+    display: flex; align-items: center; justify-content: center;
   }
-  .org-placeholder-overlay-dot {
-    width: 6px;
-    height: 6px;
-    border-radius: 50%;
-    background: var(--gold);
-    flex-shrink: 0;
+  .org-directorate-box.org-box {
+    font-weight: 500; font-size: 12px; color: var(--navy); background: var(--cream);
+    border: 1.5px solid var(--navy); padding: 9px 10px; min-height: 36px;
+    display: flex; align-items: center; justify-content: flex-start;
+  }
+  .org-division-box.org-box {
+    font-weight: 400; font-size: 11px; color: var(--navy); background: var(--cream);
+    border: 1px solid var(--gold-soft); padding: 7px 9px; min-height: 30px;
+    display: flex; align-items: center; justify-content: flex-start;
+    text-transform: none; font-family: var(--font-body); letter-spacing: 0;
+  }
+
+  .org-connector { width: 2px; background: var(--navy); margin: 0 auto; }
+  .org-connector--trunk { height: 24px; }
+  .org-connector--tick { height: 18px; }
+
+  .org-row { display: flex; gap: 0; align-items: flex-start; margin-top: 40px; }
+  .org-col { flex: 1 1 0; min-width: 0; padding: 0 8px; position: relative; }
+  .org-col::before, .org-col::after {
+    content: ''; position: absolute; top: 0; height: 2px; background: var(--navy);
+  }
+  .org-col::before { left: 0; right: 50%; }
+  .org-col::after { left: 50%; right: 0; }
+  .org-col:first-child::before { background: transparent; }
+  .org-col:last-child::after { background: transparent; }
+
+  /* Bracket rail — directorate tier. The tick/rail references the
+     directorate box's own height only (via the anchor wrapper), not the
+     full branch-item, which also contains that directorate's nested
+     division boxes. For non-last items, the li's own full-height line
+     already passes through the anchor's center point. For the LAST item,
+     that full-height line is removed and replaced with a short stub sized
+     to 50% of the anchor's own actual height — self-correcting for
+     1-line or 2-line text rather than a guessed pixel value. */
+  .org-branch { list-style: none; margin: 0 0 0 8px; padding: 0; }
+  .org-branch-item { position: relative; padding-left: 14px; }
+  .org-branch-item::after {
+    content: ''; position: absolute; left: 0; top: 0; bottom: 0;
+    width: 2px; background: var(--navy);
+  }
+  .org-branch-item:last-child::after { display: none; }
+
+  .org-connector-anchor { position: relative; }
+  .org-connector-anchor::before {
+    content: ''; position: absolute; left: -14px; top: 50%;
+    width: 14px; height: 2px; background: var(--navy);
+    transform: translateY(-50%);
+  }
+  .org-branch-item:last-child .org-connector-anchor::after {
+    content: ''; position: absolute; left: -14px; top: 0; height: 50%;
+    width: 2px; background: var(--navy);
+  }
+
+  .org-branch-content { min-width: 0; padding-bottom: 12px; }
+
+  /* Stub connecting the C-suite box down into its branch's rail, aligned
+     to the same x-position as the rail itself (not centered). */
+  .org-branch-trunk { width: 2px; height: 10px; background: var(--navy); margin-left: 8px; }
+
+  /* Division tier — same pattern, lighter weight. Division boxes have no
+     further nested children, so their own branch-item height already
+     equals their own box height — no anchor wrapper needed at this tier. */
+  .org-branch--sub { margin: 0 0 0 6px; }
+  .org-branch--sub .org-branch-item { padding-left: 11px; }
+  .org-branch--sub .org-branch-item::after { background: var(--gold-soft); width: 2px; }
+  .org-branch--sub .org-branch-item:last-child::after {
+    display: block; bottom: auto; height: 50%;
+  }
+  .org-branch--sub .org-branch-item::before {
+    content: ''; position: absolute; left: 0; top: 50%;
+    width: 11px; height: 2px; background: var(--gold-soft);
+    transform: translateY(-50%);
+  }
+  .org-branch--sub .org-branch-content { padding-bottom: 8px; }
+  .org-branch--sub .org-branch-item:last-child .org-branch-content { padding-bottom: 0; }
+
+  .org-divisions-wrap { padding-top: 8px; }
+
+  @media (max-width: 900px) {
+    .org-row { flex-direction: column; gap: 0; }
+    .org-col {
+      border-top: none;
+      padding-top: 26px;
+      position: relative;
+    }
+    .org-col::before { display: none; }
+    .org-col::after {
+      content: '';
+      position: absolute;
+      left: 50%;
+      top: 0;
+      height: 26px;
+      width: 2px;
+      background: var(--navy);
+      transform: translateX(-50%);
+    }
+    .org-col:first-child::after { display: none; }
+    .org-connector--tick { display: none; }
   }
 
   /* ============================================================
@@ -1643,7 +1729,7 @@
     <div class="container nav__inner">
       <a class="nav__brand" href="/" aria-label="AYC Security home">
         <img class="nav__logo"
-             src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png"
+             src="/images/ayc-logo.png"
              alt="AYC Security">
         <span class="nav__vrule" aria-hidden="true"></span>
         <span class="nav__mark" aria-hidden="true">
@@ -1654,9 +1740,9 @@
 
       <nav class="nav__links" aria-label="Primary">
         <div class="nav__dropdown-wrap" data-dropdown>
-          <button class="nav__trigger" type="button" aria-expanded="false" aria-haspopup="true" aria-controls="dd-services">
+          <a href="/services" class="nav__trigger" aria-haspopup="true" aria-controls="dd-services">
             Services <span class="nav__caret" aria-hidden="true"></span>
-          </button>
+          </a>
           <div class="nav__dropdown" id="dd-services" role="menu">
             <a href="/services/ongoing-security" role="menuitem">Ongoing Site Security</a>
             <a href="/services/disaster-response" role="menuitem">Disaster &amp; Emergency Response</a>
@@ -1700,7 +1786,7 @@
   <div class="drawer-scrim" id="drawer-scrim" aria-hidden="true"></div>
   <aside class="drawer" id="mobile-drawer" aria-label="Mobile navigation" aria-hidden="true">
     <div class="drawer__head">
-      <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png" alt="AYC Security">
+      <img src="/images/ayc-logo.png" alt="AYC Security">
       <button class="drawer__close" type="button" id="drawer-close" aria-label="Close menu">✕</button>
     </div>
     <ul class="drawer__list">
@@ -1814,8 +1900,8 @@
     <div class="story__grid">
       <div class="story__media">
         <img
-          src="https://plus.unsplash.com/premium_photo-1682125939509-03aa8ae4b587?fm=jpg&q=80&w=1200&auto=format&fit=crop&ixlib=rb-4.1.0"
-          alt="AYC Security officer on patrol — replace with real AYC team photo">
+          src="/images/security-guard-patrol-boca-raton.webp"
+          alt="AYC Security officer on patrol">
       </div>
 
       <div class="story__text">
@@ -1964,7 +2050,7 @@
         <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Seth Stern, President">
           <div class="flip-inner">
             <div class="card-front">
-              <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_a32cb4156735499db593790ed61d03e3~mv2.png" alt="Seth Stern" loading="lazy">
+              <img class="card-photo" src="/images/seth-stern.webp" alt="Seth Stern" loading="lazy">
               <div class="card-front-body">
                 <h3 class="card-name">Seth Stern</h3>
                 <p class="card-title">President</p>
@@ -1985,7 +2071,7 @@
         <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Daniel Sommers, General Counsel">
           <div class="flip-inner">
             <div class="card-front">
-              <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_d0a5f4695b0a4571b2021b3edc86bc1f~mv2.jpg" alt="Daniel P.W.A. Sommers, Esq." loading="lazy">
+              <img class="card-photo" src="/images/daniel-sommers.webp" alt="Daniel P.W.A. Sommers, Esq." loading="lazy">
               <div class="card-front-body">
                 <h3 class="card-name">Daniel P.W.A. Sommers, Esq.</h3>
                 <p class="card-title">General Counsel</p>
@@ -2006,7 +2092,7 @@
         <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Brian Papula, Junior Partner">
           <div class="flip-inner">
             <div class="card-front">
-              <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_897aec30e58f46c880c2169a548e7a67~mv2.jpg/v1/fill/w_287,h_323,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/IMG_2333_edited_edited.jpg" alt="Brian Papula, Junior Partner" loading="lazy" />
+              <img class="card-photo" src="/images/brian-papula.webp" alt="Brian Papula, Junior Partner" loading="lazy" />
               <div class="card-front-body">
                 <h3 class="card-name">Brian Papula</h3>
                 <p class="card-title">Junior Partner</p>
@@ -2087,7 +2173,7 @@
         <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Damien O'Connell, Vice President Leadership and Decision-Making">
           <div class="flip-inner">
             <div class="card-front">
-              <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_a9a0c949ccb946b48f825134baa5f4ff~mv2.jpg" alt="Damien O'Connell" loading="lazy">
+              <img class="card-photo" src="/images/damien-oconnell.webp" alt="Damien O'Connell" loading="lazy">
               <div class="card-front-body">
                 <h3 class="card-name">Damien O'Connell</h3>
                 <p class="card-title">Vice President, Leadership and Decision-Making</p>
@@ -2138,7 +2224,7 @@
         <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Dr. Kashif Pirzada, MD, Vice President Medical Training">
           <div class="flip-inner">
             <div class="card-front">
-              <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_235c3caff06440dfae2aecee93c26c17~mv2.webp" alt="Dr. Kashif Pirzada, MD" loading="lazy">
+              <img class="card-photo" src="/images/kashif-pirzada.webp" alt="Dr. Kashif Pirzada, MD" loading="lazy">
               <div class="card-front-body">
                 <h3 class="card-name">Dr. Kashif Pirzada, MD</h3>
                 <p class="card-title">Vice President, Medical Training</p>
@@ -2159,7 +2245,7 @@
         <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Laval Martin, Vice President Resiliency">
           <div class="flip-inner">
             <div class="card-front">
-              <img class="card-photo" src="https://static.wixstatic.com/media/9ddcb9_fa167b551d974f3a9e4f356c1f3b7b5d~mv2.webp" alt="Laval Martin" loading="lazy">
+              <img class="card-photo" src="/images/laval-martin.webp" alt="Laval Martin" loading="lazy">
               <div class="card-front-body">
                 <h3 class="card-name">Laval Martin</h3>
                 <p class="card-title">Vice President, Resiliency</p>
@@ -2201,7 +2287,7 @@
         <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Dr. Frank Sommers, MD, Vice President Disaster Psychiatry">
           <div class="flip-inner">
             <div class="card-front">
-              <img class="card-photo" src="https://static.wixstatic.com/media/cdf5ef_699e4c3c2c5f48c2a8240dd2b76b0987~mv2.jpg" alt="Dr. Frank Sommers, MD" loading="lazy">
+              <img class="card-photo" src="/images/frank-sommers.webp" alt="Dr. Frank Sommers, MD" loading="lazy">
               <div class="card-front-body">
                 <h3 class="card-name">Dr. Frank Sommers, MD</h3>
                 <p class="card-title">Vice President, Disaster Psychiatry</p>
@@ -2222,7 +2308,7 @@
         <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Rabbi Jonathan Jaffit, Vice President Disaster Chaplaincy">
           <div class="flip-inner">
             <div class="card-front">
-              <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_e8c2b7f0f9cb424787dd1ea05c19905a~mv2.jpeg" alt="Rabbi Jonathan Jaffit" loading="lazy">
+              <img class="card-photo" src="/images/jonathan-jaffit.webp" alt="Rabbi Jonathan Jaffit" loading="lazy">
               <div class="card-front-body">
                 <h3 class="card-name">Rabbi Jonathan Jaffit</h3>
                 <p class="card-title">Vice President, Disaster Chaplaincy</p>
@@ -2240,19 +2326,19 @@
           </div>
         </button>
 
-        <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for David Letterman, Vice President Healthcare Facilities">
+        <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for David Lederman, Vice President Healthcare Facilities">
           <div class="flip-inner">
             <div class="card-front">
               <div class="card-photo--placeholder" aria-hidden="true">AYC</div>
               <div class="card-front-body">
-                <h3 class="card-name">David Letterman</h3>
+                <h3 class="card-name">David Lederman</h3>
                 <p class="card-title">Vice President, Healthcare Facilities</p>
                 <hr class="card-rule">
                 <span class="card-flip-prompt">View Bio +</span>
               </div>
             </div>
             <div class="card-back">
-              <h3 class="card-back-name">David Letterman</h3>
+              <h3 class="card-back-name">David Lederman</h3>
               <p class="card-back-title">Vice President, Healthcare Facilities</p>
               <hr class="card-back-divider">
               <div class="card-bio-wrap"><p class="card-bio">Bio coming soon. To learn more about our team, we invite you to get in touch directly.</p></div>
@@ -2273,7 +2359,7 @@
         <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Eugene Coles, Vice President Force Protection">
           <div class="flip-inner">
             <div class="card-front">
-              <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_34df00e15c0848f0accf25738d70d45c~mv2.jpg" alt="Eugene Coles" loading="lazy">
+              <img class="card-photo" src="/images/eugene-coles.webp" alt="Eugene Coles" loading="lazy">
               <div class="card-front-body">
                 <h3 class="card-name">Eugene Coles</h3>
                 <p class="card-title">Vice President, Force Protection</p>
@@ -2294,7 +2380,7 @@
         <button class="flip-card" type="button" aria-pressed="false" aria-label="View bio for Byron Childs, Ohio Operations Director and Client Account Manager">
           <div class="flip-inner">
             <div class="card-front">
-              <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_93eb6596a52b4b629f31cbfdd0727dcf~mv2.jpg" alt="Byron Childs" loading="lazy">
+              <img class="card-photo" src="/images/byron-childs.webp" alt="Byron Childs" loading="lazy">
               <div class="card-front-body">
                 <h3 class="card-name">Byron Childs</h3>
                 <p class="card-title">Ohio Operations Director &amp; Client Account Manager</p>
@@ -2325,19 +2411,122 @@
       <h2 id="org-heading" class="section-headline section-headline--sm">How We're Structured</h2>
       <p class="org-sub">AYC Security's operational structure ensures every client engagement is supported at every level.</p>
 
-      <div style="position:relative;overflow:hidden;overflow-x:auto;-webkit-overflow-scrolling:touch;margin-top:40px;">
-        <img
-          src="https://alizafagen.github.io/ayc-homepage-lightversion/assets/ayc-security-org-chart.png"
-          alt="AYC Security organizational chart"
-          style="max-width:100%;min-width:700px;display:block;height:auto;border:1px solid #E4DED2;">
+      <div class="org-apex-row">
+        <span class="org-box org-apex">President</span>
       </div>
+      <div class="org-connector org-connector--trunk"></div>
 
-      <p class="mobile-scroll-hint" style="font-family:var(--font-mono);font-size:11px;letter-spacing:0.14em;text-transform:uppercase;color:#5A5A56;text-align:center;margin-top:12px;">
-        Scroll to view full chart on mobile
-      </p>
+      <div class="org-row">
 
-      <div class="sr-only">
-        AYC Security USA organizational structure. The President oversees six direct reports: Chief Financial Officer, Chief Operating Officer, General Counsel, Chief Personnel Officer, Chief of Staff, and Chief Marketing Officer. The Chief Operating Officer oversees three directorates: Consulting Directorate including Crisis Management Division, Threat Assessment Division, Risk Analysis Division, and Penetration Testing Division; Security Directorate including Transportation Hubs, Hospitals, Large Commercial Entities, and Mines and Construction Sites; and Training Directorate including Workplace Safety, Leadership and Decision-Making, and Communication and Legalities. The Chief Personnel Officer oversees the Admin Directorate including Human Resources Office, Logistics Division, and Procurement Office; and the Education Directorate. The Chief Marketing Officer oversees Government Sales, Individual Sales, and Commercial Sales.
+        <div class="org-col">
+          <div class="org-connector org-connector--tick"></div>
+          <span class="org-box org-role">Chief Financial Officer</span>
+        </div>
+
+        <div class="org-col">
+          <div class="org-connector org-connector--tick"></div>
+          <span class="org-box org-role">Chief Operating Officer</span>
+          <div class="org-branch-trunk"></div>
+
+          <ul class="org-branch">
+            <li class="org-branch-item">
+              <div class="org-branch-content">
+                <div class="org-connector-anchor"><span class="org-box org-directorate-box">Consulting Directorate</span></div>
+                <div class="org-divisions-wrap">
+                  <ul class="org-branch org-branch--sub">
+                    <li class="org-branch-item"><div class="org-branch-content"><span class="org-box org-division-box">Crisis Management Division</span></div></li>
+                    <li class="org-branch-item"><div class="org-branch-content"><span class="org-box org-division-box">Threat Assessment Division</span></div></li>
+                    <li class="org-branch-item"><div class="org-branch-content"><span class="org-box org-division-box">Risk Analysis Division</span></div></li>
+                    <li class="org-branch-item"><div class="org-branch-content"><span class="org-box org-division-box">Penetration Testing Division</span></div></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="org-branch-item">
+              <div class="org-branch-content">
+                <div class="org-connector-anchor"><span class="org-box org-directorate-box">Security Directorate</span></div>
+                <div class="org-divisions-wrap">
+                  <ul class="org-branch org-branch--sub">
+                    <li class="org-branch-item"><div class="org-branch-content"><span class="org-box org-division-box">Transportation Hubs</span></div></li>
+                    <li class="org-branch-item"><div class="org-branch-content"><span class="org-box org-division-box">Hospitals</span></div></li>
+                    <li class="org-branch-item"><div class="org-branch-content"><span class="org-box org-division-box">Large Commercial Entities</span></div></li>
+                    <li class="org-branch-item"><div class="org-branch-content"><span class="org-box org-division-box">Mines &amp; Construction Sites</span></div></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="org-branch-item">
+              <div class="org-branch-content">
+                <div class="org-connector-anchor"><span class="org-box org-directorate-box">Training Directorate</span></div>
+                <div class="org-divisions-wrap">
+                  <ul class="org-branch org-branch--sub">
+                    <li class="org-branch-item"><div class="org-branch-content"><span class="org-box org-division-box">Workplace Safety</span></div></li>
+                    <li class="org-branch-item"><div class="org-branch-content"><span class="org-box org-division-box">Leadership &amp; Decision-Making</span></div></li>
+                    <li class="org-branch-item"><div class="org-branch-content"><span class="org-box org-division-box">Communication &amp; Legalities</span></div></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="org-col">
+          <div class="org-connector org-connector--tick"></div>
+          <span class="org-box org-role">General Counsel</span>
+        </div>
+
+        <div class="org-col">
+          <div class="org-connector org-connector--tick"></div>
+          <span class="org-box org-role">Chief Personnel Officer</span>
+          <div class="org-branch-trunk"></div>
+
+          <ul class="org-branch">
+            <li class="org-branch-item">
+              <div class="org-branch-content">
+                <div class="org-connector-anchor"><span class="org-box org-directorate-box">Admin Directorate</span></div>
+                <div class="org-divisions-wrap">
+                  <ul class="org-branch org-branch--sub">
+                    <li class="org-branch-item"><div class="org-branch-content"><span class="org-box org-division-box">Human Resources Office</span></div></li>
+                    <li class="org-branch-item"><div class="org-branch-content"><span class="org-box org-division-box">Logistics Division</span></div></li>
+                    <li class="org-branch-item"><div class="org-branch-content"><span class="org-box org-division-box">Procurement Office</span></div></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+            <li class="org-branch-item">
+              <div class="org-branch-content">
+                <div class="org-connector-anchor"><span class="org-box org-directorate-box">Education Directorate</span></div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="org-col">
+          <div class="org-connector org-connector--tick"></div>
+          <span class="org-box org-role">Chief of Staff</span>
+        </div>
+
+        <div class="org-col">
+          <div class="org-connector org-connector--tick"></div>
+          <span class="org-box org-role">Chief Marketing Officer</span>
+          <div class="org-branch-trunk"></div>
+
+          <ul class="org-branch">
+            <li class="org-branch-item">
+              <div class="org-branch-content">
+                <div class="org-connector-anchor"><span class="org-box org-directorate-box">Sales</span></div>
+                <div class="org-divisions-wrap">
+                  <ul class="org-branch org-branch--sub">
+                    <li class="org-branch-item"><div class="org-branch-content"><span class="org-box org-division-box">Government Sales</span></div></li>
+                    <li class="org-branch-item"><div class="org-branch-content"><span class="org-box org-division-box">Individual Sales</span></div></li>
+                    <li class="org-branch-item"><div class="org-branch-content"><span class="org-box org-division-box">Commercial Sales</span></div></li>
+                  </ul>
+                </div>
+              </div>
+            </li>
+          </ul>
+        </div>
+
       </div>
     </div>
   </section>
@@ -2355,7 +2544,7 @@
         <button class="flip-card" type="button" aria-pressed="false" aria-label="View profile of Lieutenant General Stacy Clardy">
           <div class="flip-inner">
             <div class="card-front">
-              <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_a9aa7e0478904b609bd70b04332e1ffe~mv2.jpg" alt="Lieutenant General Stacy Clardy" loading="lazy">
+              <img class="card-photo" src="/images/stacy-clardy.webp" alt="Lieutenant General Stacy Clardy" loading="lazy">
               <div class="card-front-body">
                 <h3 class="card-name">Lt. Gen. Stacy Clardy</h3>
                 <p class="card-title">USMC, Retired · Board of Advisors</p>
@@ -2375,7 +2564,7 @@
         <button class="flip-card" type="button" aria-pressed="false" aria-label="View profile of Lieutenant Colonel Robert Leonhard">
           <div class="flip-inner">
             <div class="card-front">
-              <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_aac01e088ae6490abb45481a18173201~mv2.jpg" alt="Lieutenant Colonel Robert Leonhard, PhD" loading="lazy">
+              <img class="card-photo" src="/images/robert-leonhard.webp" alt="Lieutenant Colonel Robert Leonhard, PhD" loading="lazy">
               <div class="card-front-body">
                 <h3 class="card-name">Lt. Col. Robert Leonhard, PhD</h3>
                 <p class="card-title">US Army, Retired · Board of Advisors</p>
@@ -2395,7 +2584,7 @@
         <button class="flip-card" type="button" aria-pressed="false" aria-label="View profile of Lieutenant-Colonel James MacMillan">
           <div class="flip-inner">
             <div class="card-front">
-              <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_4a609e01f26c4cd8bc14746c2730a8f6~mv2.jpg" alt="Lieutenant-Colonel James MacMillan" loading="lazy">
+              <img class="card-photo" src="/images/james-macmillan.webp" alt="Lieutenant-Colonel James MacMillan" loading="lazy">
               <div class="card-front-body">
                 <h3 class="card-name">Lt. Col. James MacMillan</h3>
                 <p class="card-title">Canadian Army, Retired · Board of Advisors</p>
@@ -2416,7 +2605,7 @@
           <button class="flip-card" type="button" aria-pressed="false" aria-label="View profile of Mr. Rick DeChant">
             <div class="flip-inner">
               <div class="card-front">
-                <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_b38f8e61032d4dc38350679500dbc92d~mv2.jpg" alt="Mr. Rick DeChant" loading="lazy">
+                <img class="card-photo" src="/images/rick-dechant.webp" alt="Mr. Rick DeChant" loading="lazy">
                 <div class="card-front-body">
                   <h3 class="card-name">Mr. Rick DeChant</h3>
                   <p class="card-title">Board of Advisors</p>
@@ -2436,7 +2625,7 @@
           <button class="flip-card" type="button" aria-pressed="false" aria-label="View profile of Mr. Lee Mersek">
             <div class="flip-inner">
               <div class="card-front">
-                <img class="card-photo" src="https://static.wixstatic.com/media/f4c8e4_e31863a72aa245149aededebd7f324bc~mv2.jpg" alt="Mr. Lee Mersek" loading="lazy">
+                <img class="card-photo" src="/images/lee-mersek.webp" alt="Mr. Lee Mersek" loading="lazy">
                 <div class="card-front-body">
                   <h3 class="card-name">Mr. Lee Mersek</h3>
                   <p class="card-title">Board of Advisors</p>
@@ -2464,7 +2653,7 @@
     <div class="container">
       <div class="giving-grid">
         <div class="giving-image-wrap">
-          <img class="giving-image" src="https://images.unsplash.com/photo-1593113598332-cd288d649433?auto=format&amp;fit=crop&amp;w=1200&amp;q=80" alt="Community support and charitable giving — AYC Security" loading="lazy">
+          <img class="giving-image" src="/images/ayc-community-support-giving.webp" alt="Community support and charitable giving — AYC Security" loading="lazy">
           <div class="giving-image-overlay" aria-hidden="true"></div>
         </div>
         <div class="giving-content">
@@ -2509,13 +2698,13 @@
        FOOTER
        ============================================================ -->
   <footer class="site-footer" role="contentinfo"
-    style="background:#0A1622; padding:72px 0 36px;">
+    style="background:var(--navy-2); padding:72px 0 36px;">
     <div class="container">
       <div class="footer-responsive-grid" style="display:grid;
         grid-template-columns:4fr 2fr 2fr 2fr; gap:48px;">
 
         <div>
-          <img src="https://static.wixstatic.com/media/f4c8e4_08fa1ba8254447b6b6500b7ff3491956~mv2.png"
+          <img src="/images/ayc-logo.png"
             alt="AYC Security USA"
             style="height:42px; width:auto; margin-bottom:22px;
             display:block;">
@@ -2567,7 +2756,7 @@
         <nav aria-label="Services footer navigation">
           <span style="font-family:'IBM Plex Mono',monospace;
             font-size:10px; letter-spacing:0.24em;
-            text-transform:uppercase; color:#D9B66B;
+            text-transform:uppercase; color:var(--gold-soft);
             display:block; margin-bottom:18px;">
             Services
           </span>
@@ -2611,7 +2800,7 @@
         <nav aria-label="Company footer navigation">
           <span style="font-family:'IBM Plex Mono',monospace;
             font-size:10px; letter-spacing:0.24em;
-            text-transform:uppercase; color:#D9B66B;
+            text-transform:uppercase; color:var(--gold-soft);
             display:block; margin-bottom:18px;">
             Company
           </span>
@@ -2645,13 +2834,13 @@
         <div>
           <span style="font-family:'IBM Plex Mono',monospace;
             font-size:10px; letter-spacing:0.24em;
-            text-transform:uppercase; color:#D9B66B;
+            text-transform:uppercase; color:var(--gold-soft);
             display:block; margin-bottom:18px;">
             Contact
           </span>
           <a href="tel:+15615717983"
             style="font-family:'Inter',sans-serif; font-size:14px;
-            color:#D9B66B; display:block; padding:5px 0;
+            color:var(--gold-soft); display:block; padding:5px 0;
             text-decoration:none;">
             (561) 571-7983</a>
           <a href="/cdn-cgi/l/email-protection#2b42454d446b4a5248584e485e59425f5205484446" style="font-family:'Inter',sans-serif; font-size:14px;
@@ -2660,7 +2849,7 @@
             <span class="__cf_email__" data-cfemail="8ae3e4ece5caebf3e9f9efe9fff8e3fef3a4e9e5e7">[email&#160;protected]</span></a>
           <span style="font-family:'IBM Plex Mono',monospace;
             font-size:10px; letter-spacing:0.16em;
-            text-transform:uppercase; color:#D9B66B;
+            text-transform:uppercase; color:var(--gold-soft);
             display:block; margin-top:14px;">
             Florida HQ
           </span>
@@ -2672,7 +2861,7 @@
           </address>
           <span style="font-family:'IBM Plex Mono',monospace;
             font-size:10px; letter-spacing:0.16em;
-            text-transform:uppercase; color:#D9B66B;
+            text-transform:uppercase; color:var(--gold-soft);
             display:block; margin-top:14px;">
             Ohio
           </span>
@@ -2748,6 +2937,11 @@
         closeTimer = setTimeout(() => closeDD(wrap), 140);
       });
       trigger.addEventListener('click', (e) => {
+        const href = trigger.getAttribute('href');
+        if (href && href !== '#') {
+          window.location.href = href;
+          return;
+        }
         e.preventDefault();
         if (wrap.classList.contains('is-open')) closeDD(wrap);
         else openDD(wrap);
