@@ -1286,6 +1286,44 @@
     height: 100%;
     color: #fff;
   }
+
+  /* Mobile: replace the 3D flip with a crossfade to avoid an iOS Safari
+     rendering bug where preserve-3d/backface-visibility on transformed
+     cards inside a grid can visually bleed into neighboring cards. */
+  @media (max-width: 899px) {
+    .flip-inner {
+      transition: none;
+      transform-style: flat;
+      -webkit-transform-style: flat;
+    }
+    .flip-card[aria-pressed="true"] .flip-inner { transform: none; }
+    .card-front,
+    .card-back {
+      backface-visibility: visible;
+      -webkit-backface-visibility: visible;
+      transition: opacity .3s ease, visibility .3s ease;
+    }
+    .card-front {
+      opacity: 1;
+      visibility: visible;
+    }
+    .card-back {
+      transform: none;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .flip-card[aria-pressed="true"] .card-front {
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+    }
+    .flip-card[aria-pressed="true"] .card-back {
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+    }
+  }
   .card-back-name {
     font-family: var(--font-display);
     font-weight: 600;
