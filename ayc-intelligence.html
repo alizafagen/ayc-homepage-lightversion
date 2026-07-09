@@ -700,10 +700,10 @@
   /* ============ SHARED SECTION TYPE ============ */
   .sec-identifier {
     font-family: 'IBM Plex Mono', monospace;
-    font-size: 11px;
+    font-size: 14px;
     color: var(--gold);
     text-transform: uppercase;
-    letter-spacing: 0.22em;
+    letter-spacing: 0.2em;
     margin: 0 0 18px;
     font-weight: 500;
   }
@@ -989,7 +989,7 @@
   }
   .pillar-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 36px;
   }
   @media (max-width: 1000px) {
@@ -1328,6 +1328,23 @@
   .intel-sec.cream { background: var(--cream); }
   .intel-sec.paper { background: var(--paper); }
   .intel-sec.cream-2 { background: var(--cream-2); }
+
+  /* ============ OPS INTELLIGENCE CALLOUT ============ */
+  .ops-callout {
+    background: var(--cream-2);
+    border-top: 3px solid var(--gold);
+    border-bottom: 3px solid var(--gold);
+    padding: clamp(64px, 8vw, 96px) 0;
+  }
+  .ops-callout .sec-title { margin-bottom: 20px; }
+  .ops-callout-body {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    line-height: 1.75;
+    color: var(--ink-soft);
+    max-width: 68ch;
+    margin: 0 0 clamp(40px, 5vw, 56px);
+  }
 
   .intel-cards {
     margin-top: clamp(48px, 6vw, 72px);
@@ -1784,7 +1801,7 @@
           <span class="gold">Can Act On</span>
         </h1>
         <hr class="gold-rule" style="margin: 0 0 24px;" />
-        <p class="hero-sub">AYC Intelligence is a division of AYC Security, a full-service security firm with legal counsel integrated directly in operations. We provide corporate intelligence, claims investigations, and background investigations to organizations that need answers they can act on.</p>
+        <p class="hero-sub">AYC Intelligence conducts corporate intelligence, claims investigations, and background investigations, backed by legal counsel embedded in every engagement. Findings are built to be acted on, not filed away.</p>
         <div class="hero-ctas">
           <a class="btn btn-gold" href="/contact">Request a Consultation →</a>
           <a class="btn btn-outline-light" href="tel:+15615717983">Call (561) 571-7983</a>
@@ -1798,6 +1815,7 @@
           <li class="offer-item"><span class="offer-check" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5L12 3"/></svg></span>Background Investigations</li>
           <li class="offer-item"><span class="offer-check" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5L12 3"/></svg></span>Corporate Intelligence</li>
           <li class="offer-item"><span class="offer-check" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5L12 3"/></svg></span>Claims Investigations</li>
+          <li class="offer-item"><span class="offer-check" aria-hidden="true"><svg viewBox="0 0 14 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 7l3.5 3.5L12 3"/></svg></span>Predictive Threat Intelligence</li>
         </ul>
         <hr class="offer-rule" />
         <p class="offer-foot">All Engagements Strictly Confidential</p>
@@ -1811,10 +1829,10 @@
   <div class="container">
     <div class="overview-center">
       <hr class="gold-rule" />
-      <p class="lead">AYC Intelligence is a division of AYC Security, an international full-service security firm with legal counsel integrated directly in operations. Our management team brings a combined 150 years of military, law enforcement, and intelligence experience to every engagement.</p>
+      <p class="lead">AYC Intelligence is a division of AYC Security, an international security firm with legal counsel embedded directly in operations. Our management team brings a combined 150 years of military, law enforcement, and intelligence experience to every engagement.</p>
       <p class="body">We provide corporate intelligence, claims investigations, and background investigations with the operational discipline and legal rigor that come from running active security programs at scale.</p>
       <div class="confidentiality-callout">
-        <p><span>All engagements strictly confidential.</span> Client relationships and engagement details are never disclosed.</p>
+        <p><span>All engagements are strictly confidential.</span> Client relationships and engagement details are never disclosed.</p>
       </div>
     </div>
   </div>
@@ -1834,7 +1852,7 @@
       <div class="text-col">
         <p class="sec-identifier">Background Investigations</p>
         <h2 class="sec-title" id="bgTitle">Know Who You're<br />Working With</h2>
-        <p class="sec-body">AYC Intelligence conducts thorough background investigations for organizations making hiring decisions, evaluating partners, or assessing individuals in positions of trust. Every investigation is reviewed through the lens of our in-house legal counsel to ensure compliance with applicable law.</p>
+        <p class="sec-body">AYC Intelligence conducts background investigations for organizations making hiring decisions, evaluating partners, or assessing individuals in positions of trust. Every investigation is reviewed by in-house legal counsel to ensure compliance with applicable law.</p>
         <p class="sec-note">Confidential. Legally reviewed. Nationwide reach.</p>
       </div>
     </div>
@@ -2096,6 +2114,109 @@
   </div>
 </section>
 
+<!-- ============ SECTION 4 — PREDICTIVE THREAT INTELLIGENCE ============ -->
+<section class="intel-sec paper" id="predictive-intelligence" aria-labelledby="predictiveTitle" data-screen-label="06 Predictive Threat Intelligence">
+  <div class="container">
+    <div class="split-5050">
+      <div class="text-col">
+        <p class="sec-identifier">Predictive Threat Intelligence</p>
+        <h2 class="sec-title" id="predictiveTitle">Spot Risk Before<br />It Spots You</h2>
+        <p class="sec-body">Every site, route, and event carries a different risk profile. Before a deployment begins, AYC Intelligence analysts assess the conditions specific to it, crime trends, civil unrest, weather, and other localized factors, so decisions are made on evidence, not assumption.</p>
+        <p class="sec-note">Assessed before risk becomes exposure.</p>
+      </div>
+      <div style="overflow:hidden;position:relative;height:100%;min-height:480px;">
+        <img
+          src="/images/predictive-intelligence-gsoc-monitoring.webp"
+          alt="Analyst reviewing predictive risk intelligence dashboard"
+          style="width:100%;height:100%;object-fit:cover;object-position:center;display:block;filter:grayscale(20%) contrast(1.05);"
+        />
+      </div>
+    </div>
+
+    <div class="intel-cards">
+      <article class="intel-card">
+        <div class="intel-card-head">
+          <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
+            <rect x="6" y="4" width="18" height="26"/>
+            <path d="M10 10h10M10 15h8M10 20h6"/>
+            <circle cx="26" cy="24" r="6"/>
+            <path d="M30 28l4 4"/>
+          </svg>
+          <h3>Pre-Deployment Risk Assessment</h3>
+        </div>
+        <p>AYC Intelligence evaluates the site, route, or event before personnel arrive: local crime trends, civil unrest, weather, and conditions specific to the assignment.</p>
+      </article>
+      <article class="intel-card">
+        <div class="intel-card-head">
+          <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
+            <path d="M4 26c6-2 8-14 14-16 6-2 10 4 14 2"/>
+            <circle cx="6" cy="25" r="2.5"/>
+            <circle cx="18" cy="12" r="2.5"/>
+            <circle cx="31" cy="11" r="2.5"/>
+          </svg>
+          <h3>Travel & Personnel Risk Intelligence</h3>
+        </div>
+        <p>For close protection details and personnel operating outside familiar territory, analysts assess routes, destinations, and itineraries against current conditions before travel begins.</p>
+      </article>
+      <article class="intel-card">
+        <div class="intel-card-head">
+          <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
+            <circle cx="18" cy="18" r="14"/>
+            <path d="M4 18h28M18 4c4 4 4 24 0 28M18 4c-4 4-4 24 0 28"/>
+          </svg>
+          <h3>Open-Source & Geospatial Monitoring</h3>
+        </div>
+        <p>Public records, mapping data, and open-source signals are analyzed around a site or region to surface patterns that internal data alone would miss.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CALLOUT — INTELLIGENCE BEHIND OPERATIONS ============ -->
+<section class="ops-callout" aria-labelledby="opsCalloutTitle" data-screen-label="06b Intelligence Behind Operations">
+  <div class="container">
+    <hr class="gold-rule" />
+    <p class="sec-identifier">Intelligence Behind Operations</p>
+    <h2 class="sec-title" id="opsCalloutTitle">Intelligence Shouldn't<br />Stop at the Report</h2>
+    <p class="ops-callout-body">At AYC, security is not just a guard at the door or a camera on the wall. It is about being prepared, with the right intelligence to prevent, predict, and respond to any threat. That standard runs through every AYC deployment. We provide on-the-ground operations backed by the same intelligence discipline that powers our investigations.</p>
+    <div class="intel-cards">
+      <article class="intel-card">
+        <div class="intel-card-head">
+          <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
+            <circle cx="18" cy="18" r="14"/>
+            <circle cx="18" cy="18" r="1.5" fill="currentColor" stroke="none"/>
+            <path d="M18 18L28 10"/>
+            <path d="M18 6v2M18 28v2M6 18h2M28 18h2"/>
+          </svg>
+          <h3>Constant Communication</h3>
+        </div>
+        <p>Personnel report in continuously. Coverage is confirmed at every post, every shift.</p>
+      </article>
+      <article class="intel-card">
+        <div class="intel-card-head">
+          <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
+            <path d="M18 5c-5 0-8 4-8 9v6l-3 5h22l-3-5v-6c0-5-3-9-8-9z"/>
+            <path d="M14 27a4 4 0 008 0"/>
+            <path d="M18 2v3"/>
+          </svg>
+          <h3>Immediate Escalation</h3>
+        </div>
+        <p>Developing conditions, a gap in coverage, a change nearby, are flagged and escalated in real-time.</p>
+      </article>
+      <article class="intel-card">
+        <div class="intel-card-head">
+          <svg class="icon" viewBox="0 0 36 36" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" aria-hidden="true">
+            <path d="M4 28h28M4 28V8M4 28l8-10 6 6 12-14"/>
+            <path d="M24 8h6v6"/>
+          </svg>
+          <h3>After-Action Review</h3>
+        </div>
+        <p>Findings from every deployment sharpen the risk picture for the next one, in the same site, sector, or region.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
 <!-- ============ TRIGGERS — WHEN TO HIRE AYC INTELLIGENCE ============ -->
 <section class="triggers" aria-labelledby="triggersTitle" data-screen-label="06 When to Hire">
   <div class="container">
@@ -2210,6 +2331,11 @@
         <h3>Nationwide Reach</h3>
         <p>AYC Intelligence operates across the United States, Canada, and internationally.</p>
       </article>
+      <article class="pillar">
+        <svg class="icon" viewBox="0 0 40 40" fill="none" aria-hidden="true"><circle cx="20" cy="20" r="15" stroke="currentColor" stroke-width="2"/><circle cx="20" cy="20" r="1.6" fill="currentColor"/><path d="M20 20L31 11" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><path d="M20 6v3M20 31v3M6 20h3M31 20h3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+        <h3>Intelligence That Powers Operations</h3>
+        <p>The same analysts and oversight behind our investigations also brief and support active field deployments, from pre-deployment risk assessments to after-action review.</p>
+      </article>
     </div>
   </div>
 </section>
@@ -2266,7 +2392,7 @@
           How quickly can AYC Intelligence begin an engagement?
           <span class="faq-toggle" aria-hidden="true"></span>
         </button>
-        <div class="faq-a"><p>We pride ourselves on initiating engagements quickly, without compromising the quality or legal integrity of the work. Timelines depend on the nature and scope of the investigation. Contact us to discuss your specific situation and timeline.</p></div>
+        <div class="faq-a"><p>AYC Intelligence initiates engagements quickly, without compromising the quality or legal integrity of the work. Timelines depend on the nature and scope of the investigation. Contact us to discuss your specific situation and timeline.</p></div>
       </div>
       <div class="faq-item">
         <button class="faq-q" aria-expanded="false">
@@ -2281,6 +2407,20 @@
           <span class="faq-toggle" aria-hidden="true"></span>
         </button>
         <div class="faq-a"><p>Yes. AYC Intelligence operates across the United States, Canada, and internationally, with investigative reach through direct personnel and vetted regional partners.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          What is predictive threat intelligence?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><p>Predictive threat intelligence is the practice of monitoring conditions around a site, route, or event, crime trends, civil unrest, weather, and open-source signals, to identify risk before it becomes an incident. Rather than responding after something happens, it gives security teams and clients advance warning so they can adjust before a situation escalates.</p></div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-q" aria-expanded="false">
+          Does AYC Intelligence only investigate after an incident, or does it support active operations too?
+          <span class="faq-toggle" aria-hidden="true"></span>
+        </button>
+        <div class="faq-a"><p>Both. AYC Intelligence conducts investigations after the fact, and the same analysts build risk assessments before a deployment begins, covering the site, route, or event. Once personnel are in place, AYC's operations team stays in constant communication, confirming coverage at every post and watching for anything that could affect the assignment.</p></div>
       </div>
     </div>
   </div>
