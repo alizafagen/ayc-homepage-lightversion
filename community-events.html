@@ -604,11 +604,12 @@
     <button class="close-btn" id="slideout-close" aria-label="Close">×</button>
   </div>
   <p>Give us the details. We will follow up the same day.</p>
-  <form onsubmit="event.preventDefault();this.querySelector('button[type=submit]').textContent='Sent. We will follow up.';">
-    <div class="field"><label for="so-name">Name</label><input id="so-name" type="text" required></div>
-    <div class="field"><label for="so-email">Email</label><input id="so-email" type="email" required></div>
-    <div class="field"><label for="so-phone">Phone</label><input id="so-phone" type="tel"></div>
-    <div class="field"><label for="so-msg">What do you need?</label><textarea id="so-msg" required></textarea></div>
+  <form id="slideout-form" name="slideout-contact" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="slideout-contact" />
+    <div class="field"><label for="so-name">Name</label><input id="so-name" name="name" type="text" required></div>
+    <div class="field"><label for="so-email">Email</label><input id="so-email" name="email" type="email" required></div>
+    <div class="field"><label for="so-phone">Phone</label><input id="so-phone" name="phone" type="tel"></div>
+    <div class="field"><label for="so-msg">What do you need?</label><textarea id="so-msg" name="message" required></textarea></div>
     <button type="submit" class="btn btn-gold">Send Request →</button>
   </form>
 </aside>
@@ -907,6 +908,60 @@
   sideTab.addEventListener('click', openSO);
   slClose.addEventListener('click', closeSO);
   scrim.addEventListener('click', closeSO);
+
+  // ---------- Slideout form -> Netlify Forms ----------
+  const slideoutForm = document.getElementById('slideout-form');
+  if (slideoutForm) {
+    const soSubmitBtn = slideoutForm.querySelector('button[type="submit"]');
+    const soSubmitLabel = soSubmitBtn ? soSubmitBtn.textContent : '';
+    const soMsg = document.createElement('p');
+    soMsg.setAttribute('role', 'status');
+    soMsg.setAttribute('aria-live', 'polite');
+    soMsg.style.cssText = 'margin-top:12px;font-size:14px;display:none;';
+    slideoutForm.appendChild(soMsg);
+
+    const soEncode = (data) => Object.keys(data)
+      .map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
+      .join('&');
+
+    slideoutForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = {};
+      new FormData(slideoutForm).forEach((v, k) => { data[k] = v; });
+      if (soSubmitBtn) { soSubmitBtn.disabled = true; soSubmitBtn.textContent = 'Sending…'; }
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: soEncode(data)
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error('Submit failed');
+          slideoutForm.reset();
+          soMsg.textContent = 'Thanks — your message has been sent. We will be in touch shortly.';
+          soMsg.style.color = 'var(--gold)';
+          soMsg.style.display = 'block';
+          if (soSubmitBtn) soSubmitBtn.style.display = 'none';
+          setTimeout(() => {
+            closeSO();
+            setTimeout(() => {
+              soMsg.style.display = 'none';
+              if (soSubmitBtn) {
+                soSubmitBtn.style.display = '';
+                soSubmitBtn.disabled = false;
+                soSubmitBtn.textContent = soSubmitLabel;
+              }
+            }, 400);
+          }, 1800);
+        })
+        .catch(() => {
+          soMsg.textContent = 'Something went wrong and your message was not sent. Please try again or call us directly.';
+          soMsg.style.color = '#B3261E';
+          soMsg.style.display = 'block';
+          if (soSubmitBtn) { soSubmitBtn.disabled = false; soSubmitBtn.textContent = soSubmitLabel; }
+        });
+    });
+  }
 
   // ESC closes overlays
   document.addEventListener('keydown', (e) => {

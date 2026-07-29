@@ -1700,7 +1700,8 @@ button{font-family:inherit;cursor:pointer;border:none;background:none;color:inhe
   <button class="slideout-close" id="slideout-close" aria-label="Close form">✕</button>
   <h2>Get in Touch</h2>
   <p>Tell us about your operation. We will get back to you promptly.</p>
-  <form>
+  <form id="slideout-form" name="slideout-contact" method="POST" data-netlify="true">
+    <input type="hidden" name="form-name" value="slideout-contact" />
     <label for="so-name">Name</label>
     <input id="so-name" name="name" type="text" required>
     <label for="so-org">Organization</label>
@@ -1787,6 +1788,60 @@ document.addEventListener('keydown', e => {
     if (drawer.classList.contains('open')) drawerClose.click();
   }
 });
+
+// ---------- Slideout form -> Netlify Forms ----------
+const slideoutForm = document.getElementById('slideout-form');
+if (slideoutForm) {
+  const soSubmitBtn = slideoutForm.querySelector('button[type="submit"]');
+  const soSubmitLabel = soSubmitBtn ? soSubmitBtn.textContent : '';
+  const soMsg = document.createElement('p');
+  soMsg.setAttribute('role', 'status');
+  soMsg.setAttribute('aria-live', 'polite');
+  soMsg.style.cssText = 'margin-top:12px;font-size:14px;display:none;';
+  slideoutForm.appendChild(soMsg);
+
+  const soEncode = (data) => Object.keys(data)
+    .map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
+    .join('&');
+
+  slideoutForm.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const data = {};
+    new FormData(slideoutForm).forEach((v, k) => { data[k] = v; });
+    if (soSubmitBtn) { soSubmitBtn.disabled = true; soSubmitBtn.textContent = 'Sending…'; }
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: soEncode(data)
+    })
+      .then((res) => {
+        if (!res.ok) throw new Error('Submit failed');
+        slideoutForm.reset();
+        soMsg.textContent = 'Thanks — your message has been sent. We will be in touch shortly.';
+        soMsg.style.color = 'var(--gold)';
+        soMsg.style.display = 'block';
+        if (soSubmitBtn) soSubmitBtn.style.display = 'none';
+        setTimeout(() => {
+          closeSlideout();
+          setTimeout(() => {
+            soMsg.style.display = 'none';
+            if (soSubmitBtn) {
+              soSubmitBtn.style.display = '';
+              soSubmitBtn.disabled = false;
+              soSubmitBtn.textContent = soSubmitLabel;
+            }
+          }, 400);
+        }, 1800);
+      })
+      .catch(() => {
+        soMsg.textContent = 'Something went wrong and your message was not sent. Please try again or call us directly.';
+        soMsg.style.color = '#B3261E';
+        soMsg.style.display = 'block';
+        if (soSubmitBtn) { soSubmitBtn.disabled = false; soSubmitBtn.textContent = soSubmitLabel; }
+      });
+  });
+}
 </script>
 </body>
 </html>

@@ -1885,7 +1885,9 @@
       <button class="slideout__close" type="button" id="slideout-close" aria-label="Close contact form">✕</button>
     </div>
     <div class="slideout__body">
-      <form>
+      <form id="slideout-form" name="slideout-contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="slideout-contact" />
+        <input type="hidden" name="service_interest" id="service-interest">
         <p class="slideout__label">Service interest</p>
         <div class="pill-row" role="group" aria-label="Service type">
           <button class="pill" type="button">Residential</button>
@@ -1896,13 +1898,13 @@
           <button class="pill" type="button">Not sure</button>
         </div>
         <label for="f-name">Name</label>
-        <input id="f-name" type="text" autocomplete="name">
+        <input id="f-name" name="name" type="text" autocomplete="name">
         <label for="f-email">Email</label>
-        <input id="f-email" type="email" autocomplete="email">
+        <input id="f-email" name="email" type="email" autocomplete="email">
         <label for="f-phone">Phone (optional)</label>
-        <input id="f-phone" type="tel" autocomplete="tel">
+        <input id="f-phone" name="phone" type="tel" autocomplete="tel">
         <label for="f-service">Service Type</label>
-        <select id="f-service">
+        <select id="f-service" name="service_type">
           <option value="">Select…</option>
           <option>Ongoing Site Security</option>
           <option>Disaster &amp; Emergency Response</option>
@@ -1913,7 +1915,7 @@
           <option>AYC Intelligence</option>
         </select>
         <label for="f-msg">Message</label>
-        <textarea id="f-msg"></textarea>
+        <textarea id="f-msg" name="message"></textarea>
         <button class="slideout__submit" type="submit">Send Us a Message →</button>
       </form>
     </div>
@@ -3064,12 +3066,70 @@
     });
 
     // Pill toggles in slideout
+    const serviceInterestField = document.getElementById('service-interest');
     document.querySelectorAll('.pill-row .pill').forEach((p) => {
       p.addEventListener('click', () => {
         document.querySelectorAll('.pill-row .pill').forEach(x => x.classList.remove('is-active'));
         p.classList.add('is-active');
+        if (serviceInterestField) serviceInterestField.value = p.textContent.trim();
       });
     });
+
+    // ---------- Slideout form -> Netlify Forms ----------
+    const slideoutForm = document.getElementById('slideout-form');
+    if (slideoutForm) {
+      const soSubmitBtn = slideoutForm.querySelector('button[type="submit"]');
+      const soSubmitLabel = soSubmitBtn ? soSubmitBtn.textContent : '';
+      const soMsg = document.createElement('p');
+      soMsg.setAttribute('role', 'status');
+      soMsg.setAttribute('aria-live', 'polite');
+      soMsg.style.cssText = 'margin-top:12px;font-size:14px;display:none;';
+      slideoutForm.appendChild(soMsg);
+
+      const soEncode = (data) => Object.keys(data)
+        .map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
+        .join('&');
+
+      slideoutForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const data = {};
+        new FormData(slideoutForm).forEach((v, k) => { data[k] = v; });
+        if (soSubmitBtn) { soSubmitBtn.disabled = true; soSubmitBtn.textContent = 'Sending…'; }
+
+        fetch('/', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+          body: soEncode(data)
+        })
+          .then((res) => {
+            if (!res.ok) throw new Error('Submit failed');
+            slideoutForm.reset();
+            document.querySelectorAll('.pill-row .pill').forEach((x) => x.classList.remove('is-active'));
+            if (serviceInterestField) serviceInterestField.value = '';
+            soMsg.textContent = 'Thanks — your message has been sent. We will be in touch shortly.';
+            soMsg.style.color = 'var(--gold)';
+            soMsg.style.display = 'block';
+            if (soSubmitBtn) soSubmitBtn.style.display = 'none';
+            setTimeout(() => {
+              closeSlideout();
+              setTimeout(() => {
+                soMsg.style.display = 'none';
+                if (soSubmitBtn) {
+                  soSubmitBtn.style.display = '';
+                  soSubmitBtn.disabled = false;
+                  soSubmitBtn.textContent = soSubmitLabel;
+                }
+              }, 400);
+            }, 1800);
+          })
+          .catch(() => {
+            soMsg.textContent = 'Something went wrong and your message was not sent. Please try again or call us directly.';
+            soMsg.style.color = '#B3261E';
+            soMsg.style.display = 'block';
+            if (soSubmitBtn) { soSubmitBtn.disabled = false; soSubmitBtn.textContent = soSubmitLabel; }
+          });
+      });
+    }
 
     // ---------- Flip cards (Leadership + Advisors) ----------
     document.querySelectorAll('.flip-card').forEach((card) => {

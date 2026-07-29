@@ -1463,17 +1463,18 @@
     </div>
     <div class="slideout__body">
       <p class="slideout__intro">Tell us what you need. The right person will reach out.</p>
-      <form>
+      <form id="slideout-form" name="slideout-contact" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="slideout-contact" />
         <label for="f-name">Name *</label>
-        <input id="f-name" type="text" autocomplete="name" required>
+        <input id="f-name" name="name" type="text" autocomplete="name" required>
         <label for="f-org">Organization</label>
-        <input id="f-org" type="text" autocomplete="organization">
+        <input id="f-org" name="organization" type="text" autocomplete="organization">
         <label for="f-phone">Phone (optional)</label>
-        <input id="f-phone" type="tel" autocomplete="tel">
+        <input id="f-phone" name="phone" type="tel" autocomplete="tel">
         <label for="f-email">Email *</label>
-        <input id="f-email" type="email" autocomplete="email" required>
+        <input id="f-email" name="email" type="email" autocomplete="email" required>
         <label for="f-msg">Message</label>
-        <textarea id="f-msg"></textarea>
+        <textarea id="f-msg" name="message"></textarea>
         <button class="slideout__submit" type="submit">Send Message →</button>
       </form>
     </div>
@@ -1946,6 +1947,60 @@
   scrim.addEventListener('click', () => {
     if (slideout.classList.contains('is-open')) closeSlideout();
   });
+
+  // ---------- Slideout form -> Netlify Forms ----------
+  const slideoutForm = document.getElementById('slideout-form');
+  if (slideoutForm) {
+    const soSubmitBtn = slideoutForm.querySelector('button[type="submit"]');
+    const soSubmitLabel = soSubmitBtn ? soSubmitBtn.textContent : '';
+    const soMsg = document.createElement('p');
+    soMsg.setAttribute('role', 'status');
+    soMsg.setAttribute('aria-live', 'polite');
+    soMsg.style.cssText = 'margin-top:12px;font-size:14px;display:none;';
+    slideoutForm.appendChild(soMsg);
+
+    const soEncode = (data) => Object.keys(data)
+      .map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
+      .join('&');
+
+    slideoutForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = {};
+      new FormData(slideoutForm).forEach((v, k) => { data[k] = v; });
+      if (soSubmitBtn) { soSubmitBtn.disabled = true; soSubmitBtn.textContent = 'Sending…'; }
+
+      fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: soEncode(data)
+      })
+        .then((res) => {
+          if (!res.ok) throw new Error('Submit failed');
+          slideoutForm.reset();
+          soMsg.textContent = 'Thanks — your message has been sent. We will be in touch shortly.';
+          soMsg.style.color = 'var(--gold)';
+          soMsg.style.display = 'block';
+          if (soSubmitBtn) soSubmitBtn.style.display = 'none';
+          setTimeout(() => {
+            closeSlideout();
+            setTimeout(() => {
+              soMsg.style.display = 'none';
+              if (soSubmitBtn) {
+                soSubmitBtn.style.display = '';
+                soSubmitBtn.disabled = false;
+                soSubmitBtn.textContent = soSubmitLabel;
+              }
+            }, 400);
+          }, 1800);
+        })
+        .catch(() => {
+          soMsg.textContent = 'Something went wrong and your message was not sent. Please try again or call us directly.';
+          soMsg.style.color = '#B3261E';
+          soMsg.style.display = 'block';
+          if (soSubmitBtn) { soSubmitBtn.disabled = false; soSubmitBtn.textContent = soSubmitLabel; }
+        });
+    });
+  }
 
   // Escape closes everything
   document.addEventListener('keydown', (e) => {
